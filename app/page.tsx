@@ -63,6 +63,61 @@ const workflow = [
   "Teams investigate, export reports, and keep a clear decision trail.",
 ];
 
+const pricingPlans = [
+  {
+    name: "Starter",
+    price: "€149",
+    cadence: "/month",
+    description: "For small businesses starting with transaction risk monitoring.",
+    features: [
+      "1 organisation",
+      "3 users",
+      "Excel upload",
+      "Transaction risk scoring",
+      "Basic alerts and reports",
+      "Up to 1,000 transactions/month",
+    ],
+    cta: "Start Starter",
+    href: APP_URL,
+    highlighted: false,
+  },
+  {
+    name: "Pro",
+    price: "€399",
+    cadence: "/month",
+    description: "For teams that need API access, alert operations, and deeper controls.",
+    features: [
+      "10 users",
+      "API keys",
+      "Bulk upload",
+      "Crypto monitoring",
+      "Email alerts",
+      "Audit trail export",
+      "Up to 10,000 transactions/month",
+    ],
+    cta: "Start Pro",
+    href: APP_URL,
+    highlighted: true,
+  },
+  {
+    name: "Enterprise",
+    price: "Contact us",
+    cadence: "",
+    description: "For larger, regulated, or custom deployment requirements.",
+    features: [
+      "Custom transaction limits",
+      "Custom risk rules",
+      "Local/customer environment deployment",
+      "Dedicated onboarding",
+      "Priority support",
+      "Security review support",
+    ],
+    cta: "Contact Sales",
+    href: `mailto:${CONTACT_EMAIL}?subject=Enterprise%20plan%20enquiry`,
+    highlighted: false,
+  },
+];
+
 const interestOptions = [
   "Fraud detection",
   "Crypto monitoring",
@@ -364,6 +419,7 @@ export default function SentraRiskLandingPage() {
           <div className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
             <a href="#platform" className="hover:text-slate-950">Platform</a>
             <a href="#api" className="hover:text-slate-950">API</a>
+            <a href="#pricing" className="hover:text-slate-950">Pricing</a>
             <a href="#security" className="hover:text-slate-950">Security</a>
             <a href="#demo" className="hover:text-slate-950">Contact</a>
           </div>
@@ -510,6 +566,73 @@ Authorization: Bearer YOUR_API_KEY
 }`}
             </pre>
           </div>
+        </div>
+      </section>
+
+      <section id="pricing" className="border-b border-slate-200 bg-slate-50 px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase text-cyan-700">Pricing</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+              Simple pricing for serious fraud prevention.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-slate-600">
+              Start with a focused plan, then scale into API access, crypto monitoring, email alerts, and custom deployment support as your risk operations mature.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {pricingPlans.map((plan) => (
+              <div
+                key={plan.name}
+                className={`rounded-md border p-6 shadow-sm ${
+                  plan.highlighted
+                    ? "border-slate-950 bg-slate-950 text-white"
+                    : "border-slate-200 bg-white text-slate-950"
+                }`}
+              >
+                <div className="flex items-center justify-between gap-4">
+                  <h3 className="text-xl font-semibold">{plan.name}</h3>
+                  {plan.highlighted && (
+                    <span className="rounded-md bg-cyan-300 px-2 py-1 text-xs font-semibold text-slate-950">
+                      Recommended
+                    </span>
+                  )}
+                </div>
+                <div className="mt-6 flex items-end gap-1">
+                  <p className="text-4xl font-semibold">{plan.price}</p>
+                  <p className={`pb-1 text-sm ${plan.highlighted ? "text-slate-300" : "text-slate-500"}`}>
+                    {plan.cadence}
+                  </p>
+                </div>
+                <p className={`mt-4 min-h-14 text-sm leading-6 ${plan.highlighted ? "text-slate-300" : "text-slate-600"}`}>
+                  {plan.description}
+                </p>
+                <ul className="mt-6 space-y-3">
+                  {plan.features.map((feature) => (
+                    <li key={feature} className="flex gap-3 text-sm">
+                      <CheckCircle2 className={`mt-0.5 h-4 w-4 shrink-0 ${plan.highlighted ? "text-cyan-300" : "text-cyan-700"}`} aria-hidden="true" />
+                      <span className={plan.highlighted ? "text-slate-200" : "text-slate-700"}>{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+                <a
+                  href={plan.href}
+                  className={`mt-7 inline-flex h-12 w-full items-center justify-center rounded-md px-6 text-sm font-semibold transition ${
+                    plan.highlighted
+                      ? "bg-white text-slate-950 hover:bg-slate-100"
+                      : "bg-slate-950 text-white hover:bg-slate-800"
+                  }`}
+                >
+                  {plan.cta}
+                </a>
+              </div>
+            ))}
+          </div>
+
+          <p className="mt-6 text-sm text-slate-500">
+            Pilot option: eligible Irish SMEs can start with a 30-day pilot before moving to a monthly plan.
+          </p>
         </div>
       </section>
 
