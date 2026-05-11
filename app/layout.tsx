@@ -25,9 +25,12 @@ export const metadata: Metadata = {
     type: "website",
   },
   icons: {
-    icon: "/sentrarisk-logo.svg",
-    shortcut: "/sentrarisk-logo.svg",
-    apple: "/sentrarisk-logo.svg",
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+      { url: "/sentrarisk-logo.svg", type: "image/svg+xml" },
+    ],
+    shortcut: "/icon.svg",
+    apple: "/apple-icon.svg",
   },
 };
 
