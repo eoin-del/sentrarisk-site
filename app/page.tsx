@@ -1,11 +1,11 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import {
   Activity,
   ArrowRight,
-  BarChart3,
   Bitcoin,
+  CheckCircle2,
   Code2,
   FileText,
   Gauge,
@@ -60,6 +60,14 @@ const workflow = [
   "Import transactions, stream via API, or review activity manually.",
   "SentraRisk assigns a risk score and explains the strongest indicators.",
   "Teams investigate, export reports, and keep a clear decision trail.",
+];
+
+const interestOptions = [
+  "Fraud detection",
+  "Crypto monitoring",
+  "API integration",
+  "Transaction reports",
+  "Enterprise setup",
 ];
 
 function LogoMark() {
@@ -167,6 +175,164 @@ function ProductVisual() {
   );
 }
 
+function CheckLine({ text }: { text: string }) {
+  return (
+    <div className="mb-3 flex gap-3 last:mb-0">
+      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-700" aria-hidden="true" />
+      <p className="text-sm leading-6 text-slate-600">{text}</p>
+    </div>
+  );
+}
+
+function DemoForm() {
+  const [submitted, setSubmitted] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    company: "",
+    email: "",
+    role: "",
+    teamSize: "",
+    interest: interestOptions[0],
+    message: "",
+  });
+
+  function updateField(field: keyof typeof form, value: string) {
+    setForm((current) => ({ ...current, [field]: value }));
+  }
+
+  function submitDemoRequest(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const subject = encodeURIComponent(`SentraRisk demo request from ${form.company || form.name}`);
+    const body = encodeURIComponent(
+      [
+        "New SentraRisk demo request",
+        "",
+        `Name: ${form.name}`,
+        `Company: ${form.company}`,
+        `Email: ${form.email}`,
+        `Role: ${form.role || "Not provided"}`,
+        `Team size: ${form.teamSize || "Not provided"}`,
+        `Interested in: ${form.interest}`,
+        "",
+        "Message:",
+        form.message || "Not provided",
+      ].join("\n"),
+    );
+
+    setSubmitted(true);
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+  }
+
+  return (
+    <form onSubmit={submitDemoRequest} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
+      <div className="flex items-start gap-3">
+        <Users className="mt-0.5 h-6 w-6 text-cyan-700" aria-hidden="true" />
+        <div>
+          <p className="text-lg font-semibold text-slate-950">Book a product demo</p>
+          <p className="mt-2 text-sm leading-6 text-slate-600">
+            Tell us a little about your organisation and we will come back to you with the right next step.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Full name
+          <input
+            required
+            value={form.name}
+            onChange={(event) => updateField("name", event.target.value)}
+            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            placeholder="Your name"
+          />
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Work email
+          <input
+            required
+            type="email"
+            value={form.email}
+            onChange={(event) => updateField("email", event.target.value)}
+            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            placeholder="name@company.com"
+          />
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Company
+          <input
+            required
+            value={form.company}
+            onChange={(event) => updateField("company", event.target.value)}
+            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            placeholder="Company name"
+          />
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Role
+          <input
+            value={form.role}
+            onChange={(event) => updateField("role", event.target.value)}
+            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            placeholder="Founder, compliance, finance..."
+          />
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Organisation size
+          <select
+            value={form.teamSize}
+            onChange={(event) => updateField("teamSize", event.target.value)}
+            className="h-11 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+          >
+            <option value="">Select size</option>
+            <option value="1-10">1-10 people</option>
+            <option value="11-50">11-50 people</option>
+            <option value="51-250">51-250 people</option>
+            <option value="250+">250+ people</option>
+          </select>
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Main interest
+          <select
+            value={form.interest}
+            onChange={(event) => updateField("interest", event.target.value)}
+            className="h-11 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+          >
+            {interestOptions.map((option) => (
+              <option key={option} value={option}>
+                {option}
+              </option>
+            ))}
+          </select>
+        </label>
+      </div>
+
+      <label className="mt-4 grid gap-2 text-sm font-medium text-slate-700">
+        What would you like to discuss?
+        <textarea
+          value={form.message}
+          onChange={(event) => updateField("message", event.target.value)}
+          className="min-h-28 rounded-md border border-slate-300 px-3 py-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+          placeholder="Tell us about your fraud detection, transaction monitoring, or crypto risk requirements."
+        />
+      </label>
+
+      <button
+        type="submit"
+        className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+      >
+        Send Demo Request <Mail className="h-4 w-4" aria-hidden="true" />
+      </button>
+
+      {submitted && (
+        <p className="mt-3 rounded-md bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-800">
+          Your email app should now open with the completed request.
+        </p>
+      )}
+    </form>
+  );
+}
+
 export default function SentraRiskLandingPage() {
   return (
     <main className="min-h-screen bg-white text-slate-950">
@@ -183,7 +349,7 @@ export default function SentraRiskLandingPage() {
             <a href="#platform" className="hover:text-slate-950">Platform</a>
             <a href="#api" className="hover:text-slate-950">API</a>
             <a href="#security" className="hover:text-slate-950">Security</a>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-slate-950">Contact</a>
+            <a href="#demo" className="hover:text-slate-950">Contact</a>
           </div>
           <a
             href={APP_URL}
@@ -213,7 +379,7 @@ export default function SentraRiskLandingPage() {
                 Open Platform <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
-                href={`mailto:${CONTACT_EMAIL}`}
+                href="#demo"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
               >
                 Book a Demo <Mail className="h-4 w-4" aria-hidden="true" />
@@ -298,7 +464,7 @@ export default function SentraRiskLandingPage() {
                 Developer Dashboard <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
-                href={`mailto:${CONTACT_EMAIL}`}
+                href="#demo"
                 className="inline-flex h-12 items-center justify-center rounded-md border border-white/20 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Discuss Integration
@@ -352,7 +518,7 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <section id="contact" className="border-t border-slate-200 bg-slate-50 px-5 py-20 md:px-8">
+      <section id="demo" className="border-t border-slate-200 bg-slate-50 px-5 py-20 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.7fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Contact</p>
@@ -362,30 +528,24 @@ Authorization: Bearer YOUR_API_KEY
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
               Speak with SentraRisk Systems about fraud detection, crypto monitoring, API scoring, and implementation for your organisation.
             </p>
-          </div>
-          <div className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
-            <div className="flex items-center gap-3">
-              <Users className="h-6 w-6 text-cyan-700" aria-hidden="true" />
-              <p className="text-lg font-semibold text-slate-950">Ready for a demo?</p>
-            </div>
-            <p className="mt-4 text-sm leading-6 text-slate-600">
-              Contact the team or open the platform to continue setup.
-            </p>
-            <div className="mt-6 grid gap-3">
-              <a
-                href={`mailto:${CONTACT_EMAIL}`}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
-              >
-                Contact Us <Mail className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <a
-                href={APP_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-slate-300 px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
-              >
-                Open Platform <BarChart3 className="h-4 w-4" aria-hidden="true" />
-              </a>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+                <CheckLine text="Receive a focused product walkthrough" />
+                <CheckLine text="Discuss your transaction monitoring workflow" />
+                <CheckLine text="Review API and dashboard setup options" />
+              </div>
+              <div className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+                <p className="text-sm font-semibold text-slate-950">Prefer email?</p>
+                <a className="mt-2 block text-sm font-medium text-cyan-700" href={`mailto:${CONTACT_EMAIL}`}>
+                  {CONTACT_EMAIL}
+                </a>
+                <p className="mt-4 text-sm leading-6 text-slate-600">
+                  We usually respond with the next step and any setup questions needed for your organisation.
+                </p>
+              </div>
             </div>
           </div>
+          <DemoForm />
         </div>
       </section>
 
