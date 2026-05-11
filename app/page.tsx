@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
 import {
   Activity,
@@ -565,9 +566,16 @@ Authorization: Bearer YOUR_API_KEY
       </section>
 
       <footer className="border-t border-slate-200 px-5 py-8 md:px-8">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
-          <p>© 2026 SentraRisk Systems. All rights reserved.</p>
-          <p>Fraud detection, transaction monitoring, and risk intelligence.</p>
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
+          <div>
+            <p>© 2026 SentraRisk Systems. All rights reserved.</p>
+            <p className="mt-1">Fraud detection, transaction monitoring, and risk intelligence.</p>
+          </div>
+          <div className="flex flex-wrap gap-4 font-medium">
+            <Link href="/privacy-policy" className="hover:text-slate-950">Privacy Policy</Link>
+            <Link href="/terms-of-service" className="hover:text-slate-950">Terms</Link>
+            <Link href="/security-statement" className="hover:text-slate-950">Security</Link>
+          </div>
         </div>
       </footer>
     </main>
