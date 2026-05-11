@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import React, { useState } from "react";
 import {
   Activity,
@@ -12,7 +13,6 @@ import {
   LockKeyhole,
   Mail,
   Shield,
-  ShieldCheck,
   Siren,
   Users,
 } from "lucide-react";
@@ -72,8 +72,18 @@ const interestOptions = [
 
 function LogoMark() {
   return (
-    <div className="flex h-9 w-9 items-center justify-center rounded-md border border-slate-200 bg-white text-slate-950 shadow-sm">
-      <ShieldCheck className="h-5 w-5" aria-hidden="true" />
+    <div className="flex items-center gap-3">
+      <Image
+        src="/sentrarisk-logo.svg"
+        alt="SentraRisk Systems logo"
+        width={40}
+        height={40}
+        className="h-10 w-10 rounded-md shadow-sm"
+      />
+      <div className="leading-tight">
+        <span className="block text-sm font-semibold tracking-wide text-slate-950">SentraRisk</span>
+        <span className="block text-xs font-medium text-slate-500">Systems</span>
+      </div>
     </div>
   );
 }
@@ -85,7 +95,13 @@ function ProductVisual() {
       <div className="absolute left-1/2 top-16 w-[980px] -translate-x-1/2 border border-slate-300 bg-white shadow-2xl md:top-20">
         <div className="flex h-12 items-center justify-between border-b border-slate-200 px-5">
           <div className="flex items-center gap-3">
-            <LogoMark />
+            <Image
+              src="/sentrarisk-logo.svg"
+              alt="SentraRisk Systems logo"
+              width={32}
+              height={32}
+              className="h-8 w-8 rounded-md"
+            />
             <div>
               <p className="text-xs font-semibold uppercase text-slate-500">SentraRisk Command</p>
               <p className="text-sm font-semibold text-slate-950">Live risk operations</p>
@@ -343,7 +359,6 @@ export default function SentraRiskLandingPage() {
         <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
           <a href="#" className="flex items-center gap-3">
             <LogoMark />
-            <span className="text-sm font-semibold tracking-wide">SentraRisk Systems</span>
           </a>
           <div className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
             <a href="#platform" className="hover:text-slate-950">Platform</a>

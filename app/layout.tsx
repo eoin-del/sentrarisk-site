@@ -24,6 +24,11 @@ export const metadata: Metadata = {
     siteName: "SentraRisk Systems",
     type: "website",
   },
+  icons: {
+    icon: "/sentrarisk-logo.svg",
+    shortcut: "/sentrarisk-logo.svg",
+    apple: "/sentrarisk-logo.svg",
+  },
 };
 
 export default function RootLayout({
