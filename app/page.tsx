@@ -77,7 +77,7 @@ const pricingPlans = [
       "Basic alerts and reports",
       "Up to 1,000 transactions/month",
     ],
-    cta: "Start Starter",
+    cta: "Start 14-day trial",
     href: APP_URL,
     highlighted: false,
   },
@@ -95,7 +95,7 @@ const pricingPlans = [
       "Audit trail export",
       "Up to 10,000 transactions/month",
     ],
-    cta: "Start Pro",
+    cta: "Start 14-day trial",
     href: APP_URL,
     highlighted: true,
   },
@@ -631,7 +631,7 @@ Authorization: Bearer YOUR_API_KEY
           </div>
 
           <p className="mt-6 text-sm text-slate-500">
-            Pilot option: eligible Irish SMEs can start with a 30-day pilot before moving to a monthly plan.
+            New trial workspaces include 14 days of access for feedback and evaluation before moving to a monthly plan.
           </p>
         </div>
       </section>
