@@ -20,6 +20,7 @@ import {
 
 const APP_URL = "https://app.sentrarisksystems.com";
 const CONTACT_EMAIL = "hello@sentrarisksystems.com";
+const REGISTER_URL = `${APP_URL}/register`;
 
 const riskRows = [
   { label: "Velocity spike", score: "91", status: "Investigate" },
@@ -31,30 +32,30 @@ const riskRows = [
 const capabilities = [
   {
     icon: Gauge,
-    title: "Real-time risk scoring",
-    text: "Score transaction activity as it enters your workflow, with clear risk reasons for analysts and decision makers.",
+    title: "Real-time transaction intelligence",
+    text: "Score payment activity as it enters your workflow, with clear risk reasons analysts and business owners can act on.",
   },
   {
     icon: Siren,
-    title: "Alert operations",
-    text: "Route flagged transactions into a review workflow with status, ownership, notes, and audit history.",
+    title: "Operational alert review",
+    text: "Route flagged transactions into a structured workflow with status, ownership, reviewer notes, and audit history.",
   },
   {
     icon: Bitcoin,
-    title: "Crypto monitoring",
-    text: "Track wallet activity and highlight common laundering indicators such as rapid movement, exposure, and unusual flow.",
+    title: "Crypto risk monitoring",
+    text: "Track wallet activity and highlight laundering indicators such as rapid movement, exposure, and unusual value flow.",
   },
   {
     icon: Code2,
-    title: "Developer API",
-    text: "Connect SentraRisk to internal tools with API keys, transaction scoring endpoints, and bulk assessment support.",
+    title: "API-first deployment",
+    text: "Connect SentraRisk to internal tools with revocable API keys, transaction scoring endpoints, and bulk assessment support.",
   },
 ];
 
 const metrics = [
-  ["Live scoring", "API and dashboard"],
-  ["Audit-ready", "Notes and review history"],
-  ["SME-focused", "Built for lean teams"],
+  ["Live scoring", "Dashboard and API workflows"],
+  ["Audit-ready", "Decision notes and exports"],
+  ["SME-focused", "Built for lean finance teams"],
 ];
 
 const workflow = [
@@ -66,9 +67,9 @@ const workflow = [
 const pricingPlans = [
   {
     name: "Starter",
-    price: "€149",
+    price: "€225",
     cadence: "/month",
-    description: "For small businesses starting with transaction risk monitoring.",
+    description: "For small teams that need a professional transaction risk workflow.",
     features: [
       "1 organisation",
       "3 users",
@@ -78,14 +79,14 @@ const pricingPlans = [
       "Up to 1,000 transactions/month",
     ],
     cta: "Start 14-day trial",
-    href: APP_URL,
+    href: REGISTER_URL,
     highlighted: false,
   },
   {
     name: "Pro",
-    price: "€399",
+    price: "€599",
     cadence: "/month",
-    description: "For teams that need API access, alert operations, and deeper controls.",
+    description: "For growing teams that need API access, crypto monitoring, and stronger controls.",
     features: [
       "10 users",
       "API keys",
@@ -96,7 +97,7 @@ const pricingPlans = [
       "Up to 10,000 transactions/month",
     ],
     cta: "Start 14-day trial",
-    href: APP_URL,
+    href: REGISTER_URL,
     highlighted: true,
   },
   {
@@ -435,20 +436,20 @@ export default function SentraRiskLandingPage() {
           <div className="max-w-3xl">
             <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white/80 px-3 py-2 text-sm font-medium text-slate-600 shadow-sm">
               <span className="h-2 w-2 bg-cyan-500" />
-              Fraud detection infrastructure for growing businesses
+              Transaction risk intelligence for modern finance teams
             </div>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-normal text-slate-950 md:text-7xl">
-              Real-time fraud risk intelligence for SMEs.
+              Real-time fraud prevention for growing businesses.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
-              SentraRisk helps teams score transactions, review alerts, monitor crypto exposure, and export clear risk reports from one professional dashboard.
+              SentraRisk Intelligence helps SMEs score transactions, review alerts, monitor crypto exposure, and export decision-ready risk reports from one secure dashboard.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
-                href={APP_URL}
+                href={REGISTER_URL}
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white shadow-lg transition hover:bg-slate-800"
               >
-                Open Platform <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                Start Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="#demo"
@@ -475,10 +476,10 @@ export default function SentraRiskLandingPage() {
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Platform</p>
               <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                Built for teams that need clarity, not noise.
+                Built for accountable risk review, not noisy dashboards.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk brings transaction scoring, alert handling, reporting, and business account controls into a single workflow for small to medium enterprises.
+                SentraRisk brings transaction scoring, alert handling, reporting, API keys, and business account controls into a single operating layer for small to medium enterprises.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -571,14 +572,28 @@ Authorization: Bearer YOUR_API_KEY
 
       <section id="pricing" className="border-b border-slate-200 bg-slate-50 px-5 py-20 md:px-8">
         <div className="mx-auto max-w-7xl">
-          <div className="max-w-3xl">
-            <p className="text-sm font-semibold uppercase text-cyan-700">Pricing</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-              Simple pricing for serious fraud prevention.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-slate-600">
-              Start with a focused plan, then scale into API access, crypto monitoring, email alerts, and custom deployment support as your risk operations mature.
-            </p>
+          <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+            <div>
+              <p className="text-sm font-semibold uppercase text-cyan-700">Pricing</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+                Premium risk software priced for serious operations.
+              </h2>
+              <p className="mt-5 text-base leading-7 text-slate-600">
+                Start with a focused fraud-risk workflow, then scale into API access, crypto monitoring, email alerts, and custom deployment support as your controls mature.
+              </p>
+            </div>
+            <div className="grid gap-3 rounded-md border border-slate-200 bg-white p-5 shadow-sm sm:grid-cols-3">
+              {[
+                ["14 days", "Trial access"],
+                ["No lock-in", "Monthly plans"],
+                ["Contact us", "Enterprise setup"],
+              ].map(([value, label]) => (
+                <div key={value} className="border-l-2 border-cyan-500 pl-4">
+                  <p className="text-lg font-semibold text-slate-950">{value}</p>
+                  <p className="mt-1 text-sm text-slate-500">{label}</p>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="mt-12 grid gap-5 lg:grid-cols-3">
@@ -631,7 +646,7 @@ Authorization: Bearer YOUR_API_KEY
           </div>
 
           <p className="mt-6 text-sm text-slate-500">
-            New trial workspaces include 14 days of access for feedback and evaluation before moving to a monthly plan.
+            Prices shown exclude any applicable taxes. New trial workspaces include 14 days of access for feedback and evaluation before moving to a monthly plan.
           </p>
         </div>
       </section>
