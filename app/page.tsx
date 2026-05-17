@@ -419,6 +419,7 @@ export default function SentraRiskLandingPage() {
           </a>
           <div className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
             <a href="#platform" className="hover:text-slate-950">Platform</a>
+            <a href="#product-demo" className="hover:text-slate-950">Demo</a>
             <a href="#api" className="hover:text-slate-950">API</a>
             <a href="#pricing" className="hover:text-slate-950">Pricing</a>
             <a href="#security" className="hover:text-slate-950">Security</a>
@@ -493,6 +494,47 @@ export default function SentraRiskLandingPage() {
                   </div>
                 );
               })}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="product-demo" className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-center">
+            <div>
+              <p className="text-sm font-semibold uppercase text-cyan-700">Product demo</p>
+              <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+                See SentraRisk Intelligence in action.
+              </h2>
+              <p className="mt-5 text-base leading-7 text-slate-600">
+                Watch a short walkthrough of the dashboard, transaction scoring workflow, alert review, reporting, API controls, and enterprise readiness features.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <a
+                  href={REGISTER_URL}
+                  className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+                >
+                  Start Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </a>
+                <a
+                  href="#demo"
+                  className="inline-flex h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+                >
+                  Book a Demo
+                </a>
+              </div>
+            </div>
+            <div className="overflow-hidden rounded-md border border-slate-200 bg-slate-950 p-3 shadow-2xl">
+              <video
+                controls
+                preload="metadata"
+                playsInline
+                className="aspect-video w-full rounded-sm bg-black"
+              >
+                <source src="/sentrarisk-intelligence-demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
