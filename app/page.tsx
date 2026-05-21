@@ -11,10 +11,13 @@ import {
   Code2,
   FileText,
   Gauge,
+  Landmark,
   LockKeyhole,
   Mail,
+  Rocket,
   Shield,
   Siren,
+  Store,
   Users,
 } from "lucide-react";
 
@@ -62,6 +65,77 @@ const workflow = [
   "Import transactions, stream via API, or review activity manually.",
   "SentraRisk assigns a risk score and explains the strongest indicators.",
   "Teams investigate, export reports, and keep a clear decision trail.",
+];
+
+const audienceSegments = [
+  {
+    icon: Store,
+    title: "SMEs handling regular payment volume",
+    text: "For operators who need professional fraud review without building a full internal risk team.",
+  },
+  {
+    icon: Landmark,
+    title: "Finance and compliance teams",
+    text: "For teams that need clear scoring, reviewer ownership, and exportable evidence for internal controls.",
+  },
+  {
+    icon: Code2,
+    title: "Platforms and fintech workflows",
+    text: "For products that want transaction scoring, API keys, and batch review built into existing operations.",
+  },
+];
+
+const useCases = [
+  {
+    title: "Supplier and invoice fraud review",
+    text: "Flag unusual amounts, new beneficiaries, timing anomalies, and payment patterns before funds leave the business.",
+  },
+  {
+    title: "Customer transaction monitoring",
+    text: "Score incoming activity, investigate high-risk records, and keep a consistent review trail across the team.",
+  },
+  {
+    title: "Crypto exposure checks",
+    text: "Assess wallet behaviour, velocity, and laundering indicators alongside ordinary transaction risk workflows.",
+  },
+  {
+    title: "Board and audit reporting",
+    text: "Turn operational reviews into decision memos, compliance packs, and concise evidence for leadership.",
+  },
+];
+
+const pilotSteps = [
+  "Connect a sample transaction file, dashboard workflow, or scoring API path.",
+  "Run a focused review period with real examples, risk reasons, and feedback from your team.",
+  "Leave with a deployment recommendation, pricing path, and clear next controls to activate.",
+];
+
+const faqs = [
+  {
+    question: "Who is SentraRisk built for?",
+    answer:
+      "SentraRisk is built for SMEs, finance teams, compliance operators, and platforms that need a practical way to score transaction risk and manage fraud review.",
+  },
+  {
+    question: "Do we need engineers to get started?",
+    answer:
+      "No. Teams can begin with dashboard access and file upload. API access is available when you want to connect scoring directly to internal systems.",
+  },
+  {
+    question: "What happens during the pilot programme?",
+    answer:
+      "We agree a focused workflow, run representative data through SentraRisk, review the results together, and decide the best production setup.",
+  },
+  {
+    question: "Can SentraRisk support crypto monitoring?",
+    answer:
+      "Yes. SentraRisk includes crypto risk monitoring for wallet activity, unusual value flow, rapid movement, and exposure indicators.",
+  },
+  {
+    question: "Is the output suitable for audits or internal review?",
+    answer:
+      "Yes. The platform is designed around decision notes, alert ownership, risk reports, and exportable evidence for accountable review.",
+  },
 ];
 
 const pricingPlans = [
@@ -419,10 +493,10 @@ export default function SentraRiskLandingPage() {
           </a>
           <div className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
             <a href="#platform" className="hover:text-slate-950">Platform</a>
+            <a href="#who" className="hover:text-slate-950">Who it&apos;s for</a>
+            <a href="#use-cases" className="hover:text-slate-950">Use cases</a>
             <a href="#product-demo" className="hover:text-slate-950">Demo</a>
-            <a href="#api" className="hover:text-slate-950">API</a>
-            <a href="#pricing" className="hover:text-slate-950">Pricing</a>
-            <a href="#security" className="hover:text-slate-950">Security</a>
+            <a href="#pilot" className="hover:text-slate-950">Pilot</a>
             <a href="#demo" className="hover:text-slate-950">Contact</a>
           </div>
           <a
@@ -499,6 +573,34 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
+      <section id="who" className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase text-cyan-700">Who it&apos;s for</p>
+              <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+                Built for teams that need risk control without enterprise drag.
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+                SentraRisk gives lean teams a serious review layer for fraud, transaction monitoring, crypto exposure, and evidence-ready reporting.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {audienceSegments.map((item) => {
+                const Icon = item.icon;
+                return (
+                  <div key={item.title} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
+                    <Icon className="h-6 w-6 text-cyan-700" aria-hidden="true" />
+                    <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="product-demo" className="px-5 py-20 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-center">
@@ -561,6 +663,33 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
+      <section id="use-cases" className="border-y border-slate-200 bg-slate-50 px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase text-cyan-700">Use cases</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+              Practical fraud-risk workflows your team can run this week.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-slate-600">
+              Use SentraRisk as a review desk, API scoring layer, crypto monitoring view, or reporting engine depending on where your risk process starts.
+            </p>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-2">
+            {useCases.map((item) => (
+              <div key={item.title} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
+                <div className="flex items-start gap-4">
+                  <span className="mt-1 h-2.5 w-2.5 shrink-0 bg-cyan-500" />
+                  <div>
+                    <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
+                    <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="api" className="bg-slate-950 px-5 py-20 text-white md:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
@@ -608,6 +737,52 @@ Authorization: Bearer YOUR_API_KEY
   "recommended_action": "Review"
 }`}
             </pre>
+          </div>
+        </div>
+      </section>
+
+      <section id="pilot" className="px-5 py-20 md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase text-cyan-700">Pilot programme</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+              Prove the workflow before you roll it out.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-slate-600">
+              The SentraRisk pilot is a focused evaluation for teams that want to test real transaction review, risk reasons, reporting outputs, and API fit before committing to production.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#demo"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+              >
+                Discuss a Pilot <Rocket className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=SentraRisk%20pilot%20programme`}
+                className="inline-flex h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+              >
+                Email the Team
+              </a>
+            </div>
+          </div>
+          <div className="rounded-md border border-slate-200 bg-slate-50 p-6 shadow-sm">
+            <div className="grid gap-4">
+              {pilotSteps.map((item, index) => (
+                <div key={item} className="flex gap-4 rounded-md border border-slate-200 bg-white p-5">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-cyan-700 text-sm font-semibold text-white">
+                    {index + 1}
+                  </span>
+                  <p className="text-sm leading-6 text-slate-600">{item}</p>
+                </div>
+              ))}
+            </div>
+            <div className="mt-5 rounded-md bg-slate-950 p-5 text-white">
+              <p className="text-sm font-semibold text-cyan-300">Typical pilot outcome</p>
+              <p className="mt-3 text-sm leading-6 text-slate-300">
+                A clear view of where SentraRisk fits, which controls to activate first, and whether dashboard, file upload, API, or hybrid deployment is the right path.
+              </p>
+            </div>
           </div>
         </div>
       </section>
@@ -710,6 +885,31 @@ Authorization: Bearer YOUR_API_KEY
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="border-t border-slate-200 bg-white px-5 py-20 md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr]">
+          <div>
+            <p className="text-sm font-semibold uppercase text-cyan-700">FAQ</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+              Questions teams ask before starting.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-slate-600">
+              A short guide to setup, pilot scope, integrations, and review outputs.
+            </p>
+          </div>
+          <div className="space-y-3">
+            {faqs.map((item) => (
+              <details key={item.question} className="group rounded-md border border-slate-200 bg-slate-50 p-5 shadow-sm">
+                <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-slate-950">
+                  {item.question}
+                  <span className="text-xl leading-none text-cyan-700 group-open:rotate-45">+</span>
+                </summary>
+                <p className="mt-4 text-sm leading-6 text-slate-600">{item.answer}</p>
+              </details>
+            ))}
           </div>
         </div>
       </section>
