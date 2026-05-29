@@ -9,7 +9,7 @@ import {
   Bitcoin,
   CheckCircle2,
   Code2,
-  FileText,
+  Cloud,
   Gauge,
   Landmark,
   LockKeyhole,
@@ -49,6 +49,11 @@ const capabilities = [
     text: "Track wallet activity and highlight laundering indicators such as rapid movement, exposure, and unusual value flow.",
   },
   {
+    icon: Cloud,
+    title: "Xero-supported imports",
+    text: "Connect Xero, import supplier bills, and score them inside the same alert and reporting workflow as uploaded files and API data.",
+  },
+  {
     icon: Code2,
     title: "API-first deployment",
     text: "Connect SentraRisk to internal tools with revocable API keys, transaction scoring endpoints, and bulk assessment support.",
@@ -56,13 +61,13 @@ const capabilities = [
 ];
 
 const metrics = [
-  ["Live scoring", "Dashboard and API workflows"],
+  ["Xero support", "Supplier bill imports"],
   ["Audit-ready", "Decision notes and exports"],
   ["SME-focused", "Built for lean finance teams"],
 ];
 
 const workflow = [
-  "Import transactions, stream via API, or review activity manually.",
+  "Import transactions from Xero, upload a file, stream via API, or review activity manually.",
   "SentraRisk assigns a risk score and explains the strongest indicators.",
   "Teams investigate, export reports, and keep a clear decision trail.",
 ];
@@ -88,7 +93,7 @@ const audienceSegments = [
 const useCases = [
   {
     title: "Supplier and invoice fraud review",
-    text: "Flag unusual amounts, new beneficiaries, timing anomalies, and payment patterns before funds leave the business.",
+    text: "Import supplier bills from Xero or file upload, then flag unusual amounts, new beneficiaries, timing anomalies, and payment patterns before review.",
   },
   {
     title: "Customer transaction monitoring",
@@ -105,7 +110,7 @@ const useCases = [
 ];
 
 const pilotSteps = [
-  "Connect a sample transaction file, dashboard workflow, or scoring API path.",
+  "Connect Xero, a sample transaction file, dashboard workflow, or scoring API path.",
   "Run a focused review period with real examples, risk reasons, and feedback from your team.",
   "Leave with a deployment recommendation, pricing path, and clear next controls to activate.",
 ];
@@ -119,7 +124,12 @@ const faqs = [
   {
     question: "Do we need engineers to get started?",
     answer:
-      "No. Teams can begin with dashboard access and file upload. API access is available when you want to connect scoring directly to internal systems.",
+      "No. Teams can begin with dashboard access, Xero-supported imports, and file upload. API access is available when you want to connect scoring directly to internal systems.",
+  },
+  {
+    question: "Does SentraRisk support Xero?",
+    answer:
+      "Yes. SentraRisk supports Xero supplier bill imports so teams can bring recent bills into the dashboard, score them for risk, and review alerts alongside other transaction data.",
   },
   {
     question: "What happens during the pilot programme?",
@@ -147,6 +157,7 @@ const pricingPlans = [
     features: [
       "1 organisation",
       "3 users",
+      "Xero-supported imports",
       "Excel upload",
       "Transaction risk scoring",
       "Basic alerts and reports",
@@ -164,6 +175,7 @@ const pricingPlans = [
     features: [
       "10 users",
       "API keys",
+      "Xero supplier bill imports",
       "Bulk upload",
       "Crypto monitoring",
       "Email alerts",
@@ -195,6 +207,7 @@ const pricingPlans = [
 
 const interestOptions = [
   "Fraud detection",
+  "Xero integration",
   "Crypto monitoring",
   "API integration",
   "Transaction reports",
@@ -245,7 +258,7 @@ function ProductVisual() {
         </div>
         <div className="grid grid-cols-[220px_1fr]">
           <aside className="min-h-[520px] border-r border-slate-200 bg-slate-950 p-4 text-white">
-            {["Overview", "Transactions", "Crypto", "Reports", "API"].map((item, index) => (
+            {["Overview", "Xero Import", "Transactions", "Crypto", "Reports", "API"].map((item, index) => (
               <div
                 key={item}
                 className={`mb-2 flex h-10 items-center gap-3 rounded-md px-3 text-sm ${
@@ -517,7 +530,7 @@ export default function SentraRiskLandingPage() {
               Real-time fraud prevention for growing businesses.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
-              SentraRisk Intelligence helps SMEs score transactions, review alerts, monitor crypto exposure, and export decision-ready risk reports from one secure dashboard.
+              SentraRisk Intelligence helps SMEs import Xero supplier bills, score transactions, review alerts, monitor crypto exposure, and export decision-ready risk reports from one secure dashboard.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -554,7 +567,7 @@ export default function SentraRiskLandingPage() {
                 Built for accountable risk review, not noisy dashboards.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk brings transaction scoring, alert handling, reporting, API keys, and business account controls into a single operating layer for small to medium enterprises.
+                SentraRisk brings Xero-supported imports, transaction scoring, alert handling, reporting, API keys, and business account controls into a single operating layer for small to medium enterprises.
               </p>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
@@ -610,7 +623,7 @@ export default function SentraRiskLandingPage() {
                 See SentraRisk Intelligence in action.
               </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Watch a short walkthrough of the dashboard, transaction scoring workflow, alert review, reporting, API controls, and enterprise readiness features.
+                Watch a short walkthrough of the dashboard, Xero import flow, transaction scoring workflow, alert review, reporting, API controls, and enterprise readiness features.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -698,7 +711,7 @@ export default function SentraRiskLandingPage() {
               Connect fraud scoring directly to your operations.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
-              Use secure API keys to score individual transactions or upload batches, then review the same risk outcomes inside the dashboard.
+              Use Xero-supported imports, secure API keys, or batch uploads to score transactions, then review the same risk outcomes inside the dashboard.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -749,7 +762,7 @@ Authorization: Bearer YOUR_API_KEY
               Prove the workflow before you roll it out.
             </h2>
             <p className="mt-5 text-base leading-7 text-slate-600">
-              The SentraRisk pilot is a focused evaluation for teams that want to test real transaction review, risk reasons, reporting outputs, and API fit before committing to production.
+              The SentraRisk pilot is a focused evaluation for teams that want to test Xero imports, real transaction review, risk reasons, reporting outputs, and API fit before committing to production.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -780,7 +793,7 @@ Authorization: Bearer YOUR_API_KEY
             <div className="mt-5 rounded-md bg-slate-950 p-5 text-white">
               <p className="text-sm font-semibold text-cyan-300">Typical pilot outcome</p>
               <p className="mt-3 text-sm leading-6 text-slate-300">
-                A clear view of where SentraRisk fits, which controls to activate first, and whether dashboard, file upload, API, or hybrid deployment is the right path.
+                A clear view of where SentraRisk fits, which controls to activate first, and whether Xero import, dashboard, file upload, API, or hybrid deployment is the right path.
               </p>
             </div>
           </div>
@@ -796,7 +809,7 @@ Authorization: Bearer YOUR_API_KEY
                 Premium risk software priced for serious operations.
               </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Start with a focused fraud-risk workflow, then scale into API access, crypto monitoring, email alerts, and custom deployment support as your controls mature.
+                Start with a focused fraud-risk workflow, then scale into Xero imports, API access, crypto monitoring, email alerts, and custom deployment support as your controls mature.
               </p>
             </div>
             <div className="grid gap-3 rounded-md border border-slate-200 bg-white p-5 shadow-sm sm:grid-cols-3">
@@ -873,8 +886,8 @@ Authorization: Bearer YOUR_API_KEY
           <div className="grid gap-5 md:grid-cols-3">
             {[
               [Shield, "Business account structure", "Admin and user dashboards designed around organisational access."],
+              [Cloud, "Xero-supported workflow", "Import supplier bills from Xero and review them alongside uploaded and API-scored transactions."],
               [LockKeyhole, "Data control", "Designed for controlled environments and accountable review processes."],
-              [FileText, "Report exports", "Generate analyst and executive risk reports for internal records."],
             ].map(([Icon, title, text]) => {
               const TypedIcon = Icon as typeof Shield;
               return (
@@ -922,13 +935,13 @@ Authorization: Bearer YOUR_API_KEY
               Bring real-time risk review into your business.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
-              Speak with SentraRisk Systems about fraud detection, crypto monitoring, API scoring, and implementation for your organisation.
+              Speak with SentraRisk Systems about Xero-supported imports, fraud detection, crypto monitoring, API scoring, and implementation for your organisation.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
                 <CheckLine text="Receive a focused product walkthrough" />
+                <CheckLine text="Review Xero import and supplier bill scoring" />
                 <CheckLine text="Discuss your transaction monitoring workflow" />
-                <CheckLine text="Review API and dashboard setup options" />
               </div>
               <div className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
                 <p className="text-sm font-semibold text-slate-950">Prefer email?</p>
