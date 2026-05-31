@@ -166,9 +166,9 @@ const faqs = [
 const pricingPlans = [
   {
     name: "Starter",
-    price: "€225",
+    price: "€149",
     cadence: "/month",
-    description: "For small teams that need a professional transaction risk workflow.",
+    description: "For small teams that want Xero-backed supplier risk checks and basic reporting.",
     features: [
       "1 organisation",
       "3 users",
@@ -183,10 +183,28 @@ const pricingPlans = [
     highlighted: false,
   },
   {
-    name: "Pro",
-    price: "€599",
+    name: "Compliance",
+    price: "€299",
     cadence: "/month",
-    description: "For growing teams that need API access, crypto monitoring, and stronger controls.",
+    description: "For accountants, virtual CFOs, and operators who need audit-ready packs.",
+    features: [
+      "5 users",
+      "Xero supplier bill imports",
+      "Compliance pack exports",
+      "Board summary PDF",
+      "Risk notes and ownership",
+      "Email alerts",
+      "Up to 5,000 transactions/month",
+    ],
+    cta: "Start 14-day trial",
+    href: REGISTER_URL,
+    highlighted: true,
+  },
+  {
+    name: "Growth",
+    price: "€499",
+    cadence: "/month",
+    description: "For finance teams that need API access, crypto monitoring, and higher volume.",
     features: [
       "10 users",
       "API keys",
@@ -199,7 +217,7 @@ const pricingPlans = [
     ],
     cta: "Start 14-day trial",
     href: REGISTER_URL,
-    highlighted: true,
+    highlighted: false,
   },
   {
     name: "Enterprise",
@@ -207,6 +225,7 @@ const pricingPlans = [
     cadence: "",
     description: "For larger, regulated, or custom deployment requirements.",
     features: [
+      "25+ users",
       "Custom transaction limits",
       "Custom risk rules",
       "Local/customer environment deployment",
@@ -851,17 +870,17 @@ Authorization: Bearer YOUR_API_KEY
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Pricing</p>
               <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                Premium risk software priced for serious operations.
+                Pricing by risk-control need.
               </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Start with a focused fraud-risk workflow, then scale into Xero imports, API access, crypto monitoring, email alerts, and custom deployment support as your controls mature.
+                Start with Xero-backed supplier risk review, add compliance packs and board reporting, then scale into API access, crypto monitoring, or a custom enterprise deployment.
               </p>
             </div>
             <div className="grid gap-3 rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm sm:grid-cols-3">
               {[
                 ["14 days", "Trial access"],
                 ["No lock-in", "Monthly plans"],
-                ["Contact us", "Enterprise setup"],
+                ["Custom", "Enterprise setup"],
               ].map(([value, label]) => (
                 <div key={value} className="border-l-2 border-cyan-500 pl-4">
                   <p className="text-lg font-semibold text-slate-950">{value}</p>
@@ -871,7 +890,7 @@ Authorization: Bearer YOUR_API_KEY
             </div>
           </div>
 
-          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+          <div className="mt-12 grid gap-5 lg:grid-cols-4">
             {pricingPlans.map((plan) => (
               <div
                 key={plan.name}
