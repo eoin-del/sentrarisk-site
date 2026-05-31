@@ -240,8 +240,8 @@ function LogoMark() {
         className="h-10 w-10 rounded-md shadow-sm"
       />
       <div className="leading-tight">
-        <span className="block text-sm font-semibold tracking-wide text-slate-950">SentraRisk</span>
-        <span className="block text-xs font-medium text-slate-500">Systems</span>
+        <span className="block text-sm font-semibold tracking-wide text-white">SentraRisk</span>
+        <span className="block text-xs font-medium text-cyan-100">Systems</span>
       </div>
     </div>
   );
@@ -513,23 +513,23 @@ export default function SentraRiskLandingPage() {
     <main className="premium-shell min-h-screen text-slate-950">
       <section className="relative min-h-[94vh] overflow-hidden">
         <ProductVisual />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.93)_34%,rgba(255,255,255,0.62)_62%,rgba(255,255,255,0.18)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,19,31,0.96)_0%,rgba(16,32,51,0.92)_38%,rgba(16,32,51,0.54)_64%,rgba(255,255,255,0.08)_100%)]" />
 
         <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
           <a href="#" className="flex items-center gap-3">
             <LogoMark />
           </a>
-          <div className="hidden items-center gap-7 rounded-full border border-white/70 bg-white/75 px-5 py-3 text-sm font-medium text-slate-600 shadow-sm backdrop-blur md:flex">
-            <a href="#platform" className="hover:text-slate-950">Platform</a>
-            <a href="#who" className="hover:text-slate-950">Who it&apos;s for</a>
-            <a href="#use-cases" className="hover:text-slate-950">Use cases</a>
-            <a href="#product-demo" className="hover:text-slate-950">Demo</a>
-            <a href="#pilot" className="hover:text-slate-950">Pilot</a>
-            <a href="#demo" className="hover:text-slate-950">Contact</a>
+          <div className="hidden items-center gap-7 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-medium text-slate-200 shadow-sm backdrop-blur md:flex">
+            <a href="#platform" className="hover:text-white">Platform</a>
+            <a href="#who" className="hover:text-white">Who it&apos;s for</a>
+            <a href="#use-cases" className="hover:text-white">Use cases</a>
+            <a href="#product-demo" className="hover:text-white">Demo</a>
+            <a href="#pilot" className="hover:text-white">Pilot</a>
+            <a href="#demo" className="hover:text-white">Contact</a>
           </div>
           <a
             href={APP_URL}
-            className="inline-flex h-10 items-center justify-center rounded-full bg-slate-950 px-5 text-sm font-semibold text-white shadow-lg shadow-slate-950/20 transition hover:bg-slate-800"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-white px-5 text-sm font-semibold text-slate-950 shadow-lg shadow-black/20 transition hover:bg-cyan-100"
           >
             Login
           </a>
@@ -537,35 +537,35 @@ export default function SentraRiskLandingPage() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(94vh-80px)] max-w-7xl items-center px-5 pb-24 pt-16 md:px-8">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/85 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur">
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-300/40 bg-white/10 px-4 py-2 text-sm font-semibold text-cyan-100 shadow-sm backdrop-blur">
               <span className="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_16px_rgba(6,182,212,0.65)]" />
               Xero-supported fraud-risk intelligence
             </div>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-normal text-slate-950 md:text-7xl">
-              Premium fraud-risk control for modern finance teams.
+            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-normal text-white md:text-7xl">
+              Fraud-risk intelligence that looks boardroom-ready.
             </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
+            <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
               SentraRisk Intelligence helps SMEs import Xero supplier bills, score transactions, review alerts, monitor crypto exposure, and export decision-ready risk reports from one secure dashboard.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href={REGISTER_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-slate-950 px-7 text-sm font-semibold text-white shadow-[0_20px_50px_rgba(15,23,42,0.28)] transition hover:-translate-y-0.5 hover:bg-slate-800"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 text-sm font-semibold text-slate-950 shadow-[0_20px_50px_rgba(141,224,215,0.22)] transition hover:-translate-y-0.5 hover:bg-cyan-200"
               >
                 Start Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="#demo"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-900 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 text-sm font-semibold text-white shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15"
               >
                 Book a Demo <Mail className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
             <div className="mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
               {metrics.map(([value, label]) => (
-                <div key={value} className="rounded-2xl border border-white/80 bg-white/75 p-4 shadow-sm backdrop-blur">
-                  <p className="text-sm font-semibold text-slate-950">{value}</p>
-                  <p className="mt-1 text-sm text-slate-500">{label}</p>
+                <div key={value} className="rounded-2xl border border-white/15 bg-white/10 p-4 shadow-sm backdrop-blur">
+                  <p className="text-sm font-semibold text-white">{value}</p>
+                  <p className="mt-1 text-sm text-slate-300">{label}</p>
                 </div>
               ))}
             </div>
