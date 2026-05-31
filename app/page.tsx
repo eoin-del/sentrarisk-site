@@ -66,6 +66,21 @@ const metrics = [
   ["SME-focused", "Built for lean finance teams"],
 ];
 
+const premiumStats = [
+  ["90-day", "Xero bill import window"],
+  ["Live", "Risk scoring workflow"],
+  ["PDF", "Compliance-ready exports"],
+  ["API", "Built for integration"],
+];
+
+const integrationProof = [
+  "Xero supplier bills",
+  "Excel transaction files",
+  "Risk scoring API",
+  "Crypto wallet checks",
+  "Audit-ready reports",
+];
+
 const workflow = [
   "Import transactions from Xero, upload a file, stream via API, or review activity manually.",
   "SentraRisk assigns a risk score and explains the strongest indicators.",
@@ -234,10 +249,10 @@ function LogoMark() {
 
 function ProductVisual() {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#eef3f7]">
-      <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(15,23,42,0.05)_1px,transparent_1px),linear-gradient(rgba(15,23,42,0.05)_1px,transparent_1px)] bg-[size:56px_56px]" />
-      <div className="absolute left-1/2 top-16 w-[980px] -translate-x-1/2 border border-slate-300 bg-white shadow-2xl md:top-20">
-        <div className="flex h-12 items-center justify-between border-b border-slate-200 px-5">
+    <div className="absolute inset-0 overflow-hidden bg-[#edf4f7] premium-grid">
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(14,124,134,0.22)_0%,transparent_38%),linear-gradient(250deg,rgba(141,224,215,0.18)_0%,transparent_42%)]" />
+      <div className="absolute left-[54%] top-14 w-[1040px] -translate-x-1/2 overflow-hidden rounded-[28px] border border-white/70 bg-white/92 shadow-[0_40px_140px_rgba(15,23,42,0.22)] backdrop-blur md:top-16">
+        <div className="flex h-14 items-center justify-between border-b border-slate-200/80 bg-white/80 px-5">
           <div className="flex items-center gap-3">
             <Image
               src="/sentrarisk-logo.svg"
@@ -248,12 +263,12 @@ function ProductVisual() {
             />
             <div>
               <p className="text-xs font-semibold uppercase text-slate-500">SentraRisk Command</p>
-              <p className="text-sm font-semibold text-slate-950">Live risk operations</p>
+              <p className="text-sm font-semibold text-slate-950">Xero risk operations</p>
             </div>
           </div>
-          <div className="flex items-center gap-2 text-xs text-slate-500">
-            <span className="h-2 w-2 bg-emerald-500" />
-            Monitoring active
+          <div className="flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1 text-xs font-semibold text-emerald-700">
+            <span className="h-2 w-2 rounded-full bg-emerald-500" />
+            Connected to Xero
           </div>
         </div>
         <div className="grid grid-cols-[220px_1fr]">
@@ -270,14 +285,14 @@ function ProductVisual() {
               </div>
             ))}
           </aside>
-          <div className="p-5">
+          <div className="bg-slate-50/60 p-5">
             <div className="grid grid-cols-3 gap-3">
               {[
-                ["Transactions", "24,891", "+8.4%"],
-                ["Flagged", "316", "1.27%"],
+                ["Bills imported", "1,248", "Xero"],
+                ["Flagged", "37", "Review"],
                 ["Avg. Risk", "42", "-3.1%"],
               ].map(([label, value, change]) => (
-                <div key={label} className="rounded-md border border-slate-200 bg-slate-50 p-4">
+                <div key={label} className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                   <p className="text-xs font-medium text-slate-500">{label}</p>
                   <div className="mt-3 flex items-end justify-between">
                     <p className="text-2xl font-semibold text-slate-950">{value}</p>
@@ -288,10 +303,10 @@ function ProductVisual() {
             </div>
 
             <div className="mt-4 grid grid-cols-[1fr_240px] gap-4">
-              <div className="rounded-md border border-slate-200 bg-white p-4">
+              <div className="rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
                 <div className="mb-5 flex items-center justify-between">
-                  <p className="text-sm font-semibold text-slate-950">Flagged activity</p>
-                  <p className="text-xs text-slate-500">Last 24 hours</p>
+                  <p className="text-sm font-semibold text-slate-950">Supplier risk queue</p>
+                  <p className="text-xs text-slate-500">Imported from Xero</p>
                 </div>
                 <div className="space-y-3">
                   {riskRows.map((row) => (
@@ -303,7 +318,7 @@ function ProductVisual() {
                         <p className="text-sm font-medium text-slate-800">{row.label}</p>
                       </div>
                       <p className="text-sm font-semibold text-slate-950">{row.score}</p>
-                      <p className="rounded-md bg-slate-100 px-2 py-1 text-center text-xs font-medium text-slate-600">
+                      <p className="rounded-full bg-slate-100 px-2 py-1 text-center text-xs font-medium text-slate-600">
                         {row.status}
                       </p>
                     </div>
@@ -311,7 +326,7 @@ function ProductVisual() {
                 </div>
               </div>
 
-              <div className="rounded-md border border-slate-200 bg-slate-950 p-4 text-white">
+              <div className="rounded-2xl border border-slate-800 bg-slate-950 p-4 text-white shadow-xl">
                 <p className="text-sm font-semibold">Risk distribution</p>
                 <div className="mt-6 flex h-32 items-end gap-2">
                   {[34, 58, 46, 75, 62, 88, 54].map((height, index) => (
@@ -495,16 +510,16 @@ function DemoForm() {
 
 export default function SentraRiskLandingPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-950">
-      <section className="relative min-h-[92vh] overflow-hidden">
+    <main className="premium-shell min-h-screen text-slate-950">
+      <section className="relative min-h-[94vh] overflow-hidden">
         <ProductVisual />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.92)_34%,rgba(255,255,255,0.56)_62%,rgba(255,255,255,0.22)_100%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(255,255,255,0.98)_0%,rgba(255,255,255,0.93)_34%,rgba(255,255,255,0.62)_62%,rgba(255,255,255,0.18)_100%)]" />
 
         <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
           <a href="#" className="flex items-center gap-3">
             <LogoMark />
           </a>
-          <div className="hidden items-center gap-7 text-sm font-medium text-slate-600 md:flex">
+          <div className="hidden items-center gap-7 rounded-full border border-white/70 bg-white/75 px-5 py-3 text-sm font-medium text-slate-600 shadow-sm backdrop-blur md:flex">
             <a href="#platform" className="hover:text-slate-950">Platform</a>
             <a href="#who" className="hover:text-slate-950">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-slate-950">Use cases</a>
@@ -514,20 +529,20 @@ export default function SentraRiskLandingPage() {
           </div>
           <a
             href={APP_URL}
-            className="inline-flex h-10 items-center justify-center rounded-md bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-slate-800"
+            className="inline-flex h-10 items-center justify-center rounded-full bg-slate-950 px-5 text-sm font-semibold text-white shadow-lg shadow-slate-950/20 transition hover:bg-slate-800"
           >
             Login
           </a>
         </nav>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(92vh-80px)] max-w-7xl items-center px-5 pb-20 pt-16 md:px-8">
+        <div className="relative z-10 mx-auto flex min-h-[calc(94vh-80px)] max-w-7xl items-center px-5 pb-24 pt-16 md:px-8">
           <div className="max-w-3xl">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-slate-200 bg-white/80 px-3 py-2 text-sm font-medium text-slate-600 shadow-sm">
-              <span className="h-2 w-2 bg-cyan-500" />
-              Transaction risk intelligence for modern finance teams
+            <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-cyan-200 bg-white/85 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur">
+              <span className="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_16px_rgba(6,182,212,0.65)]" />
+              Xero-supported fraud-risk intelligence
             </div>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-normal text-slate-950 md:text-7xl">
-              Real-time fraud prevention for growing businesses.
+              Premium fraud-risk control for modern finance teams.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-600 md:text-xl">
               SentraRisk Intelligence helps SMEs import Xero supplier bills, score transactions, review alerts, monitor crypto exposure, and export decision-ready risk reports from one secure dashboard.
@@ -535,20 +550,20 @@ export default function SentraRiskLandingPage() {
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
                 href={REGISTER_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white shadow-lg transition hover:bg-slate-800"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-slate-950 px-7 text-sm font-semibold text-white shadow-[0_20px_50px_rgba(15,23,42,0.28)] transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
                 Start Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="#demo"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-900 shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white"
               >
                 Book a Demo <Mail className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
             <div className="mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
               {metrics.map(([value, label]) => (
-                <div key={value} className="border-l-2 border-cyan-500 bg-white/70 py-2 pl-4">
+                <div key={value} className="rounded-2xl border border-white/80 bg-white/75 p-4 shadow-sm backdrop-blur">
                   <p className="text-sm font-semibold text-slate-950">{value}</p>
                   <p className="mt-1 text-sm text-slate-500">{label}</p>
                 </div>
@@ -558,7 +573,19 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="platform" className="border-y border-slate-200 bg-slate-50 px-5 py-20 md:px-8">
+      <section className="border-y border-slate-200/80 bg-white/75 px-5 py-6 backdrop-blur md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {premiumStats.map(([value, label]) => (
+            <div key={value} className="flex items-center justify-between rounded-2xl border border-slate-200 bg-white px-5 py-4 shadow-sm">
+              <span className="text-2xl font-semibold text-slate-950">{value}</span>
+              <span className="max-w-32 text-right text-sm font-medium leading-5 text-slate-500">{label}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section id="platform" className="relative overflow-hidden border-y border-slate-200 bg-slate-50 px-5 py-24 md:px-8">
+        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent" />
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
@@ -569,13 +596,23 @@ export default function SentraRiskLandingPage() {
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
                 SentraRisk brings Xero-supported imports, transaction scoring, alert handling, reporting, API keys, and business account controls into a single operating layer for small to medium enterprises.
               </p>
+              <div className="mt-8 grid gap-2">
+                {integrationProof.map((item) => (
+                  <div key={item} className="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                    <CheckCircle2 className="h-4 w-4 text-cyan-700" aria-hidden="true" />
+                    {item}
+                  </div>
+                ))}
+              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {capabilities.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
-                    <Icon className="h-6 w-6 text-cyan-700" aria-hidden="true" />
+                  <div key={item.title} className="premium-card group rounded-[24px] border border-white bg-white p-6 transition hover:-translate-y-1 hover:shadow-[0_28px_90px_rgba(15,23,42,0.13)]">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700 transition group-hover:bg-cyan-600 group-hover:text-white">
+                      <Icon className="h-6 w-6" aria-hidden="true" />
+                    </div>
                     <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
                   </div>
@@ -614,7 +651,7 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="product-demo" className="px-5 py-20 md:px-8">
+      <section id="product-demo" className="px-5 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-center">
             <div>
@@ -640,12 +677,20 @@ export default function SentraRiskLandingPage() {
                 </a>
               </div>
             </div>
-            <div className="overflow-hidden rounded-md border border-slate-200 bg-slate-950 p-3 shadow-2xl">
+            <div className="overflow-hidden rounded-[28px] border border-slate-800 bg-slate-950 p-3 shadow-[0_40px_120px_rgba(15,23,42,0.28)]">
+              <div className="mb-3 flex items-center justify-between px-2 pt-1">
+                <div className="flex gap-2">
+                  <span className="h-3 w-3 rounded-full bg-rose-400" />
+                  <span className="h-3 w-3 rounded-full bg-amber-400" />
+                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
+                </div>
+                <span className="text-xs font-semibold text-slate-400">SentraRisk live demo</span>
+              </div>
               <video
                 controls
                 preload="metadata"
                 playsInline
-                className="aspect-video w-full rounded-sm bg-black"
+                className="aspect-video w-full rounded-2xl bg-black"
               >
                 <source src="/sentrarisk-intelligence-demo.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
@@ -703,7 +748,7 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="api" className="bg-slate-950 px-5 py-20 text-white md:px-8">
+      <section id="api" className="premium-dark px-5 py-24 text-white md:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-300">API access</p>
@@ -728,13 +773,13 @@ export default function SentraRiskLandingPage() {
               </a>
             </div>
           </div>
-          <div className="rounded-md border border-white/10 bg-black p-5 font-mono text-sm shadow-2xl">
+          <div className="rounded-[28px] border border-white/10 bg-black/55 p-5 font-mono text-sm shadow-2xl backdrop-blur">
             <div className="mb-4 flex gap-2">
               <span className="h-3 w-3 rounded-full bg-rose-400" />
               <span className="h-3 w-3 rounded-full bg-amber-400" />
               <span className="h-3 w-3 rounded-full bg-emerald-400" />
             </div>
-            <pre className="overflow-x-auto text-slate-300">
+            <pre className="overflow-x-auto rounded-2xl bg-slate-950/80 p-4 text-slate-300">
 {`POST /score-transaction
 Authorization: Bearer YOUR_API_KEY
 
@@ -754,7 +799,7 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <section id="pilot" className="px-5 py-20 md:px-8">
+      <section id="pilot" className="px-5 py-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Pilot programme</p>
@@ -779,18 +824,18 @@ Authorization: Bearer YOUR_API_KEY
               </a>
             </div>
           </div>
-          <div className="rounded-md border border-slate-200 bg-slate-50 p-6 shadow-sm">
+          <div className="rounded-[28px] border border-slate-200 bg-slate-50 p-6 shadow-[0_28px_90px_rgba(15,23,42,0.08)]">
             <div className="grid gap-4">
               {pilotSteps.map((item, index) => (
-                <div key={item} className="flex gap-4 rounded-md border border-slate-200 bg-white p-5">
-                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-cyan-700 text-sm font-semibold text-white">
+                <div key={item} className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-5">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-700 text-sm font-semibold text-white">
                     {index + 1}
                   </span>
                   <p className="text-sm leading-6 text-slate-600">{item}</p>
                 </div>
               ))}
             </div>
-            <div className="mt-5 rounded-md bg-slate-950 p-5 text-white">
+            <div className="mt-5 rounded-2xl bg-slate-950 p-5 text-white">
               <p className="text-sm font-semibold text-cyan-300">Typical pilot outcome</p>
               <p className="mt-3 text-sm leading-6 text-slate-300">
                 A clear view of where SentraRisk fits, which controls to activate first, and whether Xero import, dashboard, file upload, API, or hybrid deployment is the right path.
@@ -800,7 +845,7 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <section id="pricing" className="border-b border-slate-200 bg-slate-50 px-5 py-20 md:px-8">
+      <section id="pricing" className="border-b border-slate-200 bg-slate-50 px-5 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
@@ -812,7 +857,7 @@ Authorization: Bearer YOUR_API_KEY
                 Start with a focused fraud-risk workflow, then scale into Xero imports, API access, crypto monitoring, email alerts, and custom deployment support as your controls mature.
               </p>
             </div>
-            <div className="grid gap-3 rounded-md border border-slate-200 bg-white p-5 shadow-sm sm:grid-cols-3">
+            <div className="grid gap-3 rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm sm:grid-cols-3">
               {[
                 ["14 days", "Trial access"],
                 ["No lock-in", "Monthly plans"],
@@ -830,16 +875,16 @@ Authorization: Bearer YOUR_API_KEY
             {pricingPlans.map((plan) => (
               <div
                 key={plan.name}
-                className={`rounded-md border p-6 shadow-sm ${
+                className={`rounded-[28px] border p-6 shadow-sm transition hover:-translate-y-1 ${
                   plan.highlighted
-                    ? "border-slate-950 bg-slate-950 text-white"
+                    ? "border-slate-950 bg-slate-950 text-white shadow-[0_30px_90px_rgba(15,23,42,0.24)]"
                     : "border-slate-200 bg-white text-slate-950"
                 }`}
               >
                 <div className="flex items-center justify-between gap-4">
                   <h3 className="text-xl font-semibold">{plan.name}</h3>
                   {plan.highlighted && (
-                    <span className="rounded-md bg-cyan-300 px-2 py-1 text-xs font-semibold text-slate-950">
+                    <span className="rounded-full bg-cyan-300 px-3 py-1 text-xs font-semibold text-slate-950">
                       Recommended
                     </span>
                   )}
@@ -881,7 +926,7 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <section id="security" className="px-5 py-20 md:px-8">
+      <section id="security" className="px-5 py-24 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-5 md:grid-cols-3">
             {[
@@ -891,8 +936,10 @@ Authorization: Bearer YOUR_API_KEY
             ].map(([Icon, title, text]) => {
               const TypedIcon = Icon as typeof Shield;
               return (
-                <div key={title as string} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
-                  <TypedIcon className="h-6 w-6 text-cyan-700" aria-hidden="true" />
+                <div key={title as string} className="premium-card rounded-[24px] border border-white p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50">
+                    <TypedIcon className="h-6 w-6 text-cyan-700" aria-hidden="true" />
+                  </div>
                   <h3 className="mt-5 text-lg font-semibold text-slate-950">{title as string}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{text as string}</p>
                 </div>
