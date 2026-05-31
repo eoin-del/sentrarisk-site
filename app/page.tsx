@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React from "react";
 import {
   Activity,
   ArrowRight,
@@ -22,8 +22,8 @@ import {
 } from "lucide-react";
 
 const APP_URL = "https://app.sentrarisksystems.com";
-const CONTACT_EMAIL = "hello@sentrarisksystems.com";
-const REGISTER_URL = `${APP_URL}/register`;
+const CONTACT_EMAIL = "eoin@sentrarisksystems.com";
+const TRIAL_ENQUIRY_URL = "#demo";
 
 const riskRows = [
   { label: "Velocity spike", score: "91", status: "Investigate" },
@@ -179,7 +179,7 @@ const pricingPlans = [
       "Up to 10,000 transactions/month",
     ],
     cta: "Start 14-day trial",
-    href: REGISTER_URL,
+    href: TRIAL_ENQUIRY_URL,
     highlighted: false,
   },
   {
@@ -197,7 +197,7 @@ const pricingPlans = [
       "Up to 20,000 transactions/month",
     ],
     cta: "Start 14-day trial",
-    href: REGISTER_URL,
+    href: TRIAL_ENQUIRY_URL,
     highlighted: true,
   },
   {
@@ -216,7 +216,7 @@ const pricingPlans = [
       "Up to 30,000 transactions/month",
     ],
     cta: "Start 14-day trial",
-    href: REGISTER_URL,
+    href: TRIAL_ENQUIRY_URL,
     highlighted: false,
   },
   {
@@ -379,53 +379,22 @@ function CheckLine({ text }: { text: string }) {
 }
 
 function DemoForm() {
-  const [submitted, setSubmitted] = useState(false);
-  const [form, setForm] = useState({
-    name: "",
-    company: "",
-    email: "",
-    role: "",
-    teamSize: "",
-    interest: interestOptions[0],
-    message: "",
-  });
-
-  function updateField(field: keyof typeof form, value: string) {
-    setForm((current) => ({ ...current, [field]: value }));
-  }
-
-  function submitDemoRequest(event: React.FormEvent<HTMLFormElement>) {
-    event.preventDefault();
-
-    const subject = encodeURIComponent(`SentraRisk demo request from ${form.company || form.name}`);
-    const body = encodeURIComponent(
-      [
-        "New SentraRisk demo request",
-        "",
-        `Name: ${form.name}`,
-        `Company: ${form.company}`,
-        `Email: ${form.email}`,
-        `Role: ${form.role || "Not provided"}`,
-        `Team size: ${form.teamSize || "Not provided"}`,
-        `Interested in: ${form.interest}`,
-        "",
-        "Message:",
-        form.message || "Not provided",
-      ].join("\n"),
-    );
-
-    setSubmitted(true);
-    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
-  }
-
   return (
-    <form onSubmit={submitDemoRequest} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
+    <form
+      action={`https://formsubmit.co/${CONTACT_EMAIL}`}
+      method="POST"
+      className="rounded-md border border-slate-200 bg-white p-6 shadow-sm"
+    >
+      <input type="hidden" name="_subject" value="New SentraRisk trial enquiry" />
+      <input type="hidden" name="_template" value="table" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://www.sentrarisksystems.com/thank-you" />
       <div className="flex items-start gap-3">
         <Users className="mt-0.5 h-6 w-6 text-cyan-700" aria-hidden="true" />
         <div>
-          <p className="text-lg font-semibold text-slate-950">Book a product demo</p>
+          <p className="text-lg font-semibold text-slate-950">Request trial access</p>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            Tell us a little about your organisation and we will come back to you with the right next step.
+            Tell us a little about your organisation and we will come back to you with the right trial setup.
           </p>
         </div>
       </div>
@@ -435,8 +404,7 @@ function DemoForm() {
           Full name
           <input
             required
-            value={form.name}
-            onChange={(event) => updateField("name", event.target.value)}
+            name="name"
             className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
             placeholder="Your name"
           />
@@ -446,8 +414,7 @@ function DemoForm() {
           <input
             required
             type="email"
-            value={form.email}
-            onChange={(event) => updateField("email", event.target.value)}
+            name="email"
             className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
             placeholder="name@company.com"
           />
@@ -456,8 +423,7 @@ function DemoForm() {
           Company
           <input
             required
-            value={form.company}
-            onChange={(event) => updateField("company", event.target.value)}
+            name="company"
             className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
             placeholder="Company name"
           />
@@ -465,8 +431,7 @@ function DemoForm() {
         <label className="grid gap-2 text-sm font-medium text-slate-700">
           Role
           <input
-            value={form.role}
-            onChange={(event) => updateField("role", event.target.value)}
+            name="role"
             className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
             placeholder="Founder, compliance, finance..."
           />
@@ -474,8 +439,8 @@ function DemoForm() {
         <label className="grid gap-2 text-sm font-medium text-slate-700">
           Organisation size
           <select
-            value={form.teamSize}
-            onChange={(event) => updateField("teamSize", event.target.value)}
+            name="organisation_size"
+            defaultValue=""
             className="h-11 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
           >
             <option value="">Select size</option>
@@ -488,8 +453,8 @@ function DemoForm() {
         <label className="grid gap-2 text-sm font-medium text-slate-700">
           Main interest
           <select
-            value={form.interest}
-            onChange={(event) => updateField("interest", event.target.value)}
+            name="main_interest"
+            defaultValue={interestOptions[0]}
             className="h-11 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
           >
             {interestOptions.map((option) => (
@@ -504,8 +469,7 @@ function DemoForm() {
       <label className="mt-4 grid gap-2 text-sm font-medium text-slate-700">
         What would you like to discuss?
         <textarea
-          value={form.message}
-          onChange={(event) => updateField("message", event.target.value)}
+          name="message"
           className="min-h-28 rounded-md border border-slate-300 px-3 py-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
           placeholder="Tell us about your fraud detection, transaction monitoring, or crypto risk requirements."
         />
@@ -515,14 +479,8 @@ function DemoForm() {
         type="submit"
         className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
       >
-        Send Demo Request <Mail className="h-4 w-4" aria-hidden="true" />
+        Send Trial Enquiry <Mail className="h-4 w-4" aria-hidden="true" />
       </button>
-
-      {submitted && (
-        <p className="mt-3 rounded-md bg-emerald-50 px-3 py-2 text-sm font-medium text-emerald-800">
-          Your email app should now open with the completed request.
-        </p>
-      )}
     </form>
   );
 }
@@ -568,7 +526,7 @@ export default function SentraRiskLandingPage() {
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
-                href={REGISTER_URL}
+                href={TRIAL_ENQUIRY_URL}
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full bg-cyan-300 px-7 text-sm font-semibold text-slate-950 shadow-[0_20px_50px_rgba(141,224,215,0.22)] transition hover:-translate-y-0.5 hover:bg-cyan-200"
               >
                 Start Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -683,7 +641,7 @@ export default function SentraRiskLandingPage() {
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
-                  href={REGISTER_URL}
+                  href={TRIAL_ENQUIRY_URL}
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
                 >
                   Start Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
