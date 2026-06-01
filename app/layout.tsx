@@ -15,12 +15,12 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.ico", sizes: "any" },
-      { url: "/icon.svg", type: "image/svg+xml" },
-      { url: "/sentrarisk-logo.svg", type: "image/svg+xml" },
+      { url: "/sentrarisk-logo.svg?v=3", type: "image/svg+xml" },
+      { url: "/icon.svg?v=3", type: "image/svg+xml" },
+      { url: "/favicon.ico?v=3", sizes: "any" },
     ],
-    shortcut: "/favicon.ico",
-    apple: "/apple-icon.svg",
+    shortcut: "/favicon.ico?v=3",
+    apple: "/apple-icon.svg?v=3",
   },
 };
 
