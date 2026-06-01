@@ -109,18 +109,40 @@ const useCases = [
   {
     title: "Supplier and invoice fraud review",
     text: "Import supplier bills from Xero or file upload, then flag unusual amounts, new beneficiaries, timing anomalies, and payment patterns before review.",
+    href: "/supplier-fraud-detection",
   },
   {
     title: "Customer transaction monitoring",
     text: "Score incoming activity, investigate high-risk records, and keep a consistent review trail across the team.",
+    href: "#demo",
   },
   {
     title: "Crypto exposure checks",
     text: "Assess wallet behaviour, velocity, and laundering indicators alongside ordinary transaction risk workflows.",
+    href: "#demo",
   },
   {
     title: "Board and audit reporting",
     text: "Turn operational reviews into decision memos, compliance packs, and concise evidence for leadership.",
+    href: "/accountants",
+  },
+];
+
+const seoLandingPages = [
+  {
+    title: "Xero fraud detection",
+    text: "For teams that want to import Xero supplier bills and review fraud-risk indicators before payment.",
+    href: "/xero-fraud-detection",
+  },
+  {
+    title: "Supplier fraud detection",
+    text: "For finance teams reviewing invoices, new suppliers, unusual payment patterns, and transaction anomalies.",
+    href: "/supplier-fraud-detection",
+  },
+  {
+    title: "Accountants and virtual CFOs",
+    text: "For advisors who want client-ready fraud-risk reports, board summaries, and compliance pack exports.",
+    href: "/accountants",
   },
 ];
 
@@ -717,9 +739,38 @@ export default function SentraRiskLandingPage() {
                   <div>
                     <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                    <Link href={item.href} className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:text-cyan-900">
+                      Learn more <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
                   </div>
                 </div>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-3xl">
+            <p className="text-sm font-semibold uppercase text-cyan-700">Solutions</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+              Find SentraRisk by the problem you need to solve.
+            </h2>
+          </div>
+          <div className="mt-10 grid gap-4 md:grid-cols-3">
+            {seoLandingPages.map((page) => (
+              <Link
+                key={page.href}
+                href={page.href}
+                className="group rounded-md border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan-300"
+              >
+                <h3 className="text-lg font-semibold text-slate-950">{page.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{page.text}</p>
+                <span className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 group-hover:text-cyan-900">
+                  Open page <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </span>
+              </Link>
             ))}
           </div>
         </div>
@@ -989,6 +1040,9 @@ Authorization: Bearer YOUR_API_KEY
             <p className="mt-1">Fraud detection, transaction monitoring, and risk intelligence.</p>
           </div>
           <div className="flex flex-wrap gap-4 font-medium">
+            <Link href="/xero-fraud-detection" className="hover:text-slate-950">Xero Fraud Detection</Link>
+            <Link href="/supplier-fraud-detection" className="hover:text-slate-950">Supplier Fraud Detection</Link>
+            <Link href="/accountants" className="hover:text-slate-950">Accountants</Link>
             <Link href="/privacy-policy" className="hover:text-slate-950">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-slate-950">Terms</Link>
             <Link href="/security-statement" className="hover:text-slate-950">Security</Link>
