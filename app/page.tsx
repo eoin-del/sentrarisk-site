@@ -272,17 +272,20 @@ const interestOptions = [
 
 function LogoMark() {
   return (
-    <div className="flex items-center gap-3">
-      <Image
-        src="/sentrarisk-logo.svg"
-        alt="SentraRisk Systems logo"
-        width={40}
-        height={40}
-        className="h-10 w-10 rounded-md shadow-sm"
-      />
+    <div className="flex items-center gap-3 rounded-full border border-white/15 bg-white/10 px-3 py-2 shadow-sm backdrop-blur">
+      <span className="flex h-9 w-9 items-center justify-center rounded-md bg-[#102033] ring-1 ring-white/20">
+        <Image
+          src="/sentrarisk-logo.svg"
+          alt="SentraRisk Systems"
+          width={36}
+          height={36}
+          className="h-9 w-9 rounded-md"
+          priority
+        />
+      </span>
       <div className="leading-tight">
-        <span className="block text-sm font-semibold tracking-wide text-white">SentraRisk</span>
-        <span className="block text-xs font-medium text-cyan-100">Systems</span>
+        <span className="block text-sm font-semibold text-white">SentraRisk</span>
+        <span className="block text-[11px] font-medium uppercase text-cyan-100">Systems</span>
       </div>
     </div>
   );
@@ -514,8 +517,8 @@ export default function SentraRiskLandingPage() {
         <ProductVisual />
         <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(7,19,31,0.96)_0%,rgba(16,32,51,0.92)_38%,rgba(16,32,51,0.54)_64%,rgba(255,255,255,0.08)_100%)]" />
 
-        <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between px-5 py-5 md:px-8">
-          <a href="#" className="flex items-center gap-3">
+        <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-5 md:px-8">
+          <a href="#" className="shrink-0">
             <LogoMark />
           </a>
           <div className="hidden items-center gap-7 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-medium text-slate-200 shadow-sm backdrop-blur md:flex">
