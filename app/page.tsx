@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useMemo, useState } from "react";
 import {
   Activity,
   ArrowRight,
@@ -10,6 +10,8 @@ import {
   CheckCircle2,
   Code2,
   Cloud,
+  Download,
+  FileText,
   Gauge,
   Landmark,
   LockKeyhole,
@@ -20,6 +22,7 @@ import {
   Store,
   Users,
 } from "lucide-react";
+import { sampleReports } from "./marketing-content";
 
 const APP_URL = "https://app.sentrarisksystems.com";
 const CONTACT_EMAIL = "eoin@sentrarisksystems.com";
@@ -145,6 +148,14 @@ const seoLandingPages = [
     href: "/accountants",
   },
 ];
+
+const riskReasons = {
+  amount: "Transaction amount is above normal SME supplier review thresholds.",
+  supplier: "Supplier is new or has limited payment history.",
+  beneficiary: "Beneficiary details changed or are newly introduced.",
+  crypto: "Crypto exposure adds additional source-of-funds review pressure.",
+  invoice: "Invoice timing or pattern is unusual for the supplier relationship.",
+};
 
 const pilotSteps = [
   "Connect Xero, a sample transaction file, dashboard workflow, or scoring API path.",
@@ -510,6 +521,126 @@ function DemoForm() {
   );
 }
 
+function RiskScoreDemo() {
+  const [amount, setAmount] = useState(12850);
+  const [supplierAge, setSupplierAge] = useState(14);
+  const [newBeneficiary, setNewBeneficiary] = useState(true);
+  const [cryptoExposure, setCryptoExposure] = useState(false);
+  const [invoiceAnomaly, setInvoiceAnomaly] = useState(true);
+
+  const result = useMemo(() => {
+    const amountScore = amount > 20000 ? 28 : amount > 10000 ? 20 : amount > 5000 ? 12 : 4;
+    const supplierScore = supplierAge < 7 ? 24 : supplierAge < 30 ? 16 : supplierAge < 90 ? 8 : 2;
+    const score = Math.min(
+      98,
+      14 +
+        amountScore +
+        supplierScore +
+        (newBeneficiary ? 18 : 0) +
+        (cryptoExposure ? 16 : 0) +
+        (invoiceAnomaly ? 14 : 0),
+    );
+
+    const reasons = [
+      amount > 10000 ? riskReasons.amount : null,
+      supplierAge < 30 ? riskReasons.supplier : null,
+      newBeneficiary ? riskReasons.beneficiary : null,
+      cryptoExposure ? riskReasons.crypto : null,
+      invoiceAnomaly ? riskReasons.invoice : null,
+    ].filter(Boolean) as string[];
+
+    return {
+      score,
+      level: score >= 75 ? "High" : score >= 50 ? "Review" : "Monitor",
+      action: score >= 75 ? "Escalate before approval" : score >= 50 ? "Review supporting evidence" : "Keep in monitoring queue",
+      reasons: reasons.length ? reasons : ["No major risk driver selected. Keep normal monitoring active."],
+    };
+  }, [amount, supplierAge, newBeneficiary, cryptoExposure, invoiceAnomaly]);
+
+  return (
+    <div className="grid gap-6 rounded-[28px] border border-slate-200 bg-white p-5 shadow-[0_28px_90px_rgba(15,23,42,0.08)] lg:grid-cols-[0.95fr_1.05fr]">
+      <div className="rounded-2xl bg-slate-50 p-5">
+        <div className="flex items-center gap-3">
+          <div className="flex h-11 w-11 items-center justify-center rounded-md bg-slate-950 text-cyan-300">
+            <Gauge className="h-5 w-5" aria-hidden="true" />
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-slate-950">Try the risk scorer</p>
+            <p className="text-xs text-slate-500">Example scoring preview</p>
+          </div>
+        </div>
+
+        <div className="mt-6 space-y-5">
+          <label className="grid gap-2 text-sm font-semibold text-slate-700">
+            Transaction amount: €{amount.toLocaleString("en-IE")}
+            <input
+              type="range"
+              min="500"
+              max="50000"
+              step="250"
+              value={amount}
+              onChange={(event) => setAmount(Number(event.target.value))}
+              className="accent-cyan-700"
+            />
+          </label>
+
+          <label className="grid gap-2 text-sm font-semibold text-slate-700">
+            Supplier age: {supplierAge} days
+            <input
+              type="range"
+              min="1"
+              max="180"
+              step="1"
+              value={supplierAge}
+              onChange={(event) => setSupplierAge(Number(event.target.value))}
+              className="accent-cyan-700"
+            />
+          </label>
+
+          {[
+            ["New beneficiary", newBeneficiary, setNewBeneficiary],
+            ["Crypto exposure", cryptoExposure, setCryptoExposure],
+            ["Invoice anomaly", invoiceAnomaly, setInvoiceAnomaly],
+          ].map(([label, checked, setter]) => (
+            <label key={label as string} className="flex items-center justify-between rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700">
+              {label as string}
+              <input
+                type="checkbox"
+                checked={checked as boolean}
+                onChange={(event) => (setter as React.Dispatch<React.SetStateAction<boolean>>)(event.target.checked)}
+                className="h-5 w-5 accent-cyan-700"
+              />
+            </label>
+          ))}
+        </div>
+      </div>
+
+      <div className="rounded-2xl bg-slate-950 p-6 text-white">
+        <p className="text-sm font-semibold uppercase text-cyan-300">Risk result</p>
+        <div className="mt-5 flex items-end justify-between gap-4">
+          <div>
+            <p className="text-6xl font-semibold tracking-normal">{result.score}</p>
+            <p className="mt-2 text-sm text-slate-300">Risk score out of 100</p>
+          </div>
+          <span className="rounded-full bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950">{result.level}</span>
+        </div>
+        <div className="mt-6 rounded-md border border-white/10 bg-white/5 p-4">
+          <p className="text-sm font-semibold text-white">Recommended action</p>
+          <p className="mt-2 text-sm leading-6 text-slate-300">{result.action}</p>
+        </div>
+        <div className="mt-5 space-y-3">
+          {result.reasons.map((reason) => (
+            <div key={reason} className="flex gap-3 text-sm leading-6 text-slate-300">
+              <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-cyan-300" aria-hidden="true" />
+              {reason}
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export default function SentraRiskLandingPage() {
   return (
     <main className="premium-shell min-h-screen text-slate-950">
@@ -526,6 +657,7 @@ export default function SentraRiskLandingPage() {
             <a href="#who" className="hover:text-white">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-white">Use cases</a>
             <a href="#product-demo" className="hover:text-white">Demo</a>
+            <Link href="/sample-reports" className="hover:text-white">Reports</Link>
             <a href="#pilot" className="hover:text-white">Pilot</a>
             <a href="#demo" className="hover:text-white">Contact</a>
           </div>
@@ -702,6 +834,27 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
+      <section id="risk-scorer" className="border-y border-slate-200 bg-slate-50 px-5 py-24 md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase text-cyan-700">Interactive demo</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+              Score a sample transaction before booking a call.
+            </h2>
+            <p className="mt-5 text-base leading-7 text-slate-600">
+              Adjust a sample transaction and see how SentraRisk turns risk indicators into a score, reasons, and a recommended review action.
+            </p>
+            <a
+              href={TRIAL_ENQUIRY_URL}
+              className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+            >
+              Request Trial Access <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </a>
+          </div>
+          <RiskScoreDemo />
+        </div>
+      </section>
+
       <section className="px-5 py-20 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
           <div>
@@ -779,6 +932,46 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
+      <section id="sample-reports" className="border-y border-slate-200 bg-white px-5 py-24 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
+            <div>
+            <p className="text-sm font-semibold uppercase text-cyan-700">Sample reports</p>
+            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+                See the outputs your team can take into a review meeting.
+            </h2>
+              <p className="mt-5 text-base leading-7 text-slate-600">
+                Sample board summaries, compliance packs, and transaction reports make SentraRisk feel tangible before a prospect logs in.
+              </p>
+            </div>
+            <Link
+              href="/sample-reports"
+              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800 lg:justify-self-end"
+            >
+              View Sample Reports <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {sampleReports.map((report) => (
+              <div key={report.title} className="rounded-md border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                <div className="flex h-11 w-11 items-center justify-center rounded-md bg-cyan-50 text-cyan-700">
+                  <FileText className="h-5 w-5" aria-hidden="true" />
+                </div>
+                <p className="mt-5 text-xs font-semibold uppercase text-cyan-700">{report.label}</p>
+                <h3 className="mt-2 text-xl font-semibold text-slate-950">{report.title}</h3>
+                <p className="mt-3 text-sm leading-6 text-slate-600">{report.description}</p>
+                <a
+                  href={report.href}
+                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:text-cyan-900"
+                >
+                  Download sample <Download className="h-4 w-4" aria-hidden="true" />
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="api" className="premium-dark px-5 py-24 text-white md:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
@@ -842,10 +1035,10 @@ Authorization: Bearer YOUR_API_KEY
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#demo"
+                href="/pilot-programme"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
               >
-                Discuss a Pilot <Rocket className="h-4 w-4" aria-hidden="true" />
+                View Pilot Programme <Rocket className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href={`mailto:${CONTACT_EMAIL}?subject=SentraRisk%20pilot%20programme`}
@@ -1046,6 +1239,8 @@ Authorization: Bearer YOUR_API_KEY
             <Link href="/xero-fraud-detection" className="hover:text-slate-950">Xero Fraud Detection</Link>
             <Link href="/supplier-fraud-detection" className="hover:text-slate-950">Supplier Fraud Detection</Link>
             <Link href="/accountants" className="hover:text-slate-950">Accountants</Link>
+            <Link href="/sample-reports" className="hover:text-slate-950">Sample Reports</Link>
+            <Link href="/pilot-programme" className="hover:text-slate-950">Pilot Programme</Link>
             <Link href="/privacy-policy" className="hover:text-slate-950">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-slate-950">Terms</Link>
             <Link href="/security-statement" className="hover:text-slate-950">Security</Link>

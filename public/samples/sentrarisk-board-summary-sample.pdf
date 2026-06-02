@@ -1,0 +1,49 @@
+%PDF-1.4
+1 0 obj << /Type /Catalog /Pages 2 0 R >> endobj
+2 0 obj << /Type /Pages /Kids [3 0 R] /Count 1 >> endobj
+3 0 obj << /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 4 0 R >> >> /Contents 5 0 R >> endobj
+4 0 obj << /Type /Font /Subtype /Type1 /BaseFont /Helvetica >> endobj
+5 0 obj << /Length 2115 >> stream
+0.97 0.99 1 rg 0 0 612 792 re f
+0.06 0.13 0.2 rg 0 712 612 80 re f
+1 1 1 rg BT /F1 18 Tf 48 756 Td (SentraRisk Systems) Tj ET
+1 1 1 rg BT /F1 24 Tf 48 728 Td (Board Summary Sample) Tj ET
+0.25 0.45 0.48 rg BT /F1 11 Tf 48 692 Td (Executive view of fraud-risk exposure, alert movement, and recommended controls.) Tj ET
+0.88 0.97 0.96 rg 48 620 516 46 re f
+0.06 0.13 0.2 rg BT /F1 12 Tf 64 638 Td (Sample output for demonstration only - not customer data) Tj ET
+1 1 1 rg 48 548 158 54 re f
+0.83 0.88 0.93 RG 48 548 158 54 re S
+0.06 0.13 0.2 rg BT /F1 18 Tf 62 578 Td (37) Tj ET
+0.38 0.45 0.55 rg BT /F1 9 Tf 62 562 Td (alerts reviewed) Tj ET
+1 1 1 rg 226 548 158 54 re f
+0.83 0.88 0.93 RG 226 548 158 54 re S
+0.06 0.13 0.2 rg BT /F1 18 Tf 240 578 Td (8) Tj ET
+0.38 0.45 0.55 rg BT /F1 9 Tf 240 562 Td (high-risk items) Tj ET
+1 1 1 rg 404 548 158 54 re f
+0.83 0.88 0.93 RG 404 548 158 54 re S
+0.06 0.13 0.2 rg BT /F1 18 Tf 418 578 Td (4) Tj ET
+0.38 0.45 0.55 rg BT /F1 9 Tf 418 562 Td (recommended controls) Tj ET
+0.06 0.13 0.2 rg BT /F1 15 Tf 48 494 Td (Executive overview) Tj ET
+0.24 0.31 0.38 rg BT /F1 11 Tf 64 470 Td (Supplier bill review identified a small number of high-risk items requiring escalation.) Tj ET
+0.24 0.31 0.38 rg BT /F1 11 Tf 64 452 Td (Most risk exposure came from new beneficiaries, invoice anomalies, and unusual timing patterns.) Tj ET
+0.06 0.13 0.2 rg BT /F1 15 Tf 48 416 Td (Recommended controls) Tj ET
+0.24 0.31 0.38 rg BT /F1 11 Tf 64 392 Td (Add second approval for new beneficiaries above agreed thresholds.) Tj ET
+0.24 0.31 0.38 rg BT /F1 11 Tf 64 374 Td (Review unusual supplier timing patterns before payment release.) Tj ET
+0.24 0.31 0.38 rg BT /F1 11 Tf 64 356 Td (Export monthly risk summaries for board and finance review.) Tj ET
+0.06 0.13 0.2 rg BT /F1 15 Tf 48 320 Td (Next step) Tj ET
+0.24 0.31 0.38 rg BT /F1 11 Tf 64 296 Td (Run a focused pilot using live Xero supplier bill imports and board summary exports.) Tj ET
+0.06 0.13 0.2 rg 48 62 516 42 re f
+1 1 1 rg BT /F1 10 Tf 64 78 Td (Request a live walkthrough: eoin@sentrarisksystems.com | www.sentrarisksystems.com) Tj ET
+endstream endobj
+xref
+0 6
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000115 00000 n 
+0000000241 00000 n 
+0000000311 00000 n 
+trailer << /Size 6 /Root 1 0 R >>
+startxref
+2477
+%%EOF
