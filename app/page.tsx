@@ -27,6 +27,7 @@ import { sampleReports } from "./marketing-content";
 const APP_URL = "https://app.sentrarisksystems.com";
 const CONTACT_EMAIL = "eoin@sentrarisksystems.com";
 const TRIAL_ENQUIRY_URL = "#demo";
+const appBillingUrl = (plan: string) => `${APP_URL}/billing?plan=${encodeURIComponent(plan)}`;
 
 const riskRows = [
   { label: "Velocity spike", score: "91", status: "Investigate" },
@@ -212,7 +213,7 @@ const pricingPlans = [
       "Up to 10,000 transactions/month",
     ],
     cta: "Start 14-day trial",
-    href: TRIAL_ENQUIRY_URL,
+    href: appBillingUrl("starter"),
     highlighted: false,
   },
   {
@@ -230,7 +231,7 @@ const pricingPlans = [
       "Up to 20,000 transactions/month",
     ],
     cta: "Start 14-day trial",
-    href: TRIAL_ENQUIRY_URL,
+    href: appBillingUrl("compliance"),
     highlighted: true,
   },
   {
@@ -249,7 +250,7 @@ const pricingPlans = [
       "Up to 30,000 transactions/month",
     ],
     cta: "Start 14-day trial",
-    href: TRIAL_ENQUIRY_URL,
+    href: appBillingUrl("growth"),
     highlighted: false,
   },
   {
