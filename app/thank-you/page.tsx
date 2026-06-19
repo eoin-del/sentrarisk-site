@@ -13,7 +13,7 @@ export default function ThankYouPage() {
           Thanks for requesting SentraRisk trial access.
         </h1>
         <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-          Your details have been sent to Eoin. We will review your organisation details and come back with the right trial setup or demo next step.
+          Your details have been sent to SentraRisk support. We will review your organisation details and come back with access details or the right next step for your team.
         </p>
         <div className="mt-9 flex flex-col gap-3 sm:flex-row">
           <Link
@@ -23,10 +23,10 @@ export default function ThankYouPage() {
             Back to website
           </Link>
           <a
-            href="mailto:eoin@sentrarisksystems.com"
+            href="mailto:support@sentrarisksystems.com"
             className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-white/20 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
           >
-            Email Eoin <Mail className="h-4 w-4" aria-hidden="true" />
+            Email support <Mail className="h-4 w-4" aria-hidden="true" />
           </a>
         </div>
       </section>

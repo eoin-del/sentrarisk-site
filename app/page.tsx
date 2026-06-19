@@ -27,7 +27,6 @@ import { sampleReports } from "./marketing-content";
 const APP_URL = "https://app.sentrarisksystems.com";
 const CONTACT_EMAIL = "support@sentrarisksystems.com";
 const TRIAL_ENQUIRY_URL = "#demo";
-const appBillingUrl = (plan: string) => `${APP_URL}/billing?plan=${encodeURIComponent(plan)}`;
 
 const riskRows = [
   { label: "Same-day threshold pattern", score: "91", status: "Escalate" },
@@ -227,8 +226,8 @@ const pricingPlans = [
       "Basic alerts and reports",
       "Up to 10,000 transactions/month",
     ],
-    cta: "Start 14-day trial",
-    href: appBillingUrl("starter"),
+    cta: "Request 14-day trial",
+    href: TRIAL_ENQUIRY_URL,
     highlighted: false,
   },
   {
@@ -245,8 +244,8 @@ const pricingPlans = [
       "Email alerts",
       "Up to 20,000 transactions/month",
     ],
-    cta: "Start 14-day trial",
-    href: appBillingUrl("compliance"),
+    cta: "Request 14-day trial",
+    href: TRIAL_ENQUIRY_URL,
     highlighted: true,
   },
   {
@@ -264,8 +263,8 @@ const pricingPlans = [
       "Audit trail export",
       "Up to 30,000 transactions/month",
     ],
-    cta: "Start 14-day trial",
-    href: appBillingUrl("growth"),
+    cta: "Request 14-day trial",
+    href: TRIAL_ENQUIRY_URL,
     highlighted: false,
   },
   {
@@ -447,7 +446,7 @@ function DemoForm() {
         <div>
           <p className="text-lg font-semibold text-slate-950">Request trial access</p>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            Tell us a little about your organisation and we will come back to you with the right trial or demo setup.
+            Tell us a little about your organisation and we will come back to you with the right access details or next step.
           </p>
         </div>
       </div>
@@ -818,7 +817,7 @@ export default function SentraRiskLandingPage() {
                   href={TRIAL_ENQUIRY_URL}
                   className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
                 >
-                  Start Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  Request Trial Access <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
                 <a
                   href="#demo"
