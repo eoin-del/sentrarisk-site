@@ -421,145 +421,6 @@ function ProductVisual() {
   );
 }
 
-function AnimatedProductDemo() {
-  const steps = [
-    {
-      title: "1. Payment data enters review",
-      text: "Xero bills, spreadsheet uploads, or API records are pulled into the SentraRisk queue.",
-      icon: Cloud,
-    },
-    {
-      title: "2. Warning signs are scored",
-      text: "Supplier changes, duplicate-looking invoices, unusual timing, and missing approvals are explained.",
-      icon: Gauge,
-    },
-    {
-      title: "3. Prevention control is applied",
-      text: "High-risk payments are held for review before release, with a clear reviewer action.",
-      icon: Shield,
-    },
-    {
-      title: "4. Evidence is saved",
-      text: "Every decision keeps the reviewer, timestamp, notes, and audit-ready outcome.",
-      icon: FileText,
-    },
-  ];
-
-  return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-2xl bg-slate-950 text-white">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_20%,rgba(14,124,134,0.35),transparent_32%),linear-gradient(135deg,#07131f_0%,#102033_58%,#0b1724_100%)]" />
-      <div className="absolute inset-x-0 top-0 z-10 flex h-14 items-center justify-between border-b border-white/10 bg-white/[0.04] px-5 backdrop-blur">
-        <div className="flex items-center gap-3">
-          <Image
-            src="/sentrarisk-logo.svg"
-            alt="SentraRisk Systems"
-            width={30}
-            height={30}
-            className="h-7 w-7 rounded-md"
-          />
-          <span className="text-sm font-semibold text-white">SentraRisk finance-risk review</span>
-        </div>
-        <span className="rounded-full border border-cyan-300/40 bg-cyan-300/10 px-3 py-1 text-xs font-semibold text-cyan-100">
-          Live demo preview
-        </span>
-      </div>
-
-      <div className="absolute left-6 top-20 hidden h-[calc(100%-104px)] w-48 rounded-2xl border border-white/10 bg-white/[0.04] p-3 md:block">
-        {["Dashboard", "Transactions", "Alerts", "Reports"].map((item, index) => (
-          <div
-            key={item}
-            className={`mb-2 flex h-10 items-center rounded-md px-3 text-sm font-semibold ${
-              index === 1 ? "bg-cyan-300 text-slate-950" : "text-slate-300"
-            }`}
-          >
-            {item}
-          </div>
-        ))}
-      </div>
-
-      <div className="absolute left-5 right-5 top-20 grid gap-4 md:left-60 md:grid-cols-[1fr_0.78fr]">
-        <div className="rounded-2xl border border-white/10 bg-white/[0.96] p-4 text-slate-950 shadow-2xl">
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <p className="text-xs font-semibold uppercase text-cyan-700">Payment request</p>
-              <h3 className="mt-2 text-2xl font-semibold">Northline Supplies Ltd</h3>
-              <p className="mt-1 text-sm text-slate-500">Supplier bill imported from finance workflow</p>
-            </div>
-            <div className="rounded-xl bg-rose-50 px-4 py-3 text-center">
-              <p className="text-xs font-semibold uppercase text-rose-700">Score</p>
-              <p className="text-3xl font-bold text-rose-700">91</p>
-            </div>
-          </div>
-
-          <div className="mt-5 grid gap-3 sm:grid-cols-3">
-            {[
-              ["Amount", "€8,450"],
-              ["Risk level", "High"],
-              ["Control", "Hold"],
-            ].map(([label, value]) => (
-              <div key={label} className="rounded-xl border border-slate-200 bg-slate-50 p-3">
-                <p className="text-xs font-medium text-slate-500">{label}</p>
-                <p className="mt-1 text-lg font-semibold text-slate-950">{value}</p>
-              </div>
-            ))}
-          </div>
-
-          <div className="mt-5 space-y-2">
-            {["Supplier bank details changed", "Urgent payment language detected", "No second approval recorded"].map((item, index) => (
-              <div
-                key={item}
-                className="demo-rule-row flex items-center gap-3 rounded-xl border border-amber-200 bg-amber-50 px-3 py-2 text-sm font-semibold text-amber-800"
-                style={{ animationDelay: `${1.2 + index * 1.2}s` }}
-              >
-                <Siren className="h-4 w-4 shrink-0" aria-hidden="true" />
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-
-        <div className="grid gap-4">
-          <div className="rounded-2xl border border-cyan-300/25 bg-cyan-300/10 p-4">
-            <p className="text-xs font-semibold uppercase text-cyan-100">Automated prevention</p>
-            <h3 className="mt-2 text-xl font-semibold text-white">Payment held pending owner review</h3>
-            <p className="mt-2 text-sm leading-6 text-slate-300">
-              SentraRisk applies the control before money leaves the business.
-            </p>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-4">
-            <p className="text-xs font-semibold uppercase text-slate-400">Evidence pack</p>
-            {["Reviewer note saved", "Timestamp captured", "Decision trail ready"].map((item) => (
-              <div key={item} className="mt-3 flex items-center gap-2 text-sm font-semibold text-white">
-                <CheckCircle2 className="h-4 w-4 text-cyan-300" aria-hidden="true" />
-                {item}
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-      <div className="absolute bottom-5 left-5 right-5 grid gap-2 md:left-60 md:grid-cols-4">
-        {steps.map((step, index) => {
-          const Icon = step.icon;
-          return (
-            <div
-              key={step.title}
-              className="demo-step-card rounded-xl border border-white/10 bg-white/[0.08] p-3 backdrop-blur"
-              style={{ animationDelay: `${index * 2.2}s` }}
-            >
-              <div className="flex items-center gap-2">
-                <Icon className="h-4 w-4 text-cyan-300" aria-hidden="true" />
-                <p className="text-xs font-semibold text-white">{step.title}</p>
-              </div>
-              <p className="mt-2 hidden text-xs leading-5 text-slate-300 lg:block">{step.text}</p>
-            </div>
-          );
-        })}
-      </div>
-    </div>
-  );
-}
-
 function CheckLine({ text }: { text: string }) {
   return (
     <div className="mb-3 flex gap-3 last:mb-0">
@@ -975,7 +836,15 @@ export default function SentraRiskLandingPage() {
                 </div>
                 <span className="text-xs font-semibold text-slate-400">SentraRisk live demo</span>
               </div>
-              <AnimatedProductDemo />
+              <video
+                controls
+                preload="metadata"
+                playsInline
+                className="aspect-video w-full rounded-2xl bg-black"
+              >
+                <source src="/sentrarisk-intelligence-demo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </div>
           </div>
         </div>
