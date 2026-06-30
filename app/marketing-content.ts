@@ -15,7 +15,7 @@ export const sampleReports = [
   },
   {
     title: "Transaction Risk Report",
-    description: "A transaction-level report explaining score drivers, supplier indicators, crypto exposure, and review recommendation.",
+    description: "A transaction-level report explaining score drivers, supplier indicators, duplicate-payment risk, and review recommendations.",
     href: "/samples/sentrarisk-transaction-risk-report-sample.pdf",
     label: "Risk detail PDF",
     stats: ["Risk score 87", "New beneficiary", "Review recommended"],
