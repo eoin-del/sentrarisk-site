@@ -7,6 +7,7 @@ import {
   Activity,
   ArrowRight,
   CheckCircle2,
+  CircleCheckBig,
   Code2,
   Cloud,
   Download,
@@ -90,6 +91,21 @@ const workflow = [
   "Review the findings, record decisions, and export a Client Control Pack for the client or internal management team.",
 ];
 
+const howItWorks = [
+  {
+    title: "Connect Xero or upload transactions",
+    text: "Start with client-level Xero supplier bills, spreadsheet exports, or transaction data from an internal workflow.",
+  },
+  {
+    title: "Review the strongest risk signals",
+    text: "SentraRisk flags duplicate-looking payments, unusual supplier changes, repeated large payments, and threshold-style patterns.",
+  },
+  {
+    title: "Export a Client Control Pack",
+    text: "Keep the final judgement human, record the decision, and produce a clear monthly output for the client or management team.",
+  },
+];
+
 const audienceSegments = [
   {
     icon: Landmark,
@@ -164,11 +180,18 @@ const accountantOutcomes = [
   },
 ];
 
+const trustSignals = [
+  "Irish software company focused on SMEs, accountants, bookkeepers, and finance teams.",
+  "Human review stays central: SentraRisk supports decisions with clearer signals and evidence.",
+  "Built around organisation-level access, reviewer notes, audit-ready exports, and controlled onboarding.",
+  "Designed for lean teams that need practical payment-risk visibility without enterprise complexity.",
+];
+
 const riskReasons = {
   amount: "Transaction amount is above normal SME supplier review thresholds.",
   supplier: "Supplier is new or has limited payment history.",
   beneficiary: "Beneficiary details changed or are newly introduced.",
-  crypto: "Crypto exposure adds additional source-of-funds review pressure.",
+  crypto: "Source-of-funds or external exposure adds additional review pressure.",
   invoice: "Invoice timing or pattern is unusual for the supplier relationship.",
 };
 
@@ -615,7 +638,7 @@ function RiskScoreDemo() {
 
           {[
             ["New beneficiary", newBeneficiary, setNewBeneficiary],
-            ["Crypto exposure", cryptoExposure, setCryptoExposure],
+            ["External exposure", cryptoExposure, setCryptoExposure],
             ["Invoice anomaly", invoiceAnomaly, setInvoiceAnomaly],
           ].map(([label, checked, setter]) => (
             <label key={label as string} className="flex items-center justify-between rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700">
@@ -670,6 +693,7 @@ export default function SentraRiskLandingPage() {
           </a>
           <div className="hidden items-center gap-7 rounded-full border border-white/15 bg-white/10 px-5 py-3 text-sm font-medium text-slate-200 shadow-sm backdrop-blur md:flex">
             <a href="#platform" className="hover:text-white">Platform</a>
+            <a href="#how-it-works" className="hover:text-white">How it works</a>
             <a href="#who" className="hover:text-white">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-white">Use cases</a>
             <a href="#product-demo" className="hover:text-white">Demo</a>
@@ -708,7 +732,7 @@ export default function SentraRiskLandingPage() {
                 href="#demo"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 text-sm font-semibold text-white shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15"
               >
-                Book a Demo <Mail className="h-4 w-4" aria-hidden="true" />
+                Book a Walkthrough <Mail className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
             <div className="mt-10 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
@@ -731,6 +755,33 @@ export default function SentraRiskLandingPage() {
               <span className="max-w-32 text-right text-sm font-medium leading-5 text-slate-500">{label}</span>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id="how-it-works" className="bg-white px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase text-cyan-700">How it works</p>
+              <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+                From client data to a useful review output.
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+                SentraRisk is designed around a simple review flow that accountants, bookkeepers, and SME finance teams can run without building a full compliance operation.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {howItWorks.map((item, index) => (
+                <article key={item.title} className="rounded-md border border-slate-200 bg-slate-50 p-6 shadow-sm">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-950 text-sm font-semibold text-white">
+                    {index + 1}
+                  </span>
+                  <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
@@ -773,6 +824,36 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
+      <section className="border-y border-slate-200 bg-white px-5 py-20 md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase text-cyan-700">Built with control in mind</p>
+            <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+              Automation for the review work, human judgement for the decision.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
+              SentraRisk was created to make payment-risk review more accessible for SMEs that do not have enterprise compliance teams. The platform helps teams spot risk indicators, but keeps the final decision with the people responsible for the business.
+            </p>
+            <div className="mt-8">
+              <Link
+                href="/accountants"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+              >
+                See Accountant Workflows <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </div>
+          </div>
+          <div className="grid gap-3">
+            {trustSignals.map((item) => (
+              <div key={item} className="flex gap-3 rounded-md border border-slate-200 bg-slate-50 p-4 shadow-sm">
+                <CircleCheckBig className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" aria-hidden="true" />
+                <p className="text-sm leading-6 text-slate-700">{item}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       <section id="who" className="px-5 py-20 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
@@ -810,7 +891,7 @@ export default function SentraRiskLandingPage() {
                 See SentraRisk Intelligence in action.
               </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Watch a short walkthrough of the dashboard, Xero import flow, transaction scoring workflow, alert review, reporting, API controls, and enterprise readiness features.
+                Watch a short walkthrough of the dashboard, Xero import flow, transaction scoring workflow, alert review, reporting, and enterprise readiness features.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -823,7 +904,7 @@ export default function SentraRiskLandingPage() {
                   href="#demo"
                   className="inline-flex h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
                 >
-                  Book a Demo
+                  Book a Walkthrough
                 </a>
               </div>
             </div>
@@ -860,6 +941,12 @@ export default function SentraRiskLandingPage() {
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
               SentraRisk is designed to help practices and finance teams spot payment-risk issues, explain what was reviewed, and give clients a useful output they can act on.
             </p>
+            <Link
+              href="/accountants"
+              className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+            >
+              See how it supports client reviews <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {accountantOutcomes.map((item) => (
@@ -1069,11 +1156,14 @@ Authorization: Bearer YOUR_API_KEY
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Pilot programme</p>
             <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-              Prove the workflow before you roll it out.
+              Start with a focused 14-day payment-risk review.
             </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-              The SentraRisk pilot is a focused evaluation for teams that want to test Xero imports, client accounts, payment-risk review, risk reasons, reporting outputs, and API fit before committing to production.
+              The SentraRisk pilot gives teams a practical way to test the workflow using sample data, anonymised transaction exports, or Xero supplier bills before moving into a live monthly review process.
             </p>
+            <div className="mt-6 rounded-md border border-cyan-200 bg-cyan-50 p-4 text-sm leading-6 text-slate-700">
+              <strong className="text-slate-950">Pilot offer:</strong> review a small transaction set, assess the quality of alerts, and produce an example Client Control Pack your team can evaluate.
+            </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="/pilot-programme"
