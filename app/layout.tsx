@@ -43,6 +43,13 @@ export default function RootLayout({
             `,
           }}
         />
+        <script
+          type="text/javascript"
+          id="hs-script-loader"
+          async
+          defer
+          src="https://js-eu1.hs-scripts.com/148356926.js"
+        />
       </head>
       <body className="min-h-full flex flex-col">
         {children}
