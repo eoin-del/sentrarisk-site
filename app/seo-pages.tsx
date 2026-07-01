@@ -2,6 +2,8 @@ import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Mail, Shield } from "lucide-react";
 
+const REGISTER_URL = "https://app.sentrarisksystems.com/register";
+
 type SeoPageProps = {
   eyebrow: string;
   title: string;
@@ -44,7 +46,7 @@ export function SeoLandingPage({
             <Link href="/#pricing" className="hidden hover:text-white sm:inline">
               Pricing
             </Link>
-            <Link href="/#demo" className="rounded-md bg-cyan-300 px-4 py-2 font-semibold text-slate-950 hover:bg-cyan-200">
+            <Link href={REGISTER_URL} className="rounded-md bg-cyan-300 px-4 py-2 font-semibold text-slate-950 hover:bg-cyan-200">
               Request trial
             </Link>
           </div>
@@ -59,7 +61,7 @@ export function SeoLandingPage({
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">{description}</p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <Link
-                href="/#demo"
+                href={REGISTER_URL}
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-cyan-300 px-6 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
               >
                 {primaryCta} <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -143,7 +145,7 @@ export function SeoLandingPage({
             </h2>
           </div>
           <Link
-            href="/#demo"
+            href={REGISTER_URL}
             className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-cyan-300 px-6 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
           >
             Request trial access <Mail className="h-4 w-4" aria-hidden="true" />

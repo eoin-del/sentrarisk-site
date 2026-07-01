@@ -27,7 +27,8 @@ import { sampleReports } from "./marketing-content";
 
 const APP_URL = "https://app.sentrarisksystems.com";
 const CONTACT_EMAIL = "support@sentrarisksystems.com";
-const TRIAL_ENQUIRY_URL = "#demo";
+const REGISTER_URL = `${APP_URL}/register`;
+const TRIAL_ENQUIRY_URL = REGISTER_URL;
 
 const riskRows = [
   { label: "Same-day threshold pattern", score: "91", status: "Escalate" },
@@ -696,10 +697,10 @@ export default function SentraRiskLandingPage() {
             <a href="#how-it-works" className="hover:text-white">How it works</a>
             <a href="#who" className="hover:text-white">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-white">Use cases</a>
-            <a href="#product-demo" className="hover:text-white">Demo</a>
+            <a href={REGISTER_URL} className="hover:text-white">Demo</a>
             <Link href="/sample-reports" className="hover:text-white">Reports</Link>
             <a href="#pilot" className="hover:text-white">Pilot</a>
-            <a href="#demo" className="hover:text-white">Contact</a>
+            <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white">Contact</a>
           </div>
           <a
             href={APP_URL}
@@ -729,7 +730,7 @@ export default function SentraRiskLandingPage() {
                 Request Trial Access <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
-                href="#demo"
+                href={REGISTER_URL}
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 text-sm font-semibold text-white shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15"
               >
                 Book a Walkthrough <Mail className="h-4 w-4" aria-hidden="true" />
@@ -901,7 +902,7 @@ export default function SentraRiskLandingPage() {
                   Request Trial Access <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </a>
                 <a
-                  href="#demo"
+                  href={REGISTER_URL}
                   className="inline-flex h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
                 >
                   Book a Walkthrough
@@ -1118,7 +1119,7 @@ export default function SentraRiskLandingPage() {
                 Developer Dashboard <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
-                href="#demo"
+                href={REGISTER_URL}
                 className="inline-flex h-12 items-center justify-center rounded-md border border-white/20 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 Discuss Integration

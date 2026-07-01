@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Download, FileText } from "lucide-react";
 import { sampleReports } from "../marketing-content";
 
+const REGISTER_URL = "https://app.sentrarisksystems.com/register";
+
 export const metadata: Metadata = {
   title: "Sample Fraud-Risk Reports | SentraRisk Systems",
   description:
@@ -17,7 +19,7 @@ export default function SampleReportsPage() {
           <Link href="/" className="text-sm font-semibold tracking-wide text-white">
             SentraRisk Systems
           </Link>
-          <Link href="/#demo" className="rounded-md bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-cyan-200">
+          <Link href={REGISTER_URL} className="rounded-md bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950 hover:bg-cyan-200">
             Request trial
           </Link>
         </nav>
@@ -70,7 +72,7 @@ export default function SampleReportsPage() {
             </h2>
           </div>
           <Link
-            href="/#demo"
+            href={REGISTER_URL}
             className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
           >
             Request trial access <ArrowRight className="h-4 w-4" aria-hidden="true" />

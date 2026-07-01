@@ -3,6 +3,8 @@ import Link from "next/link";
 import { ArrowRight, CheckCircle2, Rocket } from "lucide-react";
 import { pilotDeliverables, pilotTimeline } from "../marketing-content";
 
+const REGISTER_URL = "https://app.sentrarisksystems.com/register";
+
 export const metadata: Metadata = {
   title: "SentraRisk Pilot Programme | Fraud-Risk Trial Access",
   description:
@@ -31,7 +33,7 @@ export default function PilotProgrammePage() {
               A focused pilot for accountants, virtual CFOs, SMEs, and finance teams that want to test risk scoring, Xero-supported imports, alert review, and report outputs.
             </p>
             <Link
-              href="/#demo"
+              href={REGISTER_URL}
               className="mt-9 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-cyan-300 px-6 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
             >
               Request pilot access <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -98,7 +100,7 @@ export default function PilotProgrammePage() {
             </h2>
           </div>
           <Link
-            href="/#demo"
+            href={REGISTER_URL}
             className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-cyan-300 px-6 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
           >
             Request pilot access <ArrowRight className="h-4 w-4" aria-hidden="true" />
