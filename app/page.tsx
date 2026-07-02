@@ -59,20 +59,25 @@ const capabilities = [
     text: "Connect Xero accounts by client, import supplier bills, refresh existing records, and reduce duplicated import noise.",
   },
   {
+    icon: Users,
+    title: "Payroll payment review",
+    text: "Review payroll payment outputs for duplicate-looking payments, unusual beneficiaries, abnormal amounts, and evidence-ready decision notes without replacing payroll software.",
+  },
+  {
     icon: Code2,
     title: "Spreadsheet, API, and future integrations",
-    text: "Start with Xero or uploaded files, then connect SentraRisk to internal workflows with API keys and batch scoring when needed.",
+    text: "Start with Xero, payroll exports, or uploaded files, then connect SentraRisk to internal workflows with API keys and batch scoring when needed.",
   },
 ];
 
 const metrics = [
   ["Client Control Packs", "Monthly review outputs"],
-  ["Xero-supported", "Client-level supplier bill imports"],
+  ["Xero and payroll", "Supplier bills and payroll output review"],
   ["SME-focused", "Built for accountants and lean finance teams"],
 ];
 
 const premiumStats = [
-  ["Client", "Account-level Xero imports"],
+  ["Client", "Account-level imports and payroll review"],
   ["Risk", "Scoring with explainable reasons"],
   ["PDF", "Client-ready control packs"],
   ["API", "Available for integration"],
@@ -80,6 +85,7 @@ const premiumStats = [
 
 const integrationProof = [
   "Client-level Xero supplier bills",
+  "Payroll payment output review",
   "Excel transaction files",
   "Duplicate and threshold-pattern checks",
   "Client Control Pack PDF exports",
@@ -87,7 +93,7 @@ const integrationProof = [
 ];
 
 const workflow = [
-  "Create a client account and connect the right Xero organisation, upload a file, or add transaction data through the API.",
+  "Create a client account and connect the right Xero organisation, upload payroll or transaction exports, or add data through the API.",
   "SentraRisk scores payment activity and explains the strongest indicators behind each alert.",
   "Review the findings, record decisions, and export a Client Control Pack for the client or internal management team.",
 ];
@@ -95,7 +101,7 @@ const workflow = [
 const howItWorks = [
   {
     title: "Connect Xero or upload transactions",
-    text: "Start with client-level Xero supplier bills, spreadsheet exports, or transaction data from an internal workflow.",
+    text: "Start with client-level Xero supplier bills, payroll payment exports, spreadsheet files, or transaction data from an internal workflow.",
   },
   {
     title: "Review the strongest risk signals",
@@ -142,6 +148,11 @@ const useCases = [
     href: "#demo",
   },
   {
+    title: "Payroll payment risk review",
+    text: "Review payroll payment outputs for duplicate-looking payments, unusual beneficiaries, abnormal amount changes, and timing issues while keeping payroll processing inside the payroll system.",
+    href: "#platform",
+  },
+  {
     title: "Board and audit reporting",
     text: "Turn operational reviews into decision memos, compliance packs, and concise evidence for leadership or client meetings.",
     href: "/accountants",
@@ -173,7 +184,7 @@ const accountantOutcomes = [
   },
   {
     title: "Show value beyond bookkeeping",
-    text: "Turn Xero bills and transaction data into findings, control scores, recommended actions, and client-ready PDFs.",
+    text: "Turn Xero bills, payroll payment outputs, and transaction data into findings, control scores, recommended actions, and client-ready PDFs.",
   },
   {
     title: "Keep the judgement human",
@@ -184,6 +195,7 @@ const accountantOutcomes = [
 const trustSignals = [
   "Irish software company focused on SMEs, accountants, bookkeepers, and finance teams.",
   "Human review stays central: SentraRisk supports decisions with clearer signals and evidence.",
+  "Payroll functionality is a review layer for payroll payment outputs, not a replacement for payroll platforms.",
   "Built around organisation-level access, reviewer notes, audit-ready exports, and controlled onboarding.",
   "Designed for lean teams that need practical payment-risk visibility without enterprise complexity.",
 ];
@@ -197,7 +209,7 @@ const riskReasons = {
 };
 
 const pilotSteps = [
-  "Set up one practice, company, or client workflow using Xero, spreadsheet data, or sample transactions.",
+  "Set up one practice, company, or client workflow using Xero, payroll exports, spreadsheet data, or sample transactions.",
   "Run a focused review period covering alerts, risk reasons, duplicate checks, and Client Control Pack quality.",
   "Leave with a clear view of fit, pricing, and the first controls worth activating.",
 ];
@@ -211,12 +223,17 @@ const faqs = [
   {
     question: "Do we need engineers to get started?",
     answer:
-      "No. Teams can begin with dashboard access, client accounts, Xero-supported imports, and file upload. API access is available when you want to connect scoring directly to internal systems.",
+      "No. Teams can begin with dashboard access, client accounts, Xero-supported imports, payroll export review, and file upload. API access is available when you want to connect scoring directly to internal systems.",
   },
   {
     question: "Does SentraRisk support Xero?",
     answer:
       "Yes. SentraRisk supports Xero supplier bill imports and can separate imports by client account, so one client's Xero connection does not mix into another client's review workflow.",
+  },
+  {
+    question: "Does SentraRisk replace payroll software?",
+    answer:
+      "No. SentraRisk does not run payroll, calculate payslips, manage employee payroll records, or replace payroll providers. It reviews payroll payment outputs for risk indicators such as duplicate-looking payments, unusual beneficiaries, abnormal amounts, and review evidence.",
   },
   {
     question: "What is a Client Control Pack?",
@@ -245,6 +262,7 @@ const pricingPlans = [
       "1 organisation",
       "3 users",
       "Xero-supported imports",
+      "Payroll export review",
       "Excel upload",
       "Transaction risk scoring",
       "Basic alerts and reports",
@@ -262,6 +280,7 @@ const pricingPlans = [
     features: [
       "5 users",
       "Xero supplier bill imports",
+      "Payroll payment review",
       "Client Control Pack exports",
       "Board summary PDF",
       "Risk notes and ownership",
@@ -281,6 +300,7 @@ const pricingPlans = [
       "10 users",
       "API keys",
       "Xero supplier bill imports",
+      "Payroll payment output review",
       "Bulk upload",
       "Custom review workflows",
       "Email alerts",
@@ -300,6 +320,7 @@ const pricingPlans = [
       "25+ users",
       "Custom transaction limits",
       "Custom risk rules",
+      "Payroll and payment-control review workflows",
       "Tailored reporting and review workflows",
       "Local/customer environment deployment",
       "Dedicated onboarding",
@@ -315,6 +336,7 @@ const pricingPlans = [
 const interestOptions = [
   "Client Control Packs",
   "Xero client imports",
+  "Payroll payment review",
   "Payment-risk review",
   "Accountant practice workflow",
   "Xero integration",
@@ -547,7 +569,7 @@ function DemoForm() {
         <textarea
           name="message"
           className="min-h-28 rounded-md border border-slate-300 px-3 py-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
-          placeholder="Tell us about your payment-risk review, Xero, client control, or reporting requirements."
+          placeholder="Tell us about your payment-risk review, Xero, payroll output review, client control, or reporting requirements."
         />
       </label>
 
@@ -720,7 +742,7 @@ export default function SentraRiskLandingPage() {
               Client-ready fraud and payment-risk reviews for SMEs.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200 md:text-xl">
-              SentraRisk helps accountants, bookkeepers, and SME finance teams import Xero supplier bills, score payment risk, review suspicious patterns, and export Client Control Packs from one secure dashboard.
+              SentraRisk helps accountants, bookkeepers, and SME finance teams import Xero supplier bills, review payroll payment outputs, score payment risk, and export Client Control Packs from one secure dashboard.
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row">
               <a
@@ -796,7 +818,7 @@ export default function SentraRiskLandingPage() {
                 Built for accountable risk review, not noisy dashboards.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk brings client-level Xero imports, transaction scoring, alert handling, reporting, API keys, and account controls into one operating layer for accountants, bookkeepers, and SME finance teams.
+                SentraRisk brings client-level Xero imports, payroll payment review, transaction scoring, alert handling, reporting, API keys, and account controls into one operating layer for accountants, bookkeepers, and SME finance teams.
               </p>
               <div className="mt-8 grid gap-2">
                 {integrationProof.map((item) => (
@@ -864,7 +886,7 @@ export default function SentraRiskLandingPage() {
                 Built for teams that need risk control without enterprise drag.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk gives lean teams a serious review layer for supplier payments, duplicate-looking transactions, unusual patterns, and evidence-ready reporting.
+                SentraRisk gives lean teams a serious review layer for supplier payments, payroll payment outputs, duplicate-looking transactions, unusual patterns, and evidence-ready reporting.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
@@ -892,7 +914,7 @@ export default function SentraRiskLandingPage() {
                 See SentraRisk Intelligence in action.
               </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Watch a short walkthrough of the dashboard, Xero import flow, transaction scoring workflow, alert review, reporting, and enterprise readiness features.
+                Watch a short walkthrough of the dashboard, Xero import flow, payroll payment review, transaction scoring workflow, alert review, reporting, and enterprise readiness features.
               </p>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <a
@@ -1013,7 +1035,7 @@ export default function SentraRiskLandingPage() {
               Practical fraud-risk workflows your team can run this week.
             </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Use SentraRisk as a client review desk, Xero-backed payment-risk monitor, reporting engine, or scoring layer depending on where your workflow starts.
+                Use SentraRisk as a client review desk, Xero-backed payment-risk monitor, payroll payment review layer, reporting engine, or scoring layer depending on where your workflow starts.
               </p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -1109,7 +1131,7 @@ export default function SentraRiskLandingPage() {
               Connect fraud scoring directly to your operations.
             </h2>
               <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
-              Use Xero-supported imports, secure API keys, or batch uploads to score transactions, then review the same risk outcomes inside the dashboard.
+              Use Xero-supported imports, payroll exports, secure API keys, or batch uploads to score transactions, then review the same risk outcomes inside the dashboard.
             </p>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
@@ -1160,7 +1182,7 @@ Authorization: Bearer YOUR_API_KEY
               Start with a focused 14-day payment-risk review.
             </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-              The SentraRisk pilot gives teams a practical way to test the workflow using sample data, anonymised transaction exports, or Xero supplier bills before moving into a live monthly review process.
+              The SentraRisk pilot gives teams a practical way to test the workflow using sample data, anonymised transaction exports, payroll payment outputs, or Xero supplier bills before moving into a live monthly review process.
             </p>
             <div className="mt-6 rounded-md border border-cyan-200 bg-cyan-50 p-4 text-sm leading-6 text-slate-700">
               <strong className="text-slate-950">Pilot offer:</strong> review a small transaction set, assess the quality of alerts, and produce an example Client Control Pack your team can evaluate.
@@ -1194,7 +1216,7 @@ Authorization: Bearer YOUR_API_KEY
             <div className="mt-5 rounded-2xl bg-slate-950 p-5 text-white">
               <p className="text-sm font-semibold text-cyan-300">Typical pilot outcome</p>
               <p className="mt-3 text-sm leading-6 text-slate-300">
-                A clear view of where SentraRisk fits, which controls to activate first, and whether Xero import, dashboard, file upload, API, or hybrid deployment is the right path.
+                A clear view of where SentraRisk fits, which controls to activate first, and whether Xero import, payroll export review, dashboard, file upload, API, or hybrid deployment is the right path.
               </p>
             </div>
           </div>
@@ -1210,7 +1232,7 @@ Authorization: Bearer YOUR_API_KEY
                 Pricing by risk-control need.
               </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Start with Xero-backed supplier risk review, add Client Control Packs and board reporting, then scale into API access or a custom enterprise deployment.
+                Start with Xero-backed supplier risk review and payroll payment review, add Client Control Packs and board reporting, then scale into API access or a custom enterprise deployment.
               </p>
             </div>
             <div className="grid gap-3 rounded-[24px] border border-slate-200 bg-white p-5 shadow-sm sm:grid-cols-3">
@@ -1287,7 +1309,7 @@ Authorization: Bearer YOUR_API_KEY
           <div className="grid gap-5 md:grid-cols-3">
             {[
               [Shield, "Business account structure", "Admin and user dashboards designed around organisational access."],
-              [Cloud, "Xero-supported workflow", "Import supplier bills from Xero and review them alongside uploaded and API-scored transactions."],
+              [Cloud, "Xero and payroll-ready workflow", "Import supplier bills from Xero and review payroll exports alongside uploaded and API-scored transactions."],
               [LockKeyhole, "Data control", "Designed for controlled environments and accountable review processes."],
             ].map(([Icon, title, text]) => {
               const TypedIcon = Icon as typeof Shield;
@@ -1338,12 +1360,12 @@ Authorization: Bearer YOUR_API_KEY
               Bring real-time risk review into your business.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
-              Speak with SentraRisk Systems about Xero-supported imports, payment-risk review, Client Control Packs, API scoring, and implementation for your organisation.
+              Speak with SentraRisk Systems about Xero-supported imports, payroll payment review, payment-risk controls, Client Control Packs, API scoring, and implementation for your organisation.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
               <div className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
                 <CheckLine text="Receive a focused product walkthrough" />
-                <CheckLine text="Review Xero import and supplier bill scoring" />
+                <CheckLine text="Review Xero import, supplier bill scoring, and payroll payment outputs" />
                 <CheckLine text="Discuss your transaction monitoring workflow" />
               </div>
               <div className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
