@@ -355,7 +355,7 @@ const interestOptions = [
 
 function LogoMark() {
   return (
-    <div className="flex items-center gap-3 rounded-md border border-white/15 bg-white/[0.08] px-3 py-2 shadow-sm backdrop-blur-xl">
+    <div className="smooth-glass flex items-center gap-3 rounded-lg px-3 py-2">
       <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white ring-1 ring-white/20">
         <Image
           src="/sentrarisk-logo.svg"
@@ -377,8 +377,8 @@ function LogoMark() {
 function ProductVisual() {
   return (
     <div className="absolute inset-0 overflow-hidden bg-[#07131f] premium-grid">
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(14,124,134,0.22)_0%,transparent_38%),linear-gradient(250deg,rgba(141,224,215,0.18)_0%,transparent_42%)]" />
-      <div className="absolute left-[58%] top-20 w-[1060px] -translate-x-1/2 overflow-hidden rounded-lg border border-white/12 bg-[#0b1724]/95 shadow-[0_46px_150px_rgba(0,0,0,0.46)] backdrop-blur md:top-20">
+      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(14,124,134,0.18)_0%,transparent_44%),linear-gradient(250deg,rgba(141,224,215,0.14)_0%,transparent_48%)]" />
+      <div className="hero-product-frame absolute left-[55%] top-20 w-[1040px] -translate-x-1/2 overflow-hidden rounded-lg border border-white/10 bg-[#0b1724]/82 shadow-[0_50px_150px_rgba(0,0,0,0.34)] backdrop-blur md:top-20">
         <div className="flex h-14 items-center justify-between border-b border-white/10 bg-white/[0.04] px-5">
           <div className="flex items-center gap-3">
             <Image
@@ -398,8 +398,8 @@ function ProductVisual() {
             Live controls active
           </div>
         </div>
-        <div className="grid grid-cols-[220px_1fr]">
-          <aside className="min-h-[520px] border-r border-white/10 bg-black/25 p-4 text-white">
+        <div className="grid grid-cols-[210px_1fr]">
+          <aside className="min-h-[500px] border-r border-white/10 bg-black/15 p-4 text-white">
             {["Executive View", "Client Accounts", "Integrations", "Risk Queue", "Control Packs", "Governance"].map((item, index) => (
               <div
                 key={item}
@@ -412,14 +412,14 @@ function ProductVisual() {
               </div>
             ))}
           </aside>
-          <div className="bg-[#101b2a] p-5">
+          <div className="bg-[#101b2a]/82 p-5">
             <div className="grid grid-cols-3 gap-3">
               {[
                 ["Records monitored", "12,480", "Live"],
                 ["Priority items", "37", "Review"],
                 ["Control position", "B+", "Evidence"],
               ].map(([label, value, change]) => (
-                <div key={label} className="rounded-md border border-white/10 bg-white/[0.055] p-4 shadow-sm">
+                <div key={label} className="rounded-lg border border-white/10 bg-white/[0.045] p-4 shadow-sm">
                   <p className="text-xs font-medium text-slate-400">{label}</p>
                   <div className="mt-3 flex items-end justify-between">
                     <p className="text-2xl font-semibold text-white">{value}</p>
@@ -430,7 +430,7 @@ function ProductVisual() {
             </div>
 
             <div className="mt-4 grid grid-cols-[1fr_240px] gap-4">
-              <div className="rounded-md border border-white/10 bg-white/[0.06] p-4 shadow-sm">
+              <div className="rounded-lg border border-white/10 bg-white/[0.045] p-4 shadow-sm">
                 <div className="mb-5 flex items-center justify-between">
                   <p className="text-sm font-semibold text-white">Priority risk queue</p>
                   <p className="text-xs text-slate-400">Imported and scored by client account</p>
@@ -453,7 +453,7 @@ function ProductVisual() {
                 </div>
               </div>
 
-              <div className="rounded-md border border-[#8de0d7]/20 bg-slate-950 p-4 text-white shadow-xl">
+              <div className="rounded-lg border border-[#8de0d7]/16 bg-slate-950/86 p-4 text-white shadow-xl">
                 <p className="text-sm font-semibold">Risk distribution</p>
                 <div className="mt-6 flex h-32 items-end gap-2">
                   {[34, 58, 46, 75, 62, 88, 54].map((height, index) => (
@@ -744,7 +744,7 @@ export default function SentraRiskLandingPage() {
           <a href="#" className="shrink-0">
             <LogoMark />
           </a>
-          <div className="hidden items-center gap-7 rounded-md border border-white/15 bg-white/[0.075] px-5 py-3 text-sm font-medium text-slate-200 shadow-sm backdrop-blur-xl md:flex">
+          <div className="smooth-glass hidden items-center gap-7 rounded-lg px-5 py-3 text-sm font-medium text-slate-200 md:flex">
             <a href="#platform" className="hover:text-white">Platform</a>
             <a href="#how-it-works" className="hover:text-white">How it works</a>
             <a href="#who" className="hover:text-white">Who it&apos;s for</a>
@@ -763,7 +763,7 @@ export default function SentraRiskLandingPage() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(94vh-80px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
           <div className="max-w-[700px]">
-            <div className="mb-6 inline-flex items-center gap-2 rounded-md border border-cyan-300/40 bg-white/10 px-4 py-2 text-sm font-semibold text-cyan-100 shadow-sm backdrop-blur">
+            <div className="smooth-glass mb-6 inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-cyan-100">
               <span className="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_16px_rgba(6,182,212,0.65)]" />
               Payment-risk intelligence for accountable finance teams
             </div>
@@ -784,20 +784,20 @@ export default function SentraRiskLandingPage() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
                 href={TRIAL_ENQUIRY_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-cyan-300 px-7 text-sm font-semibold text-slate-950 shadow-[0_20px_50px_rgba(141,224,215,0.22)] transition hover:-translate-y-0.5 hover:bg-cyan-200"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-cyan-300 px-7 text-sm font-semibold text-slate-950 shadow-[0_20px_50px_rgba(141,224,215,0.22)] transition hover:-translate-y-0.5 hover:bg-cyan-200"
               >
                 Start 14-Day Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="#demo"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-white/20 bg-white/10 px-7 text-sm font-semibold text-white shadow-sm backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/15"
+                className="smooth-glass inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5"
               >
                 Speak to SentraRisk <Mail className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
             <div className="mt-7 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
               {metrics.map(([value, label]) => (
-                <div key={value} className="rounded-md border border-white/15 bg-white/[0.075] p-4 shadow-sm backdrop-blur">
+                <div key={value} className="smooth-glass rounded-lg p-4">
                   <p className="text-sm font-semibold text-white">{value}</p>
                   <p className="mt-1 text-sm text-slate-300">{label}</p>
                 </div>
@@ -807,10 +807,10 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200/80 bg-white/75 px-5 py-6 backdrop-blur md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-3 sm:grid-cols-2 lg:grid-cols-4">
+      <section className="proof-rail border-y border-slate-200/70 px-5 py-8 backdrop-blur md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-0 overflow-hidden rounded-lg border border-slate-200/70 bg-white/60 shadow-[0_20px_60px_rgba(15,23,42,0.055)] sm:grid-cols-2 lg:grid-cols-4">
           {premiumStats.map(([value, label]) => (
-            <div key={value} className="flex items-center justify-between rounded-md border border-slate-200 bg-white px-5 py-4 shadow-sm">
+            <div key={value} className="flex items-center justify-between border-b border-slate-200/70 px-5 py-5 last:border-b-0 sm:odd:border-r lg:border-b-0 lg:border-r lg:last:border-r-0">
               <span className="text-xl font-semibold text-slate-950">{value}</span>
               <span className="max-w-32 text-right text-sm font-medium leading-5 text-slate-500">{label}</span>
             </div>
@@ -819,9 +819,9 @@ export default function SentraRiskLandingPage() {
       </section>
 
       <section className="bg-[#07131f] px-5 py-16 text-white md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-6 lg:grid-cols-3">
+        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-3">
           {enterpriseProof.map(([title, text]) => (
-            <div key={title} className="rounded-md border border-white/10 bg-white/[0.045] p-6 shadow-[0_24px_80px_rgba(0,0,0,0.22)]">
+            <div key={title} className="border-l border-[#8de0d7]/35 pl-6">
               <p className="text-sm font-semibold uppercase text-[#8de0d7]">{title}</p>
               <p className="mt-4 text-sm leading-6 text-slate-300">{text}</p>
             </div>
