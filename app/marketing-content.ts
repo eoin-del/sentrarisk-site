@@ -1,27 +1,3 @@
-export const sampleReports = [
-  {
-    title: "Board Summary",
-    description: "A concise executive summary showing risk exposure, alert movement, review outcomes, and recommended next controls.",
-    href: "/samples/sentrarisk-board-summary-sample.pdf",
-    label: "Board-ready PDF",
-    stats: ["37 alerts reviewed", "8 high-risk items", "4 recommended controls"],
-  },
-  {
-    title: "Compliance Pack",
-    description: "An evidence pack for internal review, including reviewer notes, alert status, risk reasons, and decision history.",
-    href: "/samples/sentrarisk-compliance-pack-sample.pdf",
-    label: "Audit-ready PDF",
-    stats: ["Reviewer notes", "Decision trail", "Export evidence"],
-  },
-  {
-    title: "Transaction Risk Report",
-    description: "A transaction-level report explaining score drivers, supplier indicators, duplicate-payment risk, and review recommendations.",
-    href: "/samples/sentrarisk-transaction-risk-report-sample.pdf",
-    label: "Risk detail PDF",
-    stats: ["Risk score 87", "New beneficiary", "Review recommended"],
-  },
-];
-
 export const pilotDeliverables = [
   "Xero supplier bill import or sample transaction file review",
   "Risk scoring walkthrough with reasons and escalation quality",

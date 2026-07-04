@@ -19,8 +19,8 @@ export default function PilotProgrammePage() {
           <Link href="/" className="text-sm font-semibold tracking-wide text-white">
             SentraRisk Systems
           </Link>
-          <Link href="/sample-reports" className="rounded-md border border-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10">
-            Sample reports
+          <Link href={REGISTER_URL} className="rounded-md border border-white/20 px-4 py-2 text-sm font-semibold text-white hover:bg-white/10">
+            Request pilot
           </Link>
         </nav>
         <div className="mx-auto grid max-w-7xl gap-12 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">

@@ -10,8 +10,6 @@ import {
   CircleCheckBig,
   Code2,
   Cloud,
-  Download,
-  FileText,
   Gauge,
   Landmark,
   LockKeyhole,
@@ -23,7 +21,6 @@ import {
   ClipboardCheck,
   Users,
 } from "lucide-react";
-import { sampleReports } from "./marketing-content";
 
 const APP_URL = "https://app.sentrarisksystems.com";
 const CONTACT_EMAIL = "support@sentrarisksystems.com";
@@ -720,7 +717,6 @@ export default function SentraRiskLandingPage() {
             <a href="#who" className="hover:text-white">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-white">Use cases</a>
             <a href={REGISTER_URL} className="hover:text-white">Demo</a>
-            <Link href="/sample-reports" className="hover:text-white">Reports</Link>
             <a href="#pilot" className="hover:text-white">Pilot</a>
             <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white">Contact</a>
           </div>
@@ -1083,46 +1079,6 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="sample-reports" className="border-y border-slate-200 bg-white px-5 py-24 md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-8 lg:grid-cols-[0.8fr_1.2fr] lg:items-end">
-            <div>
-            <p className="text-sm font-semibold uppercase text-cyan-700">Sample reports</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                See the outputs your team can take into a review meeting.
-            </h2>
-              <p className="mt-5 text-base leading-7 text-slate-600">
-                Sample board summaries, compliance packs, and transaction reports make SentraRisk feel tangible before a prospect logs in.
-              </p>
-            </div>
-            <Link
-              href="/sample-reports"
-              className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800 lg:justify-self-end"
-            >
-              View Sample Reports <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {sampleReports.map((report) => (
-              <div key={report.title} className="rounded-md border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                <div className="flex h-11 w-11 items-center justify-center rounded-md bg-cyan-50 text-cyan-700">
-                  <FileText className="h-5 w-5" aria-hidden="true" />
-                </div>
-                <p className="mt-5 text-xs font-semibold uppercase text-cyan-700">{report.label}</p>
-                <h3 className="mt-2 text-xl font-semibold text-slate-950">{report.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{report.description}</p>
-                <a
-                  href={report.href}
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-cyan-700 hover:text-cyan-900"
-                >
-                  Download sample <Download className="h-4 w-4" aria-hidden="true" />
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="api" className="premium-dark px-5 py-24 text-white md:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
           <div>
@@ -1393,7 +1349,6 @@ Authorization: Bearer YOUR_API_KEY
             <Link href="/xero-fraud-detection" className="hover:text-slate-950">Xero Fraud Detection</Link>
             <Link href="/supplier-fraud-detection" className="hover:text-slate-950">Supplier Fraud Detection</Link>
             <Link href="/accountants" className="hover:text-slate-950">Accountants</Link>
-            <Link href="/sample-reports" className="hover:text-slate-950">Sample Reports</Link>
             <Link href="/pilot-programme" className="hover:text-slate-950">Pilot Programme</Link>
             <Link href="/privacy-policy" className="hover:text-slate-950">Privacy Policy</Link>
             <Link href="/terms-of-service" className="hover:text-slate-950">Terms</Link>

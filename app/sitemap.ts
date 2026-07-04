@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/xero-fraud-detection",
     "/supplier-fraud-detection",
     "/accountants",
-    "/sample-reports",
     "/pilot-programme",
     "/privacy-policy",
     "/terms-of-service",
