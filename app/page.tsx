@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import React, { useMemo, useState } from "react";
 import {
-  Activity,
   ArrowRight,
   CheckCircle2,
   CircleCheckBig,
@@ -26,13 +25,6 @@ const APP_URL = "https://app.sentrarisksystems.com";
 const CONTACT_EMAIL = "support@sentrarisksystems.com";
 const REGISTER_URL = `${APP_URL}/register`;
 const TRIAL_ENQUIRY_URL = REGISTER_URL;
-
-const riskRows = [
-  { label: "Same-day threshold pattern", score: "91", status: "Escalate" },
-  { label: "New supplier bank details", score: "82", status: "Review" },
-  { label: "Duplicate-looking bill", score: "76", status: "Check" },
-  { label: "Unusual invoice timing", score: "64", status: "Monitor" },
-];
 
 const capabilities = [
   {
@@ -355,8 +347,8 @@ const interestOptions = [
 
 function LogoMark() {
   return (
-    <div className="smooth-glass flex items-center gap-3 rounded-lg px-3 py-2">
-      <span className="flex h-9 w-9 items-center justify-center rounded-md bg-white ring-1 ring-white/20">
+    <div className="flex items-center gap-3">
+      <span className="flex h-10 w-10 items-center justify-center rounded-md bg-white/95 shadow-[0_16px_45px_rgba(0,0,0,0.18)] ring-1 ring-white/20">
         <Image
           src="/sentrarisk-logo.svg"
           alt="SentraRisk Systems"
@@ -368,7 +360,7 @@ function LogoMark() {
       </span>
       <div className="leading-tight">
         <span className="block text-sm font-semibold text-white">SentraRisk</span>
-        <span className="block text-[11px] font-medium uppercase text-cyan-100">Systems</span>
+        <span className="block text-[11px] font-medium uppercase text-cyan-100/90">Systems</span>
       </div>
     </div>
   );
@@ -376,103 +368,20 @@ function LogoMark() {
 
 function ProductVisual() {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#07131f] premium-grid">
-      <div className="absolute inset-0 bg-[linear-gradient(120deg,rgba(14,124,134,0.18)_0%,transparent_44%),linear-gradient(250deg,rgba(141,224,215,0.14)_0%,transparent_48%)]" />
-      <div className="hero-product-frame absolute left-[55%] top-20 w-[1040px] -translate-x-1/2 overflow-hidden rounded-lg border border-white/10 bg-[#0b1724]/82 shadow-[0_50px_150px_rgba(0,0,0,0.34)] backdrop-blur md:top-20">
-        <div className="flex h-14 items-center justify-between border-b border-white/10 bg-white/[0.04] px-5">
-          <div className="flex items-center gap-3">
-            <Image
-              src="/sentrarisk-logo.svg"
-              alt="SentraRisk Systems logo"
-              width={32}
-              height={32}
-              className="h-8 w-8 rounded-md"
-            />
-            <div>
-              <p className="text-xs font-semibold uppercase text-[#8de0d7]">SentraRisk Command Workspace</p>
-              <p className="text-sm font-semibold text-white">Payment-risk intelligence and control evidence</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-2 rounded-full border border-[#8de0d7]/30 bg-[#8de0d7]/10 px-3 py-1 text-xs font-semibold text-[#8de0d7]">
-            <span className="h-2 w-2 rounded-full bg-emerald-500" />
-            Live controls active
-          </div>
-        </div>
-        <div className="grid grid-cols-[210px_1fr]">
-          <aside className="min-h-[500px] border-r border-white/10 bg-black/15 p-4 text-white">
-            {["Executive View", "Client Accounts", "Integrations", "Risk Queue", "Control Packs", "Governance"].map((item, index) => (
-              <div
-                key={item}
-                className={`mb-2 flex h-10 items-center gap-3 rounded-md px-3 text-sm ${
-                  index === 0 ? "bg-white text-slate-950" : "text-slate-300"
-                }`}
-              >
-                <span className="h-1.5 w-1.5 bg-cyan-400" />
-                {item}
-              </div>
-            ))}
-          </aside>
-          <div className="bg-[#101b2a]/82 p-5">
-            <div className="grid grid-cols-3 gap-3">
-              {[
-                ["Records monitored", "12,480", "Live"],
-                ["Priority items", "37", "Review"],
-                ["Control position", "B+", "Evidence"],
-              ].map(([label, value, change]) => (
-                <div key={label} className="rounded-lg border border-white/10 bg-white/[0.045] p-4 shadow-sm">
-                  <p className="text-xs font-medium text-slate-400">{label}</p>
-                  <div className="mt-3 flex items-end justify-between">
-                    <p className="text-2xl font-semibold text-white">{value}</p>
-                    <p className="text-xs font-medium text-[#8de0d7]">{change}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-4 grid grid-cols-[1fr_240px] gap-4">
-              <div className="rounded-lg border border-white/10 bg-white/[0.045] p-4 shadow-sm">
-                <div className="mb-5 flex items-center justify-between">
-                  <p className="text-sm font-semibold text-white">Priority risk queue</p>
-                  <p className="text-xs text-slate-400">Imported and scored by client account</p>
-                </div>
-                <div className="space-y-3">
-                  {riskRows.map((row) => (
-                    <div key={row.label} className="grid grid-cols-[1fr_56px_90px] items-center gap-3 border-b border-white/10 pb-3 last:border-b-0">
-                      <div className="flex items-center gap-3">
-                        <span className="flex h-8 w-8 items-center justify-center rounded-md bg-rose-400/10 text-rose-200">
-                          <Activity className="h-4 w-4" aria-hidden="true" />
-                        </span>
-                        <p className="text-sm font-medium text-slate-100">{row.label}</p>
-                      </div>
-                      <p className="text-sm font-semibold text-white">{row.score}</p>
-                      <p className="rounded-full bg-white/10 px-2 py-1 text-center text-xs font-medium text-slate-200">
-                        {row.status}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-              </div>
-
-              <div className="rounded-lg border border-[#8de0d7]/16 bg-slate-950/86 p-4 text-white shadow-xl">
-                <p className="text-sm font-semibold">Risk distribution</p>
-                <div className="mt-6 flex h-32 items-end gap-2">
-                  {[34, 58, 46, 75, 62, 88, 54].map((height, index) => (
-                    <span
-                      key={height + index}
-                      className="w-full rounded-t-sm bg-cyan-400"
-                      style={{ height: `${height}%`, opacity: 0.45 + index * 0.06 }}
-                    />
-                  ))}
-                </div>
-                <div className="mt-6 border-t border-white/10 pt-4">
-                  <p className="text-xs text-slate-400">Highest exposure</p>
-                  <p className="mt-1 text-lg font-semibold">Same-day payment pattern</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div className="absolute inset-0 overflow-hidden bg-[#07131f]">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+        className="absolute inset-0 h-full w-full object-cover opacity-[0.28] saturate-[0.85]"
+      >
+        <source src="/sentrarisk-intelligence-demo.mp4" type="video/mp4" />
+      </video>
+      <div className="absolute inset-0 premium-grid opacity-70" />
+      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(3,10,18,0.96)_0%,rgba(7,19,31,0.86)_42%,rgba(7,19,31,0.34)_72%,rgba(141,224,215,0.08)_100%)]" />
+      <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(0deg,#07131f_0%,transparent_100%)]" />
     </div>
   );
 }
@@ -744,7 +653,7 @@ export default function SentraRiskLandingPage() {
           <a href="#" className="shrink-0">
             <LogoMark />
           </a>
-          <div className="smooth-glass hidden items-center gap-7 rounded-lg px-5 py-3 text-sm font-medium text-slate-200 md:flex">
+          <div className="hidden items-center gap-7 border-b border-white/10 pb-2 text-sm font-medium text-slate-300 md:flex">
             <a href="#platform" className="hover:text-white">Platform</a>
             <a href="#how-it-works" className="hover:text-white">How it works</a>
             <a href="#who" className="hover:text-white">Who it&apos;s for</a>
@@ -763,8 +672,8 @@ export default function SentraRiskLandingPage() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(94vh-80px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
           <div className="max-w-[700px]">
-            <div className="smooth-glass mb-6 inline-flex items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold text-cyan-100">
-              <span className="h-2 w-2 rounded-full bg-cyan-500 shadow-[0_0_16px_rgba(6,182,212,0.65)]" />
+            <div className="mb-6 inline-flex items-center gap-3 text-sm font-semibold text-cyan-100">
+              <span className="h-px w-10 bg-[#8de0d7]" />
               Payment-risk intelligence for accountable finance teams
             </div>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-normal text-white md:text-6xl">
@@ -795,11 +704,14 @@ export default function SentraRiskLandingPage() {
                 Speak to SentraRisk <Mail className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-            <div className="mt-7 grid max-w-3xl grid-cols-1 gap-3 sm:grid-cols-3">
+            <div className="mt-8 flex max-w-3xl flex-col gap-3 border-t border-white/10 pt-5 text-sm text-slate-300 sm:flex-row sm:items-center sm:gap-6">
               {metrics.map(([value, label]) => (
-                <div key={value} className="smooth-glass rounded-lg p-4">
-                  <p className="text-sm font-semibold text-white">{value}</p>
-                  <p className="mt-1 text-sm text-slate-300">{label}</p>
+                <div key={value} className="flex items-center gap-3">
+                  <span className="h-1.5 w-1.5 rounded-full bg-[#8de0d7]" />
+                  <p>
+                    <span className="font-semibold text-white">{value}</span>
+                    <span className="text-slate-400"> · {label}</span>
+                  </p>
                 </div>
               ))}
             </div>
@@ -808,11 +720,11 @@ export default function SentraRiskLandingPage() {
       </section>
 
       <section className="proof-rail border-y border-slate-200/70 px-5 py-8 backdrop-blur md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-0 overflow-hidden rounded-lg border border-slate-200/70 bg-white/60 shadow-[0_20px_60px_rgba(15,23,42,0.055)] sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {premiumStats.map(([value, label]) => (
-            <div key={value} className="flex items-center justify-between border-b border-slate-200/70 px-5 py-5 last:border-b-0 sm:odd:border-r lg:border-b-0 lg:border-r lg:last:border-r-0">
+            <div key={value} className="border-l border-cyan-700/25 pl-5">
               <span className="text-xl font-semibold text-slate-950">{value}</span>
-              <span className="max-w-32 text-right text-sm font-medium leading-5 text-slate-500">{label}</span>
+              <p className="mt-1 max-w-48 text-sm font-medium leading-5 text-slate-500">{label}</p>
             </div>
           ))}
         </div>
