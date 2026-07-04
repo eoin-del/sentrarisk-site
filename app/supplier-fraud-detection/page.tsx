@@ -5,7 +5,7 @@ import { SeoLandingPage } from "../seo-pages";
 export const metadata: Metadata = {
   title: "Supplier Fraud Detection Software | SentraRisk Systems",
   description:
-    "Supplier fraud detection for SMEs and finance teams. Score supplier bills, flag risky transactions, review alerts, and export fraud-risk reports.",
+    "Supplier fraud detection for SMEs and finance teams. Score supplier bills, flag risky transactions, review alerts, and retain clear control-pack evidence.",
 };
 
 export default function SupplierFraudDetectionPage() {
@@ -19,12 +19,12 @@ export default function SupplierFraudDetectionPage() {
       points={[
         "Score supplier and invoice activity using clear fraud-risk indicators.",
         "Give reviewers a structured alert queue with status, ownership, and notes.",
-        "Export board summaries, compliance packs, and evidence for internal review.",
+        "Retain board summaries, compliance packs, and evidence for internal review.",
       ]}
       proof={[
         { value: "10k+", label: "Starter transaction volume designed for active SMEs." },
         { value: "Alerts", label: "Structured review queue for risky supplier activity." },
-        { value: "Reports", label: "PDF outputs for board and compliance conversations." },
+        { value: "Control packs", label: "Review outputs for board and compliance conversations." },
       ]}
       sections={[
         {

@@ -151,7 +151,7 @@ const useCases = [
   },
   {
     title: "Board and audit reporting",
-    text: "Turn operational reviews into decision memos, compliance packs, and concise evidence for leadership or client meetings.",
+    text: "Turn operational reviews into decision memos, control packs, and concise evidence for leadership or client meetings.",
     href: "/accountants",
   },
 ];
@@ -169,7 +169,7 @@ const seoLandingPages = [
   },
   {
     title: "Accountants and virtual CFOs",
-    text: "For advisors who want client-ready fraud-risk reports, board summaries, and compliance pack exports.",
+    text: "For advisors who want client-ready payment-risk reviews, board summaries, and control pack exports.",
     href: "/accountants",
   },
 ];
@@ -262,7 +262,7 @@ const pricingPlans = [
       "Payroll export review",
       "Excel upload",
       "Transaction risk scoring",
-      "Basic alerts and reports",
+      "Basic alerts and control packs",
       "Up to 10,000 transactions/month",
     ],
     cta: "Request 14-day trial",
@@ -387,7 +387,7 @@ function ProductVisual() {
         </div>
         <div className="grid grid-cols-[220px_1fr]">
           <aside className="min-h-[520px] border-r border-slate-200 bg-slate-950 p-4 text-white">
-            {["Overview", "Clients", "Xero Import", "Risk Queue", "Control Pack", "Reports"].map((item, index) => (
+            {["Overview", "Clients", "Xero Import", "Risk Queue", "Control Pack", "Settings"].map((item, index) => (
               <div
                 key={item}
                 className={`mb-2 flex h-10 items-center gap-3 rounded-md px-3 text-sm ${
