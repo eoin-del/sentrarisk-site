@@ -325,7 +325,7 @@ const pricingPlans = [
       "Security review support",
     ],
     cta: "Contact us",
-    href: `mailto:${CONTACT_EMAIL}?subject=Enterprise%20plan%20enquiry`,
+    href: "#demo",
     highlighted: false,
   },
 ];
@@ -474,22 +474,42 @@ function CheckLine({ text }: { text: string }) {
 }
 
 function DemoForm() {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = new FormData(event.currentTarget);
+    const field = (name: string) => String(form.get(name) || "").trim();
+    const subject = encodeURIComponent("SentraRisk enquiry");
+    const body = encodeURIComponent(
+      [
+        "New SentraRisk enquiry",
+        "",
+        `Full name: ${field("name")}`,
+        `Work email: ${field("email")}`,
+        `Company: ${field("company")}`,
+        `Role: ${field("role") || "Not provided"}`,
+        `Organisation size: ${field("organisation_size") || "Not provided"}`,
+        `Main interest: ${field("main_interest") || "Not provided"}`,
+        "",
+        "Message:",
+        field("message") || "Not provided",
+      ].join("\n"),
+    );
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+  }
+
   return (
     <form
-      action={`https://formsubmit.co/${CONTACT_EMAIL}`}
-      method="POST"
+      onSubmit={handleSubmit}
       className="rounded-md border border-slate-200 bg-white p-6 shadow-sm"
     >
-      <input type="hidden" name="_subject" value="New SentraRisk trial enquiry" />
-      <input type="hidden" name="_template" value="table" />
-      <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://www.sentrarisksystems.com/thank-you" />
       <div className="flex items-start gap-3">
         <Users className="mt-0.5 h-6 w-6 text-cyan-700" aria-hidden="true" />
         <div>
-          <p className="text-lg font-semibold text-slate-950">Request trial access</p>
+          <p className="text-lg font-semibold text-slate-950">Send an enquiry</p>
           <p className="mt-2 text-sm leading-6 text-slate-600">
-            Tell us a little about your organisation and we will come back to you with the right access details or next step.
+            Tell us a little about your organisation and we will come back to you with the right next step.
           </p>
         </div>
       </div>
@@ -574,7 +594,7 @@ function DemoForm() {
         type="submit"
         className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
       >
-        Send Trial Enquiry <Mail className="h-4 w-4" aria-hidden="true" />
+        Send Enquiry Email <Mail className="h-4 w-4" aria-hidden="true" />
       </button>
     </form>
   );
@@ -718,7 +738,7 @@ export default function SentraRiskLandingPage() {
             <a href="#use-cases" className="hover:text-white">Use cases</a>
             <a href={REGISTER_URL} className="hover:text-white">Demo</a>
             <a href="#pilot" className="hover:text-white">Pilot</a>
-            <a href={`mailto:${CONTACT_EMAIL}`} className="hover:text-white">Contact</a>
+            <a href="#demo" className="hover:text-white">Contact</a>
           </div>
           <a
             href={APP_URL}
@@ -1151,10 +1171,10 @@ Authorization: Bearer YOUR_API_KEY
                 View Pilot Programme <Rocket className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
-                href={`mailto:${CONTACT_EMAIL}?subject=SentraRisk%20pilot%20programme`}
+                href="#demo"
                 className="inline-flex h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
               >
-                Email the Team
+                Send Enquiry
               </a>
             </div>
           </div>
