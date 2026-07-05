@@ -20,6 +20,6 @@ export const pilotTimeline = [
   {
     phase: "Decision",
     timing: "Day 11-14",
-    text: "Review findings, confirm pricing fit, and decide whether Starter, Compliance, Growth, or Enterprise is right.",
+    text: "Review findings, confirm pricing fit, and decide whether Starter, Compliance, Practice, or Enterprise is right.",
   },
 ];

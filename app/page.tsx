@@ -257,7 +257,7 @@ const faqs = [
 const pricingPlans = [
   {
     name: "Starter",
-    price: "€149",
+    price: "€199",
     cadence: "/month",
     description: "For small companies that want Xero-backed supplier risk checks and basic reporting.",
     features: [
@@ -276,7 +276,7 @@ const pricingPlans = [
   },
   {
     name: "Compliance",
-    price: "€299",
+    price: "€499",
     cadence: "/month",
     description: "For accountants, bookkeepers, virtual CFOs, and operators who need client-ready control packs.",
     features: [
@@ -294,15 +294,16 @@ const pricingPlans = [
     highlighted: true,
   },
   {
-    name: "Growth",
-    price: "€499",
+    name: "Practice",
+    price: "€999",
     cadence: "/month",
-    description: "For finance teams that need API access, higher transaction volume, and custom review workflows.",
+    description: "For accounting practices, bookkeeping firms, and advisory teams managing multiple client workflows.",
     features: [
       "10 users",
       "API keys",
       "Xero supplier bill imports",
       "Payroll payment output review",
+      "Client workflow management",
       "Bulk upload",
       "Custom review workflows",
       "Email alerts",
