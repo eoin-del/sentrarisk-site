@@ -60,8 +60,8 @@ const capabilities = [
 ];
 
 const metrics = [
-  ["Control Packs", "Evidence-ready monthly outputs"],
-  ["Xero and payroll", "Supplier bills and payroll payment review"],
+  ["10,000+ records", "Review high-volume files in minutes"],
+  ["Audit-ready", "Reports and decision evidence"],
   ["Human-led", "Automation supports the final decision"],
 ];
 
@@ -70,6 +70,25 @@ const premiumStats = [
   ["Explain", "Risk reasons and evidence"],
   ["Decide", "Reviewer notes and ownership"],
   ["Report", "Board-ready control packs"],
+];
+
+const comparisonRows = [
+  {
+    without: "Manual spreadsheet checks across bills, payments, and client files.",
+    with: "Centralised transaction review with clear scoring, reasons, and status.",
+  },
+  {
+    without: "Duplicate-looking payments and supplier changes can be missed until after payment.",
+    with: "Duplicate indicators, new beneficiaries, unusual amounts, and threshold patterns are surfaced earlier.",
+  },
+  {
+    without: "Review notes, evidence, and follow-up actions sit across emails or separate files.",
+    with: "Reviewer notes, ownership, archive history, and Client Control Packs stay together.",
+  },
+  {
+    without: "Difficult to show clients or leadership what was reviewed and why it mattered.",
+    with: "Audit-ready reports explain risk drivers, outcomes, and recommended next controls.",
+  },
 ];
 
 const enterpriseProof = [
@@ -607,10 +626,10 @@ export default function SentraRiskLandingPage() {
               Payment-risk intelligence for accountable finance teams
             </div>
             <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-normal text-white md:text-6xl">
-              Control payment risk before it becomes financial loss.
+              Stop duplicate payments and supplier fraud before money leaves your business.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 md:text-lg">
-              SentraRisk gives accountants, bookkeepers, and SME finance teams an enterprise-grade review layer for supplier bills, payroll payment outputs, duplicate-looking activity, unusual payment patterns, and client-ready evidence packs.
+              SentraRisk helps accountants and finance teams detect risky transactions, review payment anomalies, and produce audit-ready reports in minutes.
             </p>
             <div className="mt-5 grid max-w-2xl gap-2 sm:grid-cols-2">
               {operatingPrinciples.map((item) => (
@@ -657,6 +676,45 @@ export default function SentraRiskLandingPage() {
               <p className="mt-1 max-w-48 text-sm font-medium leading-5 text-slate-500">{label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="border-b border-slate-200 bg-white px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase text-cyan-700">Why it matters</p>
+              <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+                Replace scattered checks with a controlled review process.
+              </h2>
+              <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
+                Finance teams already know fraud risk matters. The harder part is finding the warning signs early, documenting the review, and keeping the final decision accountable.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-2">
+              <div className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm">
+                <p className="text-sm font-semibold uppercase text-slate-500">Without SentraRisk</p>
+                <div className="mt-5 space-y-4">
+                  {comparisonRows.map((row) => (
+                    <div key={row.without} className="rounded-md border border-slate-200 bg-white p-4 text-sm leading-6 text-slate-600">
+                      {row.without}
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-lg border border-cyan-200 bg-[#f3fbfb] p-5 shadow-[0_18px_55px_rgba(14,124,134,0.08)]">
+                <p className="text-sm font-semibold uppercase text-cyan-700">With SentraRisk</p>
+                <div className="mt-5 space-y-4">
+                  {comparisonRows.map((row) => (
+                    <div key={row.with} className="flex gap-3 rounded-md border border-cyan-100 bg-white p-4 text-sm leading-6 text-slate-700">
+                      <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-cyan-700" aria-hidden="true" />
+                      <span>{row.with}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
