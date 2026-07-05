@@ -11,6 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/pilot-programme",
     "/privacy-policy",
     "/terms-of-service",
+    "/data-processing",
+    "/refund-policy",
     "/security-statement",
   ];
 
