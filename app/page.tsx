@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import React, { useMemo, useState } from "react";
+import React from "react";
 import {
   ArrowRight,
   CheckCircle2,
@@ -202,14 +202,6 @@ const trustSignals = [
   "Designed for lean teams that need practical payment-risk visibility without enterprise complexity.",
 ];
 
-const riskReasons = {
-  amount: "Transaction amount is above normal SME supplier review thresholds.",
-  supplier: "Supplier is new or has limited payment history.",
-  beneficiary: "Beneficiary details changed or are newly introduced.",
-  crypto: "Source-of-funds or external exposure adds additional review pressure.",
-  invoice: "Invoice timing or pattern is unusual for the supplier relationship.",
-};
-
 const pilotSteps = [
   "Set up one practice, company, or client workflow using Xero, payroll exports, spreadsheet data, or sample transactions.",
   "Run a focused review period covering alerts, risk reasons, duplicate checks, and Client Control Pack quality.",
@@ -370,18 +362,66 @@ function LogoMark() {
 function ProductVisual() {
   return (
     <div className="absolute inset-0 overflow-hidden bg-[#07131f]">
-      <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        preload="metadata"
-        className="absolute inset-0 h-full w-full object-cover opacity-[0.28] saturate-[0.85]"
-      >
-        <source src="/sentrarisk-intelligence-demo.mp4" type="video/mp4" />
-      </video>
-      <div className="absolute inset-0 premium-grid opacity-70" />
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(3,10,18,0.96)_0%,rgba(7,19,31,0.86)_42%,rgba(7,19,31,0.34)_72%,rgba(141,224,215,0.08)_100%)]" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_16%,rgba(141,224,215,0.18)_0%,transparent_34%),linear-gradient(125deg,#030a12_0%,#07131f_45%,#0d2634_100%)]" />
+      <div className="absolute inset-0 premium-grid opacity-45" />
+      <div className="absolute right-[-7rem] top-24 hidden w-[54rem] rotate-[-5deg] rounded-2xl border border-white/10 bg-white/[0.07] p-5 shadow-[0_50px_140px_rgba(0,0,0,0.42)] backdrop-blur-xl lg:block">
+        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+          <div>
+            <div className="text-xs font-semibold uppercase text-[#8de0d7]">Finance control centre</div>
+            <div className="mt-1 text-lg font-semibold text-white">Payment risk overview</div>
+          </div>
+          <div className="rounded-md border border-[#8de0d7]/25 bg-[#8de0d7]/12 px-3 py-2 text-xs font-semibold text-[#8de0d7]">
+            Live review
+          </div>
+        </div>
+        <div className="mt-5 grid gap-4 md:grid-cols-3">
+          {[
+            ["Risk exposure", "18", "items require review"],
+            ["Control score", "84", "improving this month"],
+            ["Client packs", "7", "ready to send"],
+          ].map(([label, value, detail]) => (
+            <div key={label} className="rounded-lg border border-white/10 bg-white/[0.06] p-4">
+              <div className="text-xs font-semibold uppercase text-slate-400">{label}</div>
+              <div className="mt-3 text-3xl font-semibold text-white">{value}</div>
+              <div className="mt-1 text-xs text-slate-400">{detail}</div>
+            </div>
+          ))}
+        </div>
+        <div className="mt-5 grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
+          <div className="rounded-lg border border-white/10 bg-white/[0.055] p-4">
+            <div className="flex items-center justify-between">
+              <div className="text-sm font-semibold text-white">Alert movement</div>
+              <div className="text-xs font-semibold text-[#8de0d7]">30 day view</div>
+            </div>
+            <div className="mt-6 flex h-36 items-end gap-3">
+              {[42, 58, 46, 72, 61, 88, 67, 79].map((height, index) => (
+                <div key={height + index} className="flex flex-1 items-end rounded-t-md bg-white/8">
+                  <span
+                    className="w-full rounded-t-md bg-[linear-gradient(180deg,#8de0d7,#0e7c86)]"
+                    style={{ height: `${height}%` }}
+                  />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="rounded-lg border border-white/10 bg-white/[0.055] p-4">
+            <div className="text-sm font-semibold text-white">Priority queue</div>
+            <div className="mt-5 space-y-3">
+              {[
+                ["New beneficiary", "High"],
+                ["Duplicate-looking bill", "Review"],
+                ["Payroll variance", "Monitor"],
+              ].map(([label, level]) => (
+                <div key={label} className="flex items-center justify-between rounded-md border border-white/10 bg-[#07131f]/60 px-3 py-3">
+                  <span className="text-xs font-semibold text-slate-300">{label}</span>
+                  <span className="rounded-full bg-[#8de0d7]/12 px-2.5 py-1 text-[11px] font-semibold text-[#8de0d7]">{level}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(3,10,18,0.98)_0%,rgba(7,19,31,0.92)_44%,rgba(7,19,31,0.42)_76%,rgba(141,224,215,0.08)_100%)]" />
       <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(0deg,#07131f_0%,transparent_100%)]" />
     </div>
   );
@@ -520,126 +560,6 @@ function DemoForm() {
         Send Enquiry Email <Mail className="h-4 w-4" aria-hidden="true" />
       </button>
     </form>
-  );
-}
-
-function RiskScoreDemo() {
-  const [amount, setAmount] = useState(12850);
-  const [supplierAge, setSupplierAge] = useState(14);
-  const [newBeneficiary, setNewBeneficiary] = useState(true);
-  const [cryptoExposure, setCryptoExposure] = useState(false);
-  const [invoiceAnomaly, setInvoiceAnomaly] = useState(true);
-
-  const result = useMemo(() => {
-    const amountScore = amount > 20000 ? 28 : amount > 10000 ? 20 : amount > 5000 ? 12 : 4;
-    const supplierScore = supplierAge < 7 ? 24 : supplierAge < 30 ? 16 : supplierAge < 90 ? 8 : 2;
-    const score = Math.min(
-      98,
-      14 +
-        amountScore +
-        supplierScore +
-        (newBeneficiary ? 18 : 0) +
-        (cryptoExposure ? 16 : 0) +
-        (invoiceAnomaly ? 14 : 0),
-    );
-
-    const reasons = [
-      amount > 10000 ? riskReasons.amount : null,
-      supplierAge < 30 ? riskReasons.supplier : null,
-      newBeneficiary ? riskReasons.beneficiary : null,
-      cryptoExposure ? riskReasons.crypto : null,
-      invoiceAnomaly ? riskReasons.invoice : null,
-    ].filter(Boolean) as string[];
-
-    return {
-      score,
-      level: score >= 75 ? "High" : score >= 50 ? "Review" : "Monitor",
-      action: score >= 75 ? "Escalate before approval" : score >= 50 ? "Review supporting evidence" : "Keep in monitoring queue",
-      reasons: reasons.length ? reasons : ["No major risk driver selected. Keep normal monitoring active."],
-    };
-  }, [amount, supplierAge, newBeneficiary, cryptoExposure, invoiceAnomaly]);
-
-  return (
-    <div className="grid gap-6 rounded-lg border border-slate-200 bg-white p-5 shadow-[0_28px_90px_rgba(15,23,42,0.08)] lg:grid-cols-[0.95fr_1.05fr]">
-      <div className="rounded-md bg-slate-50 p-5">
-        <div className="flex items-center gap-3">
-          <div className="flex h-11 w-11 items-center justify-center rounded-md bg-slate-950 text-cyan-300">
-            <Gauge className="h-5 w-5" aria-hidden="true" />
-          </div>
-          <div>
-            <p className="text-sm font-semibold text-slate-950">Try the risk scorer</p>
-            <p className="text-xs text-slate-500">Example scoring preview</p>
-          </div>
-        </div>
-
-        <div className="mt-6 space-y-5">
-          <label className="grid gap-2 text-sm font-semibold text-slate-700">
-            Transaction amount: €{amount.toLocaleString("en-IE")}
-            <input
-              type="range"
-              min="500"
-              max="50000"
-              step="250"
-              value={amount}
-              onChange={(event) => setAmount(Number(event.target.value))}
-              className="accent-cyan-700"
-            />
-          </label>
-
-          <label className="grid gap-2 text-sm font-semibold text-slate-700">
-            Supplier age: {supplierAge} days
-            <input
-              type="range"
-              min="1"
-              max="180"
-              step="1"
-              value={supplierAge}
-              onChange={(event) => setSupplierAge(Number(event.target.value))}
-              className="accent-cyan-700"
-            />
-          </label>
-
-          {[
-            ["New beneficiary", newBeneficiary, setNewBeneficiary],
-            ["External exposure", cryptoExposure, setCryptoExposure],
-            ["Invoice anomaly", invoiceAnomaly, setInvoiceAnomaly],
-          ].map(([label, checked, setter]) => (
-            <label key={label as string} className="flex items-center justify-between rounded-md border border-slate-200 bg-white px-4 py-3 text-sm font-semibold text-slate-700">
-              {label as string}
-              <input
-                type="checkbox"
-                checked={checked as boolean}
-                onChange={(event) => (setter as React.Dispatch<React.SetStateAction<boolean>>)(event.target.checked)}
-                className="h-5 w-5 accent-cyan-700"
-              />
-            </label>
-          ))}
-        </div>
-      </div>
-
-      <div className="rounded-md bg-slate-950 p-6 text-white">
-        <p className="text-sm font-semibold uppercase text-cyan-300">Risk result</p>
-        <div className="mt-5 flex items-end justify-between gap-4">
-          <div>
-            <p className="text-6xl font-semibold tracking-normal">{result.score}</p>
-            <p className="mt-2 text-sm text-slate-300">Risk score out of 100</p>
-          </div>
-          <span className="rounded-full bg-cyan-300 px-4 py-2 text-sm font-semibold text-slate-950">{result.level}</span>
-        </div>
-        <div className="mt-6 rounded-md border border-white/10 bg-white/5 p-4">
-          <p className="text-sm font-semibold text-white">Recommended action</p>
-          <p className="mt-2 text-sm leading-6 text-slate-300">{result.action}</p>
-        </div>
-        <div className="mt-5 space-y-3">
-          {result.reasons.map((reason) => (
-            <div key={reason} className="flex gap-3 text-sm leading-6 text-slate-300">
-              <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-cyan-300" aria-hidden="true" />
-              {reason}
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
   );
 }
 
@@ -943,27 +863,6 @@ export default function SentraRiskLandingPage() {
               </article>
             ))}
           </div>
-        </div>
-      </section>
-
-      <section id="risk-scorer" className="border-y border-slate-200 bg-slate-50 px-5 py-24 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.7fr_1.3fr] lg:items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase text-cyan-700">Interactive demo</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-              Score a sample transaction before booking a call.
-            </h2>
-            <p className="mt-5 text-base leading-7 text-slate-600">
-              Adjust a sample transaction and see how SentraRisk turns risk indicators into a score, reasons, and a recommended review action.
-            </p>
-            <a
-              href={TRIAL_ENQUIRY_URL}
-              className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
-            >
-              Request Trial Access <ArrowRight className="h-4 w-4" aria-hidden="true" />
-            </a>
-          </div>
-          <RiskScoreDemo />
         </div>
       </section>
 
