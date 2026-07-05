@@ -579,16 +579,25 @@ export default function SentraRiskLandingPage() {
             <a href="#how-it-works" className="hover:text-white">How it works</a>
             <a href="#who" className="hover:text-white">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-white">Use cases</a>
+            <a href="#pricing" className="hover:text-white">Pricing</a>
             <a href={REGISTER_URL} className="hover:text-white">Demo</a>
             <a href="#pilot" className="hover:text-white">Pilot</a>
             <a href="#demo" className="hover:text-white">Contact</a>
           </div>
-          <a
-            href={APP_URL}
-            className="inline-flex h-10 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-slate-950 shadow-lg shadow-black/20 transition hover:bg-cyan-100"
-          >
-            Login
-          </a>
+          <div className="flex items-center gap-2">
+            <a
+              href="#pricing"
+              className="hidden h-10 items-center justify-center rounded-md border border-white/15 bg-white/10 px-4 text-sm font-semibold text-white shadow-lg shadow-black/10 transition hover:bg-white/15 sm:inline-flex"
+            >
+              Pricing
+            </a>
+            <a
+              href={APP_URL}
+              className="inline-flex h-10 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-slate-950 shadow-lg shadow-black/20 transition hover:bg-cyan-100"
+            >
+              Login
+            </a>
+          </div>
         </nav>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(94vh-80px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
