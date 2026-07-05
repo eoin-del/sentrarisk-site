@@ -853,55 +853,6 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="product-demo" className="px-5 py-24 md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[0.65fr_1.35fr] lg:items-center">
-            <div>
-              <p className="text-sm font-semibold uppercase text-cyan-700">Product demo</p>
-              <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                A serious operating layer for payment-risk review.
-              </h2>
-              <p className="mt-5 text-base leading-7 text-slate-600">
-                Watch how SentraRisk brings dashboard oversight, Xero import, payroll payment review, transaction scoring, alert handling, reporting, and enterprise readiness into one controlled workflow.
-              </p>
-              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                <a
-                  href={TRIAL_ENQUIRY_URL}
-                  className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
-                >
-                  Request Trial Access <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                </a>
-                <a
-                  href={REGISTER_URL}
-                  className="inline-flex h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
-                >
-                  Book a Walkthrough
-                </a>
-              </div>
-            </div>
-            <div className="overflow-hidden rounded-lg border border-slate-800 bg-slate-950 p-3 shadow-[0_40px_120px_rgba(15,23,42,0.28)]">
-              <div className="mb-3 flex items-center justify-between px-2 pt-1">
-                <div className="flex gap-2">
-                  <span className="h-3 w-3 rounded-full bg-rose-400" />
-                  <span className="h-3 w-3 rounded-full bg-amber-400" />
-                  <span className="h-3 w-3 rounded-full bg-emerald-400" />
-                </div>
-                <span className="text-xs font-semibold text-slate-400">SentraRisk live demo</span>
-              </div>
-              <video
-                controls
-                preload="metadata"
-                playsInline
-                className="aspect-video w-full rounded-md bg-black"
-              >
-                <source src="/sentrarisk-intelligence-demo.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section className="border-y border-slate-200 bg-white px-5 py-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div>
