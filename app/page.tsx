@@ -13,6 +13,7 @@ import {
   Landmark,
   LockKeyhole,
   Mail,
+  Newspaper,
   Rocket,
   Shield,
   Siren,
@@ -582,6 +583,109 @@ function DemoForm() {
   );
 }
 
+function NewsletterForm() {
+  function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+
+    const form = new FormData(event.currentTarget);
+    const field = (name: string) => String(form.get(name) || "").trim();
+    const consent = form.get("newsletter_consent") === "on";
+
+    if (!consent) return;
+
+    const subject = encodeURIComponent("SentraRisk monthly newsletter signup");
+    const body = encodeURIComponent(
+      [
+        "New SentraRisk monthly newsletter signup",
+        "",
+        `Full name: ${field("newsletter_name") || "Not provided"}`,
+        `Work email: ${field("newsletter_email")}`,
+        `Company: ${field("newsletter_company") || "Not provided"}`,
+        `Role: ${field("newsletter_role") || "Not provided"}`,
+        "",
+        "Consent:",
+        "The person ticked the newsletter consent box on the SentraRisk website.",
+        "",
+        "Newsletter interest:",
+        "Monthly practical notes on payment risk, supplier fraud, finance controls, Xero-supported review workflows, payroll payment checks, and SentraRisk product updates.",
+      ].join("\n"),
+    );
+
+    window.location.href = `mailto:${CONTACT_EMAIL}?subject=${subject}&body=${body}`;
+  }
+
+  return (
+    <form onSubmit={handleSubmit} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
+      <div className="flex items-start gap-3">
+        <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-md bg-cyan-50">
+          <Newspaper className="h-6 w-6 text-cyan-700" aria-hidden="true" />
+        </div>
+        <div>
+          <p className="text-lg font-semibold text-slate-950">Join the monthly risk letter</p>
+          <p className="mt-2 text-sm leading-6 text-slate-600">
+            Practical notes for accountants, finance teams, and SMEs on supplier fraud, duplicate payments, payroll payment review, and control evidence.
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-6 grid gap-4 sm:grid-cols-2">
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Full name
+          <input
+            name="newsletter_name"
+            autoComplete="name"
+            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            placeholder="Your name"
+          />
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Work email
+          <input
+            required
+            type="email"
+            name="newsletter_email"
+            autoComplete="email"
+            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            placeholder="name@company.com"
+          />
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Company
+          <input
+            name="newsletter_company"
+            autoComplete="organization"
+            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            placeholder="Company name"
+          />
+        </label>
+        <label className="grid gap-2 text-sm font-medium text-slate-700">
+          Role
+          <input
+            name="newsletter_role"
+            autoComplete="organization-title"
+            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            placeholder="Finance, compliance, founder..."
+          />
+        </label>
+      </div>
+
+      <label className="mt-4 flex gap-3 rounded-md border border-slate-200 bg-slate-50 p-3 text-sm leading-6 text-slate-600">
+        <input required type="checkbox" name="newsletter_consent" className="mt-1 h-4 w-4 shrink-0 accent-cyan-700" />
+        <span>
+          I agree to receive the SentraRisk monthly newsletter and understand I can unsubscribe at any time by contacting SentraRisk.
+        </span>
+      </label>
+
+      <button
+        type="submit"
+        className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+      >
+        Sign up to the newsletter <ArrowRight className="h-4 w-4" aria-hidden="true" />
+      </button>
+    </form>
+  );
+}
+
 export default function SentraRiskLandingPage() {
   return (
     <main className="premium-shell min-h-screen text-slate-950">
@@ -601,6 +705,7 @@ export default function SentraRiskLandingPage() {
             <a href="#pricing" className="hover:text-white">Pricing</a>
             <a href={REGISTER_URL} className="hover:text-white">Demo</a>
             <a href="#pilot" className="hover:text-white">Pilot</a>
+            <a href="#newsletter" className="hover:text-white">Newsletter</a>
             <a href="#demo" className="hover:text-white">Contact</a>
           </div>
           <div className="flex items-center gap-2">
@@ -1162,6 +1267,34 @@ Authorization: Bearer YOUR_API_KEY
               );
             })}
           </div>
+        </div>
+      </section>
+
+      <section id="newsletter" className="border-t border-slate-200 bg-white px-5 py-20 md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1fr] lg:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase text-cyan-700">Monthly newsletter</p>
+            <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+              Useful fraud-risk notes for finance teams.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
+              A short monthly email covering practical fraud-risk controls, supplier payment warning signs, payroll payment review, Xero-supported workflows, and SentraRisk product updates.
+            </p>
+            <div className="mt-8 grid gap-3 text-sm leading-6 text-slate-600 sm:grid-cols-2">
+              {[
+                "Payment-risk and duplicate-payment checks",
+                "Supplier and beneficiary warning signs",
+                "Accountant-friendly client control ideas",
+                "Product updates without noisy sales emails",
+              ].map((item) => (
+                <div key={item} className="flex gap-2 rounded-md border border-slate-200 bg-slate-50 p-3 font-medium">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-700" aria-hidden="true" />
+                  {item}
+                </div>
+              ))}
+            </div>
+          </div>
+          <NewsletterForm />
         </div>
       </section>
 
