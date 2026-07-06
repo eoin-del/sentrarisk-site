@@ -380,54 +380,6 @@ function LogoMark() {
   );
 }
 
-function ProductVisual() {
-  return (
-    <div className="hero-stage absolute inset-0 overflow-hidden">
-      <div className="absolute inset-y-0 right-0 hidden w-[45%] rounded-bl-[7rem] bg-[linear-gradient(145deg,#07131f_0%,#0b2730_58%,#102033_100%)] shadow-[inset_28px_0_70px_rgba(255,255,255,0.04)] lg:block" />
-      <div className="absolute right-[5%] top-32 hidden w-[32rem] rounded-[1.75rem] border border-white/80 bg-white/94 p-5 shadow-[0_34px_100px_rgba(15,23,42,0.20)] backdrop-blur-xl lg:block">
-        <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-          <div className="text-lg font-semibold text-slate-950">SentraRisk overview</div>
-          <div className="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-2 text-xs font-semibold text-cyan-800">
-            Ready for review
-          </div>
-        </div>
-        <div className="mt-5 grid gap-3 md:grid-cols-3">
-          {[
-            ["Reviewed", "1,248", "records checked"],
-            ["Flagged", "11", "need attention"],
-            ["Pack", "Ready", "client output"],
-          ].map(([label, value, detail]) => (
-            <div key={label} className="rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
-              <div className="text-xs font-semibold uppercase text-slate-500">{label}</div>
-              <div className="mt-3 text-2xl font-semibold text-slate-950">{value}</div>
-              <div className="mt-1 text-xs text-slate-500">{detail}</div>
-            </div>
-          ))}
-        </div>
-        <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          {[
-            ["Duplicate-looking supplier bill", "Review", "Same supplier, close amount, short time window"],
-            ["New bank details", "Hold", "Supplier payment route changed"],
-            ["Payroll variance", "Explain", "Amount differs from expected pattern"],
-          ].map(([label, action, detail]) => (
-            <div key={label} className="grid gap-2 border-b border-slate-200 px-4 py-3 last:border-b-0 md:grid-cols-[1fr_auto]">
-              <div>
-                <p className="text-sm font-semibold text-slate-950">{label}</p>
-                <p className="mt-1 text-xs leading-5 text-slate-500">{detail}</p>
-              </div>
-              <span className="h-fit rounded-full bg-slate-950 px-3 py-1 text-xs font-semibold text-white">{action}</span>
-            </div>
-          ))}
-        </div>
-        <div className="mt-4 rounded-2xl bg-slate-950 p-4 text-sm leading-6 text-slate-300">
-          Evidence notes, reviewer decisions, and client pack outputs stay together.
-        </div>
-      </div>
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(0deg,#f7faf9_0%,rgba(247,250,249,0)_100%)]" />
-    </div>
-  );
-}
-
 function SectionHeader({
   eyebrow,
   title,
@@ -617,9 +569,8 @@ function HubSpotNewsletterForm() {
 export default function SentraRiskLandingPage() {
   return (
     <main className="fluid-shell min-h-screen text-slate-950">
-      <section className="relative min-h-[92vh] overflow-hidden">
-        <ProductVisual />
-
+      <section className="hero-stage relative min-h-[92vh] overflow-hidden">
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(0deg,#f7faf9_0%,rgba(247,250,249,0)_100%)]" />
         <nav className="relative z-10 mx-auto mt-4 flex max-w-7xl items-center justify-between gap-3 rounded-2xl border border-white/80 bg-white/88 px-4 py-3 shadow-[0_18px_55px_rgba(15,23,42,0.08)] backdrop-blur-xl md:px-5">
           <a href="#" className="shrink-0">
             <LogoMark />
@@ -660,7 +611,7 @@ export default function SentraRiskLandingPage() {
         </nav>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(92vh-88px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
-          <div className="hero-copy-panel max-w-[620px] rounded-[2rem] p-6 md:p-8">
+          <div className="hero-copy-panel max-w-[720px] rounded-[2rem] p-6 md:p-8">
             <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white/90 px-4 py-2 text-sm font-semibold text-cyan-900 shadow-[0_12px_28px_rgba(14,124,134,0.08)] backdrop-blur">
               Irish-built software for SME finance teams
             </div>
