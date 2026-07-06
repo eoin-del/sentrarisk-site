@@ -362,7 +362,7 @@ const interestOptions = [
 function LogoMark() {
   return (
     <div className="flex items-center gap-3">
-      <span className="flex h-10 w-10 items-center justify-center rounded-md bg-white/95 shadow-[0_16px_45px_rgba(0,0,0,0.18)] ring-1 ring-white/20">
+      <span className="flex h-10 w-10 items-center justify-center rounded-md bg-white shadow-sm ring-1 ring-slate-200">
         <Image
           src="/sentrarisk-logo.svg"
           alt="SentraRisk Systems"
@@ -373,8 +373,8 @@ function LogoMark() {
         />
       </span>
       <div className="leading-tight">
-        <span className="block text-sm font-semibold text-white">SentraRisk</span>
-        <span className="block text-[11px] font-medium uppercase text-cyan-100/90">Systems</span>
+        <span className="block text-sm font-semibold text-slate-950">SentraRisk</span>
+        <span className="block text-[11px] font-medium uppercase text-cyan-800">Systems</span>
       </div>
     </div>
   );
@@ -382,69 +382,83 @@ function LogoMark() {
 
 function ProductVisual() {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#07131f]">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_82%_16%,rgba(141,224,215,0.18)_0%,transparent_34%),linear-gradient(125deg,#030a12_0%,#07131f_45%,#0d2634_100%)]" />
-      <div className="absolute inset-0 premium-grid opacity-45" />
-      <div className="absolute right-[-7rem] top-24 hidden w-[54rem] rotate-[-5deg] rounded-2xl border border-white/10 bg-white/[0.07] p-5 shadow-[0_50px_140px_rgba(0,0,0,0.42)] backdrop-blur-xl lg:block">
-        <div className="flex items-center justify-between border-b border-white/10 pb-4">
+    <div className="absolute inset-0 overflow-hidden bg-[#f7faf9]">
+      <div className="absolute inset-0 bg-[linear-gradient(135deg,#f7faf9_0%,#ffffff_36%,#eaf4f2_100%)]" />
+      <div className="absolute inset-y-0 right-0 hidden w-[45%] bg-[#0b1f24] lg:block" />
+      <div className="absolute right-[5%] top-32 hidden w-[32rem] rounded-md border border-slate-200 bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.12)] lg:block">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-4">
           <div>
-            <div className="text-xs font-semibold uppercase text-[#8de0d7]">Finance control centre</div>
-            <div className="mt-1 text-lg font-semibold text-white">Payment risk overview</div>
+            <div className="text-xs font-semibold uppercase text-cyan-700">Monthly client review</div>
+            <div className="mt-1 text-lg font-semibold text-slate-950">Payment control summary</div>
           </div>
-          <div className="rounded-md border border-[#8de0d7]/25 bg-[#8de0d7]/12 px-3 py-2 text-xs font-semibold text-[#8de0d7]">
-            Live review
+          <div className="rounded-md border border-cyan-200 bg-cyan-50 px-3 py-2 text-xs font-semibold text-cyan-800">
+            Ready for review
           </div>
         </div>
-        <div className="mt-5 grid gap-4 md:grid-cols-3">
+        <div className="mt-5 grid gap-3 md:grid-cols-3">
           {[
-            ["Risk exposure", "18", "items require review"],
-            ["Control score", "84", "improving this month"],
-            ["Client packs", "7", "ready to send"],
+            ["Reviewed", "1,248", "records checked"],
+            ["Flagged", "11", "need attention"],
+            ["Pack", "Ready", "client output"],
           ].map(([label, value, detail]) => (
-            <div key={label} className="rounded-lg border border-white/10 bg-white/[0.06] p-4">
-              <div className="text-xs font-semibold uppercase text-slate-400">{label}</div>
-              <div className="mt-3 text-3xl font-semibold text-white">{value}</div>
-              <div className="mt-1 text-xs text-slate-400">{detail}</div>
+            <div key={label} className="rounded-md border border-slate-200 bg-slate-50 p-4">
+              <div className="text-xs font-semibold uppercase text-slate-500">{label}</div>
+              <div className="mt-3 text-2xl font-semibold text-slate-950">{value}</div>
+              <div className="mt-1 text-xs text-slate-500">{detail}</div>
             </div>
           ))}
         </div>
-        <div className="mt-5 grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
-          <div className="rounded-lg border border-white/10 bg-white/[0.055] p-4">
-            <div className="flex items-center justify-between">
-              <div className="text-sm font-semibold text-white">Alert movement</div>
-              <div className="text-xs font-semibold text-[#8de0d7]">30 day view</div>
+        <div className="mt-5 rounded-md border border-slate-200 bg-white">
+          {[
+            ["Duplicate-looking supplier bill", "Review", "Same supplier, close amount, short time window"],
+            ["New bank details", "Hold", "Supplier payment route changed"],
+            ["Payroll variance", "Explain", "Amount differs from expected pattern"],
+          ].map(([label, action, detail]) => (
+            <div key={label} className="grid gap-2 border-b border-slate-200 px-4 py-3 last:border-b-0 md:grid-cols-[1fr_auto]">
+              <div>
+                <p className="text-sm font-semibold text-slate-950">{label}</p>
+                <p className="mt-1 text-xs leading-5 text-slate-500">{detail}</p>
+              </div>
+              <span className="h-fit rounded-full bg-slate-950 px-3 py-1 text-xs font-semibold text-white">{action}</span>
             </div>
-            <div className="mt-6 flex h-36 items-end gap-3">
-              {[42, 58, 46, 72, 61, 88, 67, 79].map((height, index) => (
-                <div key={height + index} className="flex flex-1 items-end rounded-t-md bg-white/8">
-                  <span
-                    className="w-full rounded-t-md bg-[linear-gradient(180deg,#8de0d7,#0e7c86)]"
-                    style={{ height: `${height}%` }}
-                  />
-                </div>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-lg border border-white/10 bg-white/[0.055] p-4">
-            <div className="text-sm font-semibold text-white">Priority queue</div>
-            <div className="mt-5 space-y-3">
-              {[
-                ["New beneficiary", "High"],
-                ["Duplicate-looking bill", "Review"],
-                ["Payroll variance", "Monitor"],
-              ].map(([label, level]) => (
-                <div key={label} className="flex items-center justify-between rounded-md border border-white/10 bg-[#07131f]/60 px-3 py-3">
-                  <span className="text-xs font-semibold text-slate-300">{label}</span>
-                  <span className="rounded-full bg-[#8de0d7]/12 px-2.5 py-1 text-[11px] font-semibold text-[#8de0d7]">{level}</span>
-                </div>
-              ))}
-            </div>
-          </div>
+          ))}
+        </div>
+        <div className="mt-4 rounded-md bg-slate-950 p-4 text-sm leading-6 text-slate-300">
+          Evidence notes, reviewer decisions, and client pack outputs stay together.
         </div>
       </div>
-      <div className="absolute inset-0 bg-[linear-gradient(115deg,rgba(3,10,18,0.98)_0%,rgba(7,19,31,0.92)_44%,rgba(7,19,31,0.42)_76%,rgba(141,224,215,0.08)_100%)]" />
-      <div className="absolute inset-x-0 bottom-0 h-44 bg-[linear-gradient(0deg,#07131f_0%,transparent_100%)]" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(0deg,#ffffff_0%,rgba(255,255,255,0)_100%)]" />
     </div>
+  );
+}
+
+function SectionHeader({
+  eyebrow,
+  title,
+  text,
+}: {
+  eyebrow: string;
+  title: string;
+  text?: string;
+}) {
+  return (
+    <div className="max-w-3xl">
+      <p className="text-sm font-semibold uppercase tracking-[0.08em] text-cyan-800">{eyebrow}</p>
+      <h2 className="mt-4 text-3xl font-semibold tracking-normal text-slate-950 md:text-5xl">{title}</h2>
+      {text ? <p className="mt-5 text-base leading-7 text-slate-600">{text}</p> : null}
+    </div>
+  );
+}
+
+function LinkedinMark({ size = "normal" }: { size?: "small" | "normal" }) {
+  return (
+    <span
+      className={`inline-flex items-center justify-center rounded-sm bg-[#0a66c2] font-bold leading-none text-white ${
+        size === "small" ? "h-4 w-4 text-[9px]" : "h-5 w-5 text-[11px]"
+      }`}
+    >
+      in
+    </span>
   );
 }
 
@@ -606,25 +620,23 @@ function HubSpotNewsletterForm() {
 
 export default function SentraRiskLandingPage() {
   return (
-    <main className="premium-shell min-h-screen text-slate-950">
-      <section className="relative min-h-[94vh] overflow-hidden">
+    <main className="min-h-screen bg-white text-slate-950">
+      <section className="relative min-h-[92vh] overflow-hidden">
         <ProductVisual />
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,rgba(3,10,18,0.98)_0%,rgba(7,19,31,0.94)_42%,rgba(7,19,31,0.58)_68%,rgba(255,255,255,0.03)_100%)]" />
 
-        <nav className="relative z-10 mx-auto flex max-w-7xl items-center justify-between gap-3 px-5 py-5 md:px-8">
+        <nav className="relative z-10 mx-auto mt-4 flex max-w-7xl items-center justify-between gap-3 rounded-md border border-slate-200 bg-white/92 px-4 py-3 shadow-sm backdrop-blur md:px-5">
           <a href="#" className="shrink-0">
             <LogoMark />
           </a>
-          <div className="hidden items-center gap-7 border-b border-white/10 pb-2 text-sm font-medium text-slate-300 md:flex">
-            <a href="#platform" className="hover:text-white">Platform</a>
-            <a href="#how-it-works" className="hover:text-white">How it works</a>
-            <a href="#who" className="hover:text-white">Who it&apos;s for</a>
-            <a href="#use-cases" className="hover:text-white">Use cases</a>
-            <a href="#pricing" className="hover:text-white">Pricing</a>
-            <a href={REGISTER_URL} className="hover:text-white">Demo</a>
-            <a href="#pilot" className="hover:text-white">Pilot</a>
-            <a href="#newsletter" className="hover:text-white">Newsletter</a>
-            <a href="#demo" className="hover:text-white">Contact</a>
+          <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
+            <a href="#platform" className="hover:text-slate-950">Platform</a>
+            <a href="#how-it-works" className="hover:text-slate-950">How it works</a>
+            <a href="#who" className="hover:text-slate-950">Who it&apos;s for</a>
+            <a href="#use-cases" className="hover:text-slate-950">Use cases</a>
+            <a href="#pricing" className="hover:text-slate-950">Pricing</a>
+            <a href={REGISTER_URL} className="hover:text-slate-950">Trial</a>
+            <a href="#newsletter" className="hover:text-slate-950">Newsletter</a>
+            <a href="#demo" className="hover:text-slate-950">Contact</a>
           </div>
           <div className="flex items-center gap-2">
             <a
@@ -632,41 +644,40 @@ export default function SentraRiskLandingPage() {
               target="_blank"
               rel="noreferrer"
               aria-label="Visit SentraRisk Systems on LinkedIn"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/15 bg-white/10 text-sm font-bold text-white shadow-lg shadow-black/10 transition hover:bg-white/15"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-white text-sm font-bold text-slate-950 shadow-sm transition hover:border-cyan-700"
             >
               in
             </a>
             <a
               href="#pricing"
-              className="hidden h-10 items-center justify-center rounded-md border border-white/15 bg-white/10 px-4 text-sm font-semibold text-white shadow-lg shadow-black/10 transition hover:bg-white/15 sm:inline-flex"
+              className="hidden h-10 items-center justify-center rounded-md border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-cyan-700 sm:inline-flex"
             >
               Pricing
             </a>
             <a
               href={APP_URL}
-              className="inline-flex h-10 items-center justify-center rounded-md bg-white px-5 text-sm font-semibold text-slate-950 shadow-lg shadow-black/20 transition hover:bg-cyan-100"
+              className="inline-flex h-10 items-center justify-center rounded-md bg-slate-950 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
             >
               Login
             </a>
           </div>
         </nav>
 
-        <div className="relative z-10 mx-auto flex min-h-[calc(94vh-80px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
-          <div className="max-w-[700px]">
-            <div className="mb-6 inline-flex items-center gap-3 text-sm font-semibold text-cyan-100">
-              <span className="h-px w-10 bg-[#8de0d7]" />
-              Payment-risk intelligence for accountable finance teams
+        <div className="relative z-10 mx-auto flex min-h-[calc(92vh-88px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
+          <div className="max-w-[570px]">
+            <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white px-4 py-2 text-sm font-semibold text-cyan-900 shadow-sm">
+              Irish-built software for SME finance teams
             </div>
-            <h1 className="max-w-4xl text-5xl font-semibold leading-[0.98] tracking-normal text-white md:text-6xl">
-              Stop duplicate payments and supplier fraud before money leaves your business.
+            <h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] tracking-normal text-slate-950 md:text-5xl">
+              A clearer way to review payment risk before it becomes a problem.
             </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-200 md:text-lg">
-              SentraRisk helps accountants and finance teams detect risky transactions, review payment anomalies, and produce audit-ready reports in minutes.
+            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 md:text-lg">
+              SentraRisk helps accountants, bookkeepers, and growing businesses review supplier bills, duplicate-looking payments, payroll payment outputs, and unusual transaction patterns with clear evidence and human judgement.
             </p>
             <div className="mt-5 grid max-w-2xl gap-2 sm:grid-cols-2">
-              {operatingPrinciples.map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm font-semibold text-slate-200">
-                  <CheckCircle2 className="h-4 w-4 text-[#8de0d7]" aria-hidden="true" />
+              {["Xero-supported transaction imports", "Client-ready control packs", "Human-led risk review", "Built for Irish SMEs and advisors"].map((item) => (
+                <div key={item} className="flex items-center gap-2 text-sm font-semibold text-slate-700">
+                  <CheckCircle2 className="h-4 w-4 text-cyan-700" aria-hidden="true" />
                   {item}
                 </div>
               ))}
@@ -674,24 +685,24 @@ export default function SentraRiskLandingPage() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
                 href={TRIAL_ENQUIRY_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-cyan-300 px-7 text-sm font-semibold text-slate-950 shadow-[0_20px_50px_rgba(141,224,215,0.22)] transition hover:-translate-y-0.5 hover:bg-cyan-200"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-7 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
               >
-                Start 14-Day Trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                Start 14-day trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="#demo"
-                className="smooth-glass inline-flex h-12 items-center justify-center gap-2 rounded-lg px-7 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-7 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-cyan-700"
               >
-                Speak to SentraRisk <Mail className="h-4 w-4" aria-hidden="true" />
+                Contact us <Mail className="h-4 w-4" aria-hidden="true" />
               </a>
             </div>
-            <div className="mt-8 flex max-w-3xl flex-col gap-3 border-t border-white/10 pt-5 text-sm text-slate-300 sm:flex-row sm:items-center sm:gap-6">
+            <div className="mt-8 flex max-w-3xl flex-col gap-3 border-t border-slate-200 pt-5 text-sm text-slate-600 sm:flex-row sm:items-center sm:gap-6">
               {metrics.map(([value, label]) => (
                 <div key={value} className="flex items-center gap-3">
-                  <span className="h-1.5 w-1.5 rounded-full bg-[#8de0d7]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-cyan-700" />
                   <p>
-                    <span className="font-semibold text-white">{value}</span>
-                    <span className="text-slate-400"> · {label}</span>
+                    <span className="font-semibold text-slate-950">{value}</span>
+                    <span className="text-slate-500"> · {label}</span>
                   </p>
                 </div>
               ))}
