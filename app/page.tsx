@@ -24,6 +24,7 @@ import {
 
 const APP_URL = "https://app.sentrarisksystems.com";
 const CONTACT_EMAIL = "support@sentrarisksystems.com";
+const LINKEDIN_URL = "https://www.linkedin.com/company/sentrarisk-systems/";
 const REGISTER_URL = `${APP_URL}/register`;
 const TRIAL_ENQUIRY_URL = REGISTER_URL;
 
@@ -1264,6 +1265,17 @@ Authorization: Bearer YOUR_API_KEY
                 <p className="mt-4 text-sm leading-6 text-slate-600">
                   We usually respond with the next step and any setup questions needed for your organisation.
                 </p>
+                <a
+                  href={LINKEDIN_URL}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="mt-5 inline-flex h-10 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-950 transition hover:border-cyan-700 hover:text-cyan-800"
+                >
+                  <span className="inline-flex h-5 w-5 items-center justify-center rounded-sm bg-[#0a66c2] text-[11px] font-bold leading-none text-white">
+                    in
+                  </span>
+                  Follow on LinkedIn
+                </a>
               </div>
             </div>
           </div>
@@ -1287,6 +1299,17 @@ Authorization: Bearer YOUR_API_KEY
             <Link href="/data-processing" className="hover:text-slate-950">Data Processing</Link>
             <Link href="/refund-policy" className="hover:text-slate-950">Refunds</Link>
             <Link href="/security-statement" className="hover:text-slate-950">Security</Link>
+            <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 hover:text-slate-950"
+            >
+              <span className="inline-flex h-4 w-4 items-center justify-center rounded-sm bg-[#0a66c2] text-[9px] font-bold leading-none text-white">
+                in
+              </span>
+              LinkedIn
+            </a>
           </div>
         </div>
       </footer>
