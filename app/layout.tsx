@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import { TrackingScripts } from "./tracking-scripts";
 
 export const metadata: Metadata = {
   title: "SentraRisk Systems | Real-Time Fraud Detection for SMEs",
@@ -31,27 +32,8 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="h-full antialiased" suppressHydrationWarning>
-      <head>
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-VS527Y2NFS" />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', 'G-VS527Y2NFS');
-            `,
-          }}
-        />
-        <script
-          type="text/javascript"
-          id="hs-script-loader"
-          async
-          defer
-          src="https://js-eu1.hs-scripts.com/148356926.js"
-        />
-      </head>
       <body className="min-h-full flex flex-col">
+        <TrackingScripts />
         {children}
       </body>
     </html>

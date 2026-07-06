@@ -384,14 +384,14 @@ function ProductVisual() {
   return (
     <div className="absolute inset-0 overflow-hidden bg-[#f7faf9]">
       <div className="absolute inset-0 bg-[linear-gradient(135deg,#f7faf9_0%,#ffffff_36%,#eaf4f2_100%)]" />
-      <div className="absolute inset-y-0 right-0 hidden w-[45%] bg-[#0b1f24] lg:block" />
-      <div className="absolute right-[5%] top-32 hidden w-[32rem] rounded-md border border-slate-200 bg-white p-5 shadow-[0_24px_80px_rgba(15,23,42,0.12)] lg:block">
+      <div className="absolute inset-y-0 right-0 hidden w-[45%] rounded-bl-[7rem] bg-[linear-gradient(145deg,#07131f_0%,#0b2730_58%,#102033_100%)] shadow-[inset_28px_0_70px_rgba(255,255,255,0.04)] lg:block" />
+      <div className="absolute right-[5%] top-32 hidden w-[32rem] rounded-[1.75rem] border border-white/80 bg-white/94 p-5 shadow-[0_34px_100px_rgba(15,23,42,0.20)] backdrop-blur-xl lg:block">
         <div className="flex items-center justify-between border-b border-slate-200 pb-4">
           <div>
             <div className="text-xs font-semibold uppercase text-cyan-700">Monthly client review</div>
             <div className="mt-1 text-lg font-semibold text-slate-950">Payment control summary</div>
           </div>
-          <div className="rounded-md border border-cyan-200 bg-cyan-50 px-3 py-2 text-xs font-semibold text-cyan-800">
+          <div className="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-2 text-xs font-semibold text-cyan-800">
             Ready for review
           </div>
         </div>
@@ -401,14 +401,14 @@ function ProductVisual() {
             ["Flagged", "11", "need attention"],
             ["Pack", "Ready", "client output"],
           ].map(([label, value, detail]) => (
-            <div key={label} className="rounded-md border border-slate-200 bg-slate-50 p-4">
+            <div key={label} className="rounded-2xl border border-slate-200 bg-slate-50/90 p-4">
               <div className="text-xs font-semibold uppercase text-slate-500">{label}</div>
               <div className="mt-3 text-2xl font-semibold text-slate-950">{value}</div>
               <div className="mt-1 text-xs text-slate-500">{detail}</div>
             </div>
           ))}
         </div>
-        <div className="mt-5 rounded-md border border-slate-200 bg-white">
+        <div className="mt-5 overflow-hidden rounded-2xl border border-slate-200 bg-white">
           {[
             ["Duplicate-looking supplier bill", "Review", "Same supplier, close amount, short time window"],
             ["New bank details", "Hold", "Supplier payment route changed"],
@@ -423,7 +423,7 @@ function ProductVisual() {
             </div>
           ))}
         </div>
-        <div className="mt-4 rounded-md bg-slate-950 p-4 text-sm leading-6 text-slate-300">
+        <div className="mt-4 rounded-2xl bg-slate-950 p-4 text-sm leading-6 text-slate-300">
           Evidence notes, reviewer decisions, and client pack outputs stay together.
         </div>
       </div>
@@ -500,7 +500,7 @@ function DemoForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="rounded-md border border-slate-200 bg-white p-6 shadow-sm"
+      className="fluid-card rounded-[1.5rem] p-6"
     >
       <div className="flex items-start gap-3">
         <Users className="mt-0.5 h-6 w-6 text-cyan-700" aria-hidden="true" />
@@ -518,7 +518,7 @@ function DemoForm() {
           <input
             required
             name="name"
-            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            className="h-11 rounded-xl border border-slate-300 bg-white/90 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
             placeholder="Your name"
           />
         </label>
@@ -528,7 +528,7 @@ function DemoForm() {
             required
             type="email"
             name="email"
-            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            className="h-11 rounded-xl border border-slate-300 bg-white/90 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
             placeholder="name@company.com"
           />
         </label>
@@ -537,7 +537,7 @@ function DemoForm() {
           <input
             required
             name="company"
-            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            className="h-11 rounded-xl border border-slate-300 bg-white/90 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
             placeholder="Company name"
           />
         </label>
@@ -545,7 +545,7 @@ function DemoForm() {
           Role
           <input
             name="role"
-            className="h-11 rounded-md border border-slate-300 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            className="h-11 rounded-xl border border-slate-300 bg-white/90 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
             placeholder="Founder, compliance, finance..."
           />
         </label>
@@ -554,7 +554,7 @@ function DemoForm() {
           <select
             name="organisation_size"
             defaultValue=""
-            className="h-11 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            className="h-11 rounded-xl border border-slate-300 bg-white/90 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
           >
             <option value="">Select size</option>
             <option value="1-10">1-10 people</option>
@@ -568,7 +568,7 @@ function DemoForm() {
           <select
             name="main_interest"
             defaultValue={interestOptions[0]}
-            className="h-11 rounded-md border border-slate-300 bg-white px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+            className="h-11 rounded-xl border border-slate-300 bg-white/90 px-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
           >
             {interestOptions.map((option) => (
               <option key={option} value={option}>
@@ -583,14 +583,14 @@ function DemoForm() {
         What would you like to discuss?
         <textarea
           name="message"
-          className="min-h-28 rounded-md border border-slate-300 px-3 py-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
+          className="min-h-28 rounded-xl border border-slate-300 bg-white/90 px-3 py-3 text-sm text-slate-950 outline-none transition focus:border-cyan-700 focus:ring-2 focus:ring-cyan-700/10"
           placeholder="Tell us about your payment-risk review, Xero, payroll output review, client control, or reporting requirements."
         />
       </label>
 
       <button
         type="submit"
-        className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+        className="mt-5 inline-flex h-12 w-full items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800"
       >
         Send Enquiry Email <Mail className="h-4 w-4" aria-hidden="true" />
       </button>
@@ -600,7 +600,7 @@ function DemoForm() {
 
 function HubSpotNewsletterForm() {
   return (
-    <div className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
+    <div className="fluid-card rounded-[1.5rem] p-6">
       <p className="text-lg font-semibold text-slate-950">Join the monthly risk letter</p>
       <p className="mt-2 text-sm leading-6 text-slate-600">
         Practical notes for accountants, finance teams, and SMEs on supplier fraud, duplicate payments, payroll payment review, and control evidence.
@@ -620,11 +620,11 @@ function HubSpotNewsletterForm() {
 
 export default function SentraRiskLandingPage() {
   return (
-    <main className="min-h-screen bg-white text-slate-950">
+    <main className="fluid-shell min-h-screen text-slate-950">
       <section className="relative min-h-[92vh] overflow-hidden">
         <ProductVisual />
 
-        <nav className="relative z-10 mx-auto mt-4 flex max-w-7xl items-center justify-between gap-3 rounded-md border border-slate-200 bg-white/92 px-4 py-3 shadow-sm backdrop-blur md:px-5">
+        <nav className="relative z-10 mx-auto mt-4 flex max-w-7xl items-center justify-between gap-3 rounded-2xl border border-white/80 bg-white/88 px-4 py-3 shadow-[0_18px_55px_rgba(15,23,42,0.08)] backdrop-blur-xl md:px-5">
           <a href="#" className="shrink-0">
             <LogoMark />
           </a>
@@ -644,19 +644,19 @@ export default function SentraRiskLandingPage() {
               target="_blank"
               rel="noreferrer"
               aria-label="Visit SentraRisk Systems on LinkedIn"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200 bg-white text-sm font-bold text-slate-950 shadow-sm transition hover:border-cyan-700"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-sm font-bold text-slate-950 shadow-sm transition hover:border-cyan-700"
             >
               in
             </a>
             <a
               href="#pricing"
-              className="hidden h-10 items-center justify-center rounded-md border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-cyan-700 sm:inline-flex"
+              className="hidden h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-cyan-700 sm:inline-flex"
             >
               Pricing
             </a>
             <a
               href={APP_URL}
-              className="inline-flex h-10 items-center justify-center rounded-md bg-slate-950 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+              className="inline-flex h-10 items-center justify-center rounded-xl bg-slate-950 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
             >
               Login
             </a>
@@ -665,7 +665,7 @@ export default function SentraRiskLandingPage() {
 
         <div className="relative z-10 mx-auto flex min-h-[calc(92vh-88px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
           <div className="max-w-[570px]">
-            <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white px-4 py-2 text-sm font-semibold text-cyan-900 shadow-sm">
+            <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white/90 px-4 py-2 text-sm font-semibold text-cyan-900 shadow-[0_12px_28px_rgba(14,124,134,0.08)] backdrop-blur">
               Irish-built software for SME finance teams
             </div>
             <h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] tracking-normal text-slate-950 md:text-5xl">
@@ -685,13 +685,13 @@ export default function SentraRiskLandingPage() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
                 href={TRIAL_ENQUIRY_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-7 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-7 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(15,23,42,0.18)] transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
                 Start 14-day trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="#demo"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-7 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-cyan-700"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-950 shadow-[0_14px_30px_rgba(15,23,42,0.08)] backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-700"
               >
                 Contact us <Mail className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -711,7 +711,7 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section className="proof-rail border-y border-slate-200/70 px-5 py-8 backdrop-blur md:px-8">
+      <section className="proof-rail border-y border-white/70 px-5 py-8 backdrop-blur md:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {premiumStats.map(([value, label]) => (
             <div key={value} className="border-l border-cyan-700/25 pl-5">
@@ -722,9 +722,9 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section className="border-b border-slate-200 bg-white px-5 py-20 md:px-8">
-        <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+      <section className="fluid-section px-5 py-24 md:px-8">
+        <div className="fluid-inner mx-auto max-w-7xl">
+          <div className="editorial-panel grid gap-10 rounded-[2rem] p-6 md:p-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Why it matters</p>
               <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
@@ -735,21 +735,21 @@ export default function SentraRiskLandingPage() {
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-lg border border-slate-200 bg-slate-50 p-5 shadow-sm">
+              <div className="rounded-[1.5rem] border border-slate-200/70 bg-white/72 p-5 shadow-sm">
                 <p className="text-sm font-semibold uppercase text-slate-500">Without SentraRisk</p>
                 <div className="mt-5 space-y-4">
                   {comparisonRows.map((row) => (
-                    <div key={row.without} className="rounded-md border border-slate-200 bg-white p-4 text-sm leading-6 text-slate-600">
+                    <div key={row.without} className="rounded-2xl border border-slate-200/80 bg-white/82 p-4 text-sm leading-6 text-slate-600">
                       {row.without}
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="rounded-lg border border-cyan-200 bg-[#f3fbfb] p-5 shadow-[0_18px_55px_rgba(14,124,134,0.08)]">
+              <div className="rounded-[1.5rem] border border-cyan-200/80 bg-[#f3fbfb]/82 p-5 shadow-sm">
                 <p className="text-sm font-semibold uppercase text-cyan-700">With SentraRisk</p>
                 <div className="mt-5 space-y-4">
                   {comparisonRows.map((row) => (
-                    <div key={row.with} className="flex gap-3 rounded-md border border-cyan-100 bg-white p-4 text-sm leading-6 text-slate-700">
+                    <div key={row.with} className="flex gap-3 rounded-2xl border border-cyan-100 bg-white/88 p-4 text-sm leading-6 text-slate-700">
                       <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-cyan-700" aria-hidden="true" />
                       <span>{row.with}</span>
                     </div>
@@ -761,8 +761,8 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section className="bg-[#07131f] px-5 py-16 text-white md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-8 lg:grid-cols-3">
+      <section className="px-5 py-6 md:px-8">
+        <div className="statement-band mx-auto grid max-w-7xl gap-8 rounded-[2rem] px-7 py-10 text-white lg:grid-cols-3 lg:px-10">
           {enterpriseProof.map(([title, text]) => (
             <div key={title} className="border-l border-[#8de0d7]/35 pl-6">
               <p className="text-sm font-semibold uppercase text-[#8de0d7]">{title}</p>
@@ -772,8 +772,8 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="how-it-works" className="institutional-section px-5 py-24 md:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section id="how-it-works" className="fluid-section px-5 py-24 md:px-8">
+        <div className="fluid-inner mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">How it works</p>
@@ -786,8 +786,8 @@ export default function SentraRiskLandingPage() {
             </div>
             <div className="grid gap-4 md:grid-cols-3">
               {howItWorks.map((item, index) => (
-                <article key={item.title} className="institutional-card rounded-md p-6">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-md bg-slate-950 text-sm font-semibold text-white">
+                <article key={item.title} className="fluid-card rounded-[1.5rem] p-6">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">
                     {index + 1}
                   </span>
                   <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
@@ -799,9 +799,8 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="platform" className="relative overflow-hidden border-y border-slate-200 bg-slate-50 px-5 py-24 md:px-8">
-        <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-white to-transparent" />
-        <div className="mx-auto max-w-7xl">
+      <section id="platform" className="fluid-section px-5 py-24 md:px-8">
+        <div className="fluid-inner mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Platform</p>
@@ -813,7 +812,7 @@ export default function SentraRiskLandingPage() {
               </p>
               <div className="mt-8 grid gap-2">
                 {integrationProof.map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-full border border-slate-200 bg-white px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm">
+                  <div key={item} className="flex items-center gap-3 rounded-full border border-slate-200/80 bg-white/86 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur">
                     <CheckCircle2 className="h-4 w-4 text-cyan-700" aria-hidden="true" />
                     {item}
                   </div>
@@ -824,8 +823,8 @@ export default function SentraRiskLandingPage() {
               {capabilities.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="institutional-card group rounded-md p-6 transition hover:-translate-y-1 hover:border-cyan-200">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-md bg-cyan-50 text-cyan-700 transition group-hover:bg-cyan-600 group-hover:text-white">
+                  <div key={item.title} className="fluid-card group rounded-[1.5rem] p-6 transition hover:-translate-y-1 hover:border-cyan-200">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700 transition group-hover:bg-cyan-600 group-hover:text-white">
                       <Icon className="h-6 w-6" aria-hidden="true" />
                     </div>
                     <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
@@ -838,8 +837,8 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white px-5 py-20 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <section className="px-5 py-24 md:px-8">
+        <div className="editorial-panel mx-auto grid max-w-7xl gap-10 rounded-[2rem] p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Built with control in mind</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
@@ -851,7 +850,7 @@ export default function SentraRiskLandingPage() {
             <div className="mt-8">
               <Link
                 href="/accountants"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
                 See Accountant Workflows <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
@@ -859,7 +858,7 @@ export default function SentraRiskLandingPage() {
           </div>
           <div className="grid gap-3">
             {trustSignals.map((item) => (
-              <div key={item} className="flex gap-3 rounded-md border border-slate-200 bg-slate-50 p-4 shadow-sm">
+              <div key={item} className="flex gap-3 rounded-2xl border border-white/70 bg-white/74 p-4 shadow-sm">
                 <CircleCheckBig className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" aria-hidden="true" />
                 <p className="text-sm leading-6 text-slate-700">{item}</p>
               </div>
@@ -868,8 +867,8 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="who" className="px-5 py-20 md:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section id="who" className="fluid-section px-5 py-24 md:px-8">
+        <div className="fluid-inner mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Who it&apos;s for</p>
@@ -884,7 +883,7 @@ export default function SentraRiskLandingPage() {
               {audienceSegments.map((item) => {
                 const Icon = item.icon;
                 return (
-                  <div key={item.title} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
+                  <div key={item.title} className="fluid-card rounded-[1.5rem] p-6">
                     <Icon className="h-6 w-6 text-cyan-700" aria-hidden="true" />
                     <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
@@ -896,7 +895,7 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section className="border-y border-slate-200 bg-white px-5 py-24 md:px-8">
+      <section className="px-5 py-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">For accountants</p>
@@ -908,15 +907,15 @@ export default function SentraRiskLandingPage() {
             </p>
             <Link
               href="/accountants"
-              className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+                className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800"
             >
               See how it supports client reviews <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
             {accountantOutcomes.map((item) => (
-              <article key={item.title} className="rounded-md border border-slate-200 bg-slate-50 p-6 shadow-sm">
-                <div className="flex h-11 w-11 items-center justify-center rounded-md bg-cyan-50 text-cyan-700">
+              <article key={item.title} className="fluid-card rounded-[1.5rem] p-6">
+                <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50 text-cyan-700">
                   <ClipboardCheck className="h-5 w-5" aria-hidden="true" />
                 </div>
                 <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
@@ -927,7 +926,7 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section className="px-5 py-20 md:px-8">
+      <section className="px-5 py-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Workflow</p>
@@ -937,8 +936,8 @@ export default function SentraRiskLandingPage() {
           </div>
           <div className="space-y-4">
             {workflow.map((item, index) => (
-              <div key={item} className="flex gap-4 rounded-md border border-slate-200 bg-white p-5 shadow-sm">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-slate-950 text-sm font-semibold text-white">
+              <div key={item} className="fluid-card flex gap-4 rounded-[1.5rem] p-5">
+                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">
                   {index + 1}
                 </span>
                 <p className="text-base leading-7 text-slate-600">{item}</p>
@@ -948,8 +947,8 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="use-cases" className="border-y border-slate-200 bg-slate-50 px-5 py-24 md:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section id="use-cases" className="fluid-section px-5 py-24 md:px-8">
+        <div className="fluid-inner mx-auto max-w-7xl">
           <div className="max-w-3xl">
             <p className="text-sm font-semibold uppercase text-cyan-700">Use cases</p>
             <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
@@ -961,9 +960,9 @@ export default function SentraRiskLandingPage() {
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
             {useCases.map((item) => (
-              <div key={item.title} className="institutional-card rounded-md p-6">
+              <div key={item.title} className="fluid-card rounded-[1.5rem] p-6">
                 <div className="flex items-start gap-4">
-                  <span className="mt-1 h-2.5 w-2.5 shrink-0 bg-cyan-500" />
+                  <span className="mt-1 h-2.5 w-2.5 shrink-0 rounded-full bg-cyan-500" />
                   <div>
                     <h3 className="text-lg font-semibold text-slate-950">{item.title}</h3>
                     <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
@@ -991,7 +990,7 @@ export default function SentraRiskLandingPage() {
               <Link
                 key={page.href}
                 href={page.href}
-                className="group rounded-md border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:border-cyan-300"
+                className="fluid-card group rounded-[1.5rem] p-6 transition hover:-translate-y-1 hover:border-cyan-300"
               >
                 <h3 className="text-lg font-semibold text-slate-950">{page.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-600">{page.text}</p>
@@ -1004,8 +1003,8 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="api" className="premium-dark px-5 py-24 text-white md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+      <section id="api" className="px-5 py-8 md:px-8">
+        <div className="statement-band mx-auto grid max-w-7xl gap-12 rounded-[2rem] px-7 py-14 text-white lg:grid-cols-[1fr_0.9fr] lg:items-center lg:px-10">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-300">API access</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal md:text-5xl">
@@ -1017,25 +1016,25 @@ export default function SentraRiskLandingPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href={APP_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-white px-6 text-sm font-semibold text-slate-950 transition hover:bg-slate-100"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
               >
                 Developer Dashboard <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href={REGISTER_URL}
-                className="inline-flex h-12 items-center justify-center rounded-md border border-white/20 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
               >
                 Discuss Integration
               </a>
             </div>
           </div>
-          <div className="rounded-lg border border-white/10 bg-black/55 p-5 font-mono text-sm shadow-2xl backdrop-blur">
+          <div className="rounded-2xl border border-white/10 bg-black/45 p-5 font-mono text-sm shadow-2xl backdrop-blur">
             <div className="mb-4 flex gap-2">
               <span className="h-3 w-3 rounded-full bg-rose-400" />
               <span className="h-3 w-3 rounded-full bg-amber-400" />
               <span className="h-3 w-3 rounded-full bg-emerald-400" />
             </div>
-            <pre className="overflow-x-auto rounded-md bg-slate-950/80 p-4 text-slate-300">
+            <pre className="overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-slate-300">
 {`POST /score-transaction
 Authorization: Bearer YOUR_API_KEY
 
@@ -1055,8 +1054,8 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <section id="pilot" className="px-5 py-24 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+      <section id="pilot" className="fluid-section px-5 py-24 md:px-8">
+        <div className="fluid-inner mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Pilot programme</p>
             <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
@@ -1065,28 +1064,28 @@ Authorization: Bearer YOUR_API_KEY
               <p className="mt-5 text-base leading-7 text-slate-600">
               The SentraRisk pilot gives teams a practical way to test the workflow using sample data, anonymised transaction exports, payroll payment outputs, or Xero supplier bills before moving into a live monthly review process.
             </p>
-            <div className="mt-6 rounded-md border border-cyan-200 bg-cyan-50 p-4 text-sm leading-6 text-slate-700">
+            <div className="mt-6 rounded-2xl border border-cyan-200 bg-cyan-50/90 p-4 text-sm leading-6 text-slate-700 shadow-[0_12px_32px_rgba(14,124,134,0.08)]">
               <strong className="text-slate-950">Pilot offer:</strong> review a small transaction set, assess the quality of alerts, and produce an example Client Control Pack your team can evaluate.
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
                 href="/pilot-programme"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-md bg-slate-950 px-6 text-sm font-semibold text-white transition hover:bg-slate-800"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
                 View Pilot Programme <Rocket className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="#demo"
-                className="inline-flex h-12 items-center justify-center rounded-md border border-slate-300 bg-white px-6 text-sm font-semibold text-slate-900 transition hover:bg-slate-50"
+                className="inline-flex h-12 items-center justify-center rounded-xl border border-slate-300 bg-white/90 px-6 text-sm font-semibold text-slate-900 shadow-sm transition hover:-translate-y-0.5 hover:bg-slate-50"
               >
                 Send Enquiry
               </a>
             </div>
           </div>
-          <div className="rounded-lg border border-slate-200 bg-slate-50 p-6 shadow-[0_28px_90px_rgba(15,23,42,0.08)]">
+            <div className="editorial-panel rounded-[1.75rem] p-6">
             <div className="grid gap-4">
               {pilotSteps.map((item, index) => (
-                <div key={item} className="flex gap-4 rounded-md border border-slate-200 bg-white p-5">
+                <div key={item} className="flex gap-4 rounded-2xl border border-slate-200/80 bg-white/90 p-5">
                   <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-cyan-700 text-sm font-semibold text-white">
                     {index + 1}
                   </span>
@@ -1094,7 +1093,7 @@ Authorization: Bearer YOUR_API_KEY
                 </div>
               ))}
             </div>
-            <div className="mt-5 rounded-md bg-slate-950 p-5 text-white">
+            <div className="mt-5 rounded-2xl bg-slate-950 p-5 text-white">
               <p className="text-sm font-semibold text-cyan-300">Typical pilot outcome</p>
               <p className="mt-3 text-sm leading-6 text-slate-300">
                 A clear view of where SentraRisk fits, which controls to activate first, and whether Xero import, payroll export review, dashboard, file upload, API, or hybrid deployment is the right path.
@@ -1104,8 +1103,8 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <section id="pricing" className="border-b border-slate-200 bg-slate-50 px-5 py-24 md:px-8">
-        <div className="mx-auto max-w-7xl">
+      <section id="pricing" className="fluid-section px-5 py-24 md:px-8">
+        <div className="fluid-inner mx-auto max-w-7xl">
           <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Pricing</p>
@@ -1116,7 +1115,7 @@ Authorization: Bearer YOUR_API_KEY
                 Start with Xero-backed supplier risk review and payroll payment review, add Client Control Packs and board reporting, then scale into API access or a custom enterprise deployment.
               </p>
             </div>
-            <div className="grid gap-3 rounded-lg border border-slate-200 bg-white p-5 shadow-sm sm:grid-cols-3">
+            <div className="editorial-panel grid gap-3 rounded-[1.5rem] p-5 sm:grid-cols-3">
               {[
                 ["14 days", "Trial access"],
                 ["No lock-in", "Monthly plans"],
@@ -1134,10 +1133,10 @@ Authorization: Bearer YOUR_API_KEY
             {pricingPlans.map((plan) => (
               <div
                 key={plan.name}
-                className={`rounded-lg border p-6 shadow-sm transition hover:-translate-y-1 ${
+                className={`rounded-[1.5rem] border p-6 shadow-sm transition hover:-translate-y-1 ${
                   plan.highlighted
                     ? "border-slate-950 bg-slate-950 text-white shadow-[0_30px_90px_rgba(15,23,42,0.24)]"
-                    : "border-slate-200 bg-white text-slate-950"
+                    : "border-slate-200/80 bg-white/92 text-slate-950 backdrop-blur"
                 }`}
               >
                 <div className="flex items-center justify-between gap-4">
@@ -1167,7 +1166,7 @@ Authorization: Bearer YOUR_API_KEY
                 </ul>
                 <a
                   href={plan.href}
-                  className={`mt-7 inline-flex h-12 w-full items-center justify-center rounded-md px-6 text-sm font-semibold transition ${
+                  className={`mt-7 inline-flex h-12 w-full items-center justify-center rounded-xl px-6 text-sm font-semibold transition ${
                     plan.highlighted
                       ? "bg-white text-slate-950 hover:bg-slate-100"
                       : "bg-slate-950 text-white hover:bg-slate-800"
@@ -1195,8 +1194,8 @@ Authorization: Bearer YOUR_API_KEY
             ].map(([Icon, title, text]) => {
               const TypedIcon = Icon as typeof Shield;
               return (
-                <div key={title as string} className="institutional-card rounded-md p-6">
-                  <div className="flex h-11 w-11 items-center justify-center rounded-md bg-cyan-50">
+                <div key={title as string} className="fluid-card rounded-[1.5rem] p-6">
+                  <div className="flex h-11 w-11 items-center justify-center rounded-2xl bg-cyan-50">
                     <TypedIcon className="h-6 w-6 text-cyan-700" aria-hidden="true" />
                   </div>
                   <h3 className="mt-5 text-lg font-semibold text-slate-950">{title as string}</h3>
@@ -1208,8 +1207,8 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <section id="newsletter" className="border-t border-slate-200 bg-white px-5 py-20 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1fr] lg:items-center">
+      <section id="newsletter" className="fluid-section px-5 py-24 md:px-8">
+        <div className="fluid-inner mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.85fr_1fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Monthly newsletter</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
@@ -1225,7 +1224,7 @@ Authorization: Bearer YOUR_API_KEY
                 "Accountant-friendly client control ideas",
                 "Product updates without noisy sales emails",
               ].map((item) => (
-                <div key={item} className="flex gap-2 rounded-md border border-slate-200 bg-slate-50 p-3 font-medium">
+                <div key={item} className="flex gap-2 rounded-2xl border border-slate-200/80 bg-white/80 p-3 font-medium shadow-sm">
                   <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-700" aria-hidden="true" />
                   {item}
                 </div>
@@ -1236,7 +1235,7 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <section id="faq" className="border-t border-slate-200 bg-white px-5 py-20 md:px-8">
+      <section id="faq" className="px-5 py-24 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.75fr_1.25fr]">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">FAQ</p>
@@ -1249,7 +1248,7 @@ Authorization: Bearer YOUR_API_KEY
           </div>
           <div className="space-y-3">
             {faqs.map((item) => (
-              <details key={item.question} className="group rounded-md border border-slate-200 bg-slate-50 p-5 shadow-sm">
+              <details key={item.question} className="group rounded-[1.5rem] border border-slate-200/80 bg-white/88 p-5 shadow-sm backdrop-blur">
                 <summary className="flex cursor-pointer list-none items-center justify-between gap-4 text-base font-semibold text-slate-950">
                   {item.question}
                   <span className="text-xl leading-none text-cyan-700 group-open:rotate-45">+</span>
@@ -1261,8 +1260,8 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <section id="demo" className="border-t border-slate-200 bg-slate-50 px-5 py-20 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.7fr] lg:items-center">
+      <section id="demo" className="fluid-section px-5 py-24 md:px-8">
+        <div className="fluid-inner mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1fr_0.7fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Contact</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
@@ -1272,12 +1271,12 @@ Authorization: Bearer YOUR_API_KEY
               Speak with SentraRisk Systems about Xero-supported imports, payroll payment review, payment-risk controls, Client Control Packs, API scoring, and implementation for your organisation.
             </p>
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="fluid-card rounded-[1.5rem] p-5">
                 <CheckLine text="Receive a focused product walkthrough" />
                 <CheckLine text="Review Xero import, supplier bill scoring, and payroll payment outputs" />
                 <CheckLine text="Discuss your transaction monitoring workflow" />
               </div>
-              <div className="rounded-md border border-slate-200 bg-white p-5 shadow-sm">
+              <div className="fluid-card rounded-[1.5rem] p-5">
                 <p className="text-sm font-semibold text-slate-950">Prefer email?</p>
                 <a className="mt-2 block text-sm font-medium text-cyan-700" href={`mailto:${CONTACT_EMAIL}`}>
                   {CONTACT_EMAIL}
@@ -1289,7 +1288,7 @@ Authorization: Bearer YOUR_API_KEY
                   href={LINKEDIN_URL}
                   target="_blank"
                   rel="noreferrer"
-                  className="mt-5 inline-flex h-10 items-center justify-center gap-2 rounded-md border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-950 transition hover:border-cyan-700 hover:text-cyan-800"
+                  className="mt-5 inline-flex h-10 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white px-4 text-sm font-semibold text-slate-950 transition hover:border-cyan-700 hover:text-cyan-800"
                 >
                   <span className="inline-flex h-5 w-5 items-center justify-center rounded-sm bg-[#0a66c2] text-[11px] font-bold leading-none text-white">
                     in
@@ -1303,7 +1302,7 @@ Authorization: Bearer YOUR_API_KEY
         </div>
       </section>
 
-      <footer className="border-t border-slate-200 px-5 py-8 md:px-8">
+      <footer className="border-t border-slate-200/80 bg-white/70 px-5 py-8 backdrop-blur md:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
           <div>
             <p>© 2026 SentraRisk Systems. All rights reserved.</p>
