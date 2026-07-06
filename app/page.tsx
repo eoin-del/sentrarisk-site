@@ -386,10 +386,7 @@ function ProductVisual() {
       <div className="absolute inset-y-0 right-0 hidden w-[45%] rounded-bl-[7rem] bg-[linear-gradient(145deg,#07131f_0%,#0b2730_58%,#102033_100%)] shadow-[inset_28px_0_70px_rgba(255,255,255,0.04)] lg:block" />
       <div className="absolute right-[5%] top-32 hidden w-[32rem] rounded-[1.75rem] border border-white/80 bg-white/94 p-5 shadow-[0_34px_100px_rgba(15,23,42,0.20)] backdrop-blur-xl lg:block">
         <div className="flex items-center justify-between border-b border-slate-200 pb-4">
-          <div>
-            <div className="text-lg font-semibold text-slate-950">Payment risk dashboard</div>
-            <div className="mt-1 text-xs font-medium text-slate-500">Supplier, payroll, and transaction review</div>
-          </div>
+          <div className="text-lg font-semibold text-slate-950">SentraRisk overview</div>
           <div className="rounded-full border border-cyan-200 bg-cyan-50 px-3 py-2 text-xs font-semibold text-cyan-800">
             Ready for review
           </div>
