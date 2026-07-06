@@ -815,6 +815,42 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
+      <section className="px-5 py-20 md:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 rounded-[2rem] bg-slate-950 px-6 py-10 text-white shadow-[0_28px_90px_rgba(7,19,31,0.18)] md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+          <div>
+            <p className="text-sm font-semibold uppercase text-cyan-300">About SentraRisk Systems</p>
+            <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal md:text-5xl">
+              Human-led risk intelligence for finance professionals.
+            </h2>
+          </div>
+          <div>
+            <div className="space-y-5 text-base leading-8 text-slate-300">
+              <p>
+                SentraRisk Systems is an Irish software company building human-led risk intelligence tools for finance professionals, accountants, bookkeepers, and growing businesses.
+              </p>
+              <p>
+                Our platform helps teams identify payment-risk indicators, duplicate-looking transactions, supplier changes, payroll payment anomalies, and unusual activity before they become larger financial control issues.
+              </p>
+              <p>
+                We believe automation should support professional judgement, not replace it. SentraRisk highlights risk signals, explains why they matter, and gives finance teams the evidence they need to review, decide, and act with confidence.
+              </p>
+            </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
+              {[
+                ["Explainable", "Clear reasons behind each risk signal."],
+                ["Human-led", "Final decisions stay with finance professionals."],
+                ["Evidence-ready", "Structured notes, review trails, and reports."],
+              ].map(([title, text]) => (
+                <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.06] p-4">
+                  <p className="text-sm font-semibold text-cyan-300">{title}</p>
+                  <p className="mt-2 text-sm leading-6 text-slate-300">{text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="who" className="fluid-section px-5 py-24 md:px-8">
         <div className="fluid-inner mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
