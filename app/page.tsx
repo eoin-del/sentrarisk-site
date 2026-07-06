@@ -628,6 +628,15 @@ export default function SentraRiskLandingPage() {
           </div>
           <div className="flex items-center gap-2">
             <a
+              href={LINKEDIN_URL}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Visit SentraRisk Systems on LinkedIn"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/15 bg-white/10 text-sm font-bold text-white shadow-lg shadow-black/10 transition hover:bg-white/15"
+            >
+              in
+            </a>
+            <a
               href="#pricing"
               className="hidden h-10 items-center justify-center rounded-md border border-white/15 bg-white/10 px-4 text-sm font-semibold text-white shadow-lg shadow-black/10 transition hover:bg-white/15 sm:inline-flex"
             >
