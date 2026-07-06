@@ -570,6 +570,7 @@ export default function SentraRiskLandingPage() {
   return (
     <main className="fluid-shell min-h-screen text-slate-950">
       <section className="hero-stage relative min-h-[92vh] overflow-hidden">
+        {/* Hero intentionally has no mock dashboard or product preview. */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(0deg,#f7faf9_0%,rgba(247,250,249,0)_100%)]" />
         <nav className="relative z-10 mx-auto mt-4 flex max-w-7xl items-center justify-between gap-3 rounded-2xl border border-white/80 bg-white/88 px-4 py-3 shadow-[0_18px_55px_rgba(15,23,42,0.08)] backdrop-blur-xl md:px-5">
           <a href="#" className="shrink-0">
