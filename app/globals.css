@@ -96,9 +96,35 @@ html {
 
 .fluid-shell {
   background:
-    radial-gradient(circle at 8% 6%, rgba(14, 124, 134, 0.10), transparent 28%),
-    radial-gradient(circle at 94% 18%, rgba(7, 19, 31, 0.08), transparent 30%),
-    linear-gradient(180deg, #ffffff 0%, #f7faf9 42%, #ffffff 100%);
+    radial-gradient(circle at 12% 4%, rgba(141, 224, 215, 0.16), transparent 26%),
+    radial-gradient(circle at 92% 10%, rgba(7, 19, 31, 0.12), transparent 30%),
+    linear-gradient(180deg, #eef8f7 0%, #f7faf9 42%, #ffffff 100%);
+}
+
+.hero-stage {
+  background:
+    radial-gradient(circle at 16% 18%, rgba(141, 224, 215, 0.32), transparent 26%),
+    radial-gradient(circle at 56% 3%, rgba(255, 255, 255, 0.54), transparent 22%),
+    linear-gradient(135deg, #dcefed 0%, #f5faf9 42%, #07131f 100%);
+}
+
+.hero-stage::before {
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.74) 0%, rgba(255, 255, 255, 0.38) 42%, rgba(255, 255, 255, 0) 70%),
+    linear-gradient(180deg, rgba(7, 19, 31, 0.05), rgba(7, 19, 31, 0));
+  content: "";
+  inset: 0;
+  pointer-events: none;
+  position: absolute;
+}
+
+.hero-copy-panel {
+  border: 1px solid rgba(255, 255, 255, 0.74);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.74), rgba(255, 255, 255, 0.42));
+  box-shadow:
+    0 28px 90px rgba(7, 19, 31, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(18px);
 }
 
 .fluid-section {

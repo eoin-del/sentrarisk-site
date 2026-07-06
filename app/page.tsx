@@ -382,8 +382,7 @@ function LogoMark() {
 
 function ProductVisual() {
   return (
-    <div className="absolute inset-0 overflow-hidden bg-[#f7faf9]">
-      <div className="absolute inset-0 bg-[linear-gradient(135deg,#f7faf9_0%,#ffffff_36%,#eaf4f2_100%)]" />
+    <div className="hero-stage absolute inset-0 overflow-hidden">
       <div className="absolute inset-y-0 right-0 hidden w-[45%] rounded-bl-[7rem] bg-[linear-gradient(145deg,#07131f_0%,#0b2730_58%,#102033_100%)] shadow-[inset_28px_0_70px_rgba(255,255,255,0.04)] lg:block" />
       <div className="absolute right-[5%] top-32 hidden w-[32rem] rounded-[1.75rem] border border-white/80 bg-white/94 p-5 shadow-[0_34px_100px_rgba(15,23,42,0.20)] backdrop-blur-xl lg:block">
         <div className="flex items-center justify-between border-b border-slate-200 pb-4">
@@ -427,7 +426,7 @@ function ProductVisual() {
           Evidence notes, reviewer decisions, and client pack outputs stay together.
         </div>
       </div>
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(0deg,#ffffff_0%,rgba(255,255,255,0)_100%)]" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(0deg,#f7faf9_0%,rgba(247,250,249,0)_100%)]" />
     </div>
   );
 }
@@ -664,7 +663,7 @@ export default function SentraRiskLandingPage() {
         </nav>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(92vh-88px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
-          <div className="max-w-[570px]">
+          <div className="hero-copy-panel max-w-[620px] rounded-[2rem] p-6 md:p-8">
             <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white/90 px-4 py-2 text-sm font-semibold text-cyan-900 shadow-[0_12px_28px_rgba(14,124,134,0.08)] backdrop-blur">
               Irish-built software for SME finance teams
             </div>
