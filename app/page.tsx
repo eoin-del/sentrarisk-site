@@ -31,23 +31,23 @@ const TRIAL_ENQUIRY_URL = REGISTER_URL;
 const capabilities = [
   {
     icon: Gauge,
-    title: "Stronger payment-risk scoring",
-    text: "Flag duplicate-looking payments, new suppliers, repeated large payments, same-day exposure, and threshold patterns with clear reasons.",
+    title: "Payment-risk review",
+    text: "Review duplicate-looking payments, new suppliers, repeated large payments, same-day exposure, and threshold patterns with clear reasons.",
   },
   {
     icon: Siren,
-    title: "Review workflow for real teams",
-    text: "Route flagged transactions into a structured workflow with status, ownership, reviewer notes, and an audit-ready decision trail.",
+    title: "Structured review workflow",
+    text: "Route flagged transactions into a practical workflow with status, ownership, reviewer notes, and a decision trail.",
   },
   {
     icon: ClipboardCheck,
     title: "Client Control Pack",
-    text: "Turn monthly review work into a clear client pack with findings, recommended actions, review coverage, and PDF export.",
+    text: "Turn monthly review work into a clear client pack with findings, recommended actions, review coverage, and exportable evidence.",
   },
   {
     icon: Cloud,
-    title: "Xero-supported client imports",
-    text: "Connect Xero accounts by client, import supplier bills, refresh existing records, and reduce duplicated import noise.",
+    title: "Client-level Xero imports",
+    text: "Connect Xero by client, import supplier bills, refresh existing records, and keep client workflows separate.",
   },
   {
     icon: Users,
@@ -56,22 +56,22 @@ const capabilities = [
   },
   {
     icon: Code2,
-    title: "Spreadsheet, API, and future integrations",
-    text: "Start with Xero, payroll exports, or uploaded files, then connect SentraRisk to internal workflows with API keys and batch scoring when needed.",
+    title: "Spreadsheet and API routes",
+    text: "Start with Xero, payroll exports, or uploaded files, then connect scoring to internal workflows when needed.",
   },
 ];
 
 const metrics = [
-  ["10,000+ records", "Review high-volume files in minutes"],
-  ["Audit-ready", "Reports and decision evidence"],
-  ["Human-led", "Automation supports the final decision"],
+  ["Irish-built", "Focused on SMEs and advisors"],
+  ["Evidence-led", "Notes, reports, and review trails"],
+  ["Human-led", "Final judgement stays with the user"],
 ];
 
 const premiumStats = [
-  ["Monitor", "Client-level payment activity"],
-  ["Explain", "Risk reasons and evidence"],
-  ["Decide", "Reviewer notes and ownership"],
-  ["Report", "Board-ready control packs"],
+  ["Import", "Client-level supplier and payment data"],
+  ["Review", "Clear risk reasons and evidence"],
+  ["Record", "Reviewer notes and decision ownership"],
+  ["Report", "Client-ready control packs"],
 ];
 
 const comparisonRows = [
@@ -94,9 +94,9 @@ const comparisonRows = [
 ];
 
 const enterpriseProof = [
-  ["Payment-risk intelligence", "Supplier bills, payroll outputs, uploaded records, and API-scored transactions reviewed in one operating layer."],
-  ["Governance-first workflow", "Alert ownership, decision notes, archive history, review status, and control-pack exports built into the process."],
-  ["Designed for lean finance teams", "Enterprise-style visibility without requiring an enterprise compliance department."],
+  ["Built around payment control", "Supplier bills, payroll outputs, uploaded records, and API-scored transactions reviewed in one operating layer."],
+  ["Evidence from the start", "Alert ownership, decision notes, archive history, review status, and control-pack exports built into the process."],
+  ["Designed for lean finance teams", "Clear visibility without requiring an enterprise compliance department."],
 ];
 
 const operatingPrinciples = [
@@ -272,7 +272,7 @@ const pricingPlans = [
     name: "Starter",
     price: "€199",
     cadence: "/month",
-    description: "For small companies that want Xero-backed supplier risk checks and basic reporting.",
+    description: "For small companies that want supplier-risk review, basic reporting, and practical payment controls.",
     features: [
       "1 organisation",
       "3 users",
@@ -283,7 +283,7 @@ const pricingPlans = [
       "Basic alerts and control packs",
       "Up to 10,000 transactions/month",
     ],
-    cta: "Request 14-day trial",
+    cta: "Start 14-day trial",
     href: TRIAL_ENQUIRY_URL,
     highlighted: false,
   },
@@ -302,7 +302,7 @@ const pricingPlans = [
       "Email alerts",
       "Up to 20,000 transactions/month",
     ],
-    cta: "Request 14-day trial",
+    cta: "Start 14-day trial",
     href: TRIAL_ENQUIRY_URL,
     highlighted: true,
   },
@@ -323,7 +323,7 @@ const pricingPlans = [
       "Audit trail export",
       "Up to 30,000 transactions/month",
     ],
-    cta: "Request 14-day trial",
+    cta: "Start 14-day trial",
     href: TRIAL_ENQUIRY_URL,
     highlighted: false,
   },
@@ -572,7 +572,7 @@ export default function SentraRiskLandingPage() {
       <section className="hero-stage relative min-h-[92vh] overflow-hidden">
         {/* Hero intentionally has no mock dashboard or product preview. */}
         <div className="absolute bottom-0 left-0 right-0 h-32 bg-[linear-gradient(0deg,#f7faf9_0%,rgba(247,250,249,0)_100%)]" />
-        <nav className="relative z-10 mx-auto mt-4 flex max-w-7xl items-center justify-between gap-3 rounded-2xl border border-white/80 bg-white/88 px-4 py-3 shadow-[0_18px_55px_rgba(15,23,42,0.08)] backdrop-blur-xl md:px-5">
+        <nav className="relative z-10 mx-auto mt-4 flex max-w-7xl items-center justify-between gap-3 rounded-xl border border-white/70 bg-white/90 px-4 py-3 shadow-[0_18px_55px_rgba(15,23,42,0.07)] backdrop-blur-xl md:px-5">
           <a href="#" className="shrink-0">
             <LogoMark />
           </a>
@@ -592,19 +592,19 @@ export default function SentraRiskLandingPage() {
               target="_blank"
               rel="noreferrer"
               aria-label="Visit SentraRisk Systems on LinkedIn"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-xl border border-slate-200 bg-white text-sm font-bold text-slate-950 shadow-sm transition hover:border-cyan-700"
+              className="inline-flex h-10 w-10 items-center justify-center rounded-lg border border-slate-200 bg-white text-sm font-bold text-slate-950 shadow-sm transition hover:border-cyan-700"
             >
               in
             </a>
             <a
               href="#pricing"
-              className="hidden h-10 items-center justify-center rounded-xl border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-cyan-700 sm:inline-flex"
+              className="hidden h-10 items-center justify-center rounded-lg border border-slate-200 bg-white px-4 text-sm font-semibold text-slate-950 shadow-sm transition hover:border-cyan-700 sm:inline-flex"
             >
               Pricing
             </a>
             <a
               href={APP_URL}
-              className="inline-flex h-10 items-center justify-center rounded-xl bg-slate-950 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
+              className="inline-flex h-10 items-center justify-center rounded-lg bg-slate-950 px-5 text-sm font-semibold text-white shadow-sm transition hover:bg-slate-800"
             >
               Login
             </a>
@@ -612,18 +612,18 @@ export default function SentraRiskLandingPage() {
         </nav>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(92vh-88px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
-          <div className="hero-copy-panel max-w-[720px] rounded-[2rem] p-6 md:p-8">
-            <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white/90 px-4 py-2 text-sm font-semibold text-cyan-900 shadow-[0_12px_28px_rgba(14,124,134,0.08)] backdrop-blur">
-              Irish-built software for SME finance teams
+          <div className="hero-copy-panel max-w-[760px] rounded-2xl p-6 md:p-8">
+            <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white/90 px-4 py-2 text-sm font-semibold text-cyan-900 shadow-[0_10px_24px_rgba(14,124,134,0.07)] backdrop-blur">
+              Irish-built payment-risk software
             </div>
             <h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] tracking-normal text-slate-950 md:text-5xl">
-              A clearer way to review payment risk before it becomes a problem.
+              Practical payment-risk review for accountants and SME finance teams.
             </h1>
             <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 md:text-lg">
               SentraRisk helps accountants, bookkeepers, and growing businesses review supplier bills, duplicate-looking payments, payroll payment outputs, and unusual transaction patterns with clear evidence and human judgement.
             </p>
             <div className="mt-5 grid max-w-2xl gap-2 sm:grid-cols-2">
-              {["Xero-supported transaction imports", "Client-ready control packs", "Human-led risk review", "Built for Irish SMEs and advisors"].map((item) => (
+              {["Client-level Xero imports", "Client-ready control packs", "Human-led review workflow", "Built for Irish SMEs and advisors"].map((item) => (
                 <div key={item} className="flex items-center gap-2 text-sm font-semibold text-slate-700">
                   <CheckCircle2 className="h-4 w-4 text-cyan-700" aria-hidden="true" />
                   {item}
@@ -633,13 +633,13 @@ export default function SentraRiskLandingPage() {
             <div className="mt-7 flex flex-col gap-3 sm:flex-row">
               <a
                 href={TRIAL_ENQUIRY_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-7 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(15,23,42,0.18)] transition hover:-translate-y-0.5 hover:bg-slate-800"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-slate-950 px-7 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(15,23,42,0.18)] transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
                 Start 14-day trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="#demo"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl border border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-950 shadow-[0_14px_30px_rgba(15,23,42,0.08)] backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-700"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-950 shadow-[0_14px_30px_rgba(15,23,42,0.08)] backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-700"
               >
                 Contact us <Mail className="h-4 w-4" aria-hidden="true" />
               </a>
@@ -672,32 +672,32 @@ export default function SentraRiskLandingPage() {
 
       <section className="fluid-section px-5 py-24 md:px-8">
         <div className="fluid-inner mx-auto max-w-7xl">
-          <div className="editorial-panel grid gap-10 rounded-[2rem] p-6 md:p-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
+          <div className="editorial-panel grid gap-10 rounded-2xl p-6 md:p-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Why it matters</p>
               <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                Replace scattered checks with a controlled review process.
+                Replace scattered checks with a review process your team can stand over.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
                 Finance teams already know fraud risk matters. The harder part is finding the warning signs early, documenting the review, and keeping the final decision accountable.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-[1.5rem] border border-slate-200/70 bg-white/72 p-5 shadow-sm">
+              <div className="rounded-xl border border-slate-200/70 bg-white/72 p-5 shadow-sm">
                 <p className="text-sm font-semibold uppercase text-slate-500">Without SentraRisk</p>
                 <div className="mt-5 space-y-4">
                   {comparisonRows.map((row) => (
-                    <div key={row.without} className="rounded-2xl border border-slate-200/80 bg-white/82 p-4 text-sm leading-6 text-slate-600">
+                    <div key={row.without} className="rounded-lg border border-slate-200/80 bg-white/82 p-4 text-sm leading-6 text-slate-600">
                       {row.without}
                     </div>
                   ))}
                 </div>
               </div>
-              <div className="rounded-[1.5rem] border border-cyan-200/80 bg-[#f3fbfb]/82 p-5 shadow-sm">
+              <div className="rounded-xl border border-cyan-200/80 bg-[#f3fbfb]/82 p-5 shadow-sm">
                 <p className="text-sm font-semibold uppercase text-cyan-700">With SentraRisk</p>
                 <div className="mt-5 space-y-4">
                   {comparisonRows.map((row) => (
-                    <div key={row.with} className="flex gap-3 rounded-2xl border border-cyan-100 bg-white/88 p-4 text-sm leading-6 text-slate-700">
+                    <div key={row.with} className="flex gap-3 rounded-lg border border-cyan-100 bg-white/88 p-4 text-sm leading-6 text-slate-700">
                       <CheckCircle2 className="mt-1 h-4 w-4 shrink-0 text-cyan-700" aria-hidden="true" />
                       <span>{row.with}</span>
                     </div>
@@ -710,7 +710,7 @@ export default function SentraRiskLandingPage() {
       </section>
 
       <section className="px-5 py-6 md:px-8">
-        <div className="statement-band mx-auto grid max-w-7xl gap-8 rounded-[2rem] px-7 py-10 text-white lg:grid-cols-3 lg:px-10">
+        <div className="statement-band mx-auto grid max-w-7xl gap-8 rounded-2xl px-7 py-10 text-white lg:grid-cols-3 lg:px-10">
           {enterpriseProof.map(([title, text]) => (
             <div key={title} className="border-l border-[#8de0d7]/35 pl-6">
               <p className="text-sm font-semibold uppercase text-[#8de0d7]">{title}</p>
@@ -753,7 +753,7 @@ export default function SentraRiskLandingPage() {
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Platform</p>
               <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                Built for accountable risk review, not noisy dashboards.
+                Built for accountable risk review, not another noisy dashboard.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
                 SentraRisk brings client-level Xero imports, payroll payment review, transaction scoring, alert handling, reporting, API keys, and account controls into one operating layer for accountants, bookkeepers, and SME finance teams.
@@ -786,11 +786,11 @@ export default function SentraRiskLandingPage() {
       </section>
 
       <section className="px-5 py-24 md:px-8">
-        <div className="editorial-panel mx-auto grid max-w-7xl gap-10 rounded-[2rem] p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
+        <div className="editorial-panel mx-auto grid max-w-7xl gap-10 rounded-2xl p-6 md:p-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-center">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Built with control in mind</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-              Automation for the review work, human judgement for the decision.
+              Automation for the review work. Human judgement for the decision.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
               SentraRisk was created to make payment-risk review more accessible for SMEs that do not have enterprise compliance teams. The platform helps teams spot risk indicators, but keeps the final decision with the people responsible for the business.
@@ -798,7 +798,7 @@ export default function SentraRiskLandingPage() {
             <div className="mt-8">
               <Link
                 href="/accountants"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-slate-950 px-6 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
                 See Accountant Workflows <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
@@ -806,7 +806,7 @@ export default function SentraRiskLandingPage() {
           </div>
           <div className="grid gap-3">
             {trustSignals.map((item) => (
-              <div key={item} className="flex gap-3 rounded-2xl border border-white/70 bg-white/74 p-4 shadow-sm">
+              <div key={item} className="flex gap-3 rounded-lg border border-white/70 bg-white/74 p-4 shadow-sm">
                 <CircleCheckBig className="mt-0.5 h-5 w-5 shrink-0 text-cyan-700" aria-hidden="true" />
                 <p className="text-sm leading-6 text-slate-700">{item}</p>
               </div>
@@ -816,7 +816,7 @@ export default function SentraRiskLandingPage() {
       </section>
 
       <section className="px-5 py-20 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-10 rounded-[2rem] bg-slate-950 px-6 py-10 text-white shadow-[0_28px_90px_rgba(7,19,31,0.18)] md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
+        <div className="mx-auto grid max-w-7xl gap-10 rounded-2xl bg-slate-950 px-6 py-10 text-white shadow-[0_28px_90px_rgba(7,19,31,0.18)] md:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-300">About SentraRisk Systems</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal md:text-5xl">
@@ -841,7 +841,7 @@ export default function SentraRiskLandingPage() {
                 ["Human-led", "Final decisions stay with finance professionals."],
                 ["Evidence-ready", "Structured notes, review trails, and reports."],
               ].map(([title, text]) => (
-                <div key={title} className="rounded-2xl border border-white/10 bg-white/[0.06] p-4">
+                <div key={title} className="rounded-lg border border-white/10 bg-white/[0.06] p-4">
                   <p className="text-sm font-semibold text-cyan-300">{title}</p>
                   <p className="mt-2 text-sm leading-6 text-slate-300">{text}</p>
                 </div>
