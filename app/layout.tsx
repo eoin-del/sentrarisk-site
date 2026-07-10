@@ -3,13 +3,13 @@ import "./globals.css";
 import { TrackingScripts } from "./tracking-scripts";
 
 export const metadata: Metadata = {
-  title: "SentraRisk Systems | Transaction-Risk Intelligence for Finance Teams",
+  title: "SentraRisk Systems | Irish FinTech RegTech SaaS for Payment Risk",
   description:
-    "SentraRisk Systems helps finance teams and advisors monitor transaction risk, score payment activity, review payment files, and produce evidence-ready reports.",
+    "SentraRisk Systems helps accountants, bookkeepers, virtual CFOs, and finance teams identify payment risks before they become financial losses.",
   openGraph: {
     title: "SentraRisk Systems",
     description:
-      "Explainable transaction-risk monitoring, payment-file review, crypto risk intelligence, and API scoring for finance professionals.",
+      "Irish fintech/regtech SaaS for duplicate-payment checks, supplier anomalies, unusual transaction review, and human-led payment-risk decisions.",
     url: "https://www.sentrarisksystems.com",
     siteName: "SentraRisk Systems",
     type: "website",
