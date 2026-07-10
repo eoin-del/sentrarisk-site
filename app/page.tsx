@@ -590,39 +590,56 @@ export default function SentraRiskLandingPage() {
         </nav>
 
         <div className="relative z-10 mx-auto flex min-h-[calc(92vh-88px)] max-w-7xl items-center px-5 pb-16 pt-10 md:px-8">
-          <div className="hero-copy-panel max-w-[760px] rounded-2xl p-6 md:p-8">
-            <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white/90 px-4 py-2 text-sm font-semibold text-cyan-900 shadow-[0_10px_24px_rgba(14,124,134,0.07)] backdrop-blur">
-              Irish-built payment-risk software
-            </div>
-            <h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] tracking-normal text-slate-950 md:text-5xl">
-              Stop duplicate payments and supplier-risk issues before they become expensive problems.
-            </h1>
-            <p className="mt-6 max-w-2xl text-base leading-8 text-slate-700 md:text-lg">
-              SentraRisk helps accountants, bookkeepers, and growing finance teams review supplier bills, duplicate-looking payments, uploaded payment files, and unusual transaction patterns with clear evidence and human judgement.
-            </p>
-            <div className="mt-5 grid max-w-2xl gap-2 sm:grid-cols-2">
-              {["Client-level Xero imports", "Client-ready control packs", "Human-led review workflow", "Built for Irish SMEs and advisors"].map((item) => (
-                <div key={item} className="flex items-center gap-2 text-sm font-semibold text-slate-700">
-                  <CheckCircle2 className="h-4 w-4 text-cyan-700" aria-hidden="true" />
-                  {item}
+          <div className="hero-copy-panel w-full rounded-2xl p-6 md:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
+              <div>
+                <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white/90 px-4 py-2 text-sm font-semibold text-cyan-900 shadow-[0_10px_24px_rgba(14,124,134,0.07)] backdrop-blur">
+                  Irish-built payment-risk software
                 </div>
-              ))}
+                <h1 className="max-w-4xl text-4xl font-semibold leading-[1.04] tracking-normal text-slate-950 md:text-5xl">
+                  Stop duplicate payments and supplier-risk issues before they become expensive problems.
+                </h1>
+                <p className="mt-6 max-w-3xl text-base leading-8 text-slate-700 md:text-lg">
+                  SentraRisk helps accountants, bookkeepers, and growing finance teams review supplier bills, duplicate-looking payments, uploaded payment files, and unusual transaction patterns with clear evidence and human judgement.
+                </p>
+                <div className="mt-5 grid max-w-3xl gap-2 sm:grid-cols-2">
+                  {["Client-level Xero imports", "Client-ready control packs", "Human-led review workflow", "Built for Irish SMEs and advisors"].map((item) => (
+                    <div key={item} className="flex items-center gap-2 text-sm font-semibold text-slate-700">
+                      <CheckCircle2 className="h-4 w-4 text-cyan-700" aria-hidden="true" />
+                      {item}
+                    </div>
+                  ))}
+                </div>
+                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                  <a
+                    href={TRIAL_ENQUIRY_URL}
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-slate-950 px-7 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(15,23,42,0.18)] transition hover:-translate-y-0.5 hover:bg-slate-800"
+                  >
+                    Start 14-day trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                  <a
+                    href="#demo"
+                    className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-950 shadow-[0_14px_30px_rgba(15,23,42,0.08)] backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-700"
+                  >
+                    Contact us <Mail className="h-4 w-4" aria-hidden="true" />
+                  </a>
+                </div>
+              </div>
+
+              <div className="rounded-2xl border border-white/75 bg-white/72 p-5 shadow-[0_18px_48px_rgba(15,23,42,0.08)] backdrop-blur">
+                <p className="text-sm font-semibold uppercase tracking-[0.08em] text-cyan-800">Review layer</p>
+                <div className="mt-5 grid gap-3">
+                  {premiumStats.map(([value, label]) => (
+                    <div key={value} className="flex items-center justify-between gap-4 rounded-xl border border-slate-200/80 bg-white/82 px-4 py-3">
+                      <span className="text-sm font-semibold text-slate-950">{value}</span>
+                      <span className="max-w-48 text-right text-xs font-medium leading-5 text-slate-500">{label}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
-            <div className="mt-7 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={TRIAL_ENQUIRY_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-slate-950 px-7 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(15,23,42,0.18)] transition hover:-translate-y-0.5 hover:bg-slate-800"
-              >
-                Start 14-day trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <a
-                href="#demo"
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-950 shadow-[0_14px_30px_rgba(15,23,42,0.08)] backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-700"
-              >
-                Contact us <Mail className="h-4 w-4" aria-hidden="true" />
-              </a>
-            </div>
-            <div className="mt-8 flex max-w-3xl flex-col gap-3 border-t border-slate-200 pt-5 text-sm text-slate-600 sm:flex-row sm:items-center sm:gap-6">
+
+            <div className="mt-8 flex flex-col gap-3 border-t border-slate-200 pt-5 text-sm text-slate-600 sm:flex-row sm:items-center sm:gap-6">
               {metrics.map(([value, label]) => (
                 <div key={value} className="flex items-center gap-3">
                   <span className="h-1.5 w-1.5 rounded-full bg-cyan-700" />
