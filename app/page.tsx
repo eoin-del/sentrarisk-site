@@ -51,13 +51,13 @@ const capabilities = [
   },
   {
     icon: Users,
-    title: "Payroll payment review",
-    text: "Review payroll payment outputs for duplicate-looking payments, unusual beneficiaries, abnormal amounts, and evidence-ready decision notes without replacing payroll software.",
+    title: "Staff payment file review",
+    text: "Review uploaded staff payment files for duplicate-looking payments, unusual beneficiaries, abnormal amounts, and evidence-ready decision notes.",
   },
   {
     icon: Code2,
     title: "Spreadsheet and API routes",
-    text: "Start with Xero, payroll exports, or uploaded files, then connect scoring to internal workflows when needed.",
+    text: "Start with Xero, uploaded files, or API-based scoring, then connect review outputs to internal workflows when needed.",
   },
 ];
 
@@ -238,7 +238,7 @@ const faqs = [
   {
     question: "Do we need engineers to get started?",
     answer:
-      "No. Teams can begin with dashboard access, client accounts, Xero-supported imports, payroll export review, and file upload. API access is available when you want to connect scoring directly to internal systems.",
+      "No. Teams can begin with dashboard access, client accounts, Xero-supported imports, uploaded file review, and reporting. API access is available when you want to connect scoring directly to internal systems.",
   },
   {
     question: "Does SentraRisk support Xero?",
@@ -246,9 +246,9 @@ const faqs = [
       "Yes. SentraRisk supports Xero supplier bill imports and can separate imports by client account, so one client's Xero connection does not mix into another client's review workflow.",
   },
   {
-    question: "Does SentraRisk replace payroll software?",
+    question: "Does SentraRisk process payroll?",
     answer:
-      "No. SentraRisk does not run payroll, calculate payslips, manage employee payroll records, or replace payroll providers. It reviews payroll payment outputs for risk indicators such as duplicate-looking payments, unusual beneficiaries, abnormal amounts, and review evidence.",
+      "No. SentraRisk does not run payroll, calculate payslips, manage employee payroll records, or connect directly to payroll providers. It can review uploaded payment files for duplicate-looking payments, unusual beneficiaries, abnormal amounts, and review evidence.",
   },
   {
     question: "What is a Client Control Pack?",

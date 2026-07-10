@@ -33,7 +33,7 @@ export default function AccountantsPage() {
         },
         {
           title: "For virtual CFO services",
-          text: "Add a fraud-risk review workflow to monthly finance operations, payroll payment review, board packs, and control reviews.",
+          text: "Add a fraud-risk review workflow to monthly finance operations, staff payment file checks, board packs, and control reviews.",
         },
         {
           title: "For compliance-focused reporting",
@@ -43,7 +43,7 @@ export default function AccountantsPage() {
       useCases={[
         "Monthly fraud-risk review for SME clients.",
         "Supplier bill checks before management review.",
-        "Payroll payment output review without replacing payroll software.",
+        "Uploaded staff payment file review without replacing payroll providers.",
         "Board-ready risk summaries for finance meetings.",
         "Compliance pack exports for internal controls and audit preparation.",
       ]}
