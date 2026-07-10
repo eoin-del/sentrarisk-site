@@ -25,16 +25,6 @@ export function TrackingScripts() {
       analytics.src = "https://www.googletagmanager.com/gtag/js?id=G-VS527Y2NFS";
       document.head.appendChild(analytics);
     }
-
-    if (!document.getElementById("hs-script-loader")) {
-      const hubspot = document.createElement("script");
-      hubspot.id = "hs-script-loader";
-      hubspot.type = "text/javascript";
-      hubspot.async = true;
-      hubspot.defer = true;
-      hubspot.src = "https://js-eu1.hs-scripts.com/148356926.js";
-      document.body.appendChild(hubspot);
-    }
   }, []);
 
   return null;
