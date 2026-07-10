@@ -5,7 +5,7 @@ import { SeoLandingPage } from "../seo-pages";
 export const metadata: Metadata = {
   title: "Fraud-Risk Software for Accountants & Virtual CFOs | SentraRisk Systems",
   description:
-    "Fraud-risk, payroll payment review, and transaction monitoring software for accountants, bookkeepers, virtual CFOs, and finance advisors supporting SME clients.",
+    "Fraud-risk, uploaded payment file review, and transaction monitoring software for accountants, bookkeepers, virtual CFOs, and finance advisors supporting SME clients.",
 };
 
 export default function AccountantsPage() {
@@ -13,16 +13,16 @@ export default function AccountantsPage() {
     <SeoLandingPage
       eyebrow="For accountants and virtual CFOs"
       title="Give SME clients a clearer view of fraud-risk, supplier exposure, and transaction controls."
-      description="SentraRisk helps accountants, bookkeepers, virtual CFOs, and finance advisors review client transaction risk, Xero supplier bills, payroll payment outputs, fraud indicators, and compliance-ready reports."
+      description="SentraRisk helps accountants, bookkeepers, virtual CFOs, and finance advisors review client transaction risk, Xero supplier bills, uploaded payment files, fraud indicators, and compliance-ready reports."
       primaryCta="Request advisor trial access"
       icon={Landmark}
       points={[
         "Support client conversations with board summaries, compliance packs, and clear risk indicators.",
-        "Review Xero supplier bills, payroll payment outputs, and uploaded transaction files from a single workflow.",
+        "Review Xero supplier bills, uploaded payment files, and transaction files from a single workflow.",
         "Offer a practical fraud-risk review layer without becoming an enterprise compliance team.",
       ]}
       proof={[
-        { value: "Review", label: "Built around finance and payroll payment outputs many SME clients already use." },
+        { value: "Review", label: "Built around finance and payment files many SME clients already use." },
         { value: "PDF", label: "Client-ready exports for management and review meetings." },
         { value: "SME", label: "Pricing and workflow designed for lean finance teams." },
       ]}

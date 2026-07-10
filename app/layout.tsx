@@ -5,11 +5,11 @@ import { TrackingScripts } from "./tracking-scripts";
 export const metadata: Metadata = {
   title: "SentraRisk Systems | Real-Time Fraud Detection for SMEs",
   description:
-    "SentraRisk Systems helps businesses detect fraud, score transaction risk, review payroll payment outputs, monitor crypto exposure, and manage alerts in real time.",
+    "SentraRisk Systems helps businesses detect fraud, score transaction risk, review payment files, monitor crypto exposure, and manage alerts in real time.",
   openGraph: {
     title: "SentraRisk Systems",
     description:
-      "Fraud detection, transaction monitoring, payroll payment review, crypto risk intelligence, and API scoring for growing businesses.",
+      "Fraud detection, transaction monitoring, payment-file review, crypto risk intelligence, and API scoring for growing businesses.",
     url: "https://www.sentrarisksystems.com",
     siteName: "SentraRisk Systems",
     type: "website",
