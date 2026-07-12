@@ -67,10 +67,10 @@ const metrics = [
 ];
 
 const premiumStats = [
-  ["Import", "Client-level supplier and payment data"],
-  ["Review", "Clear risk reasons and evidence"],
-  ["Record", "Reviewer notes and decision ownership"],
-  ["Report", "Client-ready control packs"],
+  ["Import", "Supplier, invoice, payment, and transaction data"],
+  ["Review", "Prioritised risk signals with clear reasons"],
+  ["Decide", "Human approval notes and decision ownership"],
+  ["Report", "Evidence packs for management, clients, or review files"],
 ];
 
 const comparisonRows = [
@@ -95,7 +95,7 @@ const comparisonRows = [
 const enterpriseProof = [
   ["Built around payment control", "Supplier bills, uploaded records, staff payment files, and API-scored transactions reviewed in one operating layer."],
   ["Evidence from the start", "Alert ownership, decision notes, archive history, review status, and control-pack exports built into the process."],
-  ["Designed for lean finance teams", "Clear visibility without requiring an enterprise compliance department."],
+  ["Designed for finance teams", "Clear visibility for SMEs, CFOs, operations, compliance users, and advisors without enterprise complexity."],
 ];
 
 const operatingPrinciples = [
@@ -122,39 +122,39 @@ const workflow = [
 
 const howItWorks = [
   {
-    title: "Connect Xero or upload transactions",
-    text: "Start with client-level Xero supplier bills, spreadsheet files, staff payment files, or transaction data from an internal workflow.",
+    title: "Import finance data",
+    text: "Start with Xero supplier bills, spreadsheet files, staff payment files, or transaction data from an internal workflow.",
   },
   {
-    title: "Review the strongest risk signals",
-    text: "SentraRisk flags duplicate-looking payments, unusual supplier changes, repeated large payments, and threshold-style patterns.",
+    title: "Prioritise risk signals",
+    text: "SentraRisk flags duplicate-looking payments, supplier changes, repeated large payments, unusual amounts, and threshold-style patterns.",
   },
   {
-    title: "Export a Client Control Pack",
-    text: "Keep the final judgement human, record the decision, and produce a clear output for the client, management team, or internal review file.",
+    title: "Record decisions and report",
+    text: "Keep the final judgement human, record the outcome, and produce a clear output for management, clients, or internal review files.",
   },
 ];
 
 const audienceSegments = [
   {
-    icon: Landmark,
-    title: "Accountants and bookkeepers",
-    text: "For practices that want to offer monthly payment-risk reviews and client-ready control packs without heavy manual work.",
+    icon: Store,
+    title: "SME finance teams",
+    text: "For growing businesses that need practical checks on suppliers, bills, duplicates, approvals, and unusual payment activity.",
   },
   {
     icon: Users,
-    title: "Virtual CFOs and advisors",
-    text: "For outsourced finance leaders who need to improve client oversight, explain review findings, and reduce manual checking time.",
-  },
-  {
-    icon: Store,
-    title: "SME finance teams",
-    text: "For growing businesses that need practical checks on suppliers, bills, duplicates, and unusual payment activity.",
+    title: "CFOs and finance managers",
+    text: "For leaders who need clearer oversight, faster review cycles, and evidence behind payment-risk decisions.",
   },
   {
     icon: Code2,
-    title: "CFO, compliance, and operations teams",
-    text: "For finance leaders, compliance users, internal reviewers, and operators who need clearer evidence behind transaction decisions.",
+    title: "Compliance and operations",
+    text: "For internal reviewers and operators who need a structured way to evidence payment controls and follow-up actions.",
+  },
+  {
+    icon: Landmark,
+    title: "Accountants and advisors",
+    text: "For firms that want to offer monthly payment-risk reviews and control packs without rebuilding checks in spreadsheets.",
   },
 ];
 
@@ -166,7 +166,7 @@ const useCases = [
   },
   {
     title: "Client Control Packs",
-    text: "Give each client a simple monthly review output covering risk grade, key findings, recommended actions, and evidence from the review.",
+    text: "Create a monthly review output covering risk grade, key findings, recommended actions, and evidence from the review.",
     href: "/accountants",
   },
   {
@@ -181,7 +181,7 @@ const useCases = [
   },
   {
     title: "Board and audit reporting",
-    text: "Turn operational reviews into decision memos, control packs, and concise evidence for leadership or client meetings.",
+    text: "Turn operational reviews into decision memos, control packs, and concise evidence for leadership, board, client, or internal review meetings.",
     href: "/accountants",
   },
 ];
@@ -198,29 +198,29 @@ const seoLandingPages = [
     href: "/supplier-fraud-detection",
   },
   {
-    title: "Accountants and virtual CFOs",
-    text: "For advisors who want client-ready payment-risk reviews, board summaries, and control pack exports.",
+    title: "Finance teams and advisors",
+    text: "For finance teams, CFOs, advisors, and practices that want payment-risk reviews, board summaries, and control pack exports.",
     href: "/accountants",
   },
 ];
 
 const professionalOutcomes = [
   {
-    title: "For accountants and advisors",
-    text: "Offer SME clients a structured transaction-risk review without manually rebuilding checks in spreadsheets every month.",
-  },
-  {
     title: "For finance teams",
     text: "Turn supplier bills, uploaded payment files, and operational transaction data into findings, control scores, recommended actions, and reports.",
   },
   {
-    title: "For compliance and review",
+    title: "For CFOs and operators",
+    text: "See which payments need review, who owns the decision, what was approved, and what evidence was retained.",
+  },
+  {
+    title: "For compliance and advisors",
     text: "Keep a clear record of why a transaction was flagged, who reviewed it, what was decided, and what evidence was retained.",
   },
 ];
 
 const trustSignals = [
-  "Irish software company focused on SMEs, accountants, bookkeepers, finance teams, and compliance-focused operators.",
+  "Irish software company focused on SMEs, finance teams, CFOs, compliance users, operations teams, accountants, and advisors.",
   "Human review stays central: SentraRisk supports decisions with clearer signals and evidence.",
   "Uploaded staff payment files can be reviewed for payment-risk indicators without replacing payroll platforms.",
   "Built around organisation-level access, reviewer notes, audit-ready exports, and controlled onboarding.",
@@ -237,7 +237,7 @@ const faqs = [
   {
     question: "Who is SentraRisk built for?",
     answer:
-      "SentraRisk is built for finance professionals, including accountants, bookkeepers, SME finance teams, virtual CFOs, compliance users, and operators who need a practical way to review transaction risk and create evidence around payment controls.",
+      "SentraRisk is built for finance professionals, including SME finance teams, CFOs, finance managers, compliance users, operations teams, virtual CFOs, accountants, bookkeepers, and advisors who need a practical way to review transaction risk and create evidence around payment controls.",
   },
   {
     question: "Do we need engineers to get started?",
@@ -605,7 +605,7 @@ export default function SentraRiskLandingPage() {
                   Identify payment risks before they become financial losses.
                 </h1>
                 <p className="mt-6 max-w-3xl text-base leading-8 text-slate-700 md:text-lg">
-                  SentraRisk helps accountants, bookkeepers, virtual CFOs, and finance teams analyse accounting data, highlight duplicate payments, supplier anomalies, unusual transactions, and other risk indicators, then review them with clear evidence and human judgement.
+                  SentraRisk helps finance teams, CFOs, operations teams, compliance users, and advisors review payment-risk signals across supplier, invoice, staff payment, and transaction data with clear evidence and human judgement.
                 </p>
                 <div className="mt-5 grid max-w-3xl gap-2 sm:grid-cols-2">
                   {["Duplicate payment checks", "Supplier anomaly review", "Unusual transaction signals", "Human-led decision workflow"].map((item) => (
@@ -729,7 +729,7 @@ export default function SentraRiskLandingPage() {
                 From client data to a useful review output.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk is designed around a simple review flow that finance teams, accountants, bookkeepers, and advisors can run without building a full compliance operation.
+                SentraRisk is designed around a simple review flow that finance teams can run without building a full compliance operation: import data, prioritise risk, record the decision, and export evidence.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
@@ -756,7 +756,7 @@ export default function SentraRiskLandingPage() {
                 Built for accountable risk review, not another noisy dashboard.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk brings client-level Xero imports, uploaded payment-file review, transaction scoring, alert handling, reporting, API keys, and account controls into one operating layer for finance professionals.
+                SentraRisk brings Xero imports, uploaded payment-file review, transaction scoring, alert handling, reporting, API keys, and account controls into one operating layer for finance professionals.
               </p>
               <div className="mt-8 grid gap-2">
                 {integrationProof.map((item) => (
@@ -793,14 +793,14 @@ export default function SentraRiskLandingPage() {
               Automation for the review work. Human judgement for the decision.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
-              SentraRisk was created to make transaction-risk monitoring more accessible for SMEs and the professionals who support them. The platform helps teams spot risk indicators, but keeps the final decision with the people responsible for the business.
+              SentraRisk was created to make transaction-risk monitoring more accessible for SMEs and finance teams. The platform helps teams spot risk indicators, but keeps the final decision with the people responsible for the business.
             </p>
             <div className="mt-8">
               <Link
                 href="/accountants"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-slate-950 px-6 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
-                See Accountant Workflows <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                See Finance Workflows <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -820,16 +820,16 @@ export default function SentraRiskLandingPage() {
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-300">About SentraRisk Systems</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal md:text-5xl">
-              Human-led risk intelligence for accountants, advisors, and finance teams.
+              Human-led risk intelligence for finance teams.
             </h2>
           </div>
           <div>
             <div className="space-y-5 text-base leading-8 text-slate-300">
               <p>
-                SentraRisk Systems is an Irish fintech/regtech SaaS platform helping accountants, bookkeepers, virtual CFOs, and finance teams identify payment risks before they become financial losses.
+                SentraRisk Systems is an Irish fintech/regtech SaaS platform helping finance teams, CFOs, operations teams, compliance users, accountants, and advisors identify payment risks before they become financial losses.
               </p>
               <p>
-                By analysing accounting data and highlighting duplicate payments, supplier anomalies, unusual transactions, staff payment-file anomalies, and other risk indicators, SentraRisk helps finance professionals reduce manual review time and improve client oversight.
+                By analysing accounting and payment data and highlighting duplicate payments, supplier anomalies, unusual transactions, staff payment-file anomalies, and other risk indicators, SentraRisk helps finance professionals reduce manual review time and improve oversight.
               </p>
               <p>
                 We believe automation should support professional judgement, not replace it. SentraRisk highlights risk signals, explains why they matter, and gives finance teams the evidence they need to review, decide, and act with confidence.
@@ -860,7 +860,7 @@ export default function SentraRiskLandingPage() {
                 Built for teams that need risk control without enterprise drag.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk gives accountants, bookkeepers, virtual CFOs, finance teams, and advisory practices a serious review layer for supplier payments, uploaded payment files, duplicate transactions, unusual patterns, and evidence-ready reporting.
+                SentraRisk gives finance teams, CFOs, compliance users, operations teams, accountants, and advisors a serious review layer for supplier payments, uploaded payment files, duplicate transactions, unusual patterns, and evidence-ready reporting.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
@@ -887,13 +887,13 @@ export default function SentraRiskLandingPage() {
               A practical way to turn transaction data into risk insight.
             </h2>
             <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-              SentraRisk is designed to help accountants, CFOs, finance managers, compliance users, and advisory teams spot payment-risk issues, explain what was reviewed, and produce useful outputs for clients or internal teams.
+              SentraRisk is designed to help CFOs, finance managers, compliance users, operations teams, accountants, and advisory teams spot payment-risk issues, explain what was reviewed, and produce useful outputs for management, clients, or internal teams.
             </p>
             <Link
               href="/accountants"
                 className="mt-8 inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-slate-950 px-6 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800"
             >
-              See accountant workflows <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              See finance workflows <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
           </div>
           <div className="grid gap-4 md:grid-cols-3">
