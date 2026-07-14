@@ -1,25 +1,25 @@
 export const pilotDeliverables = [
-  "Xero supplier bill import or sample transaction file review",
-  "Risk scoring walkthrough with reasons and escalation quality",
-  "Alert review workflow using status, ownership, and decision notes",
-  "Board summary and compliance pack export",
-  "Pilot findings call with recommended production setup",
+  "Focused setup around your payment-risk priorities",
+  "Guided product walkthrough using a suitable review scenario",
+  "Management-ready summary of what SentraRisk can support",
+  "Feedback session to assess fit and commercial value",
+  "Recommended next step if the pilot is successful",
 ];
 
 export const pilotTimeline = [
   {
     phase: "Setup",
     timing: "Day 1-2",
-    text: "Agree the workflow, trial users, sample data route, and success criteria.",
+    text: "Agree the pilot scope, trial users, and success criteria.",
   },
   {
     phase: "Review",
     timing: "Day 3-10",
-    text: "Run real or representative supplier bills, transactions, alerts, reports, and feedback through SentraRisk.",
+    text: "Review whether SentraRisk improves visibility, confidence, and management reporting.",
   },
   {
     phase: "Decision",
     timing: "Day 11-14",
-    text: "Review findings, confirm pricing fit, and decide whether Starter, Compliance, Practice, or Enterprise is right.",
+    text: "Review findings, confirm pricing fit, and decide whether SentraRisk is the right next step.",
   },
 ];

@@ -8,7 +8,7 @@ const REGISTER_URL = "https://app.sentrarisksystems.com/register";
 export const metadata: Metadata = {
   title: "SentraRisk Pilot Programme | Fraud-Risk Trial Access",
   description:
-    "Run a focused SentraRisk pilot for Xero supplier bill review, transaction risk scoring, compliance packs, and fraud-risk reporting.",
+    "Run a focused SentraRisk pilot for payment-risk oversight, bogus-payment prevention, and finance-team reporting.",
 };
 
 export default function PilotProgrammePage() {
@@ -27,10 +27,10 @@ export default function PilotProgrammePage() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200">Pilot programme</p>
             <h1 className="mt-5 max-w-4xl text-5xl font-semibold leading-tight tracking-normal md:text-6xl">
-              Prove SentraRisk with real workflows before a full rollout.
+              Prove SentraRisk before a full rollout.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              A focused pilot for accountants, virtual CFOs, SMEs, and finance teams that want to test risk scoring, Xero-supported imports, alert review, and report outputs.
+              A focused pilot for accountants, virtual CFOs, SMEs, and finance teams that want to improve payment-risk oversight before money leaves the business.
             </p>
             <Link
               href={REGISTER_URL}
@@ -80,8 +80,8 @@ export default function PilotProgrammePage() {
         <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-3">
           {[
             ["Best fit", "Accountants, virtual CFOs, SME finance teams, and compliance operators."],
-            ["Inputs", "Xero supplier bills, sample transaction files, dashboard review, or API scoring pathway."],
-            ["Output", "A clear deployment recommendation, sample reports, pricing route, and next controls to activate."],
+            ["Focus", "Payment-risk prevention, management visibility, and finance-team confidence."],
+            ["Output", "A clear recommendation, pricing route, and next step if the pilot is successful."],
           ].map(([title, text]) => (
             <div key={title} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">
               <h3 className="text-xl font-semibold text-slate-950">{title}</h3>
@@ -96,7 +96,7 @@ export default function PilotProgrammePage() {
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200">Ready to test it?</p>
             <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-normal">
-              Start with a focused workflow and turn feedback into a production setup.
+              Start with a focused pilot and turn feedback into a confident next step.
             </h2>
           </div>
           <Link

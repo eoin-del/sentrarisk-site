@@ -5,47 +5,47 @@ import { SeoLandingPage } from "../seo-pages";
 export const metadata: Metadata = {
   title: "Fraud-Risk Software for Accountants & Virtual CFOs | SentraRisk Systems",
   description:
-    "Fraud-risk, uploaded payment file review, and transaction monitoring software for accountants, bookkeepers, virtual CFOs, and finance advisors supporting SME clients.",
+    "Payment-risk prevention software for accountants, bookkeepers, virtual CFOs, and finance advisors supporting SME clients.",
 };
 
 export default function AccountantsPage() {
   return (
     <SeoLandingPage
       eyebrow="For accountants and virtual CFOs"
-      title="Give SME clients a clearer view of fraud-risk, supplier exposure, and transaction controls."
-      description="SentraRisk helps accountants, bookkeepers, virtual CFOs, and finance advisors review client transaction risk, Xero supplier bills, uploaded payment files, fraud indicators, and compliance-ready reports."
+      title="Give SME clients a clearer view of payment risk before money leaves."
+      description="SentraRisk helps accountants, bookkeepers, virtual CFOs, and finance advisors support clients with payment-risk oversight, bogus-payment prevention, and professional management outputs."
       primaryCta="Request advisor trial access"
       icon={Landmark}
       points={[
-        "Support client conversations with board summaries, compliance packs, and clear risk indicators.",
-        "Review Xero supplier bills, uploaded payment files, and transaction files from a single workflow.",
-        "Offer a practical fraud-risk review layer without becoming an enterprise compliance team.",
+        "Support client conversations with clearer management outputs.",
+        "Add a payment-risk prevention layer to client advisory work.",
+        "Help clients improve oversight without building an enterprise compliance function.",
       ]}
       proof={[
-        { value: "Review", label: "Built around finance and payment files many SME clients already use." },
-        { value: "PDF", label: "Client-ready exports for management and review meetings." },
-        { value: "SME", label: "Pricing and workflow designed for lean finance teams." },
+        { value: "Prevent", label: "Focused on stopping avoidable payment losses." },
+        { value: "Output", label: "Client-ready reporting for management conversations." },
+        { value: "SME", label: "Designed for lean finance teams." },
       ]}
       sections={[
         {
           title: "For client advisory",
-          text: "Use SentraRisk to show clients where supplier, payment, and transaction risks may need attention.",
+          text: "Use SentraRisk to help clients understand where payment-risk oversight may need strengthening.",
         },
         {
           title: "For virtual CFO services",
-          text: "Add a fraud-risk review workflow to monthly finance operations, staff payment file checks, board packs, and control reviews.",
+          text: "Add a practical payment-risk review layer to monthly finance and management support.",
         },
         {
           title: "For compliance-focused reporting",
-          text: "Create cleaner evidence around alerts, reviewer notes, risk decisions, and exported compliance packs.",
+          text: "Create clearer outputs around review activity, controls, and recommended next actions.",
         },
       ]}
       useCases={[
-        "Monthly fraud-risk review for SME clients.",
-        "Supplier bill checks before management review.",
-        "Uploaded staff payment file review without replacing payroll providers.",
-        "Board-ready risk summaries for finance meetings.",
-        "Compliance pack exports for internal controls and audit preparation.",
+        "Monthly payment-risk review for SME clients.",
+        "Bogus-payment prevention support.",
+        "Finance-control reporting for management meetings.",
+        "Client-ready summaries for advisory conversations.",
+        "Internal-control support without enterprise complexity.",
       ]}
     />
   );

@@ -79,7 +79,7 @@ export function SeoLandingPage({
             <div className="flex h-12 w-12 items-center justify-center rounded-md bg-cyan-300 text-slate-950">
               <Icon className="h-6 w-6" aria-hidden="true" />
             </div>
-            <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-cyan-200">Built for review workflows</p>
+            <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-cyan-200">Built for finance teams</p>
             <div className="mt-5 space-y-4">
               {points.map((point) => (
                 <div key={point} className="flex gap-3 rounded-md border border-white/10 bg-white/5 p-4">
@@ -122,7 +122,7 @@ export function SeoLandingPage({
               Practical risk review for real finance work.
             </h2>
             <p className="mt-5 text-base leading-7 text-slate-600">
-              SentraRisk helps teams move from manual checks and spreadsheets into a structured review workflow with clear evidence.
+              SentraRisk helps teams improve payment-risk oversight without adding unnecessary complexity.
             </p>
           </div>
           <div className="grid gap-3 sm:grid-cols-2">
@@ -141,7 +141,7 @@ export function SeoLandingPage({
           <div>
             <p className="text-sm font-semibold uppercase tracking-wide text-cyan-200">Start with a trial enquiry</p>
             <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-normal">
-              See whether SentraRisk fits your workflow before committing to a plan.
+              See whether SentraRisk fits your organisation before committing to a plan.
             </h2>
           </div>
           <Link

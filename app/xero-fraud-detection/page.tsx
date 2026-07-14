@@ -3,48 +3,48 @@ import { Cloud } from "lucide-react";
 import { SeoLandingPage } from "../seo-pages";
 
 export const metadata: Metadata = {
-  title: "Xero Fraud Detection Software | SentraRisk Systems",
+  title: "Accounting Data Risk Review | SentraRisk Systems",
   description:
-    "Xero-supported fraud detection for SMEs and finance teams. Import supplier bills, score transaction risk, review alerts, and export board-ready reports.",
+    "Payment-risk review for SMEs and finance teams that want stronger oversight before money leaves the business.",
 };
 
 export default function XeroFraudDetectionPage() {
   return (
     <SeoLandingPage
-      eyebrow="Xero fraud detection"
-      title="Review risky Xero supplier bills before they become payment problems."
-      description="SentraRisk helps SMEs, accountants, and finance teams import Xero supplier bills, score fraud indicators, review alerts, and export decision-ready reports from one workflow."
-      primaryCta="Request Xero trial access"
+      eyebrow="Accounting data review"
+      title="Bring payment-risk review closer to your finance data."
+      description="SentraRisk helps SMEs, accountants, and finance teams improve payment-risk oversight before money leaves the business, without replacing existing finance systems."
+      primaryCta="Request trial access"
       icon={Cloud}
       points={[
-        "Import supplier bills from Xero into a structured fraud-risk review workflow.",
-        "Flag unusual amounts, new supplier patterns, invoice timing issues, and transaction risk indicators.",
-        "Export board summaries and compliance-ready evidence after review.",
+        "Support finance teams with clearer payment-risk visibility.",
+        "Review activity before approval and release decisions are made.",
+        "Create professional outputs for management and internal review.",
       ]}
       proof={[
-        { value: "Xero", label: "Supplier bill imports supported for review workflows." },
-        { value: "PDF", label: "Board summaries and compliance pack exports." },
+        { value: "Finance", label: "Designed to work alongside existing finance routines." },
+        { value: "Review", label: "Human judgement remains central." },
         { value: "14 days", label: "Trial access available through enquiry." },
       ]}
       sections={[
         {
-          title: "For Xero-connected finance teams",
-          text: "SentraRisk gives teams a practical way to review Xero supplier bills for fraud-risk indicators without relying only on spreadsheets or manual judgement.",
+          title: "For finance teams",
+          text: "SentraRisk gives teams a practical way to improve payment-risk oversight without relying only on manual review.",
         },
         {
           title: "For accountants and advisors",
-          text: "Use SentraRisk to support client conversations around supplier risk, payment controls, fraud exposure, and audit-ready reporting.",
+          text: "Use SentraRisk to support client conversations around payment control, risk prevention, and management reporting.",
         },
         {
           title: "For SME operators",
-          text: "Give lean teams a clear view of which transactions need attention, why they were flagged, and who reviewed them.",
+          text: "Give lean teams a clearer way to review payment risk before funds leave the business.",
         },
       ]}
       useCases={[
-        "Review new or unusual suppliers before payment.",
-        "Identify invoice patterns that need a second look.",
-        "Create evidence for finance, board, or compliance review.",
-        "Monitor transaction risk without building a full internal risk team.",
+        "Review payment risk before release.",
+        "Support management conversations around control.",
+        "Create clear outputs for finance review.",
+        "Improve oversight without building a full internal risk team.",
       ]}
     />
   );

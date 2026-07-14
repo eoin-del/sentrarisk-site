@@ -8,8 +8,8 @@ export const metadata: Metadata = {
     "SentraRisk Systems helps accountants, bookkeepers, virtual CFOs, and finance teams identify payment risks before they become financial losses.",
   openGraph: {
     title: "SentraRisk Systems",
-    description:
-      "Irish fintech/regtech SaaS for duplicate-payment checks, supplier anomalies, unusual transaction review, and human-led payment-risk decisions.",
+  description:
+      "Irish fintech/regtech SaaS helping finance teams prevent payment risk before money leaves the business.",
     url: "https://www.sentrarisksystems.com",
     siteName: "SentraRisk Systems",
     type: "website",

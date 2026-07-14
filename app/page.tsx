@@ -45,7 +45,7 @@ const capabilities = [
   },
   {
     icon: Cloud,
-    title: "Finance-system friendly",
+    title: "Finance-team friendly",
     text: "Designed to work alongside the finance systems and review routines teams already use.",
   },
   {
@@ -94,15 +94,15 @@ const comparisonRows = [
 
 const enterpriseProof = [
   ["Built around payment prevention", "Designed to help teams act before weak approval evidence becomes a financial loss."],
-  ["Evidence from the start", "Review outputs are created with accountable decision-making in mind."],
+  ["Clear from the start", "Outputs are designed to support professional management conversations."],
   ["Designed for finance teams", "Clear visibility for SMEs, CFOs, operations, compliance users, and advisors without enterprise complexity."],
 ];
 
 const operatingPrinciples = [
   "Clear prevention before opaque automation",
-  "Human approval at the centre of every decision",
+  "Human judgement at the centre",
   "Client and organisation-level separation",
-  "Evidence outputs designed for review meetings",
+  "Professional outputs designed for review meetings",
 ];
 
 const audienceSegments = [
@@ -114,7 +114,7 @@ const audienceSegments = [
   {
     icon: Users,
     title: "CFOs and finance managers",
-    text: "For leaders who need better visibility, cleaner review records, and more confidence around payment decisions.",
+    text: "For leaders who need better visibility and more confidence around payment-risk oversight.",
   },
   {
     icon: Code2,
@@ -146,17 +146,17 @@ const useCases = [
   },
   {
     title: "Once-off pre-payment review",
-    text: "A separate paid review for a specific payment or supplier concern before release.",
+    text: "A separate paid review when a payment needs a second layer of confidence.",
     href: "#demo",
   },
   {
-    title: "Standalone transaction analysis service",
+    title: "Standalone payment review service",
     text: "For businesses that want independent risk insight without starting a full monthly subscription.",
     href: "#demo",
   },
   {
-    title: "Payment file review",
-    text: "Support finance-team review while keeping payment processing outside SentraRisk.",
+    title: "Finance activity review",
+    text: "Support finance-team oversight while keeping payment processing outside SentraRisk.",
     href: "#platform",
   },
   {
@@ -168,18 +168,18 @@ const useCases = [
 
 const seoLandingPages = [
   {
-    title: "Xero payment-risk review",
-    text: "For teams that want payment-risk review to sit closer to their accounting workflow.",
+    title: "Accounting-data supported review",
+    text: "For teams that want payment-risk review closer to their finance workflow.",
     href: "/xero-fraud-detection",
   },
   {
-    title: "Supplier fraud detection",
+    title: "Supplier payment risk",
     text: "For finance teams that want stronger prevention around supplier payment risk.",
     href: "/supplier-fraud-detection",
   },
   {
     title: "Finance teams and advisors",
-    text: "For finance teams, CFOs, advisors, and practices that want payment-risk reviews, board summaries, and control pack exports.",
+    text: "For finance teams, CFOs, advisors, and practices that want payment-risk review and professional reporting.",
     href: "/accountants",
   },
 ];
@@ -191,7 +191,7 @@ const professionalOutcomes = [
   },
   {
     title: "For CFOs and operators",
-    text: "Support better visibility over payment decisions, ownership, and review outcomes.",
+    text: "Support better visibility over payment risk, ownership, and review outcomes.",
   },
   {
     title: "For compliance and advisors",
@@ -200,14 +200,14 @@ const professionalOutcomes = [
 ];
 
 const onceOffServiceChecks = [
-  "Independent pre-payment review for a specific payment concern.",
+  "Independent pre-payment review when a payment needs extra confidence.",
   "Practical review using appropriate business information.",
-  "Clear recommendation to support the payment decision.",
+  "Clear recommendation to support the next step.",
 ];
 
 const trustSignals = [
   "Irish software company focused on SMEs, finance teams, CFOs, compliance users, operations teams, accountants, and advisors.",
-  "Human review stays central: SentraRisk helps teams catch risk before money leaves and supports decisions with clearer information.",
+  "Human review stays central: SentraRisk helps teams catch risk before money leaves and supports better oversight.",
   "Works alongside existing finance operations without replacing core accounting or payment systems.",
   "Built around organisation-level access, management outputs, and controlled onboarding.",
   "Designed for lean teams that need practical payment-risk visibility without enterprise complexity.",
@@ -223,7 +223,7 @@ const faqs = [
   {
     question: "Who is SentraRisk built for?",
     answer:
-      "SentraRisk is built for finance professionals, including SME finance teams, CFOs, finance managers, compliance users, operations teams, virtual CFOs, accountants, bookkeepers, and advisors who need a practical way to improve payment-risk oversight.",
+      "SentraRisk is built for finance professionals, including SME finance teams, CFOs, finance managers, compliance users, operations teams, virtual CFOs, accountants, bookkeepers, and advisors who need practical payment-risk oversight.",
   },
   {
     question: "Do we need engineers to get started?",
@@ -231,9 +231,9 @@ const faqs = [
       "No. Teams can begin with guided setup and practical review. More tailored setup routes are available for larger or more complex organisations.",
   },
   {
-    question: "Does SentraRisk support Xero?",
+    question: "Can SentraRisk work alongside finance systems?",
     answer:
-      "Yes. SentraRisk supports Xero-connected review for finance teams that want accounting data closer to their risk oversight.",
+      "Yes. SentraRisk is designed to work alongside existing finance operations and can be tailored where a more connected setup is needed.",
   },
   {
     question: "Does SentraRisk replace payroll or accounting software?",
@@ -251,7 +251,7 @@ const faqs = [
       "It is a client-ready review output that summarises the key findings, review coverage, and recommended next actions from the period reviewed.",
   },
   {
-    question: "Will every transaction become an alert?",
+    question: "Will SentraRisk create unnecessary noise?",
     answer:
       "No. SentraRisk is designed to help teams focus attention on the items most likely to need review, rather than creating unnecessary noise.",
   },
@@ -271,9 +271,9 @@ const pricingPlans = [
     features: [
       "1 organisation",
       "3 users",
-      "Accounting-data supported review",
-      "File-supported review",
-      "Spreadsheet-supported review",
+      "Guided payment-risk review",
+      "Finance activity review",
+      "Basic setup support",
       "Payment-risk review",
       "Basic reporting outputs",
       "Up to 10,000 records/month",
@@ -289,10 +289,10 @@ const pricingPlans = [
     description: "For SMEs and finance-led businesses that want to reduce manual review work and improve payment-control evidence.",
     features: [
       "5 users",
-      "Accounting-data supported review",
-      "File-supported review",
+      "Guided payment-risk review",
+      "Finance activity review",
       "Separate once-off review service available",
-      "Standalone payment analysis",
+      "Standalone payment review",
       "Client Control Pack exports",
       "Board summary PDF",
       "Review notes and ownership",
@@ -311,8 +311,8 @@ const pricingPlans = [
     features: [
       "10 users",
       "Advanced setup options",
-      "Accounting-data supported review",
-      "File-supported review",
+      "Guided payment-risk review",
+      "Finance activity review",
       "Client management",
       "Bulk review support",
       "Tailored review configuration",
@@ -348,9 +348,8 @@ const pricingPlans = [
 
 const interestOptions = [
   "Client Control Packs",
-  "Accounting-data review",
-  "File-supported payment review",
   "Payment-risk review",
+  "Finance activity review",
   "Accountant practice support",
   "Integration discussion",
   "Custom setup",
@@ -591,7 +590,7 @@ export default function SentraRiskLandingPage() {
             <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
               <div>
                 <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white/90 px-4 py-2 text-sm font-semibold text-cyan-900 shadow-[0_10px_24px_rgba(14,124,134,0.07)] backdrop-blur">
-                  Irish fintech/regtech SaaS for payment-risk review
+                  Irish fintech/regtech SaaS for payment-risk prevention
                 </div>
                 <h1 className="max-w-4xl text-4xl font-semibold leading-[1.04] tracking-normal text-slate-950 md:text-5xl">
                   Catch payment risk before money leaves the business.
@@ -671,7 +670,7 @@ export default function SentraRiskLandingPage() {
                 Reduce manual review time without losing professional judgement.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                Finance teams already know payment risk matters. The harder part is finding the warning signs before money leaves, documenting the review, improving oversight, and keeping the final decision accountable.
+                Finance teams already know payment risk matters. The harder part is improving oversight before money leaves, keeping reviews clear, and making the final judgement accountable.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
@@ -747,10 +746,10 @@ export default function SentraRiskLandingPage() {
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-700">Built with control in mind</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-              Automation for the review work. Human judgement for the decision.
+              Technology for the review work. Human judgement for the decision.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
-              SentraRisk was created to make payment-risk monitoring more accessible for SMEs and finance teams. The platform helps teams act earlier, while keeping the final decision with the people responsible for the business.
+              SentraRisk was created to make payment-risk prevention more accessible for SMEs and finance teams. The platform helps teams act earlier, while keeping the final judgement with the people responsible for the business.
             </p>
             <div className="mt-8">
               <Link
@@ -817,7 +816,7 @@ export default function SentraRiskLandingPage() {
                 Built for teams that need risk control without enterprise drag.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk gives finance teams, CFOs, compliance users, operations teams, accountants, and advisors a serious prevention layer for payment-risk oversight and evidence-ready reporting.
+                SentraRisk gives finance teams, CFOs, compliance users, operations teams, accountants, and advisors a serious prevention layer for payment-risk oversight and professional reporting.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-3">
@@ -1103,7 +1102,7 @@ export default function SentraRiskLandingPage() {
           <div className="grid gap-5 md:grid-cols-3">
             {[
               [Shield, "Business account structure", "Admin and user dashboards designed around organisational access."],
-              [Cloud, "Finance-system friendly", "Designed to support controlled review alongside existing finance operations."],
+              [Cloud, "Finance-team friendly", "Designed to support controlled review alongside existing finance operations."],
               [LockKeyhole, "Data control", "Designed for controlled environments, separated client areas, and accountable review."],
             ].map(([Icon, title, text]) => {
               const TypedIcon = Icon as typeof Shield;
@@ -1192,11 +1191,11 @@ export default function SentraRiskLandingPage() {
         <div className="mx-auto flex max-w-7xl flex-col gap-5 text-sm text-slate-500 md:flex-row md:items-center md:justify-between">
           <div>
             <p>© 2026 SentraRisk Systems. All rights reserved.</p>
-            <p className="mt-1">Fraud detection, payment-risk review, and client control reporting.</p>
+            <p className="mt-1">Payment-risk prevention and finance-control reporting.</p>
           </div>
           <div className="flex flex-wrap gap-4 font-medium">
-            <Link href="/xero-fraud-detection" className="hover:text-slate-950">Xero Fraud Detection</Link>
-            <Link href="/supplier-fraud-detection" className="hover:text-slate-950">Supplier Fraud Detection</Link>
+            <Link href="/xero-fraud-detection" className="hover:text-slate-950">Accounting Data Review</Link>
+            <Link href="/supplier-fraud-detection" className="hover:text-slate-950">Supplier Payment Risk</Link>
             <Link href="/accountants" className="hover:text-slate-950">Accountants</Link>
             <Link href="/pilot-programme" className="hover:text-slate-950">Pilot Programme</Link>
             <Link href="/privacy-policy" className="hover:text-slate-950">Privacy Policy</Link>
