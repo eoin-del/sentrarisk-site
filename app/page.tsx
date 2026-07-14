@@ -147,12 +147,12 @@ const useCases = [
   {
     title: "Once-off pre-payment review",
     text: "A separate paid review when a payment needs a second layer of confidence.",
-    href: "#demo",
+    href: "#once-off-kyc",
   },
   {
     title: "Standalone payment review service",
     text: "For businesses that want independent risk insight without starting a full monthly subscription.",
-    href: "#demo",
+    href: "#once-off-kyc",
   },
   {
     title: "Finance activity review",
@@ -556,6 +556,7 @@ export default function SentraRiskLandingPage() {
             <a href="#platform" className="hover:text-slate-950">Platform</a>
             <a href="#who" className="hover:text-slate-950">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-slate-950">Use cases</a>
+            <a href="#once-off-kyc" className="hover:text-slate-950">Once-off review</a>
             <a href="#pricing" className="hover:text-slate-950">Pricing</a>
             <a href={REGISTER_URL} className="hover:text-slate-950">Trial</a>
             <a href="#demo" className="hover:text-slate-950">Contact</a>
@@ -614,12 +615,26 @@ export default function SentraRiskLandingPage() {
                     Start 14-day trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                   <a
-                    href="#demo"
+                    href="#once-off-kyc"
                     className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-950 shadow-[0_14px_30px_rgba(15,23,42,0.08)] backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-700"
                   >
-                    Contact us <Mail className="h-4 w-4" aria-hidden="true" />
+                    Once-off review <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </div>
+                <a
+                  href="#once-off-kyc"
+                  className="mt-5 flex max-w-3xl flex-col gap-3 rounded-xl border border-cyan-200 bg-cyan-50/80 p-4 text-left shadow-[0_12px_28px_rgba(14,124,134,0.08)] transition hover:-translate-y-0.5 hover:border-cyan-400 sm:flex-row sm:items-center sm:justify-between"
+                >
+                  <span>
+                    <span className="block text-sm font-semibold text-slate-950">Once-off payment review</span>
+                    <span className="mt-1 block text-sm leading-6 text-slate-600">
+                      For a private or one-off payment-risk check before funds are released.
+                    </span>
+                  </span>
+                  <span className="shrink-0 rounded-full bg-white px-4 py-2 text-sm font-semibold text-cyan-800 shadow-sm">
+                    From EUR49
+                  </span>
+                </a>
               </div>
 
               <div className="rounded-2xl border border-white/75 bg-white/72 p-5 shadow-[0_18px_48px_rgba(15,23,42,0.08)] backdrop-blur">
@@ -876,6 +891,9 @@ export default function SentraRiskLandingPage() {
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
               SentraRisk can provide a standalone pre-payment review for businesses that want a second layer of confidence before releasing money, without starting a full monthly subscription.
             </p>
+            <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-cyan-300/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white">
+              Once-off reviews from EUR49
+            </div>
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/8 p-4 text-sm leading-6 text-slate-300">
               <strong className="text-white">Output:</strong> a concise review note with a clear recommendation and supporting context.
             </div>
