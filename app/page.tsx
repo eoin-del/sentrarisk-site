@@ -175,13 +175,13 @@ const useCases = [
     href: "#demo",
   },
   {
-    title: "Once-off transaction analysis",
-    text: "Run a focused pre-payment check on a single supplier payment, invoice, refund, new bank detail, or unusual transaction before money leaves the business.",
+    title: "Once-off pre-payment KYC service",
+    text: "A separate paid SentraRisk review for one supplier, invoice, refund, bank-detail change, or transaction before payment release.",
     href: "#demo",
   },
   {
-    title: "KYC and payment verification workspace",
-    text: "Bring together company, VAT, IBAN, VOP-readiness, supplier profile, and reviewer evidence checks in one controlled workflow before a payment decision is made.",
+    title: "Standalone transaction analysis service",
+    text: "For businesses that want SentraRisk to assess a single payment risk without setting up a full monthly software workflow.",
     href: "#demo",
   },
   {
@@ -229,6 +229,15 @@ const professionalOutcomes = [
   },
 ];
 
+const onceOffServiceChecks = [
+  "Supplier or payee identity review using business details supplied by the customer.",
+  "Invoice, payment reference, amount, timing and payment-purpose review.",
+  "IBAN structure check and bank-detail change risk review.",
+  "Company, VAT and public evidence review where available.",
+  "VOP-readiness status and clear note where live account-name matching is not connected.",
+  "Payment-risk summary, recommended next action and reviewer evidence note.",
+];
+
 const trustSignals = [
   "Irish software company focused on SMEs, finance teams, CFOs, compliance users, operations teams, accountants, and advisors.",
   "Human review stays central: SentraRisk supports decisions with clearer signals and evidence.",
@@ -265,9 +274,9 @@ const faqs = [
       "No. SentraRisk does not run payroll, calculate payslips, manage employee payroll records, or connect directly to payroll providers. It can review uploaded payment files for duplicate-looking payments, unusual beneficiaries, abnormal amounts, and review evidence.",
   },
   {
-    question: "Can SentraRisk run once-off transaction or KYC checks?",
+    question: "Can SentraRisk run a once-off KYC check before paying an invoice?",
     answer:
-      "Yes. SentraRisk can run a focused once-off transaction analysis and bring together supplier profile, company/VAT evidence, IBAN structure, VOP-readiness, risk scoring, reviewer notes, and decision evidence. Live account-holder name matching requires a connected VOP, bank, or payment-provider API.",
+      "Yes. SentraRisk offers a separate paid once-off pre-payment KYC and transaction analysis service for a single supplier, invoice, refund, bank-detail change, or unusual payment. It brings together supplier information, company/VAT evidence, IBAN structure, VOP-readiness, risk scoring, reviewer notes, and decision evidence. Live account-holder name matching requires a connected VOP, bank, or payment-provider API.",
   },
   {
     question: "What is a Client Control Pack?",
@@ -315,8 +324,8 @@ const pricingPlans = [
       "5 users",
       "Xero supplier bill imports",
       "Uploaded payment file review",
-      "Once-off transaction analysis",
-      "KYC and payment verification workspace",
+      "Separate once-off review service available",
+      "Standalone transaction analysis",
       "Client Control Pack exports",
       "Board summary PDF",
       "Risk notes and ownership",
@@ -948,6 +957,51 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
+      <section id="once-off-kyc" className="px-5 py-24 md:px-8">
+        <div className="statement-band mx-auto grid max-w-7xl gap-10 rounded-[2rem] px-7 py-14 text-white lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-10">
+          <div>
+            <p className="text-sm font-semibold uppercase text-cyan-300">Once-off paid service</p>
+            <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal md:text-5xl">
+              Pre-payment KYC and transaction review before an invoice is paid.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
+              SentraRisk can review a single supplier payment, invoice, refund, bank-detail change, or unusual transaction as a standalone service. It is designed for businesses that want a second layer of evidence before releasing money, without starting a full monthly software workflow.
+            </p>
+            <div className="mt-6 rounded-2xl border border-white/10 bg-white/8 p-4 text-sm leading-6 text-slate-300">
+              <strong className="text-white">Output:</strong> a concise pre-payment review note covering the risk signals found, evidence checked, limitations, and recommended next action.
+            </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <a
+                href="#demo"
+                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
+              >
+                Request once-off review <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+              <a
+                href={`mailto:${CONTACT_EMAIL}?subject=Once-off%20pre-payment%20KYC%20review`}
+                className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
+              >
+                Email SentraRisk
+              </a>
+            </div>
+          </div>
+          <div className="rounded-2xl border border-white/10 bg-black/35 p-5 shadow-2xl backdrop-blur">
+            <p className="text-sm font-semibold text-cyan-300">What SentraRisk reviews</p>
+            <div className="mt-5 grid gap-3">
+              {onceOffServiceChecks.map((check) => (
+                <div key={check} className="flex gap-3 rounded-xl border border-white/10 bg-white/6 p-3">
+                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-300" aria-hidden="true" />
+                  <p className="text-sm leading-6 text-slate-300">{check}</p>
+                </div>
+              ))}
+            </div>
+            <p className="mt-5 text-xs leading-5 text-slate-400">
+              Live account-holder name matching depends on access to a connected VOP, bank, or payment-provider API. Where that is not connected, the review will clearly state the limitation.
+            </p>
+          </div>
+        </div>
+      </section>
+
       <section id="use-cases" className="fluid-section px-5 py-24 md:px-8">
         <div className="fluid-inner mx-auto max-w-7xl">
           <div className="max-w-3xl">
@@ -956,7 +1010,7 @@ export default function SentraRiskLandingPage() {
               High-value workflows for finance teams that need control.
             </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Use SentraRisk as a client review desk, once-off transaction check, KYC/payment verification workspace, Xero-backed transaction-risk monitor, uploaded file review layer, reporting engine, or scoring layer depending on where your workflow starts.
+                Use SentraRisk as a monthly software workflow or as a separate paid once-off review service for a supplier payment, invoice, refund, bank-detail change, or unusual transaction.
               </p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -1113,7 +1167,7 @@ Authorization: Bearer YOUR_API_KEY
                 Pricing by payment-control need.
               </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Start with transaction-risk review and uploaded file checks, add efficiency-focused payment controls, once-off analysis, KYC verification workflows and control packs, then scale into API access or custom enterprise deployment.
+                Start with transaction-risk review and uploaded file checks, add efficiency-focused payment controls and control packs, or request a separate once-off pre-payment KYC review when a single invoice or transaction needs independent attention.
               </p>
             </div>
             <div className="editorial-panel grid gap-3 rounded-[1.5rem] p-5 sm:grid-cols-3">
