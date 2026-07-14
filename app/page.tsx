@@ -139,7 +139,7 @@ const audienceSegments = [
   {
     icon: Store,
     title: "SME finance teams",
-    text: "For growing businesses that need practical checks on suppliers, bills, duplicates, approvals, and unusual payment activity.",
+    text: "For businesses that handle recurring supplier payments and need practical checks on suppliers, bills, duplicates, approvals, and unusual payment activity.",
   },
   {
     icon: Users,
@@ -175,6 +175,16 @@ const useCases = [
     href: "#demo",
   },
   {
+    title: "Once-off transaction analysis",
+    text: "Run a focused pre-payment check on a single supplier payment, invoice, refund, new bank detail, or unusual transaction before money leaves the business.",
+    href: "#demo",
+  },
+  {
+    title: "KYC and payment verification workspace",
+    text: "Bring together company, VAT, IBAN, VOP-readiness, supplier profile, and reviewer evidence checks in one controlled workflow before a payment decision is made.",
+    href: "#demo",
+  },
+  {
     title: "Staff payment file review",
     text: "Review uploaded staff payment files for duplicate-looking payments, unusual beneficiaries, abnormal amount changes, and timing issues while keeping payment processing outside SentraRisk.",
     href: "#platform",
@@ -194,7 +204,7 @@ const seoLandingPages = [
   },
   {
     title: "Supplier fraud detection",
-    text: "For finance teams reviewing invoices, new suppliers, unusual payment patterns, and transaction anomalies.",
+    text: "For finance teams reviewing recurring supplier payments, new suppliers, unusual payment patterns, and transaction anomalies.",
     href: "/supplier-fraud-detection",
   },
   {
@@ -207,7 +217,7 @@ const seoLandingPages = [
 const professionalOutcomes = [
   {
     title: "For finance teams",
-    text: "Turn supplier bills, uploaded payment files, and operational transaction data into findings, control scores, recommended actions, and reports.",
+    text: "Turn recurring supplier payments, uploaded payment files, and operational transaction data into findings, control scores, recommended actions, and reports.",
   },
   {
     title: "For CFOs and operators",
@@ -255,6 +265,11 @@ const faqs = [
       "No. SentraRisk does not run payroll, calculate payslips, manage employee payroll records, or connect directly to payroll providers. It can review uploaded payment files for duplicate-looking payments, unusual beneficiaries, abnormal amounts, and review evidence.",
   },
   {
+    question: "Can SentraRisk run once-off transaction or KYC checks?",
+    answer:
+      "Yes. SentraRisk can run a focused once-off transaction analysis and bring together supplier profile, company/VAT evidence, IBAN structure, VOP-readiness, risk scoring, reviewer notes, and decision evidence. Live account-holder name matching requires a connected VOP, bank, or payment-provider API.",
+  },
+  {
     question: "What is a Client Control Pack?",
     answer:
       "It is a client-ready review output that summarises the control score, key payment-risk findings, recommended actions, review coverage, and supporting evidence from the period reviewed.",
@@ -295,11 +310,13 @@ const pricingPlans = [
     name: "Compliance",
     price: "€499",
     cadence: "/month",
-    description: "For finance professionals who need stronger review evidence, client-ready control packs, and structured transaction-risk monitoring.",
+    description: "For SMEs and finance-led businesses that want to reduce manual payment checks, improve approval evidence, and keep supplier/payment risk under control without adding extra admin.",
     features: [
       "5 users",
       "Xero supplier bill imports",
       "Uploaded payment file review",
+      "Once-off transaction analysis",
+      "KYC and payment verification workspace",
       "Client Control Pack exports",
       "Board summary PDF",
       "Risk notes and ownership",
@@ -939,7 +956,7 @@ export default function SentraRiskLandingPage() {
               High-value workflows for finance teams that need control.
             </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Use SentraRisk as a client review desk, Xero-backed transaction-risk monitor, uploaded file review layer, reporting engine, or scoring layer depending on where your workflow starts.
+                Use SentraRisk as a client review desk, once-off transaction check, KYC/payment verification workspace, Xero-backed transaction-risk monitor, uploaded file review layer, reporting engine, or scoring layer depending on where your workflow starts.
               </p>
           </div>
           <div className="mt-10 grid gap-4 md:grid-cols-2">
@@ -1093,10 +1110,10 @@ Authorization: Bearer YOUR_API_KEY
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Pricing</p>
               <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                Pricing by risk-control need.
+                Pricing by payment-control need.
               </h2>
               <p className="mt-5 text-base leading-7 text-slate-600">
-                Start with Xero-backed transaction-risk review and uploaded file review, add control packs and board reporting, then scale into API access or a custom enterprise deployment.
+                Start with transaction-risk review and uploaded file checks, add efficiency-focused payment controls, once-off analysis, KYC verification workflows and control packs, then scale into API access or custom enterprise deployment.
               </p>
             </div>
             <div className="editorial-panel grid gap-3 rounded-[1.5rem] p-5 sm:grid-cols-3">
