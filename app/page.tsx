@@ -67,10 +67,10 @@ const metrics = [
 ];
 
 const premiumStats = [
-  ["Import", "Supplier, invoice, payment, and transaction data"],
-  ["Review", "Prioritised risk signals with clear reasons"],
-  ["Decide", "Human approval notes and decision ownership"],
-  ["Report", "Evidence packs for management, clients, or review files"],
+  ["Prevent", "Catch risk before payment release"],
+  ["Monitor", "Supplier, invoice, payroll, and transaction activity"],
+  ["Evidence", "Clear review notes and control outputs"],
+  ["Decide", "Human judgement stays in control"],
 ];
 
 const comparisonRows = [
@@ -103,36 +103,6 @@ const operatingPrinciples = [
   "Human approval at the centre of every decision",
   "Client and organisation-level separation",
   "Evidence outputs designed for review meetings",
-];
-
-const integrationProof = [
-  "Client-level Xero supplier bills",
-  "Uploaded staff payment file review",
-  "Excel transaction files",
-  "Duplicate and threshold-pattern checks",
-  "Client Control Pack PDF exports",
-  "Reviewer notes and decision trail",
-];
-
-const workflow = [
-  "Create a client account and connect the right Xero organisation, upload transaction files, or add data through the API.",
-  "SentraRisk scores payment activity and explains the strongest indicators before a risky payment is approved or released.",
-  "Review the findings, record decisions, and export evidence for the client, management team, or internal review file.",
-];
-
-const howItWorks = [
-  {
-    title: "Import finance data",
-    text: "Start with Xero supplier bills, spreadsheet files, staff payment files, or transaction data from an internal workflow.",
-  },
-  {
-    title: "Prioritise risk signals",
-    text: "SentraRisk flags duplicate-looking payments, supplier changes, repeated large payments, unusual amounts, and threshold-style patterns before payment release where data is reviewed in time.",
-  },
-  {
-    title: "Record decisions and report",
-    text: "Keep the final judgement human, record the outcome, and produce a clear output for management, clients, or internal review files.",
-  },
 ];
 
 const audienceSegments = [
@@ -230,12 +200,9 @@ const professionalOutcomes = [
 ];
 
 const onceOffServiceChecks = [
-  "Supplier or payee identity review using business details supplied by the customer.",
-  "Invoice, payment reference, amount, timing and payment-purpose review.",
-  "IBAN structure check and bank-detail change risk review.",
-  "Company, VAT and public evidence review where available.",
-  "VOP-readiness status and clear note where live account-name matching is not connected.",
-  "Payment-risk summary, recommended next action and reviewer evidence note.",
+  "Supplier, invoice, bank-detail and transaction risk review before payment release.",
+  "Company, VAT, IBAN and available public evidence checks.",
+  "Clear recommendation and evidence note for the payment decision.",
 ];
 
 const trustSignals = [
@@ -261,7 +228,7 @@ const faqs = [
   {
     question: "Do we need engineers to get started?",
     answer:
-      "No. Teams can begin with dashboard access, client accounts, Xero-supported imports, uploaded file review, and reporting. API access is available when you want to connect scoring directly to internal systems.",
+      "No. Teams can begin with dashboard access, client accounts, Xero-supported imports, uploaded file review, and reporting. More tailored integration routes are available for larger or more complex organisations.",
   },
   {
     question: "Does SentraRisk support Xero?",
@@ -588,7 +555,6 @@ export default function SentraRiskLandingPage() {
           </a>
           <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
             <a href="#platform" className="hover:text-slate-950">Platform</a>
-            <a href="#how-it-works" className="hover:text-slate-950">How it works</a>
             <a href="#who" className="hover:text-slate-950">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-slate-950">Use cases</a>
             <a href="#pricing" className="hover:text-slate-950">Pricing</a>
@@ -746,52 +712,17 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section id="how-it-works" className="fluid-section px-5 py-24 md:px-8">
-        <div className="fluid-inner mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-start">
-            <div>
-              <p className="text-sm font-semibold uppercase text-cyan-700">How it works</p>
-              <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                From client data to a useful review output.
-              </h2>
-              <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk is designed around a simple review flow that finance teams can run without building a full compliance operation: import data, prioritise risk, record the decision, and export evidence.
-              </p>
-            </div>
-            <div className="grid gap-4 md:grid-cols-3">
-              {howItWorks.map((item, index) => (
-                <article key={item.title} className="fluid-card rounded-[1.5rem] p-6">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">
-                    {index + 1}
-                  </span>
-                  <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
-                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
       <section id="platform" className="fluid-section px-5 py-24 md:px-8">
         <div className="fluid-inner mx-auto max-w-7xl">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Platform</p>
               <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                Built for accountable risk review, not another noisy dashboard.
+                Built to monitor and stop payment risk before money leaves.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk brings Xero imports, uploaded payment-file review, transaction scoring, alert handling, reporting, API keys, and account controls into one operating layer for finance professionals.
+                SentraRisk gives finance professionals a clear prevention layer for supplier payments, invoice risk, staff payment-file anomalies, and unusual transaction activity.
               </p>
-              <div className="mt-8 grid gap-2">
-                {integrationProof.map((item) => (
-                  <div key={item} className="flex items-center gap-3 rounded-full border border-slate-200/80 bg-white/86 px-4 py-2 text-sm font-semibold text-slate-700 shadow-sm backdrop-blur">
-                    <CheckCircle2 className="h-4 w-4 text-cyan-700" aria-hidden="true" />
-                    {item}
-                  </div>
-                ))}
-              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {capabilities.map((item) => {
@@ -826,7 +757,7 @@ export default function SentraRiskLandingPage() {
                 href="/accountants"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-slate-950 px-6 text-sm font-semibold text-white shadow-[0_14px_30px_rgba(15,23,42,0.16)] transition hover:-translate-y-0.5 hover:bg-slate-800"
               >
-                See Finance Workflows <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                See Finance Use Cases <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -936,27 +867,6 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section className="px-5 py-24 md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase text-cyan-700">Workflow</p>
-            <h2 className="mt-4 text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-              From transaction data to a defensible decision.
-            </h2>
-          </div>
-          <div className="space-y-4">
-            {workflow.map((item, index) => (
-              <div key={item} className="fluid-card flex gap-4 rounded-[1.5rem] p-5">
-                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">
-                  {index + 1}
-                </span>
-                <p className="text-base leading-7 text-slate-600">{item}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       <section id="once-off-kyc" className="px-5 py-24 md:px-8">
         <div className="statement-band mx-auto grid max-w-7xl gap-10 rounded-[2rem] px-7 py-14 text-white lg:grid-cols-[0.9fr_1.1fr] lg:items-center lg:px-10">
           <div>
@@ -986,7 +896,7 @@ export default function SentraRiskLandingPage() {
             </div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-black/35 p-5 shadow-2xl backdrop-blur">
-            <p className="text-sm font-semibold text-cyan-300">What SentraRisk reviews</p>
+            <p className="text-sm font-semibold text-cyan-300">What the service provides</p>
             <div className="mt-5 grid gap-3">
               {onceOffServiceChecks.map((check) => (
                 <div key={check} className="flex gap-3 rounded-xl border border-white/10 bg-white/6 p-3">
@@ -1054,57 +964,6 @@ export default function SentraRiskLandingPage() {
                 </span>
               </Link>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="api" className="px-5 py-8 md:px-8">
-        <div className="statement-band mx-auto grid max-w-7xl gap-12 rounded-[2rem] px-7 py-14 text-white lg:grid-cols-[1fr_0.9fr] lg:items-center lg:px-10">
-          <div>
-            <p className="text-sm font-semibold uppercase text-cyan-300">API access</p>
-            <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal md:text-5xl">
-              Connect risk scoring directly to operational workflows.
-            </h2>
-              <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
-              Use Xero-supported imports, secure API keys, or batch uploads to score transactions, then review the same risk outcomes inside the dashboard.
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <a
-                href={APP_URL}
-                className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
-              >
-                Developer Dashboard <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </a>
-              <a
-                href="#demo"
-                className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
-              >
-                Discuss Integration
-              </a>
-            </div>
-          </div>
-          <div className="rounded-2xl border border-white/10 bg-black/45 p-5 font-mono text-sm shadow-2xl backdrop-blur">
-            <div className="mb-4 flex gap-2">
-              <span className="h-3 w-3 rounded-full bg-rose-400" />
-              <span className="h-3 w-3 rounded-full bg-amber-400" />
-              <span className="h-3 w-3 rounded-full bg-emerald-400" />
-            </div>
-            <pre className="overflow-x-auto rounded-xl bg-slate-950/80 p-4 text-slate-300">
-{`POST /score-transaction
-Authorization: Bearer YOUR_API_KEY
-
-{
-  "amount": 12850,
-  "origin": "Customer A",
-  "account": "Beneficiary B"
-}
-
-{
-  "risk_score": 87,
-  "risk_level": "High",
-  "recommended_action": "Review"
-}`}
-            </pre>
           </div>
         </div>
       </section>
@@ -1244,7 +1103,7 @@ Authorization: Bearer YOUR_API_KEY
           <div className="grid gap-5 md:grid-cols-3">
             {[
               [Shield, "Business account structure", "Admin and user dashboards designed around organisational access."],
-              [Cloud, "Xero and file-ready workflow", "Import supplier bills from Xero and review uploaded files alongside API-scored transactions."],
+              [Cloud, "Xero and file-ready review", "Review Xero supplier bills and uploaded payment files in a controlled environment."],
               [LockKeyhole, "Data control", "Designed for controlled environments, separated client workspaces, and accountable review processes."],
             ].map(([Icon, title, text]) => {
               const TypedIcon = Icon as typeof Shield;
