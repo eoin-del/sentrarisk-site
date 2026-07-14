@@ -26,6 +26,7 @@ const CONTACT_EMAIL = "support@sentrarisksystems.com";
 const LINKEDIN_URL = "https://www.linkedin.com/company/sentrarisk-systems/";
 const REGISTER_URL = `${APP_URL}/register`;
 const TRIAL_ENQUIRY_URL = REGISTER_URL;
+const ONCE_OFF_REVIEW_FORM_URL = "https://forms.gle/PML1jZDYtcmse8d56";
 
 const capabilities = [
   {
@@ -622,7 +623,9 @@ export default function SentraRiskLandingPage() {
                   </a>
                 </div>
                 <a
-                  href="#once-off-kyc"
+                  href={ONCE_OFF_REVIEW_FORM_URL}
+                  target="_blank"
+                  rel="noreferrer"
                   className="mt-5 flex max-w-3xl flex-col gap-3 rounded-xl border border-cyan-200 bg-cyan-50/80 p-4 text-left shadow-[0_12px_28px_rgba(14,124,134,0.08)] transition hover:-translate-y-0.5 hover:border-cyan-400 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <span>
@@ -891,15 +894,22 @@ export default function SentraRiskLandingPage() {
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
               SentraRisk can provide a standalone pre-payment review for businesses that want a second layer of confidence before releasing money, without starting a full monthly subscription.
             </p>
-            <div className="mt-5 inline-flex items-center gap-3 rounded-full border border-cyan-300/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white">
+            <a
+              href={ONCE_OFF_REVIEW_FORM_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="mt-5 inline-flex items-center gap-3 rounded-full border border-cyan-300/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-200 hover:bg-white/15"
+            >
               Once-off reviews from EUR49
-            </div>
+            </a>
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/8 p-4 text-sm leading-6 text-slate-300">
               <strong className="text-white">Output:</strong> a concise review note with a clear recommendation and supporting context.
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href="#demo"
+                href={ONCE_OFF_REVIEW_FORM_URL}
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
               >
                 Request once-off review <ArrowRight className="h-4 w-4" aria-hidden="true" />
