@@ -151,6 +151,11 @@ const useCases = [
     href: "#once-off-kyc",
   },
   {
+    title: "Scam text or email check",
+    text: "A quick paid check when a message, link, invoice request, or payment instruction feels suspicious.",
+    href: "#once-off-kyc",
+  },
+  {
     title: "Standalone payment review service",
     text: "For businesses that want independent risk insight without starting a full monthly subscription.",
     href: "#once-off-kyc",
@@ -201,6 +206,7 @@ const professionalOutcomes = [
 ];
 
 const onceOffServiceChecks = [
+  "Scam text, email, link, or payment-message check from €5.",
   "Independent pre-payment review when a payment needs extra confidence.",
   "Practical review using appropriate business information.",
   "Clear recommendation to support the next step.",
@@ -629,13 +635,13 @@ export default function SentraRiskLandingPage() {
                   className="mt-5 flex max-w-3xl flex-col gap-3 rounded-xl border border-cyan-200 bg-cyan-50/80 p-4 text-left shadow-[0_12px_28px_rgba(14,124,134,0.08)] transition hover:-translate-y-0.5 hover:border-cyan-400 sm:flex-row sm:items-center sm:justify-between"
                 >
                   <span>
-                    <span className="block text-sm font-semibold text-slate-950">Once-off payment review</span>
+                    <span className="block text-sm font-semibold text-slate-950">Scam, text or email check</span>
                     <span className="mt-1 block text-sm leading-6 text-slate-600">
-                      For a private or one-off payment-risk check before funds are released.
+                      For a suspicious message, link, invoice request, or payment instruction that needs a quick second look.
                     </span>
                   </span>
                   <span className="shrink-0 rounded-full bg-white px-4 py-2 text-sm font-semibold text-cyan-800 shadow-sm">
-                    From EUR49
+                    €5
                   </span>
                 </a>
               </div>
@@ -889,10 +895,10 @@ export default function SentraRiskLandingPage() {
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-300">Once-off paid service</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal md:text-5xl">
-              Once-off pre-payment review before money leaves.
+              Quick scam checks and once-off payment review before money leaves.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
-              SentraRisk can provide a standalone pre-payment review for businesses that want a second layer of confidence before releasing money, without starting a full monthly subscription.
+              SentraRisk can review suspicious texts, emails, links, invoice requests, and payment instructions for businesses that want a second layer of confidence without starting a full monthly subscription.
             </p>
             <a
               href={ONCE_OFF_REVIEW_FORM_URL}
@@ -900,7 +906,7 @@ export default function SentraRiskLandingPage() {
               rel="noreferrer"
               className="mt-5 inline-flex items-center gap-3 rounded-full border border-cyan-300/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-200 hover:bg-white/15"
             >
-              Once-off reviews from EUR49
+              Scam message checks from €5
             </a>
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/8 p-4 text-sm leading-6 text-slate-300">
               <strong className="text-white">Output:</strong> a concise review note with a clear recommendation and supporting context.
@@ -912,7 +918,7 @@ export default function SentraRiskLandingPage() {
                 rel="noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
               >
-                Request once-off review <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                Request €5 scam check <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href={`mailto:${CONTACT_EMAIL}?subject=Once-off%20pre-payment%20review`}
@@ -1227,6 +1233,7 @@ export default function SentraRiskLandingPage() {
             <Link href="/accountants" className="hover:text-slate-950">Accountants</Link>
             <Link href="/pilot-programme" className="hover:text-slate-950">Pilot Programme</Link>
             <Link href="/privacy-policy" className="hover:text-slate-950">Privacy Policy</Link>
+            <Link href="/cookie-policy" className="hover:text-slate-950">Cookies</Link>
             <Link href="/terms-of-service" className="hover:text-slate-950">Terms</Link>
             <Link href="/data-processing" className="hover:text-slate-950">Data Processing</Link>
             <Link href="/refund-policy" className="hover:text-slate-950">Refunds</Link>
