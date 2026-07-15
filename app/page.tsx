@@ -172,6 +172,28 @@ const useCases = [
   },
 ];
 
+const services = [
+  {
+    icon: Shield,
+    title: "SentraRisk software",
+    label: "Monthly platform",
+    text: "Payment-risk monitoring software for finance teams, CFOs, accountants, advisors, and operations teams that want to catch weak approval evidence, unusual supplier activity, and potential payment risk before money leaves.",
+    price: "From €199/month",
+    href: "#pricing",
+    cta: "View software plans",
+  },
+  {
+    icon: Mail,
+    title: "Scam message and email check",
+    label: "Once-off service",
+    text: "A quick review for suspicious texts, emails, links, invoice requests, or payment instructions where a business wants a second layer of confidence before responding or paying.",
+    price: "From €5",
+    href: ONCE_OFF_REVIEW_FORM_URL,
+    cta: "Request a check",
+    external: true,
+  },
+];
+
 const seoLandingPages = [
   {
     title: "Accounting-data supported review",
@@ -561,6 +583,7 @@ export default function SentraRiskLandingPage() {
           </a>
           <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
             <a href="#platform" className="hover:text-slate-950">Platform</a>
+            <a href="#services" className="hover:text-slate-950">Services</a>
             <a href="#who" className="hover:text-slate-950">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-slate-950">Use cases</a>
             <a href="#once-off-kyc" className="hover:text-slate-950">Once-off review</a>
@@ -641,7 +664,7 @@ export default function SentraRiskLandingPage() {
                     </span>
                   </span>
                   <span className="shrink-0 rounded-full bg-white px-4 py-2 text-sm font-semibold text-cyan-800 shadow-sm">
-                    €5
+                    From €5
                   </span>
                 </a>
               </div>
@@ -682,6 +705,62 @@ export default function SentraRiskLandingPage() {
               <p className="mt-1 max-w-48 text-sm font-medium leading-5 text-slate-500">{label}</p>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section id="services" className="px-5 py-20 md:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+            <div>
+              <p className="text-sm font-semibold uppercase text-cyan-700">Services</p>
+              <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
+                Software and focused checks to stop bogus payments.
+              </h2>
+            </div>
+            <p className="max-w-xl text-base leading-7 text-slate-600">
+              Use SentraRisk as an ongoing payment-risk platform, or request a focused once-off check when a message, link, invoice request, or payment instruction needs attention.
+            </p>
+          </div>
+
+          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+            {services.map((service) => {
+              const Icon = service.icon;
+              const content = (
+                <article className="group h-full rounded-[1.5rem] border border-slate-200/80 bg-white/88 p-6 shadow-[0_22px_65px_rgba(15,23,42,0.08)] backdrop-blur transition hover:-translate-y-1 hover:border-cyan-300">
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-cyan-50 text-cyan-800">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                    <span className="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-xs font-semibold text-slate-600">
+                      {service.label}
+                    </span>
+                  </div>
+                  <h3 className="mt-6 text-2xl font-semibold text-slate-950">{service.title}</h3>
+                  <p className="mt-3 min-h-24 text-sm leading-7 text-slate-600">{service.text}</p>
+                  <div className="mt-6 flex flex-col gap-3 border-t border-slate-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
+                    <span className="text-lg font-semibold text-slate-950">{service.price}</span>
+                    <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-800">
+                      {service.cta} <ArrowRight className="h-4 w-4 transition group-hover:translate-x-0.5" aria-hidden="true" />
+                    </span>
+                  </div>
+                </article>
+              );
+
+              if (service.external) {
+                return (
+                  <a key={service.title} href={service.href} target="_blank" rel="noreferrer" className="block">
+                    {content}
+                  </a>
+                );
+              }
+
+              return (
+                <a key={service.title} href={service.href} className="block">
+                  {content}
+                </a>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -918,7 +997,7 @@ export default function SentraRiskLandingPage() {
                 rel="noreferrer"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
               >
-                Request €5 scam check <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                Request scam check <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href={`mailto:${CONTACT_EMAIL}?subject=Once-off%20pre-payment%20review`}
