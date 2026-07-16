@@ -62,16 +62,27 @@ const capabilities = [
 ];
 
 const metrics = [
-  ["Irish fintech/regtech", "Built for SMEs and finance professionals"],
-  ["Evidence-led", "Notes, reports, and review trails"],
-  ["Human-led", "Final judgement stays with the user"],
+  ["€49 entry check", "Start with KYC verification"],
+  ["Once-off reviews", "Payment-control gaps and evidence"],
+  ["Monthly platform", "Ongoing finance oversight"],
 ];
 
-const premiumStats = [
-  ["Prevent", "Catch risk before payment release"],
-  ["Monitor", "Ongoing finance activity"],
-  ["Evidence", "Clear review outputs"],
-  ["Decide", "Human judgement stays in control"],
+const conversionSteps = [
+  {
+    step: "1",
+    title: "Start with a simple check",
+    text: "Use the €49 KYC verification for a client, supplier, contractor, or counterparty when you need confidence quickly.",
+  },
+  {
+    step: "2",
+    title: "Review payment-control risk",
+    text: "Use the Total Compliance Payment Risk Review to find bogus, duplicate, incorrect, or poorly approved payment risks.",
+  },
+  {
+    step: "3",
+    title: "Keep control with SentraRisk",
+    text: "Move into the platform when you want ongoing monitoring, evidence, actions, and management-ready reporting.",
+  },
 ];
 
 const comparisonRows = [
@@ -151,6 +162,11 @@ const useCases = [
     href: "#once-off-kyc",
   },
   {
+    title: "€49 KYC verification",
+    text: "A practical check for a client, supplier, contractor, or counterparty before taking on avoidable risk.",
+    href: "#once-off-kyc",
+  },
+  {
     title: "Scam text or email check",
     text: "A quick paid check when a message, link, invoice request, or payment instruction feels suspicious.",
     href: "#once-off-kyc",
@@ -174,19 +190,37 @@ const useCases = [
 
 const services = [
   {
+    icon: LockKeyhole,
+    title: "KYC verification",
+    label: "€49 check",
+    text: "A practical KYC-style verification for clients, suppliers, contractors, or counterparties before taking on avoidable identity, payment, reputational, or compliance risk.",
+    price: "€49 per check",
+    href: `mailto:${CONTACT_EMAIL}?subject=KYC%20verification%20check`,
+    cta: "Request KYC check",
+  },
+  {
+    icon: ClipboardCheck,
+    title: "Total Compliance Payment Risk Review",
+    label: "Once-off review",
+    text: "A focused business review of supplier setup, invoice approval, payment evidence, and control gaps to help identify bogus, duplicate, incorrect, or poorly approved payment risks.",
+    price: "From €349",
+    href: "#demo",
+    cta: "Request review",
+  },
+  {
     icon: Shield,
     title: "SentraRisk software",
     label: "Monthly platform",
-    text: "Payment-risk monitoring software for finance teams, CFOs, accountants, advisors, and operations teams that want to catch weak approval evidence, unusual supplier activity, and potential payment risk before money leaves.",
+    text: "Payment-risk monitoring software for finance teams, CFOs, accountants, advisors, and operations teams that want stronger oversight before money leaves.",
     price: "From €199/month",
     href: "#pricing",
-    cta: "View software plans",
+    cta: "View plans",
   },
   {
     icon: Mail,
     title: "Scam message and email check",
-    label: "Once-off service",
-    text: "A quick review for suspicious texts, emails, links, invoice requests, or payment instructions where a business wants a second layer of confidence before responding or paying.",
+    label: "Quick check",
+    text: "A fast second look at suspicious texts, emails, links, invoice requests, or payment instructions before someone replies or pays.",
     price: "From €5",
     href: ONCE_OFF_REVIEW_FORM_URL,
     cta: "Request a check",
@@ -228,10 +262,11 @@ const professionalOutcomes = [
 ];
 
 const onceOffServiceChecks = [
+  "€49 KYC verification for a client, supplier, contractor, or counterparty.",
+  "Total Compliance Payment Risk Review for bogus, duplicate, incorrect, or poorly approved payment risks.",
   "Scam text, email, link, or payment-message check from €5.",
   "Independent pre-payment review when a payment needs extra confidence.",
-  "Practical review using appropriate business information.",
-  "Clear recommendation to support the next step.",
+  "Clear summary, red flags, evidence notes, and recommended next steps.",
 ];
 
 const trustSignals = [
@@ -377,6 +412,8 @@ const pricingPlans = [
 
 const interestOptions = [
   "Client Control Packs",
+  "€49 KYC verification",
+  "Total Compliance Payment Risk Review",
   "Payment-risk review",
   "Finance activity review",
   "Accountant practice support",
@@ -621,16 +658,16 @@ export default function SentraRiskLandingPage() {
             <div className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr] lg:items-end">
               <div>
                 <div className="mb-6 inline-flex items-center rounded-full border border-cyan-200 bg-white/90 px-4 py-2 text-sm font-semibold text-cyan-900 shadow-[0_10px_24px_rgba(14,124,134,0.07)] backdrop-blur">
-                  Irish fintech/regtech SaaS for payment-risk prevention
+                  KYC verification, payment-risk reviews, and finance-control software
                 </div>
                 <h1 className="max-w-4xl text-4xl font-semibold leading-[1.04] tracking-normal text-slate-950 md:text-5xl">
-                  Catch payment risk before money leaves the business.
+                  Stop bogus payments before they leave the business.
                 </h1>
                 <p className="mt-6 max-w-3xl text-base leading-8 text-slate-700 md:text-lg">
-                  SentraRisk helps finance teams, CFOs, operations teams, compliance users, and advisors prevent avoidable losses by monitoring payment risk before weak approval evidence turns into a financial loss.
+                  SentraRisk helps businesses verify who they deal with, review weak payment controls, and keep evidence before a suspicious supplier, invoice, or approval turns into a financial loss.
                 </p>
                 <div className="mt-5 grid max-w-3xl gap-2 sm:grid-cols-2">
-                  {["Pre-payment risk visibility", "Finance-team oversight", "Clear review outputs", "Human-led decisions"].map((item) => (
+                  {["€49 KYC verification", "Bogus payment prevention", "Clear evidence trails", "Human-led review"].map((item) => (
                     <div key={item} className="flex items-center gap-2 text-sm font-semibold text-slate-700">
                       <CheckCircle2 className="h-4 w-4 text-cyan-700" aria-hidden="true" />
                       {item}
@@ -639,16 +676,16 @@ export default function SentraRiskLandingPage() {
                 </div>
                 <div className="mt-7 flex flex-col gap-3 sm:flex-row">
                   <a
-                    href={TRIAL_ENQUIRY_URL}
+                    href="#services"
                     className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-slate-950 px-7 text-sm font-semibold text-white shadow-[0_16px_34px_rgba(15,23,42,0.18)] transition hover:-translate-y-0.5 hover:bg-slate-800"
                   >
-                    Start 14-day trial <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    View services <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                   <a
-                    href="#once-off-kyc"
+                    href="#demo"
                     className="inline-flex h-12 items-center justify-center gap-2 rounded-lg border border-slate-300 bg-white/90 px-7 text-sm font-semibold text-slate-950 shadow-[0_14px_30px_rgba(15,23,42,0.08)] backdrop-blur transition hover:-translate-y-0.5 hover:border-cyan-700"
                   >
-                    Once-off review <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    Contact us <ArrowRight className="h-4 w-4" aria-hidden="true" />
                   </a>
                 </div>
                 <a
@@ -669,13 +706,23 @@ export default function SentraRiskLandingPage() {
                 </a>
               </div>
 
-              <div className="rounded-2xl border border-white/75 bg-white/72 p-5 shadow-[0_18px_48px_rgba(15,23,42,0.08)] backdrop-blur">
-                <p className="text-sm font-semibold uppercase tracking-[0.08em] text-cyan-800">Review layer</p>
-                <div className="mt-5 grid gap-3">
-                  {premiumStats.map(([value, label]) => (
-                    <div key={value} className="flex items-center justify-between gap-4 rounded-xl border border-slate-200/80 bg-white/82 px-4 py-3">
-                      <span className="text-sm font-semibold text-slate-950">{value}</span>
-                      <span className="max-w-48 text-right text-xs font-medium leading-5 text-slate-500">{label}</span>
+              <div className="rounded-2xl border border-white/75 bg-white/72 p-6 shadow-[0_18px_48px_rgba(15,23,42,0.08)] backdrop-blur">
+                <p className="text-sm font-semibold uppercase tracking-[0.08em] text-cyan-800">Built for confidence</p>
+                <h2 className="mt-4 text-2xl font-semibold leading-tight text-slate-950">
+                  A clearer way to check risk before saying yes.
+                </h2>
+                <p className="mt-4 text-sm leading-7 text-slate-600">
+                  SentraRisk supports practical, human-led review for businesses that need confidence around who they deal with, how payments are approved, and what evidence is kept.
+                </p>
+                <div className="mt-6 grid gap-3">
+                  {[
+                    "Check clients, suppliers, and counterparties",
+                    "Review payment approvals before money leaves",
+                    "Keep a clear record of concerns and next steps",
+                  ].map((item) => (
+                    <div key={item} className="flex gap-3 rounded-xl border border-slate-200/80 bg-white/82 p-4">
+                      <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-700" aria-hidden="true" />
+                      <span className="text-sm leading-6 text-slate-700">{item}</span>
                     </div>
                   ))}
                 </div>
@@ -697,32 +744,21 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
-      <section className="proof-rail border-y border-white/70 px-5 py-8 backdrop-blur md:px-8">
-        <div className="mx-auto grid max-w-7xl gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {premiumStats.map(([value, label]) => (
-            <div key={value} className="border-l border-cyan-700/25 pl-5">
-              <span className="text-xl font-semibold text-slate-950">{value}</span>
-              <p className="mt-1 max-w-48 text-sm font-medium leading-5 text-slate-500">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       <section id="services" className="px-5 py-20 md:px-8">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Services</p>
               <h2 className="mt-4 max-w-3xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                Software and focused checks to stop bogus payments.
+                Clear services businesses can buy now.
               </h2>
             </div>
             <p className="max-w-xl text-base leading-7 text-slate-600">
-              Use SentraRisk as an ongoing payment-risk platform, or request a focused once-off check when a message, link, invoice request, or payment instruction needs attention.
+              Start small with a €49 KYC check, go deeper with a Total Compliance Payment Risk Review, then move into SentraRisk software when ongoing control is needed.
             </p>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-2">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {services.map((service) => {
               const Icon = service.icon;
               const content = (
@@ -736,7 +772,7 @@ export default function SentraRiskLandingPage() {
                     </span>
                   </div>
                   <h3 className="mt-6 text-2xl font-semibold text-slate-950">{service.title}</h3>
-                  <p className="mt-3 min-h-24 text-sm leading-7 text-slate-600">{service.text}</p>
+                  <p className="mt-3 min-h-32 text-sm leading-7 text-slate-600 xl:min-h-40">{service.text}</p>
                   <div className="mt-6 flex flex-col gap-3 border-t border-slate-200 pt-5 sm:flex-row sm:items-center sm:justify-between">
                     <span className="text-lg font-semibold text-slate-950">{service.price}</span>
                     <span className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-800">
@@ -764,16 +800,43 @@ export default function SentraRiskLandingPage() {
         </div>
       </section>
 
+      <section className="px-5 py-10 md:px-8">
+        <div className="mx-auto max-w-7xl rounded-2xl border border-slate-200/80 bg-white/88 p-6 shadow-[0_20px_70px_rgba(15,23,42,0.07)] backdrop-blur md:p-8">
+          <div className="grid gap-8 lg:grid-cols-[0.7fr_1.3fr] lg:items-start">
+            <div>
+              <p className="text-sm font-semibold uppercase text-cyan-700">How clients start</p>
+              <h2 className="mt-4 max-w-xl text-3xl font-semibold tracking-normal text-slate-950 md:text-4xl">
+                A simple route from first check to ongoing control.
+              </h2>
+              <p className="mt-4 text-base leading-7 text-slate-600">
+                The first sale should feel easy. SentraRisk gives businesses a low-friction way to test value, then a clear path into deeper review and monitoring.
+              </p>
+            </div>
+            <div className="grid gap-4 md:grid-cols-3">
+              {conversionSteps.map((item) => (
+                <article key={item.step} className="rounded-xl border border-slate-200 bg-slate-50/80 p-5">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-full bg-slate-950 text-sm font-semibold text-white">
+                    {item.step}
+                  </span>
+                  <h3 className="mt-5 text-lg font-semibold text-slate-950">{item.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-600">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section className="fluid-section px-5 py-24 md:px-8">
         <div className="fluid-inner mx-auto max-w-7xl">
           <div className="editorial-panel grid gap-10 rounded-2xl p-6 md:p-8 lg:grid-cols-[0.72fr_1.28fr] lg:items-start">
             <div>
               <p className="text-sm font-semibold uppercase text-cyan-700">Why it matters</p>
               <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                Reduce manual review time without losing professional judgement.
+                Bogus payments rarely look obvious at the start.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                Finance teams already know payment risk matters. The harder part is improving oversight before money leaves, keeping reviews clear, and making the final judgement accountable.
+                They often come from small control gaps: unclear approvals, changed bank details, duplicate invoices, weak supplier checks, or missing evidence. SentraRisk turns those gaps into a clear review process.
               </p>
             </div>
             <div className="grid gap-4 md:grid-cols-2">
@@ -974,36 +1037,32 @@ export default function SentraRiskLandingPage() {
           <div>
             <p className="text-sm font-semibold uppercase text-cyan-300">Once-off paid service</p>
             <h2 className="mt-4 max-w-2xl text-4xl font-semibold tracking-normal md:text-5xl">
-              Quick scam checks and once-off payment review before money leaves.
+              One-off checks when you need confidence before moving forward.
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300">
-              SentraRisk can review suspicious texts, emails, links, invoice requests, and payment instructions for businesses that want a second layer of confidence without starting a full monthly subscription.
+              Verify a client or supplier for €49, check a suspicious message from €5, or commission a deeper Total Compliance Payment Risk Review when a business wants to tighten approvals, supplier controls, and evidence.
             </p>
             <a
-              href={ONCE_OFF_REVIEW_FORM_URL}
-              target="_blank"
-              rel="noreferrer"
+              href={`mailto:${CONTACT_EMAIL}?subject=KYC%20verification%20check`}
               className="mt-5 inline-flex items-center gap-3 rounded-full border border-cyan-300/30 bg-white/10 px-5 py-3 text-sm font-semibold text-white transition hover:border-cyan-200 hover:bg-white/15"
             >
-              Scam message checks from €5
+              KYC verification from €49
             </a>
             <div className="mt-6 rounded-2xl border border-white/10 bg-white/8 p-4 text-sm leading-6 text-slate-300">
-              <strong className="text-white">Output:</strong> a concise review note with a clear recommendation and supporting context.
+              <strong className="text-white">Output:</strong> a concise verification or review note with red flags, evidence notes, and recommended next steps.
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <a
-                href={ONCE_OFF_REVIEW_FORM_URL}
-                target="_blank"
-                rel="noreferrer"
+                href={`mailto:${CONTACT_EMAIL}?subject=KYC%20verification%20check`}
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-xl bg-white px-6 text-sm font-semibold text-slate-950 transition hover:-translate-y-0.5 hover:bg-slate-100"
               >
-                Request scam check <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                Request €49 KYC check <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
-                href={`mailto:${CONTACT_EMAIL}?subject=Once-off%20pre-payment%20review`}
+                href="#demo"
                 className="inline-flex h-12 items-center justify-center rounded-xl border border-white/20 px-6 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-white/10"
               >
-                Email SentraRisk
+                Ask about payment review
               </a>
             </div>
           </div>
