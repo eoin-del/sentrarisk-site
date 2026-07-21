@@ -31,33 +31,43 @@ const ONCE_OFF_REVIEW_FORM_URL = "https://forms.gle/PML1jZDYtcmse8d56";
 const capabilities = [
   {
     icon: Gauge,
-    title: "Pre-payment risk visibility",
-    text: "Give finance teams a clearer view of payment risk before approval decisions are made.",
+    title: "30+ transaction checks",
+    text: "Evaluate each transaction against amount, timing, velocity, exposure, counterparty and data-quality conditions where relevant context is available.",
   },
   {
     icon: Siren,
-    title: "Human-led review",
-    text: "Support responsible review without replacing the professional judgement of the people running the business.",
+    title: "IBAN and beneficiary changes",
+    text: "Prioritise supplier IBAN changes, new destination accounts and beneficiary details that differ from established payment history.",
   },
   {
     icon: ClipboardCheck,
-    title: "Clear management outputs",
-    text: "Produce practical reporting that helps teams explain what was reviewed and what action was taken.",
+    title: "Duplicate and pattern detection",
+    text: "Surface duplicate-looking payments, similar-value activity, repeated transactions and possible threshold avoidance.",
   },
   {
     icon: Cloud,
-    title: "Finance-team friendly",
-    text: "Designed to work alongside the finance systems and review routines teams already use.",
+    title: "Client-specific calibration",
+    text: "Adapt amount bands to each client’s reviewed payment history while preserving critical IBAN, duplicate and missing-data controls.",
   },
   {
     icon: Users,
-    title: "Built for lean teams",
-    text: "Helps small and growing finance teams improve oversight without enterprise complexity.",
+    title: "Supplier and payroll context",
+    text: "Compare activity with known supplier profiles, established payment behaviour and approved payroll baselines.",
   },
   {
     icon: Code2,
-    title: "Scalable adoption",
-    text: "Start simply, then tailor the setup as the organisation grows and the review needs become more complex.",
+    title: "Structured review workflow",
+    text: "Assign alerts, record reviewer decisions, archive resolved items and retain clear ownership of each outcome.",
+  },
+  {
+    icon: Shield,
+    title: "Evidence-ready reporting",
+    text: "Produce decision records, transaction audit PDFs and Client Control Packs for management, client and internal review.",
+  },
+  {
+    icon: LockKeyhole,
+    title: "Controlled client workspaces",
+    text: "Keep client activity separated through role-based organisation access and subscription-controlled capabilities.",
   },
 ];
 
@@ -608,7 +618,7 @@ export default function SentraRiskLandingPage() {
             <LogoMark />
           </a>
           <div className="hidden items-center gap-6 text-sm font-medium text-slate-600 md:flex">
-            <a href="#platform" className="hover:text-slate-950">Platform</a>
+            <a href="#features" className="hover:text-slate-950">Features</a>
             <a href="#services" className="hover:text-slate-950">Services</a>
             <a href="#who" className="hover:text-slate-950">Who it&apos;s for</a>
             <a href="#use-cases" className="hover:text-slate-950">Use cases</a>
@@ -867,16 +877,23 @@ export default function SentraRiskLandingPage() {
       </section>
 
       <section id="platform" className="fluid-section px-5 py-24 md:px-8">
-        <div className="fluid-inner mx-auto max-w-7xl">
+        <div id="features" className="fluid-inner mx-auto max-w-7xl scroll-mt-24">
           <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
             <div>
-              <p className="text-sm font-semibold uppercase text-cyan-700">Platform</p>
+              <p className="text-sm font-semibold uppercase text-cyan-700">Platform features</p>
               <h2 className="mt-4 max-w-xl text-4xl font-semibold tracking-normal text-slate-950 md:text-5xl">
-                Built to monitor and stop payment risk before money leaves.
+                Clear transaction checks. Defensible human decisions.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk gives finance professionals a clear prevention layer for payment risk, helping teams review before money leaves.
+                SentraRisk evaluates each transaction against more than 30 risk and control conditions where the required data and history are available. It explains the indicators and keeps the final decision with the reviewer.
               </p>
+              <div className="mt-8 max-w-sm rounded-xl border border-cyan-200 bg-white/84 p-5 shadow-sm">
+                <p className="text-4xl font-semibold text-slate-950">30+</p>
+                <p className="mt-2 text-sm font-semibold text-cyan-800">transaction risk and control checks</p>
+                <p className="mt-3 text-sm leading-6 text-slate-600">
+                  Risk indicators support professional review and do not, by themselves, determine that fraud has occurred.
+                </p>
+              </div>
             </div>
             <div className="grid gap-4 sm:grid-cols-2">
               {capabilities.map((item) => {
