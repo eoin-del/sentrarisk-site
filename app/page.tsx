@@ -31,18 +31,18 @@ const ONCE_OFF_REVIEW_FORM_URL = "https://forms.gle/PML1jZDYtcmse8d56";
 const capabilities = [
   {
     icon: Gauge,
-    title: "30+ transaction checks",
+    title: "50+ transaction checks",
     text: "Evaluate each transaction against amount, timing, velocity, exposure, counterparty and data-quality conditions where relevant context is available.",
   },
   {
     icon: Siren,
     title: "IBAN and beneficiary changes",
-    text: "Prioritise supplier IBAN changes, new destination accounts and beneficiary details that differ from established payment history.",
+    text: "Prioritise supplier IBAN changes, checksum failures, shared beneficiary accounts and destination details that differ from established payment history.",
   },
   {
     icon: ClipboardCheck,
     title: "Duplicate and pattern detection",
-    text: "Surface duplicate-looking payments, similar-value activity, repeated transactions and possible threshold avoidance.",
+    text: "Surface reused or near-matching invoice references, conflicting amounts, duplicate-looking payments and possible threshold avoidance.",
   },
   {
     icon: Cloud,
@@ -52,7 +52,7 @@ const capabilities = [
   {
     icon: Users,
     title: "Supplier and payroll context",
-    text: "Compare activity with known supplier profiles, established payment behaviour and approved payroll baselines.",
+    text: "Compare activity with supplier history, currency and payment-type patterns, dormant relationships, spend shifts and approved payroll baselines.",
   },
   {
     icon: Code2,
@@ -885,10 +885,10 @@ export default function SentraRiskLandingPage() {
                 Clear transaction checks. Defensible human decisions.
               </h2>
               <p className="mt-5 max-w-xl text-base leading-7 text-slate-600">
-                SentraRisk evaluates each transaction against more than 30 risk and control conditions where the required data and history are available. It explains the indicators and keeps the final decision with the reviewer.
+                SentraRisk evaluates each transaction against more than 50 risk and control conditions where the required data and history are available. It explains the indicators and keeps the final decision with the reviewer.
               </p>
               <div className="mt-8 max-w-sm rounded-xl border border-cyan-200 bg-white/84 p-5 shadow-sm">
-                <p className="text-4xl font-semibold text-slate-950">30+</p>
+                <p className="text-4xl font-semibold text-slate-950">50+</p>
                 <p className="mt-2 text-sm font-semibold text-cyan-800">transaction risk and control checks</p>
                 <p className="mt-3 text-sm leading-6 text-slate-600">
                   Risk indicators support professional review and do not, by themselves, determine that fraud has occurred.
