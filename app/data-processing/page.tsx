@@ -11,8 +11,9 @@ const sections = [
   {
     title: "1. Purpose",
     body: [
-      "This Data Processing page explains how SentraRisk Systems approaches customer data when providing fraud-risk intelligence, transaction scoring, alert review, reporting, API access, Xero-supported imports, and related services.",
-      "It forms part of the online terms accepted during registration and should be reviewed alongside our Privacy Policy, Terms of Service, Refund and Cancellation Policy, and Security Statement.",
+      "This Data Processing page explains how SentraRisk Systems approaches customer data when providing fraud-risk intelligence, transaction review, alert workflows, reporting, API access, customer-authorised accounting imports, and related services.",
+      "It forms part of the online terms accepted during registration and is incorporated into the Terms of Service as a practical processor agreement for business customers.",
+      "It should be reviewed alongside our Privacy Policy, Cookie Policy, Terms of Service, Refund and Cancellation Policy, and Security Statement.",
     ],
   },
   {
@@ -25,7 +26,7 @@ const sections = [
   {
     title: "3. Categories of Data",
     body: [
-      "Customer data may include transaction details, supplier or counterparty references, payment amounts, account identifiers, reviewer notes, alert status, uploaded spreadsheet content, Xero-imported supplier bill information, crypto wallet references, and risk-scoring outputs.",
+      "Customer data may include transaction details, supplier or counterparty references, payment amounts, account identifiers, reviewer notes, alert status, uploaded spreadsheet content, customer-authorised accounting import records, crypto wallet references, and review outputs.",
       "Account and operational data may include organisation name, user names, work email addresses, roles, login activity, audit activity, API key records, subscription status, and support messages.",
     ],
   },
@@ -34,15 +35,16 @@ const sections = [
     body: [
       "The subject matter of processing is the provision, support, security, billing, and improvement of the SentraRisk platform and related services.",
       "The duration of processing is the period during which the customer uses SentraRisk, plus any reasonable retention period needed for backups, audit records, legal obligations, dispute handling, security, or agreed support.",
-      "The purpose of processing is to provide payment-risk monitoring, transaction scoring, alert review, reporting, integration workflows, customer support, and related account administration.",
+      "The purpose of processing is to provide payment-risk monitoring, transaction review, alert review, reporting, integration workflows, customer support, and related account administration.",
     ],
   },
   {
     title: "5. Processing Instructions",
     body: [
-      "SentraRisk Systems processes customer data to provide and improve the contracted service, maintain security, troubleshoot issues, respond to support requests, manage billing-related access, and comply with legal obligations.",
+      "SentraRisk Systems processes customer data to provide, secure, support, operate and improve the contracted service, troubleshoot issues, respond to support requests, manage billing-related access, and comply with legal obligations.",
       "We do not sell customer data. We do not use customer transaction data for unrelated advertising.",
       "Customers are responsible for ensuring that their instructions are lawful and that they have appropriate notices, permissions, and lawful bases for data uploaded, connected, or processed through SentraRisk.",
+      "If SentraRisk believes an instruction may breach data protection law, security requirements, platform rules, or third-party provider terms, SentraRisk may refuse, pause, or ask the customer to clarify the instruction.",
     ],
   },
   {
@@ -64,6 +66,7 @@ const sections = [
     title: "8. Sub-processors",
     body: [
       "SentraRisk Systems may use trusted service providers for hosting, payment processing, email, analytics, infrastructure, and operational support. These providers are used only where needed to operate, secure, bill, or support the service.",
+      "Examples may include AWS, Stripe, Google Workspace, HubSpot, Xero, Sage, blockchain data providers, and similar operational providers where needed for the service or customer-authorised integrations.",
       "Customers can contact support@sentrarisksystems.com for current information about core providers used for the service.",
       "Where required, SentraRisk will take reasonable steps to ensure sub-processors are subject to appropriate data protection obligations.",
     ],
@@ -79,6 +82,7 @@ const sections = [
     body: [
       "Customer data is retained for as long as needed to provide the service, meet legal or accounting requirements, resolve disputes, support security, or comply with customer instructions.",
       "On reasonable request, SentraRisk can assist with deletion or export of customer data, subject to technical limits, legal obligations, backup retention, and legitimate business record requirements.",
+      "SentraRisk may retain limited account, billing, security, audit, backup and support records where needed for service operation, legal obligations, dispute handling, fraud prevention, accounting, or security.",
     ],
   },
   {
@@ -99,7 +103,7 @@ const sections = [
     title: "13. Audit and Assistance",
     body: [
       "SentraRisk will make reasonable information available to support customer due diligence, security review, and processor compliance requests, subject to confidentiality, security, commercial sensitivity, and reasonable limits.",
-      "Any audit or review must be scoped, proportionate, and arranged in advance so it does not compromise the security or confidentiality of other customers or the platform.",
+      "Any audit, security review, technical review, penetration test, or due diligence request must be scoped, proportionate, arranged in advance, and must not compromise other customers, the platform, confidential methods, source code, risk logic, or trade secrets.",
     ],
   },
   {

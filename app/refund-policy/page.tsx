@@ -11,7 +11,7 @@ const sections = [
   {
     title: "1. Subscriptions",
     body: [
-      "SentraRisk Systems is provided as a subscription service for business customers. Subscription access, billing periods, and plan limits are based on the plan selected during checkout or agreed with SentraRisk Systems.",
+      "SentraRisk Systems is provided as a subscription service for business customers. Subscription access, billing periods, and plan limits are based on the order form or written agreement accepted by the customer.",
       "Unless otherwise agreed in writing, subscriptions renew automatically until cancelled.",
     ],
   },
@@ -26,7 +26,7 @@ const sections = [
     title: "3. Payment Failures",
     body: [
       "If a subscription payment fails, is disputed, is cancelled, or is not received when due, SentraRisk may restrict product access for the affected workspace.",
-      "Billing access remains available where possible so an administrator can update payment details, choose a plan, or restore access through Stripe checkout.",
+      "Billing access remains available where possible so an administrator can update payment details. Plan changes and restored access must be agreed with SentraRisk Systems.",
     ],
   },
   {
@@ -46,7 +46,7 @@ const sections = [
   {
     title: "6. Plan Changes",
     body: [
-      "Plan upgrades, downgrades, and user-limit changes may affect pricing and access. Any proration, credit, or billing adjustment depends on the checkout or billing system used and any written agreement with SentraRisk Systems.",
+      "Plan upgrades, downgrades, and user-limit changes may affect pricing and access. Any proration, credit, or billing adjustment depends on the billing arrangement and written agreement with SentraRisk Systems.",
     ],
   },
   {

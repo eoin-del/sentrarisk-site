@@ -1,25 +1,25 @@
 export const pilotDeliverables = [
-  "Focused setup around your payment-risk priorities",
-  "Guided product walkthrough using a suitable review scenario",
-  "Management-ready summary of what SentraRisk can support",
-  "Feedback session to assess fit and commercial value",
-  "Recommended next step if the pilot is successful",
+  "A written scope covering the team, data, workflow, and success measures",
+  "Guided setup using an agreed sample or authorised business dataset",
+  "Access for the nominated reviewers involved in the beta",
+  "A closing review of findings, usability, and commercial fit",
+  "A documented recommendation on rollout, changes, or stopping",
 ];
 
 export const pilotTimeline = [
   {
-    phase: "Setup",
-    timing: "Day 1-2",
-    text: "Agree the pilot scope, trial users, and success criteria.",
+    phase: "Scope",
+    timing: "Before access",
+    text: "Confirm authorised users, suitable data, boundaries, measurable success criteria, and any commercial terms.",
   },
   {
-    phase: "Review",
-    timing: "Day 3-10",
-    text: "Review whether SentraRisk improves visibility, confidence, and management reporting.",
+    phase: "Use",
+    timing: "During the beta",
+    text: "Import the agreed data, review relevant items, record decisions, and test the workflow in practice.",
   },
   {
-    phase: "Decision",
-    timing: "Day 11-14",
-    text: "Review findings, confirm pricing fit, and decide whether SentraRisk is the right next step.",
+    phase: "Evaluate",
+    timing: "Closing review",
+    text: "Compare the agreed measures, review feedback, and decide whether a wider rollout is justified.",
   },
 ];

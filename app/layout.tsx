@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { TrackingScripts } from "./tracking-scripts";
+import { CookieConsent } from "./cookie-consent";
 
 export const metadata: Metadata = {
-  title: "SentraRisk Systems | Irish FinTech RegTech SaaS for Payment Risk",
+  title: "SentraRisk Systems | Catch Payment Risks Before Money Leaves",
   description:
-    "SentraRisk Systems helps accountants, bookkeepers, virtual CFOs, and finance teams identify payment risks before they become financial losses.",
+    "SentraRisk helps finance teams identify possible duplicate payments, supplier-detail changes, unusual activity, and missing support before funds are released.",
   openGraph: {
-    title: "SentraRisk Systems",
-  description:
-      "Irish fintech/regtech SaaS helping finance teams prevent payment risk before money leaves the business.",
+    title: "SentraRisk Systems | Catch Payment Risks Before Money Leaves",
+    description:
+      "Payment-risk monitoring for finance teams, accountants, and invoice-heavy SMEs.",
     url: "https://www.sentrarisksystems.com",
     siteName: "SentraRisk Systems",
     type: "website",
@@ -35,6 +36,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col">
         <TrackingScripts />
         {children}
+        <CookieConsent />
       </body>
     </html>
   );

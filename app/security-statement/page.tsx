@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 const sections = [
   {
     title: "Account and Access Controls",
-    body: "SentraRisk supports business account structures with administrative controls for managing users, roles, account access, and API keys. Administrators are responsible for creating and revoking access for their organisation.",
+    body: "SentraRisk supports business account structures with administrative controls for managing users, roles, account access, protected routes, and API keys. Administrators are responsible for creating, reviewing, and revoking access for their organisation.",
   },
   {
     title: "API Key Management",
@@ -18,7 +18,11 @@ const sections = [
   },
   {
     title: "Audit and Review History",
-    body: "The platform includes audit logs, alert review status, reviewer notes, and transaction risk reports to support accountable decision-making and internal review.",
+    body: "The platform includes audit logs, alert review status, reviewer notes, control pack records, decision memos, transaction reports, and review history to support accountable decision-making and internal review.",
+  },
+  {
+    title: "Hosting, Encryption, and Backups",
+    body: "Where technically available and configured, SentraRisk may use HTTPS, secure hosting practices, provider-level encryption controls, restricted support access, logging, data minimisation controls, and database backup procedures. Customers remain responsible for downloaded reports, exports, local files, and records held outside the platform.",
   },
   {
     title: "Local and Customer Environment Security",
@@ -32,6 +36,10 @@ const sections = [
     title: "Human-Led Decisions",
     body: "Risk scores, fraud indicators, and alerts are decision-support tools. Customers remain responsible for human review, investigations, and final business decisions.",
   },
+  {
+    title: "Security Reviews",
+    body: "Customers can request reasonable security information for procurement or due diligence. Deep technical review, penetration testing, audit access, or review of confidential platform methods must be agreed in writing and scoped so it does not compromise other customers, platform security, source code, risk logic, or trade secrets.",
+  },
 ];
 
 export default function SecurityStatementPage() {
@@ -44,7 +52,7 @@ export default function SecurityStatementPage() {
         <div className="mt-10 border-b border-slate-200 pb-8">
           <p className="text-sm font-semibold uppercase text-cyan-700">Trust</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-normal md:text-5xl">Security Statement</h1>
-          <p className="mt-4 text-sm text-slate-500">Last updated: 11 May 2026</p>
+          <p className="mt-4 text-sm text-slate-500">Last updated: 15 July 2026</p>
           <p className="mt-6 text-base leading-7 text-slate-600">
             SentraRisk Systems is designed to help organisations review transaction risk with clear access controls, auditability, and customer-controlled data handling.
           </p>

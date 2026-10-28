@@ -19,14 +19,15 @@ const sections = [
   {
     title: "2. Contract Documents",
     body: [
-      "These Terms should be read with the Privacy Policy, Data Processing terms, Refund and Cancellation Policy, Security Statement, and any written order form or subscription agreement agreed with SentraRisk Systems.",
+      "These Terms should be read with the Privacy Policy, Cookie Policy, Data Processing terms, Refund and Cancellation Policy, Security Statement, and any written order form or subscription agreement agreed with SentraRisk Systems.",
+      "The Data Processing terms, Security Statement, support terms, subprocessor terms, billing rules, and customer responsibility clauses in these Terms form part of the customer agreement when a workspace is created, a subscription is started, an order form is signed, or the platform is used.",
       "If there is a conflict between an individually signed written agreement and these online Terms, the signed written agreement will apply to the extent of the conflict.",
     ],
   },
   {
     title: "3. Use of the Software",
     body: [
-      "SentraRisk provides payment-risk monitoring, fraud-risk indicators, transaction scoring, alert review, reporting, integration tools, and API access for legitimate business use.",
+      "SentraRisk provides payment-risk monitoring, fraud-risk indicators, transaction review, alert review, reporting, integration tools, API access, control packs, customer checks, wallet-risk review, and related decision-support software for legitimate business use.",
       "Users must use the software lawfully, responsibly, and only for authorised business, risk management, fraud prevention, compliance, finance, audit, or security purposes.",
       "Customers must not misuse the service, attempt unauthorised access, interfere with the platform, reverse engineer protected parts of the software, share credentials, misuse API keys, upload unlawful data, or process data they are not authorised to handle.",
     ],
@@ -46,20 +47,24 @@ const sections = [
     ],
   },
   {
-    title: "6. Billing, Trials, and Company Representative",
+    title: "6. Orders, Billing, Trials, and Company Representative",
     body: [
+      "A customer's plan, price, billing cycle, usage limits, start date, beta or trial period, workspace scope, and any special terms will be set out in an order form or written subscription agreement.",
       "The administrator or authorised company representative is responsible for billing, subscription selection, payment terms, and keeping payment information accurate.",
       "Where a user creates or manages an organisation account, that user may be treated as the company representative for account, billing, and administrative purposes unless another authorised representative is appointed.",
       "If payment fails, is cancelled, or is not received when due, SentraRisk may restrict product access while keeping billing access available so the organisation can restore payment.",
       "Trial access may be limited, suspended, or ended if the trial is misused, if billing setup is incomplete, or if the workspace appears to be created for unlawful or unauthorised purposes.",
+      "Plan upgrades, downgrades, renewals, cancellations, refunds, failed payments, and data retention after cancellation are handled under these Terms, the Refund and Cancellation Policy, the billing provider flow, and any agreed written order form.",
     ],
   },
   {
     title: "7. Customer Data and Data Protection",
     body: [
       "Customers retain responsibility for the accuracy, legality, quality, and authority to use any data they upload, connect, import, or process through SentraRisk.",
-      "Where SentraRisk processes personal data on behalf of a customer, the Data Processing terms apply. Customers remain responsible for their own internal notices, lawful basis, user permissions, and instructions to SentraRisk.",
+      "Where SentraRisk processes personal data on behalf of a customer, the Data Processing terms apply and are incorporated into these Terms as a processor agreement for business customers. Customers remain responsible for their own internal notices, lawful basis, user permissions, data subject requests, regulatory notifications, and instructions to SentraRisk.",
       "Customers must not upload personal data, financial data, payroll data, supplier data, or transaction data unless they have the right to do so.",
+      "Customer data may include transaction records, supplier or counterparty references, payment amounts, payroll-related payment outputs, account identifiers, reviewer notes, alert status, uploaded files, customer-authorised accounting imports, wallet references, client records, and audit logs.",
+      "SentraRisk does not sell customer transaction data and does not use customer transaction data for unrelated advertising.",
     ],
   },
   {
@@ -67,6 +72,8 @@ const sections = [
     body: [
       "SentraRisk may operate through cloud-hosted services, third-party integrations, APIs, and software running locally or within a customer's own environment.",
       "Customers are responsible for the security, configuration, access controls, backups, connected third-party permissions, and data handling practices within their own environment, devices, infrastructure, and local deployments.",
+      "Where customers connect accounting, payment, crypto, CRM, email, or other third-party services, the customer confirms it has authority to make that connection and remains responsible for the permissions granted through that third-party service.",
+      "Third-party platforms may change, restrict, suspend, price, or remove APIs or services. SentraRisk is not responsible for third-party platform outages, API changes, permission issues, incorrect third-party data, or customer misconfiguration.",
     ],
   },
   {
@@ -78,42 +85,92 @@ const sections = [
     ],
   },
   {
-    title: "10. Intellectual Property",
+    title: "10. Support and Service Levels",
     body: [
-      "SentraRisk Systems owns or licenses the software, platform design, code, algorithms, workflows, documentation, reports templates, branding, and related intellectual property.",
-      "Customers receive a limited, non-exclusive, non-transferable right to use the service during an active subscription or authorised trial, subject to these Terms.",
+      "Standard support is provided through support@sentrarisksystems.com or any in-app support route made available by SentraRisk.",
+      "For critical access or security issues, SentraRisk aims to provide a first response within 1 business day. For major product issues, SentraRisk aims to provide a first response within 2 business days. For general support or usage questions, SentraRisk aims to provide a first response within 3 business days.",
+      "Support targets are not guaranteed fix times. Availability of support may be affected by weekends, public holidays, investigation complexity, customer response time, third-party provider issues, and the customer's plan or written agreement.",
+      "Support helps customers use the software. It does not provide legal, audit, tax, accounting, banking, investment, insurance, payroll, or regulatory advice.",
     ],
   },
   {
-    title: "11. Limitation of Liability",
+    title: "11. Security, Backups, and Auditability",
+    body: [
+      "SentraRisk is designed around organisation-level access controls, role-based permissions, login protection, audit records, API key controls, review history, and control pack records.",
+      "Where technically available and configured, SentraRisk may use secure hosting practices, HTTPS, provider-level encryption controls, restricted support access, logging, data minimisation controls, and database backup procedures.",
+      "Customers are responsible for managing their own users, devices, passwords, accounting permissions, email accounts, API keys, internal approvals, exports, downloaded reports, and local records.",
+      "Customers should review reports, control packs, compliance packs, decision memos, comments, notes, and open alerts before sending them to clients, counterparties, auditors, regulators, advisers, or third parties.",
+      "No online or cloud-connected service can guarantee absolute security, uninterrupted access, or error-free operation.",
+    ],
+  },
+  {
+    title: "12. Sub-processors and Service Providers",
+    body: [
+      "SentraRisk may use trusted providers for hosting, infrastructure, database services, backups, payment processing, email, analytics, CRM, customer support, security, and customer-authorised integrations.",
+      "Examples may include AWS, Stripe, Google Workspace, HubSpot, Xero, Sage, blockchain data providers, and similar operational providers where needed for the service.",
+      "SentraRisk will take reasonable steps to ensure sub-processors are subject to appropriate confidentiality and data protection obligations where required.",
+      "Customers can contact support@sentrarisksystems.com for current information about core providers used to operate the service.",
+    ],
+  },
+  {
+    title: "13. Data Return, Deletion, and Audit Requests",
+    body: [
+      "On reasonable request, SentraRisk can assist with export or deletion of customer data, subject to technical limits, backup cycles, legal obligations, security needs, dispute handling, and legitimate business records.",
+      "SentraRisk may retain account, billing, security, audit, backup, and support records where needed for service operation, legal obligations, dispute handling, fraud prevention, accounting, or security.",
+      "SentraRisk may provide reasonable compliance or security information to support customer due diligence, subject to confidentiality, security, commercial sensitivity, and reasonable limits.",
+      "Any audit, security review, technical review, penetration test, or due diligence request must be scoped, proportionate, arranged in advance, and must not compromise other customers, the platform, confidential methods, source code, risk logic, or trade secrets.",
+    ],
+  },
+  {
+    title: "14. Intellectual Property",
+    body: [
+      "SentraRisk Systems owns or licenses the software, platform design, code, algorithms, workflows, documentation, reports templates, branding, and related intellectual property.",
+      "Customers receive a limited, non-exclusive, non-transferable right to use the service during an active subscription or authorised trial, subject to these Terms.",
+      "Customers must not copy, reverse engineer, decompile, scrape, benchmark, reproduce, train from, resell, sublicense, or attempt to derive the underlying logic, source code, scoring approach, rules, workflows, reports, user interface, or confidential product methods used by SentraRisk.",
+      "Customers must not share access with competitors, consultants, developers, or other third parties for the purpose of copying, comparing, rebuilding, or creating a competing product or service.",
+      "Any feedback, suggestions, comments, feature ideas, configuration requests, or improvement ideas provided by customers may be used by SentraRisk without restriction or obligation, provided SentraRisk does not disclose the customer's confidential information or customer data except as permitted by these Terms.",
+    ],
+  },
+  {
+    title: "15. Confidentiality",
+    body: [
+      "Customers must keep non-public SentraRisk materials confidential, including private demos, product methods, screenshots of non-public workflows, pricing proposals, technical information, security information, API details, risk-review methods, and any confidential business information shared by SentraRisk.",
+      "Customers must not disclose SentraRisk confidential information to competitors or use it to build, assist, benchmark, or procure a competing product or service.",
+      "SentraRisk will take reasonable steps to keep customer confidential information confidential and will use customer data only as permitted by these Terms, the Data Processing terms, the Privacy Policy, or written customer instructions.",
+    ],
+  },
+  {
+    title: "16. Limitation of Liability",
     body: [
       "To the fullest extent permitted by Irish law, SentraRisk Systems is not liable for indirect, incidental, consequential, special, punitive, or business losses arising from use of the software, including loss of profits, revenue, goodwill, opportunity, or anticipated savings.",
       "SentraRisk Systems is not responsible for customer-controlled security incidents, unauthorised user access caused by customer account management, third-party platform outages, customer misconfiguration, incorrect data, or decisions made by the customer after reviewing SentraRisk outputs.",
+      "SentraRisk is not responsible for losses caused by customers releasing payments, approving suppliers, ignoring alerts, failing to review reports, relying on incomplete or incorrect data, or using the service outside its intended decision-support purpose.",
       "Nothing in these Terms limits liability where it cannot lawfully be limited, including liability for fraud, fraudulent misrepresentation, or death or personal injury caused by negligence.",
     ],
   },
   {
-    title: "12. Suspension and Termination",
+    title: "17. Suspension and Termination",
     body: [
       "SentraRisk may suspend or restrict access where payment is overdue, security is at risk, the service is misused, legal obligations require it, or these Terms are materially breached.",
       "Customers may stop using the service or cancel in line with the Refund and Cancellation Policy or any written subscription agreement.",
+      "SentraRisk may also suspend access where a workspace appears to be used for unlawful processing, unauthorised data access, competitor review, abuse of integrations, security testing without permission, credential sharing, or activity that may harm SentraRisk, customers, providers, or third parties.",
     ],
   },
   {
-    title: "13. Changes to the Terms",
+    title: "18. Changes to the Terms",
     body: [
       "We may update these Terms of Service as the product develops, to reflect legal changes, security improvements, product changes, or business requirements.",
       "Where changes are material, we will take reasonable steps to make the updated terms available. Continued use of SentraRisk after updated terms are published means you accept the updated terms.",
     ],
   },
   {
-    title: "14. Governing Law",
+    title: "19. Governing Law",
     body: [
       "These Terms are governed by the laws of Ireland. Subject to any mandatory legal rights that cannot be excluded, disputes relating to these Terms or the service will be dealt with by the Irish courts.",
     ],
   },
   {
-    title: "15. Contact",
+    title: "20. Contact",
     body: [
       "If you have any questions about these Terms of Service, contact SentraRisk Systems at support@sentrarisksystems.com.",
     ],
@@ -130,7 +187,7 @@ export default function TermsOfServicePage() {
         <div className="mt-10 border-b border-slate-200 pb-8">
           <p className="text-sm font-semibold uppercase text-cyan-700">Legal</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-normal md:text-5xl">Terms of Service</h1>
-          <p className="mt-4 text-sm text-slate-500">Last updated: 5 July 2026</p>
+          <p className="mt-4 text-sm text-slate-500">Last updated: 15 July 2026</p>
           <p className="mt-6 text-base leading-7 text-slate-600">
             These Terms of Service explain the rules and responsibilities that apply when using SentraRisk Systems software, accounts, dashboards, and APIs.
           </p>
