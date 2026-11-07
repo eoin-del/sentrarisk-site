@@ -19,43 +19,43 @@ export const metadata: Metadata = {
 const services = [
   {
     icon: CircleGauge,
-    title: "Payment-risk monitoring",
-    price: "From €450/month",
+    title: "Pre-payment control",
+    engagement: "Ongoing control",
     text: "Ongoing review of payment and invoice activity, with clear priorities, ownership, review history, and management reporting.",
     bestFor: "Finance teams and invoice-heavy SMEs",
   },
   {
     icon: FileCheck2,
     title: "Total Compliance Payment Risk Review",
-    price: "From €349",
+    engagement: "Defined scope",
     text: "A once-off review of payment controls, supplier setup, approval evidence, duplicate risk, and areas that may need attention.",
     bestFor: "Businesses seeking a defined starting assessment",
   },
   {
     icon: ShieldCheck,
     title: "KYC verification",
-    price: "€49 per check",
+    engagement: "Per verification",
     text: "A practical verification check for a client, supplier, contractor, or other business counterparty, within the agreed scope and available sources.",
     bestFor: "Focused counterparty checks",
   },
   {
     icon: Landmark,
     title: "Invoice and cashflow follow-up",
-    price: "Scoped service",
+    engagement: "Scoped service",
     text: "Bring overdue invoices, missing records, amounts due, and follow-up ownership into a clearer finance process.",
     bestFor: "Teams spending too much time chasing records and payment",
   },
   {
     icon: Store,
     title: "Dealership deposit controls",
-    price: "Pilot pricing available",
+    engagement: "Specialist workflow",
     text: "A specialist workflow for customer deposits, payer details, refund decisions, and supporting dealership records.",
     bestFor: "Motor retailers and dealer groups",
   },
   {
     icon: SearchCheck,
     title: "Scam text and email check",
-    price: "From €5",
+    engagement: "Once-off review",
     text: "A quick second look at a suspicious message, link, invoice request, or payment instruction before someone responds or pays.",
     bestFor: "One-off suspicious communications",
   },
@@ -83,7 +83,7 @@ export default function ServicesPage() {
             Start with the business need, then choose the right level of support.
           </h1>
           <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-            Payment-risk monitoring is the core SentraRisk service. Focused reviews and specialist workflows are
+            Pre-payment control is the core SentraRisk service. Focused reviews and specialist workflows are
             available where an organisation needs a narrower starting point.
           </p>
         </div>
@@ -98,7 +98,7 @@ export default function ServicesPage() {
                 <article key={service.title} className="bg-white p-6">
                   <div className="flex items-start justify-between gap-4">
                     <Icon className="h-6 w-6 shrink-0 text-cyan-700" aria-hidden="true" />
-                    <span className="text-xs font-semibold text-cyan-900">{service.price}</span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.08em] text-cyan-900">{service.engagement}</span>
                   </div>
                   <h2 className="mt-5 text-xl font-semibold">{service.title}</h2>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{service.text}</p>

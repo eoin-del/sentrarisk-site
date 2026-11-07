@@ -145,7 +145,7 @@ export default function PilotProgrammePage() {
           {[
             ["Best fit", "Accountants, virtual CFOs, SME finance teams, and compliance operators."],
             ["Focus", "Payment-risk prevention, management visibility, and finance-team confidence."],
-            ["Commercial terms", "Three-month paid beta: €1,500 plus VAT, including standard setup for one business and up to 5,000 monthly transactions."],
+            ["Commercial terms", "A written beta proposal based on the agreed business need, data scope, users, volume, onboarding, and support."],
             ["Output", "A clear recommendation to roll out, adjust the scope, or stop after the beta."],
           ].map(([title, text]) => (
             <div key={title} className="rounded-md border border-slate-200 bg-white p-6 shadow-sm">

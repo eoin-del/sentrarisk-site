@@ -2,7 +2,7 @@ import type { LucideIcon } from "lucide-react";
 import Link from "next/link";
 import { ArrowRight, CheckCircle2, Mail, Shield } from "lucide-react";
 
-const REGISTER_URL = "https://app.sentrarisksystems.com/register";
+const REGISTER_URL = "/#contact";
 
 type SeoPageProps = {
   eyebrow: string;
@@ -43,11 +43,11 @@ export function SeoLandingPage({
             SentraRisk Systems
           </Link>
           <div className="flex items-center gap-4 text-sm font-medium text-slate-200">
-            <Link href="/#pricing" className="hidden hover:text-white sm:inline">
-              Pricing
+            <Link href="/#service-levels" className="hidden hover:text-white sm:inline">
+              Service levels
             </Link>
             <Link href={REGISTER_URL} className="rounded-md bg-cyan-300 px-4 py-2 font-semibold text-slate-950 hover:bg-cyan-200">
-              Request trial
+              Request beta access
             </Link>
           </div>
         </nav>
@@ -67,7 +67,7 @@ export function SeoLandingPage({
                 {primaryCta} <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </Link>
               <Link
-                href="/#platform"
+                href="/#product"
                 className="inline-flex h-12 items-center justify-center rounded-md border border-white/20 px-6 text-sm font-semibold text-white transition hover:bg-white/10"
               >
                 {secondaryCta}

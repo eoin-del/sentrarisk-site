@@ -9,14 +9,13 @@ import {
   Building2,
   Check,
   CheckCircle2,
-  ChevronRight,
   CircleGauge,
   FileCheck2,
   Landmark,
   Mail,
   MapPin,
+  Menu,
   SearchCheck,
-  ShieldCheck,
   Store,
   Users,
 } from "lucide-react";
@@ -51,23 +50,23 @@ const reviewAreas = [
 const workflow = [
   {
     number: "01",
-    title: "Bring in finance data",
-    text: "Use supported accounting exports, structured files, or a guided setup route.",
+    title: "Bring in the payment context",
+    text: "Use supported accounting data, invoice information, or a structured file from the process you already use.",
   },
   {
     number: "02",
-    title: "Review what needs attention",
-    text: "SentraRisk organises potential payment risks into a clear review queue.",
+    title: "Identify what needs attention",
+    text: "SentraRisk keeps routine activity out of the way and prioritises items that deserve a closer look.",
   },
   {
     number: "03",
-    title: "Make the decision",
-    text: "Your team checks the context, records its decision, and keeps control of the outcome.",
+    title: "Verify and decide",
+    text: "The right person checks the context and decides whether to clear, hold, or escalate the payment.",
   },
   {
     number: "04",
-    title: "Keep a reliable record",
-    text: "Export a clear record of the review for management, clients, or internal assurance.",
+    title: "Preserve the evidence",
+    text: "Keep a dependable record of what was checked, who decided, and why.",
   },
 ];
 
@@ -105,20 +104,20 @@ const solutions = [
 const coreOffers = [
   {
     icon: CircleGauge,
-    title: "Payment-risk monitoring",
-    price: "From €450/month",
+    title: "Pre-payment control",
+    engagement: "Ongoing control",
     text: "Ongoing review of payment and invoice activity, with clear priorities, ownership, review history, and management reporting.",
   },
   {
     icon: Users,
     title: "Accounting practice oversight",
-    price: "From €1,500/month",
+    engagement: "Multi-client",
     text: "A consistent review process across multiple client organisations, with controlled access, clear ownership, and audit-trail exports.",
   },
   {
     icon: FileCheck2,
     title: "Once-off payment control review",
-    price: "From €349",
+    engagement: "Defined scope",
     text: "A defined review of payment controls, supplier setup, approval evidence, duplicate risk, and areas that may need attention.",
   },
 ];
@@ -126,9 +125,7 @@ const coreOffers = [
 const pricingPlans = [
   {
     name: "Core",
-    price: "€450",
-    cadence: "/month",
-    setup: "€500 setup",
+    scope: "Single-entity control",
     audience: "Small finance teams",
     difference: "Establish one controlled review process",
     capacity: ["1", "5", "5,000/mo"],
@@ -145,9 +142,7 @@ const pricingPlans = [
   },
   {
     name: "Growth",
-    price: "€850",
-    cadence: "/month",
-    setup: "€1,250 setup",
+    scope: "Wider operational oversight",
     audience: "Growing finance teams",
     difference: "Coordinate several teams and report to management",
     capacity: ["3", "15", "12,000/mo"],
@@ -165,9 +160,7 @@ const pricingPlans = [
   },
   {
     name: "Practice",
-    price: "From €1,500",
-    cadence: "/month",
-    setup: "From €2,500 setup",
+    scope: "Multi-client delivery",
     audience: "Accountants and advisers",
     difference: "Operate a consistent review service across clients",
     capacity: ["10 included", "25", "25,000/mo"],
@@ -185,9 +178,7 @@ const pricingPlans = [
   },
   {
     name: "Enterprise",
-    price: "From €2,750",
-    cadence: "/month",
-    setup: "From €5,000 setup",
+    scope: "Tailored scale and rollout",
     audience: "Complex or high-volume teams",
     difference: "Design capacity, controls, and rollout around your operation",
     capacity: ["Custom", "Custom", "100k+/mo"],
@@ -226,15 +217,20 @@ const faqs = [
     answer:
       "Yes. SentraRisk is accepting a limited number of private beta organisations. Suitable data, authorised users, boundaries, success measures, and any commercial terms are agreed before a workspace is created.",
   },
+  {
+    question: "How is pricing determined?",
+    answer:
+      "SentraRisk is scoped around the organisations involved, payment volume, users, data sources, onboarding, and support required. Commercial terms are provided in a written proposal after a fit discussion.",
+  },
 ];
 
 const interests = [
   "Private beta access",
-  "Core plan - €450/month",
-  "Growth plan - €850/month",
-  "Practice plan - from €1,500/month",
-  "Enterprise plan - from €2,750/month",
-  "Payment-risk monitoring",
+  "Core service level",
+  "Growth service level",
+  "Practice service level",
+  "Enterprise service level",
+  "Pre-payment control",
   "Accounting practice solution",
   "Once-off payment review",
   "KYC verification",
@@ -342,7 +338,7 @@ function ContactForm() {
         <div>
           <h3 className="text-lg font-semibold text-slate-950">Contact SentraRisk</h3>
           <p className="mt-1 text-sm leading-6 text-slate-600">
-            Tell us which plan or payment process you would like to discuss. We will respond with a suitable scope and next step.
+            Tell us about the payment process you want to strengthen. We will respond with a suitable scope and next step.
           </p>
         </div>
       </div>
@@ -375,7 +371,7 @@ function ContactForm() {
           </select>
         </label>
         <label className="grid gap-2 text-sm font-medium text-slate-700">
-          Plan or service
+          What are you exploring?
           <select name="main_interest" defaultValue={interests[0]} className={inputClass}>
             {interests.map((interest) => (
               <option key={interest} value={interest}>
@@ -437,19 +433,36 @@ export default function Home() {
             <a href="#product" className="transition hover:text-slate-950">Product</a>
             <Link href="/industries" className="transition hover:text-slate-950">Industries</Link>
             <Link href="/services" className="transition hover:text-slate-950">Services</Link>
-            <a href="#pricing" className="transition hover:text-slate-950">Pricing</a>
+            <a href="#service-levels" className="transition hover:text-slate-950">Service levels</a>
             <Link href="/trust" className="transition hover:text-slate-950">Trust</Link>
             <a href="#contact" className="transition hover:text-slate-950">Contact</a>
           </div>
 
           <div className="flex items-center gap-2">
+            <details className="group relative lg:hidden">
+              <summary
+                aria-label="Open navigation"
+                className="flex h-10 w-10 cursor-pointer list-none items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 transition hover:bg-slate-50 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-cyan-700"
+              >
+                <Menu className="h-5 w-5" aria-hidden="true" />
+              </summary>
+              <div className="absolute right-0 top-12 z-50 grid w-56 overflow-hidden rounded-lg border border-slate-200 bg-white p-2 text-sm font-medium text-slate-700 shadow-[0_20px_50px_rgba(15,23,42,0.16)]">
+                <a href="#product" className="rounded-md px-3 py-2.5 hover:bg-slate-50 hover:text-slate-950">Product</a>
+                <Link href="/industries" className="rounded-md px-3 py-2.5 hover:bg-slate-50 hover:text-slate-950">Industries</Link>
+                <Link href="/services" className="rounded-md px-3 py-2.5 hover:bg-slate-50 hover:text-slate-950">Services</Link>
+                <a href="#service-levels" className="rounded-md px-3 py-2.5 hover:bg-slate-50 hover:text-slate-950">Service levels</a>
+                <Link href="/trust" className="rounded-md px-3 py-2.5 hover:bg-slate-50 hover:text-slate-950">Trust</Link>
+                <a href="#contact" className="rounded-md px-3 py-2.5 hover:bg-slate-50 hover:text-slate-950">Contact</a>
+                <a href={APP_URL} className="rounded-md px-3 py-2.5 hover:bg-slate-50 hover:text-slate-950">Log in</a>
+              </div>
+            </details>
             <a
               href={LINKEDIN_URL}
               target="_blank"
               rel="noreferrer"
               aria-label="Visit SentraRisk Systems on LinkedIn"
               title="SentraRisk Systems on LinkedIn"
-              className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 transition hover:border-[#0a66c2] hover:bg-slate-50 hover:text-[#0a66c2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a66c2]"
+              className="hidden h-10 w-10 shrink-0 items-center justify-center rounded-lg border border-slate-200 bg-white text-slate-700 transition hover:border-[#0a66c2] hover:bg-slate-50 hover:text-[#0a66c2] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0a66c2] sm:inline-flex"
             >
               <span className="text-sm font-bold leading-none" aria-hidden="true">in</span>
             </a>
@@ -481,15 +494,14 @@ export default function Home() {
         <div className="relative mx-auto flex min-h-[720px] max-w-7xl items-center px-5 py-20 md:min-h-[760px] md:px-8">
           <div className="max-w-3xl">
             <div className="inline-flex items-center gap-2 border-l-2 border-cyan-300 pl-3 text-sm font-semibold text-cyan-200">
-              Private beta for invoice-heavy finance teams
+              Pre-payment control software
             </div>
             <h1 className="mt-7 text-4xl font-semibold leading-[1.05] md:text-6xl lg:text-7xl">
-              Catch payment risks before money leaves.
+              Know which payments need attention before money leaves.
             </h1>
             <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-200">
-              SentraRisk helps finance teams identify possible duplicate payments, supplier-detail changes,
-              unusual activity, and missing support before funds are released. Use structured data exported
-              from the finance tools your team already knows.
+              SentraRisk works alongside your existing finance systems to identify unusual payments, guide
+              authorised review, and preserve evidence of every decision before funds are released.
             </p>
 
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -508,7 +520,7 @@ export default function Home() {
             </div>
 
             <div className="mt-10 grid max-w-3xl gap-3 text-sm text-slate-300 sm:flex sm:items-center sm:justify-between sm:gap-8">
-              {["Built in Ireland", "People stay in control", "Works with your finance software"].map((item) => (
+              {["Built in Ireland", "People stay in control", "Works alongside existing finance systems"].map((item) => (
                 <div key={item} className="flex items-center gap-2 whitespace-nowrap">
                   <Check className="h-4 w-4 shrink-0 text-cyan-300" aria-hidden="true" />
                   <span>{item}</span>
@@ -547,48 +559,42 @@ export default function Home() {
 
       <section id="product" className="border-b border-slate-200 bg-slate-50 px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
-          <div className="grid gap-10 lg:grid-cols-[0.75fr_1.25fr] lg:items-end">
-            <SectionHeading
-              label="The product"
-              title="See the risks. Review the context. Keep the decision."
-              text="SentraRisk gives authorised teams one place to review payment concerns and record what happened. It supports professional judgement instead of trying to replace it."
-            />
-            <div className="grid gap-3 sm:grid-cols-2">
-              {[
-                "Clear priorities instead of another spreadsheet",
-                "A reliable record of reviews and decisions",
-                "Visibility across invoices and transactions",
-                "Management-ready reporting",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3 border-t border-slate-300 pt-3 text-sm leading-6 text-slate-700">
-                  <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0 text-cyan-700" aria-hidden="true" />
-                  {item}
-                </div>
-              ))}
+          <SectionHeading
+            label="Where SentraRisk fits"
+            title="A controlled decision point between accounting and payment."
+            text="SentraRisk does not replace the systems that record invoices or move funds. It adds a consistent review step before the authorised team releases payment."
+          />
+
+          <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 lg:grid-cols-3">
+            <div className="bg-white p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Accounting software</p>
+              <h3 className="mt-4 text-xl font-semibold text-slate-950">Records what is owed</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">Invoices, suppliers, transactions, and supporting records enter the finance process.</p>
+            </div>
+            <div className="bg-[#0b2730] p-7 text-white">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-300">SentraRisk</p>
+              <h3 className="mt-4 text-xl font-semibold">Checks what needs attention</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-300">Potential concerns are prioritised, assigned, reviewed, and resolved with a clear decision record.</p>
+            </div>
+            <div className="bg-white p-7">
+              <p className="text-xs font-semibold uppercase tracking-[0.12em] text-slate-500">Banking and payment systems</p>
+              <h3 className="mt-4 text-xl font-semibold text-slate-950">Release the funds</h3>
+              <p className="mt-3 text-sm leading-6 text-slate-600">Authorised people remain responsible for deciding whether the payment proceeds.</p>
             </div>
           </div>
 
-          <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 md:grid-cols-3">
-            {[
-              ["Review", "Bring potential payment concerns into one controlled queue."],
-              ["Decide", "Keep authorised people responsible for the outcome."],
-              ["Record", "Retain a clear history of the review and decision."],
-            ].map(([title, text]) => (
-              <div key={title} className="bg-white p-6">
-                <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-800">{title}</p>
-                <p className="mt-3 text-sm leading-6 text-slate-600">{text}</p>
-              </div>
-            ))}
-          </div>
+          <p className="mt-6 max-w-4xl text-base leading-7 text-slate-600">
+            The real value is not another alert. It is a repeatable control process that helps the right person check the context, make the decision, and prove what happened.
+          </p>
         </div>
       </section>
 
       <section className="px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <SectionHeading
-            label="What it highlights"
-            title="The payment concerns that deserve a closer look."
-            text="SentraRisk applies more than 50 transaction checks to organise potential concerns. Public descriptions stay intentionally high-level so the control logic remains protected."
+            label="What gets a second look"
+            title="Bring the right payment concerns to the right person."
+            text="SentraRisk reviews the available payment, invoice, supplier, and approval context to organise the items that may require human attention."
           />
 
           <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-slate-200 bg-slate-200 md:grid-cols-2 lg:grid-cols-4">
@@ -610,8 +616,8 @@ export default function Home() {
         <div className="mx-auto max-w-7xl">
           <SectionHeading
             label="How it works"
-            title="A straightforward review process."
-            text="The public workflow explains what your team does without exposing the underlying detection logic, internal controls, or technical methods."
+            title="Check. Decide. Prove."
+            text="A focused workflow for busy finance teams, with routine activity kept out of the way and accountability retained throughout."
             light
           />
 
@@ -623,88 +629,6 @@ export default function Home() {
                 <p className="mt-3 text-sm leading-6 text-slate-300">{item.text}</p>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      <section id="why" className="border-b border-slate-200 bg-white px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-800">Why SentraRisk</p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
-              Accounting software records activity. SentraRisk adds another opportunity to question it.
-            </h2>
-            <p className="mt-6 max-w-2xl text-base leading-7 text-slate-600">
-              SentraRisk sits beside existing finance processes and helps teams focus on payment risks that can be
-              difficult to see during routine administration.
-            </p>
-            <p className="mt-5 max-w-2xl text-base leading-7 text-slate-600">
-              The review process helps teams organise attention around transactions that need a closer look. Authorised
-              people verify the context and remain accountable for every outcome.
-            </p>
-          </div>
-          <div className="border-l-2 border-cyan-600 pl-6 md:pl-8">
-            <ShieldCheck className="h-8 w-8 text-cyan-700" aria-hidden="true" />
-            <p className="mt-5 text-xl font-semibold leading-8 text-slate-950">
-              An additional control layer before payment, with a clear record after review.
-            </p>
-            <div className="mt-6 grid gap-3 text-sm text-slate-600">
-              {[
-                "Designed for authorised organisational access",
-                "Privacy, security, and data-processing information published",
-                "Human review remains part of the process",
-              ].map((item) => (
-                <div key={item} className="flex items-start gap-3">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-cyan-700" aria-hidden="true" />
-                  {item}
-                </div>
-              ))}
-            </div>
-            <Link href="/trust" className="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-cyan-800 hover:text-cyan-950">
-              Visit the Trust Centre <ChevronRight className="h-4 w-4" aria-hidden="true" />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section id="about" className="border-b border-slate-200 bg-slate-50 px-5 py-20 md:px-8 md:py-24">
-        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[0.72fr_1.28fr] lg:items-center">
-          <div className="rounded-lg border border-slate-200 bg-white p-7 shadow-sm">
-            <div className="flex items-center gap-4">
-              <span className="flex h-16 w-16 items-center justify-center rounded-lg bg-[#07131f]">
-                <Image
-                  src="/sentrarisk-logo.svg"
-                  alt="SentraRisk Systems"
-                  width={52}
-                  height={52}
-                  className="h-12 w-12"
-                />
-              </span>
-              <div>
-                <p className="text-lg font-semibold text-slate-950">Eoin Carey</p>
-                <p className="mt-1 text-sm text-cyan-800">Founder, SentraRisk Systems</p>
-              </div>
-            </div>
-            <div className="mt-7 border-t border-slate-200 pt-5">
-              <p className="text-sm leading-6 text-slate-600">
-                Based in Ireland and building practical payment oversight for growing businesses.
-              </p>
-            </div>
-          </div>
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-cyan-800">The company</p>
-            <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-slate-950 md:text-4xl">
-              Built around a straightforward belief: important payments deserve a clear second look.
-            </h2>
-            <p className="mt-6 max-w-3xl text-base leading-7 text-slate-600">
-              SentraRisk Systems was founded by Eoin Carey to make stronger payment oversight more accessible to
-              growing businesses and accounting practices without forcing them to replace familiar finance software.
-            </p>
-            <p className="mt-5 max-w-3xl text-base leading-7 text-slate-600">
-              Product direction has been shaped through conversations with people working across finance,
-              accounting, audit, quality assurance, and operational management. The goal is practical: help
-              authorised teams ask better questions before payment and keep a dependable record of the decision.
-            </p>
           </div>
         </div>
       </section>
@@ -785,7 +709,7 @@ export default function Home() {
                 <article key={service.title} className="bg-white p-6">
                   <div className="flex items-start justify-between gap-4">
                     <Icon className="h-6 w-6 shrink-0 text-cyan-700" aria-hidden="true" />
-                    <span className="text-xs font-semibold text-cyan-900">{service.price}</span>
+                    <span className="text-xs font-semibold uppercase tracking-[0.08em] text-cyan-900">{service.engagement}</span>
                   </div>
                   <h3 className="mt-5 text-lg font-semibold text-slate-950">{service.title}</h3>
                   <p className="mt-3 text-sm leading-6 text-slate-600">{service.text}</p>
@@ -795,18 +719,18 @@ export default function Home() {
           </div>
 
           <p className="mt-5 max-w-3xl text-xs leading-5 text-slate-500">
-            Specialist KYC, cashflow follow-up, dealership, and suspicious-message services remain available on the full Services page. Scope and final pricing are agreed before work begins.
+            Specialist KYC, cashflow follow-up, dealership, and suspicious-message services remain available on the full Services page. Scope and commercial terms are agreed before work begins.
           </p>
         </div>
       </section>
 
-      <section id="pricing" className="px-5 py-20 md:px-8 md:py-24">
+      <section id="service-levels" className="px-5 py-20 md:px-8 md:py-24">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col justify-between gap-8 md:flex-row md:items-end">
             <SectionHeading
-              label="Commercial model"
-              title="Beta access is scoped before onboarding."
-              text="The levels below show the intended fit after beta. Access, data volume, users, success measures, and commercial terms are confirmed with each organisation before activation."
+              label="Service levels"
+              title="A clear level for each operating model."
+              text="Choose the shape that most closely matches your organisation. Final scope and commercial terms are confirmed after we understand your entities, payment volume, users, data sources, and support requirements."
             />
             <a href="#contact" className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-800 hover:text-cyan-950">
               Discuss beta access <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -825,17 +749,13 @@ export default function Home() {
               >
                 {plan.featured ? (
                   <span className="absolute right-4 top-4 rounded bg-cyan-300 px-2 py-1 text-xs font-semibold text-slate-950">
-                    Most popular
+                    Common starting point
                   </span>
                 ) : null}
                 <h3 className="text-lg font-semibold">{plan.name}</h3>
                 <p className={`mt-1 text-xs font-semibold uppercase ${plan.featured ? "text-cyan-300" : "text-cyan-800"}`}>{plan.audience}</p>
-                <div className="mt-5 flex items-end gap-1">
-                  <span className="text-3xl font-semibold">{plan.price}</span>
-                  <span className={`pb-1 text-sm ${plan.featured ? "text-slate-300" : "text-slate-500"}`}>{plan.cadence}</span>
-                </div>
-                <p className={`mt-2 text-xs font-semibold ${plan.featured ? "text-cyan-300" : "text-cyan-800"}`}>
-                  {plan.setup}
+                <p className={`mt-5 text-lg font-semibold ${plan.featured ? "text-white" : "text-slate-950"}`}>
+                  {plan.scope}
                 </p>
                 <p className={`mt-4 min-h-20 text-sm leading-6 ${plan.featured ? "text-slate-300" : "text-slate-600"}`}>
                   {plan.description}
@@ -869,13 +789,13 @@ export default function Home() {
                       : "bg-slate-950 text-white hover:bg-slate-800"
                   }`}
                 >
-                  {plan.name === "Enterprise" ? "Enquire now" : "Discuss beta access"}
+                  Discuss fit
                 </a>
               </article>
             ))}
           </div>
           <p className="mt-5 text-xs leading-5 text-slate-500">
-            Prices exclude VAT and require an annual agreement. Published monthly rates are billed annually; monthly direct debit is available at a 10% higher rate. Setup fees are paid before onboarding. No online purchase is taken, and final scope is confirmed in writing before activation. If usage exceeds the included volume for two consecutive months, the organisation agrees an upgrade or additional capacity before further charges apply.
+            SentraRisk is not sold through self-service checkout. Every engagement begins with a fit discussion and a written proposal covering scope, onboarding, support, commercial terms, and agreed success measures.
           </p>
         </div>
       </section>
@@ -940,7 +860,7 @@ export default function Home() {
                 <Logo />
               </div>
               <p className="mt-4 max-w-sm text-sm leading-6">
-                Payment-risk monitoring that helps finance teams act before money leaves.
+                A control layer that helps finance teams check, decide, and prove before money leaves.
               </p>
             </div>
             <div className="flex max-w-2xl flex-wrap gap-x-5 gap-y-3 text-sm">

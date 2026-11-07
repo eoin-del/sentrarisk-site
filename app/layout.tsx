@@ -4,13 +4,13 @@ import { TrackingScripts } from "./tracking-scripts";
 import { CookieConsent } from "./cookie-consent";
 
 export const metadata: Metadata = {
-  title: "SentraRisk Systems | Catch Payment Risks Before Money Leaves",
+  title: "SentraRisk Systems | Pre-Payment Control Software",
   description:
-    "SentraRisk helps finance teams identify possible duplicate payments, supplier-detail changes, unusual activity, and missing support before funds are released.",
+    "SentraRisk helps finance teams identify unusual payments, guide authorised review, and preserve evidence of every decision before money leaves.",
   openGraph: {
-    title: "SentraRisk Systems | Catch Payment Risks Before Money Leaves",
+    title: "SentraRisk Systems | Know What Needs Attention Before Money Leaves",
     description:
-      "Payment-risk monitoring for finance teams, accountants, and invoice-heavy SMEs.",
+      "Pre-payment control software for finance teams, accountants, and invoice-heavy organisations.",
     url: "https://www.sentrarisksystems.com",
     siteName: "SentraRisk Systems",
     type: "website",
