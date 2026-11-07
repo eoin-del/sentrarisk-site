@@ -174,7 +174,7 @@ const pricingPlans = [
     description: "For accounting and advisory teams applying one controlled process across client organisations.",
     features: [
       "Everything in Growth",
-      "Five active client workspaces included",
+      "Ten active client workspaces included",
       "Additional client workspaces available",
       "API access",
       "Transaction audit-trail PDFs",
