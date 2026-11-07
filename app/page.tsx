@@ -112,7 +112,7 @@ const coreOffers = [
   {
     icon: Users,
     title: "Accounting practice oversight",
-    price: "From €1,750/month",
+    price: "From €1,500/month",
     text: "A consistent review process across multiple client organisations, with controlled access, clear ownership, and audit-trail exports.",
   },
   {
@@ -125,14 +125,16 @@ const coreOffers = [
 
 const pricingPlans = [
   {
-    name: "Starter",
+    name: "Core",
     price: "€450",
     cadence: "/month",
+    setup: "€500 setup",
     audience: "Small finance teams",
     difference: "Establish one controlled review process",
-    capacity: ["1", "3", "5,000/mo"],
+    capacity: ["1", "5", "5,000/mo"],
     description: "For one business that needs a clear place to identify, review, and record payment exceptions.",
     features: [
+      "One standard accounting connection",
       "Structured file and accounting-data imports",
       "Prioritised payment-risk review queue",
       "Recorded decisions and standard reports",
@@ -143,17 +145,19 @@ const pricingPlans = [
   },
   {
     name: "Growth",
-    price: "€950",
+    price: "€850",
     cadence: "/month",
+    setup: "€1,250 setup",
     audience: "Growing finance teams",
     difference: "Coordinate several teams and report to management",
-    capacity: ["5", "5", "12,000/mo"],
+    capacity: ["3", "15", "12,000/mo"],
     description: "For an established SME that needs wider oversight, alerts, and management-ready evidence.",
     features: [
-      "Everything in Starter",
+      "Everything in Core",
+      "Multiple standard accounting connections",
       "Email risk alerts",
       "Client control packs",
-      "Multi-workspace supplier oversight",
+      "Multi-entity supplier oversight",
       "Management-ready exports",
     ],
     href: "#contact",
@@ -161,11 +165,12 @@ const pricingPlans = [
   },
   {
     name: "Practice",
-    price: "From €1,750",
+    price: "From €1,500",
     cadence: "/month",
+    setup: "From €2,500 setup",
     audience: "Accountants and advisers",
     difference: "Operate a consistent review service across clients",
-    capacity: ["5 included", "10", "25,000/mo"],
+    capacity: ["10 included", "25", "25,000/mo"],
     description: "For accounting and advisory teams applying one controlled process across client organisations.",
     features: [
       "Everything in Growth",
@@ -180,8 +185,9 @@ const pricingPlans = [
   },
   {
     name: "Enterprise",
-    price: "Enquire now",
-    cadence: "",
+    price: "From €2,750",
+    cadence: "/month",
+    setup: "From €5,000 setup",
     audience: "Complex or high-volume teams",
     difference: "Design capacity, controls, and rollout around your operation",
     capacity: ["Custom", "Custom", "100k+/mo"],
@@ -224,10 +230,10 @@ const faqs = [
 
 const interests = [
   "Private beta access",
-  "Starter plan - €450/month",
-  "Growth plan - €950/month",
-  "Practice plan - from €1,750/month",
-  "Enterprise plan - enquire now",
+  "Core plan - €450/month",
+  "Growth plan - €850/month",
+  "Practice plan - from €1,500/month",
+  "Enterprise plan - from €2,750/month",
   "Payment-risk monitoring",
   "Accounting practice solution",
   "Once-off payment review",
@@ -828,6 +834,9 @@ export default function Home() {
                   <span className="text-3xl font-semibold">{plan.price}</span>
                   <span className={`pb-1 text-sm ${plan.featured ? "text-slate-300" : "text-slate-500"}`}>{plan.cadence}</span>
                 </div>
+                <p className={`mt-2 text-xs font-semibold ${plan.featured ? "text-cyan-300" : "text-cyan-800"}`}>
+                  {plan.setup}
+                </p>
                 <p className={`mt-4 min-h-20 text-sm leading-6 ${plan.featured ? "text-slate-300" : "text-slate-600"}`}>
                   {plan.description}
                 </p>
@@ -838,7 +847,7 @@ export default function Home() {
                 <dl className={`mt-4 grid grid-cols-3 gap-px overflow-hidden rounded-lg border text-center ${plan.featured ? "border-white/15 bg-white/15" : "border-slate-200 bg-slate-200"}`}>
                   {plan.capacity.map((item, index) => (
                     <div key={`${plan.name}-${index}-${item}`} className={`px-1.5 py-2.5 ${plan.featured ? "bg-slate-950" : "bg-white"}`}>
-                      <dt className={`text-[10px] font-semibold uppercase ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>{["Workspaces", "Users", "Volume"][index]}</dt>
+                      <dt className={`text-[10px] font-semibold uppercase ${plan.featured ? "text-slate-400" : "text-slate-500"}`}>{["Entities", "Users", "Volume"][index]}</dt>
                       <dd className={`mt-1 text-xs font-semibold leading-4 ${plan.featured ? "text-white" : "text-slate-950"}`}>{item}</dd>
                     </div>
                   ))}
@@ -866,7 +875,7 @@ export default function Home() {
             ))}
           </div>
           <p className="mt-5 text-xs leading-5 text-slate-500">
-            Indicative prices exclude VAT where applicable. No online purchase is taken: beta scope, final limits, onboarding, and support arrangements are confirmed in writing before activation.
+            Prices exclude VAT and require an annual agreement. Published monthly rates are billed annually; monthly direct debit is available at a 10% higher rate. Setup fees are paid before onboarding. No online purchase is taken, and final scope is confirmed in writing before activation. If usage exceeds the included volume for two consecutive months, the organisation agrees an upgrade or additional capacity before further charges apply.
           </p>
         </div>
       </section>
