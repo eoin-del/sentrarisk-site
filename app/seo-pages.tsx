@@ -47,7 +47,7 @@ export function SeoLandingPage({
               Service levels
             </Link>
             <Link href={REGISTER_URL} className="rounded-md bg-cyan-300 px-4 py-2 font-semibold text-slate-950 hover:bg-cyan-200">
-              Request beta access
+              Request access
             </Link>
           </div>
         </nav>

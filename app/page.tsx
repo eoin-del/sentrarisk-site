@@ -215,7 +215,7 @@ const faqs = [
   {
     question: "Can we test it before committing?",
     answer:
-      "Yes. SentraRisk is accepting a limited number of private beta organisations. Suitable data, authorised users, boundaries, success measures, and any commercial terms are agreed before a workspace is created.",
+      "Yes. SentraRisk offers guided evaluations for selected organisations. Suitable data, authorised users, boundaries, success measures, and any commercial terms are agreed before a workspace is created.",
   },
   {
     question: "How is pricing determined?",
@@ -225,7 +225,7 @@ const faqs = [
 ];
 
 const interests = [
-  "Private beta access",
+  "Guided evaluation",
   "Core service level",
   "Growth service level",
   "Practice service level",
@@ -473,7 +473,7 @@ export default function Home() {
               href="#contact"
               className="inline-flex h-10 items-center justify-center rounded-lg bg-slate-950 px-4 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
-              Request beta access
+              Request access
             </a>
           </div>
         </div>
@@ -509,7 +509,7 @@ export default function Home() {
                 href="#contact"
                 className="inline-flex h-12 items-center justify-center gap-2 rounded-lg bg-cyan-300 px-6 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200"
               >
-                Apply for beta access <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                Request access <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </a>
               <a
                 href="#product"
@@ -534,7 +534,7 @@ export default function Home() {
       <section className="border-b border-cyan-900/15 bg-cyan-50 px-5 py-5 md:px-8">
         <div className="mx-auto flex max-w-7xl flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
           <div>
-            <p className="text-sm font-semibold text-slate-950">Now onboarding a limited number of private beta organisations.</p>
+            <p className="text-sm font-semibold text-slate-950">Now onboarding a limited number of organisations.</p>
             <p className="mt-1 text-sm text-slate-600">Every workspace begins with a fit discussion, agreed test scope, and guided onboarding. There is no self-service checkout.</p>
           </div>
           <a href="#contact" className="inline-flex h-10 shrink-0 items-center justify-center gap-2 rounded-lg bg-slate-950 px-4 text-sm font-semibold text-white hover:bg-slate-800">Request access <ArrowRight className="h-4 w-4" aria-hidden="true" /></a>
@@ -733,7 +733,7 @@ export default function Home() {
               text="Choose the shape that most closely matches your organisation. Final scope and commercial terms are confirmed after we understand your entities, payment volume, users, data sources, and support requirements."
             />
             <a href="#contact" className="inline-flex items-center gap-2 text-sm font-semibold text-cyan-800 hover:text-cyan-950">
-              Discuss beta access <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              Discuss access <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </a>
           </div>
 
@@ -825,14 +825,14 @@ export default function Home() {
         <div className="mx-auto grid max-w-7xl gap-12 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <div>
             <SectionHeading
-              label="Private beta"
+              label="Guided access"
               title="Apply with the payment process you already have."
-              text="Tell us about your finance workflow, review volume, and the risks you want to reduce. We will confirm whether SentraRisk is a suitable beta fit before creating a workspace."
+              text="Tell us about your finance workflow, review volume, and the risks you want to reduce. We will confirm whether SentraRisk is a suitable fit before creating a workspace."
             />
             <div className="mt-8 space-y-4">
               {[
                 "A focused discussion of your current payment-review needs",
-                "A controlled beta scope using suitable business data",
+                "A controlled evaluation using suitable business data",
                 "A clear recommendation on fit, onboarding, and next steps",
               ].map((item) => (
                 <div key={item} className="flex items-start gap-3 text-sm leading-6 text-slate-700">
@@ -864,7 +864,7 @@ export default function Home() {
               </p>
             </div>
             <div className="flex max-w-2xl flex-wrap gap-x-5 gap-y-3 text-sm">
-              <Link href="/pilot-programme" className="hover:text-white">Private beta</Link>
+              <Link href="/pilot-programme" className="hover:text-white">Guided evaluation</Link>
               <Link href="/services" className="hover:text-white">Services</Link>
               <Link href="/industries" className="hover:text-white">Industries</Link>
               <Link href="/trust" className="hover:text-white">Trust Centre</Link>

@@ -49,7 +49,7 @@ const sections = [
   {
     title: "6. Orders, Billing, Trials, and Company Representative",
     body: [
-      "A customer's plan, price, billing cycle, usage limits, start date, beta or trial period, workspace scope, and any special terms will be set out in an order form or written subscription agreement.",
+      "A customer's plan, price, billing cycle, usage limits, start date, evaluation or trial period, workspace scope, and any special terms will be set out in an order form or written subscription agreement.",
       "The administrator or authorised company representative is responsible for billing, subscription selection, payment terms, and keeping payment information accurate.",
       "Where a user creates or manages an organisation account, that user may be treated as the company representative for account, billing, and administrative purposes unless another authorised representative is appointed.",
       "If payment fails, is cancelled, or is not received when due, SentraRisk may restrict product access while keeping billing access available so the organisation can restore payment.",

@@ -1,7 +1,7 @@
 export const pilotDeliverables = [
   "A written scope covering the team, data, workflow, and success measures",
   "Guided setup using an agreed sample or authorised business dataset",
-  "Access for the nominated reviewers involved in the beta",
+  "Access for the nominated reviewers involved in the evaluation",
   "A closing review of findings, usability, and commercial fit",
   "A documented recommendation on rollout, changes, or stopping",
 ];
@@ -14,7 +14,7 @@ export const pilotTimeline = [
   },
   {
     phase: "Use",
-    timing: "During the beta",
+    timing: "During the evaluation",
     text: "Import the agreed data, review relevant items, record decisions, and test the workflow in practice.",
   },
   {

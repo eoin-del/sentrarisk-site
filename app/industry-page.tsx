@@ -68,7 +68,7 @@ export function IndustryLandingPage({
                 href="/pilot-programme"
                 className="inline-flex h-12 items-center justify-center rounded-lg border border-white/25 px-6 text-sm font-semibold text-white hover:bg-white/10"
               >
-                View private beta
+                View guided evaluation
               </Link>
             </div>
           </div>
