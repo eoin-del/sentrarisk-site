@@ -73,10 +73,10 @@ const workflow = [
 const solutions = [
   {
     icon: Building2,
-    title: "Invoice-heavy SMEs",
-    text: "For invoice-heavy SMEs that want clearer payment oversight without replacing their accounting system.",
-    href: "/industries/invoice-heavy-smes",
-    link: "Explore SME use",
+    title: "Invoice-heavy businesses",
+    text: "For growing businesses that want clearer payment oversight without replacing their accounting system.",
+    href: "/industries/invoice-heavy-businesses",
+    link: "Explore business use",
   },
   {
     icon: Users,
@@ -146,7 +146,7 @@ const pricingPlans = [
     audience: "Growing finance teams",
     difference: "Coordinate several teams and report to management",
     capacity: ["3", "15", "12,000/mo"],
-    description: "For an established SME that needs wider oversight, alerts, and management-ready evidence.",
+    description: "For a growing business that needs wider oversight, alerts, and management-ready evidence.",
     features: [
       "Everything in Core",
       "Multiple standard accounting connections",

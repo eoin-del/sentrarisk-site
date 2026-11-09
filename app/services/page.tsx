@@ -22,7 +22,7 @@ const services = [
     title: "Pre-payment control",
     engagement: "Ongoing control",
     text: "Ongoing review of payment and invoice activity, with clear priorities, ownership, review history, and management reporting.",
-    bestFor: "Finance teams and invoice-heavy SMEs",
+    bestFor: "Finance teams and invoice-heavy businesses",
   },
   {
     icon: FileCheck2,

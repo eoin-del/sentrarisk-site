@@ -143,7 +143,7 @@ export default function PilotProgrammePage() {
       <section className="border-y border-slate-200 bg-slate-50 px-5 py-20 md:px-8">
         <div className="mx-auto grid max-w-7xl gap-6 md:grid-cols-2 lg:grid-cols-4">
           {[
-            ["Best fit", "Accountants, virtual CFOs, SME finance teams, and compliance operators."],
+            ["Best fit", "Accountants, virtual CFOs, business finance teams, and compliance operators."],
             ["Focus", "Payment-risk prevention, management visibility, and finance-team confidence."],
             ["Commercial terms", "A written proposal based on the agreed business need, data scope, users, volume, onboarding, and support."],
             ["Output", "A clear recommendation to roll out, adjust the scope, or stop after the evaluation."],

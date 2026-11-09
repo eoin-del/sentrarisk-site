@@ -5,7 +5,7 @@ import { SeoLandingPage } from "../seo-pages";
 export const metadata: Metadata = {
   title: "Supplier Fraud Detection Software | SentraRisk Systems",
   description:
-    "Supplier payment-risk prevention for SMEs and finance teams that want stronger oversight before money leaves the business.",
+    "Supplier payment-risk prevention for growing businesses and finance teams that want stronger oversight before money leaves the business.",
 };
 
 export default function SupplierFraudDetectionPage() {
@@ -42,7 +42,7 @@ export default function SupplierFraudDetectionPage() {
       ]}
       useCases={[
         "Supplier payment review before approval.",
-        "Bogus-payment prevention for SMEs.",
+        "Bogus-payment prevention for growing businesses.",
         "Payment-risk reporting for management.",
         "Second-layer review before funds are released.",
       ]}

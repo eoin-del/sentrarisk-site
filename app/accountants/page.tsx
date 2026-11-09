@@ -5,14 +5,14 @@ import { SeoLandingPage } from "../seo-pages";
 export const metadata: Metadata = {
   title: "Fraud-Risk Software for Accountants & Virtual CFOs | SentraRisk Systems",
   description:
-    "Payment-risk prevention software for accountants, bookkeepers, virtual CFOs, and finance advisors supporting SME clients.",
+    "Payment-risk prevention software for accountants, bookkeepers, virtual CFOs, and finance advisors supporting business clients.",
 };
 
 export default function AccountantsPage() {
   return (
     <SeoLandingPage
       eyebrow="For accountants and virtual CFOs"
-      title="Give SME clients a clearer view of payment risk before money leaves."
+      title="Give business clients a clearer view of payment risk before money leaves."
       description="SentraRisk helps accountants, bookkeepers, virtual CFOs, and finance advisors support clients with payment-risk oversight, bogus-payment prevention, and professional management outputs."
       primaryCta="Request advisor trial access"
       icon={Landmark}
@@ -24,7 +24,7 @@ export default function AccountantsPage() {
       proof={[
         { value: "Prevent", label: "Focused on stopping avoidable payment losses." },
         { value: "Output", label: "Client-ready reporting for management conversations." },
-        { value: "SME", label: "Designed for lean finance teams." },
+        { value: "Practical", label: "Designed for busy finance teams." },
       ]}
       sections={[
         {
@@ -41,7 +41,7 @@ export default function AccountantsPage() {
         },
       ]}
       useCases={[
-        "Monthly payment-risk review for SME clients.",
+        "Monthly payment-risk review for business clients.",
         "Bogus-payment prevention support.",
         "Finance-control reporting for management meetings.",
         "Client-ready summaries for advisory conversations.",

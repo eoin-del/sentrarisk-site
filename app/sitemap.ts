@@ -12,7 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/services",
     "/industries",
     "/industries/accounting-practices",
-    "/industries/invoice-heavy-smes",
+    "/industries/invoice-heavy-businesses",
     "/industries/multi-location-businesses",
     "/industries/motor-dealerships",
     "/trust",

@@ -5,7 +5,7 @@ import { ArrowRight, Building2, MapPin, Store, Users } from "lucide-react";
 export const metadata: Metadata = {
   title: "Industries | SentraRisk Systems",
   description:
-    "Explore SentraRisk payment-risk monitoring for accounting practices, invoice-heavy SMEs, multi-location organisations, and motor dealerships.",
+    "Explore SentraRisk payment-risk monitoring for accounting practices, invoice-heavy businesses, multi-location organisations, and motor dealerships.",
 };
 
 const industries = [
@@ -17,9 +17,9 @@ const industries = [
   },
   {
     icon: Building2,
-    title: "Invoice-heavy SMEs",
+    title: "Invoice-heavy businesses",
     text: "A clearer way to review duplicate risk, supplier-detail changes, unusual activity, and missing support.",
-    href: "/industries/invoice-heavy-smes",
+    href: "/industries/invoice-heavy-businesses",
   },
   {
     icon: MapPin,

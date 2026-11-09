@@ -5,7 +5,7 @@ import { SeoLandingPage } from "../seo-pages";
 export const metadata: Metadata = {
   title: "Accounting Data Risk Review | SentraRisk Systems",
   description:
-    "Payment-risk review for SMEs and finance teams that want stronger oversight before money leaves the business.",
+    "Payment-risk review for growing businesses and finance teams that want stronger oversight before money leaves the business.",
 };
 
 export default function XeroFraudDetectionPage() {
@@ -13,7 +13,7 @@ export default function XeroFraudDetectionPage() {
     <SeoLandingPage
       eyebrow="Accounting data review"
       title="Bring payment-risk review closer to your finance data."
-      description="SentraRisk helps SMEs, accountants, and finance teams improve payment-risk oversight before money leaves the business, without replacing existing finance systems."
+      description="SentraRisk helps growing businesses, accountants, and finance teams improve payment-risk oversight before money leaves the business, without replacing existing finance systems."
       primaryCta="Request trial access"
       icon={Cloud}
       points={[
@@ -36,7 +36,7 @@ export default function XeroFraudDetectionPage() {
           text: "Use SentraRisk to support client conversations around payment control, risk prevention, and management reporting.",
         },
         {
-          title: "For SME operators",
+          title: "For business operators",
           text: "Give lean teams a clearer way to review payment risk before funds leave the business.",
         },
       ]}
